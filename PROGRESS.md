@@ -5,9 +5,10 @@ Package manager: **pnpm**. Environment: **native Windows** (Git Bash, no WSL).
 
 ## How to resume in a new session
 1. Upload this `PROGRESS.md`.
-2. `pnpm install` — `pnpm-lock.yaml` is committed, restores exact versions, not "latest."
-3. `pnpm build` to confirm things still build before adding new code.
-4. Continue at "Next step" below.
+2. **Also re-upload `VICHARASHALA_MAPS_SPEC.md`** if you have it — my sandbox's copy became inaccessible partway through Step 4 (cache expiry, not a data-loss issue on your end), so some Step 4 decisions (see below) were made from memory/inference rather than re-checking exact spec prose. Worth a quick cross-check once the spec is back in context.
+3. `pnpm install` — `pnpm-lock.yaml` is committed, restores exact versions, not "latest."
+4. `pnpm build` to confirm things still build before adding new code.
+5. Continue at "Next step" below.
 
 ## Workflow
 - Code/config changes ship as a `stepN-patch.sh` script — run from the project root in Git Bash. Each is tested end-to-end against a clean checkout before being handed over, not just "should work." Idempotent, includes `pnpm install`.
@@ -15,20 +16,34 @@ Package manager: **pnpm**. Environment: **native Windows** (Git Bash, no WSL).
 - Linux-only native tools (tippecanoe) aren't available on native Windows. Sandbox builds them and hands over the finished artifact instead.
 - Source data comes from `https://github.com/vicharashala-ui/ecoguesser.git`, a sibling project with already-processed PA data matching this spec almost field-for-field.
 
-## Current status: Step 3 complete — protected-areas.pmtiles built
+## Current status: Step 4 complete — states/UTs enriched
 
 ### Not started yet
 - Rivers pipeline (spec §4.7 steps ⑥⑦⑧) — needs OSM Overpass, not reachable from this sandbox; needs to run on your machine (Git Bash + curl/node, no compiled tools needed)
-- State boundaries pipeline (step ⑨) — Mapshaper simplify + enrich; source available in ecoguesser, not yet pulled. Runs fine in Git Bash (Mapshaper is an npm package, not a native binary)
-- `spatialIntersect.js` / `deriveStateCrossRefs.js` / `buildSearchIndex.js` (steps ⑪⑫⑬) — depend on rivers existing first
+- `spatialIntersect.js` / `deriveStateCrossRefs.js` / `buildSearchIndex.js` (steps ⑪⑫⑬) — depend on rivers existing first. Also the reason `rivers_flowing_through`, `basin_rivers`, `notable_city_ids`, `protected_area_ids` are empty arrays in `states.json` right now — not a bug, just not populated yet.
 - Everything in spec §5 onward: NanoStores, `MapView.tsx`, all components, theming, SEO, a11y, deployment
 
 ## Next step
-**State boundaries pipeline (step ⑨)** — no rivers dependency, fully Git-Bash-friendly, unblocks the State Panel (§3.5) and the map's base layer. Will pull `india-states.geojson` from ecoguesser and run Mapshaper simplify + enrich as a `step4-patch.sh`.
+Rivers pipeline is next in spec order but needs OSM Overpass — **not reachable from this sandbox** (not in the allowed network list). Two ways to handle it:
+1. You run an Overpass fetch step yourself in Git Bash (I write the script + queries, you run + send me the output to process further), or
+2. We skip ahead to something sandbox-completable — e.g. NanoStores setup, `MapView.tsx` skeleton, or theme tokens (spec §6) — and circle back to rivers once we have the Overpass output.
 
 ---
 
 ## Completed steps log
+
+### Step 4 — State/UT metadata enrichment (delivered as `step4-patch.sh`)
+- `scripts/enrichStates.js` — enriches all 36 features (28 states + 8 UTs) with `id`, `name`, `admin_type`, `capital`; validates each via the `State` zod schema
+- Outputs `public/geojson/india-states.geojson` (geometry + minimal properties) and `public/data/states.json` (metadata only — mirrors the PA data's geometry/metadata split)
+- Verified on a clean checkout with Steps 1-3 already applied — same 28/8 split both times, `pnpm build` still succeeds
+
+**Source data finding:** `scripts/source-data/india-states.geojson` in ecoguesser is **already simplified** (Visvalingam, 200m interval, keep-shapes, 0.0001° precision — same method/tolerance as the PA boundaries). No Mapshaper invocation was needed for this step at all — it's pure JS, so Windows/Git Bash has zero friction here.
+
+**Deviation from spec**: `rivers_flowing_through`, `basin_rivers`, `notable_city_ids`, `protected_area_ids` are left as empty arrays — these depend on the rivers pipeline and `spatialIntersect.js`/`deriveStateCrossRefs.js` (steps ⑥-⑧, ⑪, ⑫), none of which exist yet. Validated as empty arrays against the `State` schema (which allows this), not skipped.
+
+**Capital list**: used the commonly-accepted single capital per state/UT (e.g. Jammu & Kashmir → Srinagar, its summer/main seat; Uttarakhand → Dehradun, the de facto seat over the designated-but-unused Gairsain). Worth a manual sanity check if precision on any specific one matters for your use case — this table isn't sourced from the ecoguesser repo, it's a static reference table I wrote.
+
+**Note:** ecoguesser also has a documented topojson conversion for this same file (`convertStatesTopo.js`) that roughly halves gzip size (~216KB vs 333KB gzip) by deduplicating shared state borders — with well-documented reasoning for why they explicitly avoid mapshaper's auto-quantization (it silently produced an invalid/self-intersecting Andaman & Nicobar polygon). Not adopted here — spec's folder layout (`public/geojson/`) reads as plain GeoJSON, and adding topojson would mean a new client-side decode dependency not yet confirmed against the actual spec text. Worth revisiting as a size optimization later if needed — the exact reasoning/command is preserved in ecoguesser's script if we do.
 
 ### Step 1 — Project scaffold
 - Astro v6.4.8 (pinned — spec targets v6, registry default is now v7) initialized manually with `pnpm init`, not `create-astro`, for exact version control

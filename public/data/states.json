@@ -1,0 +1,362 @@
+[
+  {
+    "id": "andaman-and-nicobar-islands",
+    "name": "Andaman and Nicobar Islands",
+    "admin_type": "ut",
+    "capital": "Port Blair",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "andhra-pradesh",
+    "name": "Andhra Pradesh",
+    "admin_type": "state",
+    "capital": "Amaravati",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "arunachal-pradesh",
+    "name": "Arunachal Pradesh",
+    "admin_type": "state",
+    "capital": "Itanagar",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "assam",
+    "name": "Assam",
+    "admin_type": "state",
+    "capital": "Dispur",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "bihar",
+    "name": "Bihar",
+    "admin_type": "state",
+    "capital": "Patna",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "chandigarh",
+    "name": "Chandigarh",
+    "admin_type": "ut",
+    "capital": "Chandigarh",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "chhattisgarh",
+    "name": "Chhattisgarh",
+    "admin_type": "state",
+    "capital": "Raipur",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "dadra-and-nagar-haveli-and-daman-and-diu",
+    "name": "Dadra and Nagar Haveli and Daman and Diu",
+    "admin_type": "ut",
+    "capital": "Daman",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "delhi",
+    "name": "Delhi",
+    "admin_type": "ut",
+    "capital": "New Delhi",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "goa",
+    "name": "Goa",
+    "admin_type": "state",
+    "capital": "Panaji",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "gujarat",
+    "name": "Gujarat",
+    "admin_type": "state",
+    "capital": "Gandhinagar",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "haryana",
+    "name": "Haryana",
+    "admin_type": "state",
+    "capital": "Chandigarh",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "himachal-pradesh",
+    "name": "Himachal Pradesh",
+    "admin_type": "state",
+    "capital": "Shimla",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "jammu-and-kashmir",
+    "name": "Jammu and Kashmir",
+    "admin_type": "ut",
+    "capital": "Srinagar",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "jharkhand",
+    "name": "Jharkhand",
+    "admin_type": "state",
+    "capital": "Ranchi",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "karnataka",
+    "name": "Karnataka",
+    "admin_type": "state",
+    "capital": "Bengaluru",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "kerala",
+    "name": "Kerala",
+    "admin_type": "state",
+    "capital": "Thiruvananthapuram",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "ladakh",
+    "name": "Ladakh",
+    "admin_type": "ut",
+    "capital": "Leh",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "lakshadweep",
+    "name": "Lakshadweep",
+    "admin_type": "ut",
+    "capital": "Kavaratti",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "madhya-pradesh",
+    "name": "Madhya Pradesh",
+    "admin_type": "state",
+    "capital": "Bhopal",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "maharashtra",
+    "name": "Maharashtra",
+    "admin_type": "state",
+    "capital": "Mumbai",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "manipur",
+    "name": "Manipur",
+    "admin_type": "state",
+    "capital": "Imphal",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "meghalaya",
+    "name": "Meghalaya",
+    "admin_type": "state",
+    "capital": "Shillong",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "mizoram",
+    "name": "Mizoram",
+    "admin_type": "state",
+    "capital": "Aizawl",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "nagaland",
+    "name": "Nagaland",
+    "admin_type": "state",
+    "capital": "Kohima",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "odisha",
+    "name": "Odisha",
+    "admin_type": "state",
+    "capital": "Bhubaneswar",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "puducherry",
+    "name": "Puducherry",
+    "admin_type": "ut",
+    "capital": "Puducherry",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "punjab",
+    "name": "Punjab",
+    "admin_type": "state",
+    "capital": "Chandigarh",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "rajasthan",
+    "name": "Rajasthan",
+    "admin_type": "state",
+    "capital": "Jaipur",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "sikkim",
+    "name": "Sikkim",
+    "admin_type": "state",
+    "capital": "Gangtok",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "tamil-nadu",
+    "name": "Tamil Nadu",
+    "admin_type": "state",
+    "capital": "Chennai",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "telangana",
+    "name": "Telangana",
+    "admin_type": "state",
+    "capital": "Hyderabad",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "tripura",
+    "name": "Tripura",
+    "admin_type": "state",
+    "capital": "Agartala",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "uttar-pradesh",
+    "name": "Uttar Pradesh",
+    "admin_type": "state",
+    "capital": "Lucknow",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "uttarakhand",
+    "name": "Uttarakhand",
+    "admin_type": "state",
+    "capital": "Dehradun",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  },
+  {
+    "id": "west-bengal",
+    "name": "West Bengal",
+    "admin_type": "state",
+    "capital": "Kolkata",
+    "rivers_flowing_through": [],
+    "basin_rivers": [],
+    "notable_city_ids": [],
+    "protected_area_ids": []
+  }
+]
