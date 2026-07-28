@@ -1,3 +1,18 @@
+#!/usr/bin/env bash
+# Step 5b: fixes scripts/fetchRivers.js — overpass-api.de's Apache front-end returns 406
+# without an Accept header (Node's fetch sends none by default). Also adds an automatic
+# fallback to a mirror endpoint if the primary is down/rate-limited.
+# Run from the project root, then: node scripts/fetchRivers.js
+set -euo pipefail
+
+if [ ! -f package.json ] || ! grep -q '"name": "vicharashala-maps"' package.json; then
+  echo "Run this from the vicharashala-maps project root." >&2
+  exit 1
+fi
+
+echo "==> Writing scripts/fetchRivers.js (fixed)"
+mkdir -p scripts
+cat > scripts/fetchRivers.js << 'EOF'
 // scripts/fetchRivers.js
 // Input:  none (queries OSM Overpass API directly)
 // Output: build/rivers-raw.geojson (spec §4.7 step ⑥)
@@ -144,3 +159,12 @@ run().catch((err) => {
   console.error(err.message);
   process.exit(1);
 });
+EOF
+
+echo "==> Committing"
+git add -A
+git commit -q -m "Step 5b: fix fetchRivers.js 406 (Accept header) + mirror fallback" \
+  || echo "Commit skipped (configure 'git config user.name/user.email' then commit manually)."
+
+echo ""
+echo "==> Now run: node scripts/fetchRivers.js"
