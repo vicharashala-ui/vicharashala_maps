@@ -16,23 +16,30 @@ Package manager: **pnpm**. Environment: **native Windows** (Git Bash, no WSL).
 - Linux-only native tools (tippecanoe) aren't available on native Windows. Sandbox builds them and hands over the finished artifact instead.
 - Source data comes from `https://github.com/vicharashala-ui/ecoguesser.git`, a sibling project with already-processed PA data matching this spec almost field-for-field.
 
-## Current status: Step 5c complete — government rivers shapefile processed (61/105 matched)
+## Current status: Step 6 v2 complete — HydroRIVERS join fixed, stress-tested, needs your run
 
 ### Not started yet
-- **44 unmatched rivers** — still need OSM Overpass (smaller/scoped query now, see below) or manual research for geometry
-- **32 rivers need length verification** — matched, but the govt shapefile digitizes delta/braided channels as separate parts under one name, and sums all of them into `shape_Leng`. Don't trust these lengths without cross-checking (see list in `build/rivers-govt-report.json`)
-- Full `rivers-index.json` — still missing `local_name_hi`, `drainage_type`, `stream_order`, `seasonal_type`, `origin_type`, `navigable`, `transnational`, `states`, `aliases` for all 105, even the 61 matched ones. Basin/sub_basin/origin-text/some-lengths are now seeded from the govt data; the rest needs research (open question from before, still unresolved)
+- **Running `joinHydroRivers.js` (v2) itself** — send me the console output when done
+- **44 unmatched rivers** — still need Overpass (rescoped) or manual research for geometry
+- **Full `rivers-index.json`** — still missing `local_name_hi`, `drainage_type`, `seasonal_type`, `origin_type`, `navigable`, `transnational`, `states`, `aliases` for all 105. Open question, still unresolved.
 - `scripts/prepareRivers.js` (step ⑦), `rivers.pmtiles` (step ⑧)
 - `spatialIntersect.js` / `deriveStateCrossRefs.js` / `buildSearchIndex.js` (steps ⑪⑫⑬)
 - Everything in spec §5 onward
 
 ## Next step
-1. **Overpass, rescoped**: `fetchRivers.js` needs rewriting to query only the 44 still-unmatched rivers (smaller query, less likely to hit the timeout you saw), and to use a bbox filter instead of the slow India-polygon area lookup that caused the 504. Also needs the same graceful-exit fix (Windows crashed on `process.exit()` mid-request).
-2. **Still open**: how to source the remaining `rivers-index.json` fields (local names, drainage/seasonal/origin type, stream order, etc.) for all 105 rivers — I can research via web search, but wanted your source-availability answer first (never got a reply to that question).
+1. **You run**: `step6-patch.sh` (v2) → `node scripts/joinHydroRivers.js`. Should take under a minute — send the output either way.
+2. Still open: rescoping Overpass for the 44 unmatched rivers, and the rivers-index.json sourcing question.
 
 ---
 
 ## Completed steps log
+
+### Step 6 v2 — HydroRIVERS join, performance bug fixed
+**v1 bug**: matched HydroRIVERS reaches onto named rivers via a linear per-candidate `pointToLineDistance` check with only a bbox pre-filter. Worked fine on a 90-reach synthetic test. At the real scale of India's bbox — **503,929 reaches**, an order of magnitude more than I'd estimated — this hung for 5+ hours with no progress output and no crash. My synthetic test never exercised anything close to real scale, which is exactly the gap that let this ship broken.
+
+**Fix**: rewrote the matching as (1) a grid spatial index over reach midpoints (~2.2km cells, built once), (2) each named river's geometry resampled into regularly-spaced points (every 0.5km, independent of source vertex density) rather than checking against raw geometry, (3) for each sample point, only the 3×3 nearby grid cells are checked (a handful of candidates) instead of the full bbox-filtered set, with a real haversine distance for the final decision. Also added per-river progress logging with timing, so a genuine hang would be visible immediately instead of silent.
+
+**Verified before shipping**: generated a 503,929-reach synthetic fixture matching HydroRIVERS' real density (uniform random scatter across the India bbox — if anything harder on the grid index than real river-clustered data), ran the actual patch script against it end-to-end on a clean checkout. **28-32 seconds total**, all 61 rivers matched, correctness re-confirmed against the smaller Chenab-based fixture from v1 (same results: order 13, ~103 reaches matched). This is the level of scale-testing that should have happened before v1 shipped — noting it here as a standing reminder for future steps that touch real-world-sized datasets.
 
 ### Step 5c — Government rivers shapefile processed (delivered as `step5c-patch.sh`)
 *(Steps 5a/5b were an Overpass-first attempt — 406 then 504 errors, see git history in this file's earlier revisions if needed. Superseded once you found the data.gov.in shapefile; not worth carrying forward as separate log entries.)*
