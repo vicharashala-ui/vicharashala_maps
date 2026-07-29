@@ -16,17 +16,34 @@ Package manager: **pnpm**. Environment: **native Windows** (Git Bash, no WSL).
 - Linux-only native tools (tippecanoe) aren't available on native Windows. Sandbox builds them and hands over the finished artifact instead.
 - Source data comes from `https://github.com/vicharashala-ui/ecoguesser.git`, a sibling project with already-processed PA data matching this spec almost field-for-field.
 
-## Current status: Step 4 complete — states/UTs enriched
+## Current status: Step 5c complete — government rivers shapefile processed (61/105 matched)
 
 ### Not started yet
-- Rivers pipeline (spec §4.7 steps ⑥⑦⑧) — needs OSM Overpass, not reachable from this sandbox; needs to run on your machine (Git Bash + curl/node, no compiled tools needed)
-- `spatialIntersect.js` / `deriveStateCrossRefs.js` / `buildSearchIndex.js` (steps ⑪⑫⑬) — depend on rivers existing first. Also the reason `rivers_flowing_through`, `basin_rivers`, `notable_city_ids`, `protected_area_ids` are empty arrays in `states.json` right now — not a bug, just not populated yet.
-- Everything in spec §5 onward: NanoStores, `MapView.tsx`, all components, theming, SEO, a11y, deployment
+- **44 unmatched rivers** — still need OSM Overpass (smaller/scoped query now, see below) or manual research for geometry
+- **32 rivers need length verification** — matched, but the govt shapefile digitizes delta/braided channels as separate parts under one name, and sums all of them into `shape_Leng`. Don't trust these lengths without cross-checking (see list in `build/rivers-govt-report.json`)
+- Full `rivers-index.json` — still missing `local_name_hi`, `drainage_type`, `stream_order`, `seasonal_type`, `origin_type`, `navigable`, `transnational`, `states`, `aliases` for all 105, even the 61 matched ones. Basin/sub_basin/origin-text/some-lengths are now seeded from the govt data; the rest needs research (open question from before, still unresolved)
+- `scripts/prepareRivers.js` (step ⑦), `rivers.pmtiles` (step ⑧)
+- `spatialIntersect.js` / `deriveStateCrossRefs.js` / `buildSearchIndex.js` (steps ⑪⑫⑬)
+- Everything in spec §5 onward
 
 ## Next step
-Rivers pipeline is next in spec order but needs OSM Overpass — **not reachable from this sandbox** (not in the allowed network list). Two ways to handle it:
-1. You run an Overpass fetch step yourself in Git Bash (I write the script + queries, you run + send me the output to process further), or
-2. We skip ahead to something sandbox-completable — e.g. NanoStores setup, `MapView.tsx` skeleton, or theme tokens (spec §6) — and circle back to rivers once we have the Overpass output.
+1. **Overpass, rescoped**: `fetchRivers.js` needs rewriting to query only the 44 still-unmatched rivers (smaller query, less likely to hit the timeout you saw), and to use a bbox filter instead of the slow India-polygon area lookup that caused the 504. Also needs the same graceful-exit fix (Windows crashed on `process.exit()` mid-request).
+2. **Still open**: how to source the remaining `rivers-index.json` fields (local names, drainage/seasonal/origin type, stream order, etc.) for all 105 rivers — I can research via web search, but wanted your source-availability answer first (never got a reply to that question).
+
+---
+
+## Completed steps log
+
+### Step 5c — Government rivers shapefile processed (delivered as `step5c-patch.sh`)
+*(Steps 5a/5b were an Overpass-first attempt — 406 then 504 errors, see git history in this file's earlier revisions if needed. Superseded once you found the data.gov.in shapefile; not worth carrying forward as separate log entries.)*
+- Source: `data.gov.in` "Rivers" shapefile (you uploaded it directly — `Rivers.shp/.dbf/.shx/.prj/.cpg/.sbn/.sbx`)
+- `scripts/processRiversShapefile.js` — converts via Mapshaper (WGS84 reprojection), matches the shapefile's 110 features against spec's 105-river list (handling spelling variants: Satluj→Sutlej, Gomati→Gomti, Ghaghara→Ghaghra, Sone→Son, Pranhitha→Pranhita, Cauvery→Kaveri, Kalinadi→Kali, Ghagghar→Ghaggar, etc.)
+- **61/105 matched** with real geometry + government-sourced `basin`/`sub_basin`/`origin` text; **44 unmatched** (mostly smaller Western Ghats and Northeast tributaries not in this dataset — still need Overpass)
+- **Length caveat**: 38 of 110 source features are `MultiLineString` (delta/braided channels digitized as separate parts, e.g. Ganga, Brahmaputra, Godavari, Yamuna, Krishna). The shapefile's `shape_Leng` field sums every part, inflating the figure well past commonly-cited lengths (this file's Ganga = 3096 km vs. the ~2525 km usually cited). `length_km_india` is only auto-filled for single-part rivers (29 of the 61 matched); the other 32 are left `null` with `needs_verification: true` rather than shipping an inflated number as fact.
+- Outputs: `build/rivers-govt-matched.geojson` (61 features, canonical names), `build/rivers-govt-metadata.json` (partial rivers-index.json seed), `build/rivers-govt-report.json` (full matched/unmatched/needs-verification breakdown)
+- **Gotcha hit and fixed**: `pnpm add -D mapshaper` exits with code 1 on first install (pnpm 11's supply-chain policy blocks native builds for `better-sqlite3`/`msgpackr-extract` by default) — same class of issue as Step 1's esbuild/sharp. Patch script now runs `pnpm approve-builds` right after, non-interactively.
+- Verified end-to-end on a clean checkout of your actual repo (via GitHub), not just the dev sandbox
+- Not started: full mainstem-length correction for the 32 flagged rivers (would need real longest-path extraction from the multi-part geometry, or a second source)
 
 ---
 

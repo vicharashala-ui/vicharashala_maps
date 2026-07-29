@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@turf/turf": "^7.3.5",
+    "mapshaper": "~0.7.49",
     "osmtogeojson": "^2.2.12",
     "vite": "^7.3.6",
     "zod": "^3.25.76"
