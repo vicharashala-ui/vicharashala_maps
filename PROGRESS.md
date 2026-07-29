@@ -16,7 +16,7 @@ Package manager: **pnpm**. Environment: **native Windows** (Git Bash, no WSL).
 - Linux-only native tools (tippecanoe) aren't available on native Windows. Sandbox builds them and hands over the finished artifact instead.
 - Source data comes from `https://github.com/vicharashala-ui/ecoguesser.git`, a sibling project with already-processed PA data matching this spec almost field-for-field.
 
-## Current status: Step 6 v2 complete — HydroRIVERS join fixed, stress-tested, needs your run
+## Current status: Step 6 complete — HydroRIVERS join CONFIRMED on real data (24.5s, 61/61 matched)
 
 ### Not started yet
 - **Running `joinHydroRivers.js` (v2) itself** — send me the console output when done
@@ -27,8 +27,9 @@ Package manager: **pnpm**. Environment: **native Windows** (Git Bash, no WSL).
 - Everything in spec §5 onward
 
 ## Next step
-1. **You run**: `step6-patch.sh` (v2) → `node scripts/joinHydroRivers.js`. Should take under a minute — send the output either way.
-2. Still open: rescoping Overpass for the 44 unmatched rivers, and the rivers-index.json sourcing question.
+Two open workstreams, priority not yet chosen for the next session:
+1. **Rescoped Overpass** for the 44 unmatched rivers' geometry (bbox-based, not the slow area-polygon query that 504'd before; also needs the Windows `process.exit()` crash fix)
+2. **Full `rivers-index.json` research** — still unanswered: does the user have a source, or should this be built via web research from scratch (batched by river system, not all 105 at once)
 
 ---
 
@@ -39,7 +40,9 @@ Package manager: **pnpm**. Environment: **native Windows** (Git Bash, no WSL).
 
 **Fix**: rewrote the matching as (1) a grid spatial index over reach midpoints (~2.2km cells, built once), (2) each named river's geometry resampled into regularly-spaced points (every 0.5km, independent of source vertex density) rather than checking against raw geometry, (3) for each sample point, only the 3×3 nearby grid cells are checked (a handful of candidates) instead of the full bbox-filtered set, with a real haversine distance for the final decision. Also added per-river progress logging with timing, so a genuine hang would be visible immediately instead of silent.
 
-**Verified before shipping**: generated a 503,929-reach synthetic fixture matching HydroRIVERS' real density (uniform random scatter across the India bbox — if anything harder on the grid index than real river-clustered data), ran the actual patch script against it end-to-end on a clean checkout. **28-32 seconds total**, all 61 rivers matched, correctness re-confirmed against the smaller Chenab-based fixture from v1 (same results: order 13, ~103 reaches matched). This is the level of scale-testing that should have happened before v1 shipped — noting it here as a standing reminder for future steps that touch real-world-sized datasets.
+**Verified before shipping**: generated a 503,929-reach synthetic fixture matching HydroRIVERS' real density (uniform random scatter across the India bbox — if anything harder on the grid index than real river-clustered data), ran the actual patch script against it end-to-end on a clean checkout — 28-32 seconds, all 61 rivers matched, correctness re-confirmed against the smaller Chenab-based fixture from v1 (same results: order 13, ~103 reaches matched).
+
+**Confirmed on real HydroRIVERS data**: 24.5s total, 61/61 rivers matched, no zero-match rivers — the stress test predicted real performance accurately.
 
 ### Step 5c — Government rivers shapefile processed (delivered as `step5c-patch.sh`)
 *(Steps 5a/5b were an Overpass-first attempt — 406 then 504 errors, see git history in this file's earlier revisions if needed. Superseded once you found the data.gov.in shapefile; not worth carrying forward as separate log entries.)*
