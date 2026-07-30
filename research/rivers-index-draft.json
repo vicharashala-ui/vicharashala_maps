@@ -859,5 +859,377 @@
       "seasonal_type: inferred, not independently confirmed"
     ],
     "_source": "General knowledge only (not verified this session) — formed by confluence of Dwarakeswar and Shilabati rivers, joins Hooghly near Geonkhali; flagged as the weakest-sourced entry in this batch, recommend priority re-check"
+  },
+  {
+    "id": "brahmaputra",
+    "name": "Brahmaputra",
+    "local_name_hi": "ब्रह्मपुत्र",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 916,
+    "basin_area_india_km2": 194413,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": true,
+    "transnational": true,
+    "states": [
+      "arunachal-pradesh",
+      "assam"
+    ],
+    "aliases": [
+      "Tsangpo",
+      "Yarlung Tsangpo",
+      "Siang",
+      "Dihang"
+    ],
+    "_needs_verification": [],
+    "_source": "India-WRIS wiki: source Kailash ranges (Konggyu Tsho, Tibet), 2900km total, 916km in India, basin 194,413 km2 in India (5.9% of country); navigable as National Waterway 2"
+  },
+  {
+    "id": "dibang",
+    "name": "Dibang",
+    "local_name_hi": "दिबांग",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 324,
+    "basin_area_india_km2": 13933,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "arunachal-pradesh"
+    ],
+    "aliases": [
+      "Talon"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia: source Dri/Tangon confluence, 324km, basin 13,933 km2, wholly Arunachal Pradesh, joins Lohit near Sadiya"
+  },
+  {
+    "id": "lohit",
+    "name": "Lohit",
+    "local_name_hi": "लोहित",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 200,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "arunachal-pradesh",
+      "assam"
+    ],
+    "aliases": [
+      "Zayul Chu"
+    ],
+    "_needs_verification": [
+      "length_km_india: rough estimate — total length 560km (Wikipedia) spans Tibet + Arunachal Pradesh + Assam, no direct India-only figure found",
+      "basin_area_india_km2: not found (total basin 41,499 km2 spans China/India)"
+    ],
+    "_source": "Wikipedia: source Kangri Karpo (Zayul County, Tibet), joins Siang near Sadiya, Assam to form Brahmaputra"
+  },
+  {
+    "id": "subansiri",
+    "name": "Subansiri",
+    "local_name_hi": "सुबानसिरी",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 382,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "arunachal-pradesh",
+      "assam"
+    ],
+    "aliases": [
+      "Gold River"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "byjus.com: total 442km (192km Arunachal Pradesh + 190km Assam + rest Tibet); largest Brahmaputra tributary"
+  },
+  {
+    "id": "kameng",
+    "name": "Kameng",
+    "local_name_hi": "कामेंग",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 150,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "arunachal-pradesh",
+      "assam"
+    ],
+    "aliases": [
+      "Jia Bharali",
+      "Bhareli"
+    ],
+    "_needs_verification": [
+      "origin/transnational: source described only as \"unsurveyed hills, presumably Tibet\" — not independently confirmed",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "byjus.com: ~250km total, 90km Arunachal Pradesh + 60km Assam"
+  },
+  {
+    "id": "dhansiri",
+    "name": "Dhansiri",
+    "local_name_hi": "धनसिरी",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 352,
+    "basin_area_india_km2": 1220,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "nagaland",
+      "assam"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "basin_area_india_km2: 1,220 km2 (Wikipedia) seems small relative to a 352km-long river — flagging for a sanity-check re-source"
+    ],
+    "_source": "Wikipedia: source Laisang Peak (Nagaland), 352km, wholly India, joins Brahmaputra on south bank"
+  },
+  {
+    "id": "manas",
+    "name": "Manas",
+    "local_name_hi": "मानस",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 104,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "assam"
+    ],
+    "aliases": [
+      "Drangme Chhu"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: not found (total system large, India-only portion unclear)"
+    ],
+    "_source": "Wikipedia: total 400km (24km Tibet + 272km Bhutan + 104km Assam), joins Brahmaputra at Jogighopa"
+  },
+  {
+    "id": "sankosh",
+    "name": "Sankosh",
+    "local_name_hi": "संकोश",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 85,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "assam",
+      "west-bengal"
+    ],
+    "aliases": [
+      "Puna Tsang Chu"
+    ],
+    "_needs_verification": [
+      "length_km_india: LOW CONFIDENCE placeholder — no length figure found at all this session, not even a total length",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Wikipedia: rises northern Bhutan, forms part of Assam-West Bengal border before joining Brahmaputra — no length data in the article"
+  },
+  {
+    "id": "teesta",
+    "name": "Teesta",
+    "local_name_hi": "तीस्ता",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 414,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "sikkim",
+      "west-bengal"
+    ],
+    "aliases": [
+      "Tista"
+    ],
+    "_needs_verification": [
+      "length_km_india: single source gave 414km total; commonly-cited alternate figures (~309km) exist elsewhere and weren't reconciled this session",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Osmanian river-list (414km, low-to-medium authority): source Pahunri Glacier (Sikkim), flows through Sikkim/West Bengal into Bangladesh to join Brahmaputra"
+  },
+  {
+    "id": "rangeet",
+    "name": "Rangeet",
+    "local_name_hi": "रंगीत",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 65,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "sikkim"
+    ],
+    "aliases": [
+      "Rangit",
+      "Ranjit"
+    ],
+    "_needs_verification": [
+      "length_km_india: LOW CONFIDENCE placeholder — no length figure found this session",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "waterwaymap.org confirms Rangeet as a Sikkim waterway and Teesta tributary — no length data found"
+  },
+  {
+    "id": "torsa",
+    "name": "Torsa",
+    "local_name_hi": "तोर्षा",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 100,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "west-bengal"
+    ],
+    "aliases": [
+      "Amo Chhu",
+      "Machu"
+    ],
+    "_needs_verification": [
+      "length_km_india: DERIVED (total 358km minus 113km Tibet minus 145km Bhutan = ~100km), not a direct source",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Wikipedia: source Chumbi Valley (Tibet), flows through Bhutan then India then Bangladesh to join Brahmaputra"
+  },
+  {
+    "id": "jaldhaka",
+    "name": "Jaldhaka",
+    "local_name_hi": "जलढाका",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 193,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "spring-fed",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "sikkim",
+      "west-bengal"
+    ],
+    "aliases": [
+      "Dichu"
+    ],
+    "_needs_verification": [
+      "length_km_india: DERIVED (total 233km minus ~40km Bhutan stretch = ~193km) and doesn't separately account for a Bangladesh portion — treat as rough",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Wikipedia: source Bitang Lake (Kupup, Sikkim), flows Sikkim → Bhutan (~40km) → re-enters India at Bindu, Kalimpong → eventually Bangladesh"
+  },
+  {
+    "id": "barak",
+    "name": "Barak",
+    "local_name_hi": "बराक",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 524,
+    "basin_area_india_km2": 41723,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": true,
+    "transnational": true,
+    "states": [
+      "manipur",
+      "mizoram",
+      "assam"
+    ],
+    "aliases": [],
+    "_needs_verification": [],
+    "_source": "Wikipedia: source Liyai Khullen village (Manipur), 524km of 900km total in India, basin 41,723 km2 of 52,000 km2 total in India; navigable — National Waterway 16 (Lakhipur-Bhanga, 121km)"
+  },
+  {
+    "id": "kopili",
+    "name": "Kopili",
+    "local_name_hi": "कोपिली",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 290,
+    "basin_area_india_km2": 16420,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "meghalaya",
+      "assam"
+    ],
+    "aliases": [
+      "Kapili"
+    ],
+    "_needs_verification": [
+      "ALIAS FLAG: Wikipedia treats 'Kapili' as an alternate name for this same Kopili river, but spec §4.9 lists Kopili and Kapili as two separate entries. Recommend clarifying with the user whether Kapili should be (a) merged into this entry, (b) a genuinely distinct river, or (c) dropped as a duplicate before final validation."
+    ],
+    "_source": "Wikipedia: source Meghalaya plateau, 290km, basin 16,420 km2, wholly India (Meghalaya + Assam), largest south-bank Brahmaputra tributary"
+  },
+  {
+    "id": "kapili",
+    "name": "Kapili",
+    "local_name_hi": "कापिली",
+    "basin": "brahmaputra-basin",
+    "length_km_india": null,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "assam"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "ENTIRE ENTRY IS A PLACEHOLDER pending clarification — Wikipedia's Kopili River article states 'Kapili' is simply an alternate name for the Kopili river (previous entry), not a separate river. No independent Kapili data was found this session. All fields here (states, drainage/origin/seasonal type) are copied from the Kopili entry as a best guess only — do not treat as sourced."
+    ],
+    "_source": "None found independently — see needs_verification"
   }
 ]
