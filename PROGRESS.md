@@ -127,3 +127,10 @@ Both need to land before `prepareRivers.js` can run and produce the final `publi
 - Built `public/tiles/protected-areas.pmtiles` from `build/pa-merged.geojson` using spec §4.7 step ⑤'s command verbatim
 - Verified via the `pmtiles` JS library: minZoom 4 / maxZoom 14, source-layer `protected-areas`, `id`+`category` fields present, bounds match India's extent, **8.68 MB** (well under Cloudflare's 25 MiB limit — no R2 offload needed)
 - **Action needed**: place the delivered file at `public/tiles/protected-areas.pmtiles` in your project (overwrites the empty placeholder from Step 1)
+
+### Session close note (before Step 8 / geometry work)
+Ended this session on an open decision rather than a completed patch. **Read this before starting geometry work:**
+
+- **The assistant's sandbox cannot reach `overpass-api.de` or `nominatim.openstreetmap.org`** (network allowlist is GitHub/npm/PyPI-only) — any Overpass script it writes is UNTESTED and can't be verified end-to-end the way every prior patch script was. Given the prior Overpass attempt already failed twice (406, then 504, plus a Windows `process.exit()` crash bug), don't accept an Overpass script as "done" without actually running it and reporting back what happened.
+- The assistant also doesn't have `build/rivers-govt-report.json` (Step 5c's matched/unmatched breakdown) — it's gitignored and only existed in a prior sandbox session, so it can't scope which 44 rivers still need geometry without either that file or a fresh list.
+- Options on the table when the session ended: (1) send the govt report / unmatched-rivers list and have the assistant write the script for you to test-run, (2) have it write a best-effort untested script and iterate from your error reports, or (3) do the verification pass below first since Overpass is a separate, unblocked workstream.
