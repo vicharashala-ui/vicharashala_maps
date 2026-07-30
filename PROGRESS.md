@@ -16,39 +16,38 @@ Package manager: **pnpm**. Environment: **native Windows** (Git Bash, no WSL).
 - Linux-only native tools (tippecanoe) aren't available on native Windows. Sandbox builds them and hands over the finished artifact instead.
 - Source data comes from `https://github.com/vicharashala-ui/ecoguesser.git`, a sibling project with already-processed PA data matching this spec almost field-for-field.
 
-## Current status: Step 7 in progress — rivers-index.json metadata research, Peninsular-West complete (93/105 rivers total)
+## Current status: Step 7 research pass COMPLETE — all 107 rivers in `research/rivers-index-draft.json` (spec §4.9's list totals 107, not 105 — see note below)
 
-### rivers-index.json research progress (`research/rivers-index-draft.json`)
+### rivers-index.json research: all batches done
 Built via web research (batched by river system per spec §4.9), NOT the shapefile's `build/rivers-govt-metadata.json` seed from Step 5c — that file lives in your gitignored `build/` dir from a prior session and wasn't available to cross-check here. **Action needed**: if you still have that file, share it so the overlapping fields (basin/origin text for the 61 matched rivers) can be reconciled against this research — government-sourced beats web-sourced where they conflict.
 
-Spec §4.9 defines 7 river-system groups: Indus, Ganga, Brahmaputra, Peninsular-East, Peninsular-West, Coastal, Inland Drainage.
+**Count correction**: spec §4.9's river lists actually total 107 named rivers (9 Indus + 26 Ganga + 15 Brahmaputra + 29 Peninsular-East + 14 Peninsular-West + 12 Coastal + 2 Inland Drainage), not the ~105 figure used throughout this project so far. Every named entry in §4.9 has a draft record now.
 
-- **Indus system** (9/9 done)
-- **Ganga system** (26/26 done)
-- **Brahmaputra system** (15/15 done)
-- **Peninsular-East system** (29/29 done)
-- **Peninsular-West system** (14/14 done): Narmada, Tapi, Mahi, Sabarmati, Periyar, Chaliyar, Bharathapuzha, Pamba, Kallada, Sharavati, Zuari, Mandovi, Purna, Girna
-- Each entry has all `RiverIndexEntry` fields except `bounds` (added later in step ⑦ from geometry) and `stream_order` (left `null` — needs the real Strahler value from Step 6's HydroRIVERS join output, not invented here)
-- **Strongest data this batch**: Narmada, Tapi, Mahi, Periyar, Purna all cross-confirmed 2+ sources. **ACTION NEEDED — "Purna" disambiguation**: India has 3 distinct rivers named Purna (a Tapi tributary via Khandesh, an independent South Gujarat coastal river, and a separate Godavari tributary in Marathwada). Used the Tapi tributary since spec pairs Purna with Girna (both Tapi tributaries) — worth a sanity-check.
-- Other flagged weak entries this batch: Zuari and Sabarmati both have Wikipedia-internal length/basin conflicts (infobox vs. body text disagree); Sharavati/Zuari/Mandovi/Kallada have no basin area found
-- **ACTION NEEDED — "Vellar" naming ambiguity** (from Peninsular-East, still unresolved): Tamil Nadu has two Vellar rivers; used the Southern one.
-- **ACTION NEEDED — Kopili/Kapili naming conflict** (from Brahmaputra batch, still unresolved): likely the same river listed twice in spec.
-- Other flagged weak entries from earlier batches (Ganga: Rupnarayan, Ghaghra, Sarda, Gandak, Kosi, Bagmati, Mechi; Brahmaputra: Sankosh, Rangeet, Teesta, Torsa, Jaldhaka; Peninsular-East pt.1: Musi, Indravati, Pranhita, Wainganga, Wardha) still unresolved
-- `_source` field on each entry records what was used — strip before final schema validation
-- 2 river-system groups remaining: Coastal (11 rivers), Inland Drainage (2 rivers) — 12 rivers total left
+- **Indus** (9/9), **Ganga** (26/26), **Brahmaputra** (15/15), **Peninsular-East** (29/29), **Peninsular-West** (14/14) — all done in prior updates
+- **Coastal** (12/12 done): Ulhas, Vaitarna, Savitri, Vashisthi, Kali (Karnataka), Netravati, Gurupur, Aghanashini, Damanganga, Swarnamukhi, Manimuktha, Vaippar
+- **Inland Drainage** (2/2 done): Luni, Ghaggar-Hakra
+- Every entry has all `RiverIndexEntry` fields except `bounds` (added later in step ⑦ from geometry) and `stream_order` (left `null` — needs the real Strahler value from Step 6's HydroRIVERS join output, not invented here)
+
+### Before running `prepareRivers.js`, this needs a verification pass — full list of open items:
+1. **Reconcile against Step 5c's `build/rivers-govt-metadata.json`** (send it over) — government data should override web research on any overlapping field
+2. **Naming/identity questions requiring your input** (not resolved by more research, need a decision):
+   - **Kopili vs Kapili** (Brahmaputra) — likely the same river listed twice in spec; `kapili` entry is an unsourced placeholder
+   - **Vellar** (Peninsular-East) — Tamil Nadu has two rivers by this name; used the Southern one
+   - **Purna** (Peninsular-West) — India has 3 rivers by this name; used the Tapi tributary
+3. **Entries with essentially no data found** (weakest of the weak — worth dedicated re-research before trusting): **Vashisthi** (no length at all), **Manimuktha** (nothing found), **Gurupur** (length is an unsourced guess), **Sankosh**/**Rangeet** (Brahmaputra, no length found), **Kamla** (Ganga, no length found)
+4. **Everything else flagged `_needs_verification`** across all 7 batches — mostly derived/estimated lengths for transboundary rivers (India-only portion of a longer river) and unconfirmed `basin_area_india_km2`/`seasonal_type` values. Strip all `_source`/`_needs_verification` fields before final schema validation regardless.
 
 ### Not started yet
-- 2 remaining river-system groups for rivers-index.json (12 rivers, see above)
-- **44 unmatched rivers** — still need Overpass (rescoped) or manual research for geometry
+- **44 unmatched rivers** — still need Overpass (rescoped) or manual research for geometry (separate from the metadata research just finished)
 - `scripts/prepareRivers.js` (step ⑦ proper — merges `research/rivers-index-draft.json` + geometry bounds + reconciled `stream_order` into the final validated `public/data/rivers-index.json`), `rivers.pmtiles` (step ⑧)
 - `spatialIntersect.js` / `deriveStateCrossRefs.js` / `buildSearchIndex.js` (steps ⑪⑫⑬)
 - Everything in spec §5 onward
 
 ## Next step
-1. Continue rivers-index.json research: **Coastal + Inland Drainage systems** next (12 rivers — the final two groups, likely can finish rivers-index.json research entirely in the next session), or reorder if you'd rather
-2. Resolve the "Purna", "Vellar", and Kopili/Kapili naming questions above
-3. In parallel/after: rescoped Overpass for the 44 unmatched rivers' geometry
-4. Once both are further along: reconcile `research/rivers-index-draft.json` against Step 5c's `build/rivers-govt-metadata.json` seed (send it over if you have it), and re-verify all flagged weak entries, before running `prepareRivers.js`
+Metadata research is done — the two remaining workstreams are independent of each other now:
+1. **Verification pass** on the open items above (naming decisions + weak entries), ideally with the Step 5c govt data reconciled in
+2. **Geometry**: rescoped Overpass for the 44 unmatched rivers (separate task, blocked on nothing above)
+Both need to land before `prepareRivers.js` can run and produce the final `public/data/rivers-index.json` + `rivers.pmtiles`.
 
 ---
 
