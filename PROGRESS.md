@@ -16,25 +16,29 @@ Package manager: **pnpm**. Environment: **native Windows** (Git Bash, no WSL).
 - Linux-only native tools (tippecanoe) aren't available on native Windows. Sandbox builds them and hands over the finished artifact instead.
 - Source data comes from `https://github.com/vicharashala-ui/ecoguesser.git`, a sibling project with already-processed PA data matching this spec almost field-for-field.
 
-## Current status: Step 7 in progress — rivers-index.json metadata research, batch 1/9 (Indus system) done
+## Current status: Step 7 in progress — rivers-index.json metadata research, 20/105 rivers done
 
 ### rivers-index.json research progress (`research/rivers-index-draft.json`)
 Built via web research (batched by river system per spec §4.9), NOT the shapefile's `build/rivers-govt-metadata.json` seed from Step 5c — that file lives in your gitignored `build/` dir from a prior session and wasn't available to cross-check here. **Action needed**: if you still have that file, share it so the overlapping fields (basin/origin text for the 61 matched rivers) can be reconciled against this research — government-sourced beats web-sourced where they conflict.
-- Batch 1/9 done: **Indus system** (9 rivers) — Indus, Jhelum, Chenab, Ravi, Beas, Sutlej, Spiti, Zanskar, Shyok
+
+**Correction**: spec §4.9 actually defines 7 river-system groups, not 9 — Indus, Ganga, Brahmaputra, Peninsular-East, Peninsular-West, Coastal, Inland Drainage. Fixing the miscount from the last update.
+
+- **Indus system** (9/9 done): Indus, Jhelum, Chenab, Ravi, Beas, Sutlej, Spiti, Zanskar, Shyok
+- **Ganga system** (11/26 done): Ganga, Bhagirathi, Alaknanda, Yamuna, Chambal, Banas, Kali Sindh, Parbati, Betwa, Ken, Son — remaining 15: Gomti, Ghaghra/Karnali, Sarda/Sharda, Gandak, Burhi Gandak, Kosi, Mahananda, Mechi, Kamla, Bagmati, Damodar, Hooghly, Barakar, Ajay, Rupnarayan
 - Each entry has all `RiverIndexEntry` fields except `bounds` (added later in step ⑦ from geometry) and `stream_order` (left `null` — needs the real Strahler value from Step 6's HydroRIVERS join output, not invented here)
-- Fields with genuine sourcing gaps are flagged in each entry's `_needs_verification` array with the specific gap — not silently guessed. Worst offender: **Chenab** (conflicting length-in-India figures across sources, 960-1180km, no authoritative India-only figure found; `basin_area_india_km2` left `null`)
-- `_source` field on each entry records what was used (CWC "About Basins" preferred where available, Wikipedia/WRIS wiki otherwise) — strip before final schema validation
-- 8/9 systems remaining: Ganga, Yamuna & tributaries, Brahmaputra, Peninsular East-flowing (Godavari/Krishna/Kaveri/etc.), Peninsular West-flowing (Narmada/Tapi/etc.), Northeast tributaries, Coastal/minor, Himalayan-other — batching order not yet fixed, doing them roughly in spec §4.9 list order unless told otherwise
+- Fields with genuine sourcing gaps are flagged in each entry's `_needs_verification` array with the specific gap — not silently guessed. Worst offenders so far: **Chenab** (conflicting India-length figures, 960-1180km); **Yamuna** `basin_area_india_km2` (366,223km2 is the standard textbook figure, not independently re-confirmed this session); several MP/Rajasthan Chambal tributaries have inferred (not sourced) `seasonal_type`
+- `_source` field on each entry records what was used (CWC preferred where available, then India-WRIS wiki, then Wikipedia/secondary) — strip before final schema validation
+- 5 river-system groups remaining after Ganga: Brahmaputra, Peninsular-East, Peninsular-West, Coastal, Inland Drainage
 
 ### Not started yet
-- **8 remaining river-system batches** for rivers-index.json (see above)
+- Rest of Ganga system (15 rivers) + 5 remaining river-system groups for rivers-index.json (see above)
 - **44 unmatched rivers** — still need Overpass (rescoped) or manual research for geometry
 - `scripts/prepareRivers.js` (step ⑦ proper — merges `research/rivers-index-draft.json` + geometry bounds + reconciled `stream_order` into the final validated `public/data/rivers-index.json`), `rivers.pmtiles` (step ⑧)
 - `spatialIntersect.js` / `deriveStateCrossRefs.js` / `buildSearchIndex.js` (steps ⑪⑫⑬)
 - Everything in spec §5 onward
 
 ## Next step
-1. Continue rivers-index.json research, next batch: **Ganga system** (or reorder if you'd rather prioritize differently)
+1. Continue rivers-index.json research: rest of Ganga system (Gomti/Ghaghra/Gandak/Kosi group next, or reorder if you'd rather)
 2. In parallel/after: rescoped Overpass for the 44 unmatched rivers' geometry
 3. Once both are further along: reconcile `research/rivers-index-draft.json` against Step 5c's `build/rivers-govt-metadata.json` seed (send it over if you have it) before running `prepareRivers.js`
 
