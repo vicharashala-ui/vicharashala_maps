@@ -1,0 +1,92 @@
+[
+  {
+    "id": "indus", "name": "Indus", "local_name_hi": "सिन्धु",
+    "basin": "indus-basin", "length_km_india": 709, "basin_area_india_km2": 321289,
+    "drainage_type": "himalayan", "stream_order": null,
+    "seasonal_type": "perennial", "origin_type": "glacial",
+    "navigable": false, "transnational": true,
+    "states": ["ladakh"], "aliases": ["Sindhu", "Singi Khamban"],
+    "_needs_verification": [],
+    "_source": "CWC Indus Basin Organisation (cwc.gov.in/ibo/about-basins): total 2880km/709km in India, catchment 321,289 km2 in India"
+  },
+  {
+    "id": "jhelum", "name": "Jhelum", "local_name_hi": "झेलम",
+    "basin": "indus-basin", "length_km_india": 165, "basin_area_india_km2": 17622,
+    "drainage_type": "himalayan", "stream_order": null,
+    "seasonal_type": "perennial", "origin_type": "spring-fed",
+    "navigable": true, "transnational": true,
+    "states": ["jammu-and-kashmir"], "aliases": ["Vyeth", "Vitasta", "Hydaspes"],
+    "_needs_verification": [],
+    "_source": "India-WRIS wiki: length 402km to border, 165km in India (Kashmir Valley), catchment 17,622 km2. Navigable: traditional shikara/boat traffic in Srinagar/Wular reaches."
+  },
+  {
+    "id": "chenab", "name": "Chenab", "local_name_hi": "चिनाब",
+    "basin": "indus-basin", "length_km_india": 700, "basin_area_india_km2": null,
+    "drainage_type": "himalayan", "stream_order": null,
+    "seasonal_type": "perennial", "origin_type": "glacial",
+    "navigable": false, "transnational": true,
+    "states": ["himachal-pradesh", "jammu-and-kashmir"], "aliases": ["Chandrabhaga", "Asikni"],
+    "_needs_verification": ["length_km_india: estimated from CWC segment data (Chandra 125km + confluence-to-Akhnoor 504km + onward J&K stretch) — sources conflict (960-1180km claimed for total/India length across different pages), no single authoritative India-only figure found", "basin_area_india_km2: not found in searched sources, left null"],
+    "_source": "India-WRIS chenab wiki (segment lengths); Wikipedia/Britannica (total length 974km); conflicting secondary sources"
+  },
+  {
+    "id": "ravi", "name": "Ravi", "local_name_hi": "रावी",
+    "basin": "indus-basin", "length_km_india": 725, "basin_area_india_km2": 14442,
+    "drainage_type": "himalayan", "stream_order": null,
+    "seasonal_type": "perennial", "origin_type": "glacial",
+    "navigable": false, "transnational": true,
+    "states": ["himachal-pradesh", "punjab"], "aliases": ["Iravati", "Purushni"],
+    "_needs_verification": [],
+    "_source": "CWC Indus Basin Organisation: 725km, 14,442 km2 catchment in India"
+  },
+  {
+    "id": "beas", "name": "Beas", "local_name_hi": "ब्यास",
+    "basin": "indus-basin", "length_km_india": 470, "basin_area_india_km2": 20303,
+    "drainage_type": "himalayan", "stream_order": null,
+    "seasonal_type": "perennial", "origin_type": "glacial",
+    "navigable": false, "transnational": false,
+    "states": ["himachal-pradesh", "punjab"], "aliases": ["Vipasha", "Vipas", "Hyphasis"],
+    "_needs_verification": [],
+    "_source": "Wikipedia: entirely within India, 470km, basin 20,303 km2"
+  },
+  {
+    "id": "sutlej", "name": "Sutlej", "local_name_hi": "सतलुज",
+    "basin": "indus-basin", "length_km_india": 1050, "basin_area_india_km2": null,
+    "drainage_type": "himalayan", "stream_order": null,
+    "seasonal_type": "perennial", "origin_type": "glacial",
+    "navigable": false, "transnational": true,
+    "states": ["himachal-pradesh", "punjab"], "aliases": ["Satluj", "Satadru", "Zungbal"],
+    "_needs_verification": ["length_km_india: single secondary source only (vajiramandravi.com, 1450km total/1050km India) — not cross-checked against CWC", "basin_area_india_km2: not found"],
+    "_source": "Vajiram & Ravi UPSC notes (secondary, not govt-sourced) — flagged, recommend CWC cross-check"
+  },
+  {
+    "id": "spiti", "name": "Spiti", "local_name_hi": "स्पीति",
+    "basin": "indus-basin", "length_km_india": 200, "basin_area_india_km2": 6300,
+    "drainage_type": "himalayan", "stream_order": null,
+    "seasonal_type": "perennial", "origin_type": "glacial",
+    "navigable": false, "transnational": false,
+    "states": ["himachal-pradesh"], "aliases": [],
+    "_needs_verification": ["length_km_india: approximate, no exact figure found in searched sources (only catchment area was confirmed)"],
+    "_source": "Wikipedia (Spiti river/valley): catchment 6,300 km2, entirely Himachal Pradesh, tributary of Sutlej at Khab"
+  },
+  {
+    "id": "zanskar", "name": "Zanskar", "local_name_hi": "जांस्कर",
+    "basin": "indus-basin", "length_km_india": 134, "basin_area_india_km2": null,
+    "drainage_type": "himalayan", "stream_order": null,
+    "seasonal_type": "perennial", "origin_type": "glacial",
+    "navigable": false, "transnational": false,
+    "states": ["ladakh"], "aliases": [],
+    "_needs_verification": ["basin_area_india_km2: not found"],
+    "_source": "Wikidata: 134km; Wikipedia: entirely within Ladakh, joins Indus near Nimmu"
+  },
+  {
+    "id": "shyok", "name": "Shyok", "local_name_hi": "श्योक",
+    "basin": "indus-basin", "length_km_india": 400, "basin_area_india_km2": null,
+    "drainage_type": "himalayan", "stream_order": null,
+    "seasonal_type": "perennial", "origin_type": "glacial",
+    "navigable": false, "transnational": true,
+    "states": ["ladakh"], "aliases": ["Shayok"],
+    "_needs_verification": ["length_km_india: rough estimate — total length 550km (Wikipedia) but river crosses into Pakistan-administered Gilgit-Baltistan before joining Indus near Skardu; India-only portion not found in sources", "basin_area_india_km2: not found (total basin 33,465 km2 spans India/Pakistan/China)"],
+    "_source": "Wikipedia: source Rimo Glacier (Ladakh), total length 550km, basin 33,465 km2"
+  }
+]
