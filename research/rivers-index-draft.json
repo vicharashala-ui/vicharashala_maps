@@ -1645,5 +1645,287 @@
       "seasonal_type: assumed, not independently confirmed"
     ],
     "_source": "waterwaymap.org (India river-length list): 485km; confirmed as a major Pranhita/Godavari tributary by CWC's RIVER BASINS document"
+  },
+  {
+    "id": "kaveri",
+    "name": "Kaveri",
+    "local_name_hi": "कावेरी",
+    "basin": "kaveri-basin",
+    "length_km_india": 800,
+    "basin_area_india_km2": 81155,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka",
+      "tamil-nadu",
+      "kerala",
+      "puducherry"
+    ],
+    "aliases": [
+      "Cauvery",
+      "Ponni"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia + worldatlas.com (cross-confirmed): source Talakaveri (Brahmagiri range, Kodagu, Karnataka), 800km, basin 81,155 km2, wholly India; explicitly perennial (one of few peninsular rivers fed by both monsoons)"
+  },
+  {
+    "id": "amaravathi",
+    "name": "Amaravathi",
+    "local_name_hi": "अमरावती",
+    "basin": "kaveri-basin",
+    "length_km_india": 256,
+    "basin_area_india_km2": 8280,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala",
+      "tamil-nadu"
+    ],
+    "aliases": [
+      "Pournami"
+    ],
+    "_needs_verification": [
+      "length_km_india: one source (upsccolorfullnotes) gives 256km/8280km2 pairing, another (testbook) gives 282km — not reconciled"
+    ],
+    "_source": "upsccolorfullnotes.com: source Naimakad (Anaimalai, Western Ghats, Idukki district, Kerala), 256km, catchment 8,280 km2, joins Kaveri in Tamil Nadu"
+  },
+  {
+    "id": "kabini",
+    "name": "Kabini",
+    "local_name_hi": "काबिनी",
+    "basin": "kaveri-basin",
+    "length_km_india": 240,
+    "basin_area_india_km2": 7040,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala",
+      "karnataka"
+    ],
+    "aliases": [
+      "Kabani",
+      "Kapila"
+    ],
+    "_needs_verification": [
+      "length_km_india: approximate (\"~240km\") per source, not a precise figure"
+    ],
+    "_source": "upsccolorfullnotes.com (explicitly described as perennial): source Pakramthalam hills (North Wayanad, Kerala), ~240km, basin 7,040 km2"
+  },
+  {
+    "id": "hemavathi",
+    "name": "Hemavathi",
+    "local_name_hi": "हेमावती",
+    "basin": "kaveri-basin",
+    "length_km_india": 245,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "basin_area_india_km2: not found",
+      "seasonal_type: assumed (Karnataka Kaveri tributary, monsoon-fed), not independently confirmed"
+    ],
+    "_source": "adda247 UPSC notes: source Ballalarayana Durga (Chikmagalur district, Karnataka), 245km, joins Kaveri near Krishnarajasagar"
+  },
+  {
+    "id": "shimsha",
+    "name": "Shimsha",
+    "local_name_hi": "शिम्शा",
+    "basin": "kaveri-basin",
+    "length_km_india": 221,
+    "basin_area_india_km2": 8469,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "adda247 UPSC notes: source Devarayanadurga Hills (Tumkur district, Karnataka), 221km, catchment 8,469 km2"
+  },
+  {
+    "id": "arkavathi",
+    "name": "Arkavathi",
+    "local_name_hi": "अर्कावती",
+    "basin": "kaveri-basin",
+    "length_km_india": 190,
+    "basin_area_india_km2": 4351,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: Wikipedia infobox gives 190km but a secondary source (upsccolorfullnotes) gives 161km — not reconciled",
+      "seasonal_type: Bengaluru's main drinking-water source, known to have dried up in stretches from over-extraction — marked seasonal but this reflects degraded flow rather than a natural seasonal regime"
+    ],
+    "_source": "Wikipedia: source Nandi Hills (Chikkaballapura district, Karnataka), 190km, joins Kaveri near Kanakapura"
+  },
+  {
+    "id": "bhavani",
+    "name": "Bhavani",
+    "local_name_hi": "भवानी",
+    "basin": "kaveri-basin",
+    "length_km_india": 234,
+    "basin_area_india_km2": 1410,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala",
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: a secondary source (riversinsight) gives 217km vs Wikipedia's 234km — used Wikipedia"
+    ],
+    "_source": "Wikipedia (explicitly \"a 234km long perennial river fed by monsoons\"): source Nilgiris (Western Ghats, Tamil Nadu), basin 1,410 km2, second-largest river in Tamil Nadu"
+  },
+  {
+    "id": "palar",
+    "name": "Palar",
+    "local_name_hi": "पालार",
+    "basin": "palar-basin",
+    "length_km_india": 348,
+    "basin_area_india_km2": 5044,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka",
+      "andhra-pradesh",
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "_needs_verification": [],
+    "_source": "testbook (348km = 93km Karnataka + 33km Andhra Pradesh + 222km Tamil Nadu) + World Bank Climate Risk Country Profiles (catchment 5,044 km2, cross-confirmed independently)"
+  },
+  {
+    "id": "ponnaiyar",
+    "name": "Ponnaiyar",
+    "local_name_hi": "पोन्नैयार",
+    "basin": "ponnaiyar-basin",
+    "length_km_india": 497,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka",
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "basin_area_india_km2: not found",
+      "length: Wikipedia gives 497km, a secondary source (testbook TN GK) gives 500km — close agreement, used Wikipedia"
+    ],
+    "_source": "Wikipedia: second-longest river wholly in Tamil Nadu/Karnataka (after Kaveri), 497km, flows through Bengaluru's eastern suburbs, Hosur, Chengam"
+  },
+  {
+    "id": "vellar",
+    "name": "Vellar (Southern)",
+    "local_name_hi": "वेल्लार",
+    "basin": "vellar-basin",
+    "length_km_india": 137,
+    "basin_area_india_km2": 2034,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "NAMING AMBIGUITY: Tamil Nadu has two distinct Vellar rivers (Northern, near Cuddalore, and Southern, near Pudukkottai). This entry uses the Southern Vellar (Wikipedia: 137km, 2,034 km2). A separate source (World Bank Climate Risk Profiles) gives a different, larger 3,682 km2 basin figure that likely refers to the Northern Vellar or a combined figure — spec §4.9 just says \"Vellar\" with no disambiguation. Recommend confirming which one (or both) is intended."
+    ],
+    "_source": "Wikipedia (Vellar River, Southern Tamil Nadu): source Kumirikatti forest reserve, 137km, basin 2,034 km2, joins Palk Strait near Manamelkudi, Pudukkottai district"
+  },
+  {
+    "id": "vaigai",
+    "name": "Vaigai",
+    "local_name_hi": "वैगई",
+    "basin": "vaigai-basin",
+    "length_km_india": 258,
+    "basin_area_india_km2": 7230,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: two independent secondary sources (brainkart, andedge) agree on 258km/7,741km2, but Wikipedia's own infobox gives 295km/7,009km2 — used the 258km figure since two independent sources agree, but not fully reconciled with Wikipedia"
+    ],
+    "_source": "brainkart.com + andedge.com (independent agreement): source Varusanadu hills (Western Ghats, Tamil Nadu), 258km, wholly Tamil Nadu, drains into Palk Strait; Wikipedia describes it as \"semi-perennial\""
+  },
+  {
+    "id": "tamiraparani",
+    "name": "Tamiraparani",
+    "local_name_hi": "तामिरपरणी",
+    "basin": "tamiraparani-basin",
+    "length_km_india": 128,
+    "basin_area_india_km2": 5717,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "tamil-nadu"
+    ],
+    "aliases": [
+      "Thamirabarani",
+      "Tambraparni",
+      "Porunai"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia + grokipedia (cross-confirmed): source Pothigai Hills (Western Ghats, Ambasamudram taluk, Tirunelveli district), 128km, basin 5,717 km2, wholly Tamil Nadu — explicitly the ONLY perennial river fully within Tamil Nadu"
   }
 ]

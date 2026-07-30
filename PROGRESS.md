@@ -16,7 +16,7 @@ Package manager: **pnpm**. Environment: **native Windows** (Git Bash, no WSL).
 - Linux-only native tools (tippecanoe) aren't available on native Windows. Sandbox builds them and hands over the finished artifact instead.
 - Source data comes from `https://github.com/vicharashala-ui/ecoguesser.git`, a sibling project with already-processed PA data matching this spec almost field-for-field.
 
-## Current status: Step 7 in progress — rivers-index.json metadata research, 67/105 rivers done
+## Current status: Step 7 in progress — rivers-index.json metadata research, Peninsular-East complete (79/105 rivers total)
 
 ### rivers-index.json research progress (`research/rivers-index-draft.json`)
 Built via web research (batched by river system per spec §4.9), NOT the shapefile's `build/rivers-govt-metadata.json` seed from Step 5c — that file lives in your gitignored `build/` dir from a prior session and wasn't available to cross-check here. **Action needed**: if you still have that file, share it so the overlapping fields (basin/origin text for the 61 matched rivers) can be reconciled against this research — government-sourced beats web-sourced where they conflict.
@@ -26,24 +26,25 @@ Spec §4.9 defines 7 river-system groups: Indus, Ganga, Brahmaputra, Peninsular-
 - **Indus system** (9/9 done)
 - **Ganga system** (26/26 done)
 - **Brahmaputra system** (15/15 done)
-- **Peninsular-East system** (17/29 done): Mahanadi, Brahmani, Baitarani, Subarnarekha, Rushikulya, Vamsadhara, Nagavali, Godavari, Krishna, Tungabhadra, Bhima, Musi, Manjira, Indravati, Pranhita, Wainganga, Wardha — remaining 12 (Kaveri system + Tamil Nadu rivers): Kaveri, Amaravathi, Kabini, Hemavathi, Shimsha, Arkavathi, Bhavani, Palar, Ponnaiyar, Vellar, Vaigai, Tamiraparani
+- **Peninsular-East system** (29/29 done): full list — Mahanadi, Brahmani, Baitarani, Subarnarekha, Rushikulya, Vamsadhara, Nagavali, Godavari, Krishna, Tungabhadra, Bhima, Musi, Manjira, Indravati, Pranhita, Wainganga, Wardha, Kaveri, Amaravathi, Kabini, Hemavathi, Shimsha, Arkavathi, Bhavani, Palar, Ponnaiyar, Vellar, Vaigai, Tamiraparani
 - Each entry has all `RiverIndexEntry` fields except `bounds` (added later in step ⑦ from geometry) and `stream_order` (left `null` — needs the real Strahler value from Step 6's HydroRIVERS join output, not invented here)
-- **This batch's strongest data**: Godavari, Krishna, Bhima, Tungabhadra, Manjira, Mahanadi, Brahmani, Baitarani, Subarnarekha all cross-confirmed across 2+ sources (Wikipedia + CWC/govt). **Weakest**: Musi, Indravati, Pranhita, Wainganga, Wardha have `basin_area_india_km2` unfound; Pranhita's length is a low-confidence placeholder; Rushikulya/Vamsadhara lengths are rough estimates
-- **ACTION NEEDED — Kopili/Kapili naming conflict** (from Brahmaputra batch, still unresolved): Wikipedia treats "Kapili" as just an alternate name for Kopili, but spec §4.9 lists them separately. Needs your call before final validation.
-- Other flagged weak entries from earlier batches (Ganga: Rupnarayan, Ghaghra, Sarda, Gandak, Kosi, Bagmati, Mechi; Brahmaputra: Sankosh, Rangeet, Teesta, Torsa, Jaldhaka) still unresolved
+- **Strongest data this batch**: Kaveri, Tamiraparani, Bhavani, Palar, Kabini all cross-confirmed 2+ sources
+- **ACTION NEEDED — "Vellar" naming ambiguity**: Tamil Nadu has two distinct Vellar rivers (Northern, near Cuddalore; Southern, near Pudukkottai). Used the Southern Vellar (only one with clean sourced data this session) — spec §4.9 doesn't disambiguate. Needs your call.
+- **ACTION NEEDED — Kopili/Kapili naming conflict** (from Brahmaputra batch, still unresolved): Wikipedia treats "Kapili" as just an alternate name for Kopili, but spec §4.9 lists them separately.
+- Other flagged weak entries from earlier batches (Ganga: Rupnarayan, Ghaghra, Sarda, Gandak, Kosi, Bagmati, Mechi; Brahmaputra: Sankosh, Rangeet, Teesta, Torsa, Jaldhaka; Peninsular-East pt.1: Musi, Indravati, Pranhita, Wainganga, Wardha) still unresolved
 - `_source` field on each entry records what was used — strip before final schema validation
-- Remaining: rest of Peninsular-East (12 rivers), Peninsular-West (14 rivers), Coastal (11 rivers), Inland Drainage (2 rivers) — 38 rivers total
+- 3 river-system groups remaining: Peninsular-West (14 rivers), Coastal (11 rivers), Inland Drainage (2 rivers) — 26 rivers total, all smaller groups than what's been done so far
 
 ### Not started yet
-- Rest of Peninsular-East (12 rivers) + 3 remaining river-system groups for rivers-index.json (38 rivers, see above)
+- 3 remaining river-system groups for rivers-index.json (26 rivers, see above)
 - **44 unmatched rivers** — still need Overpass (rescoped) or manual research for geometry
 - `scripts/prepareRivers.js` (step ⑦ proper — merges `research/rivers-index-draft.json` + geometry bounds + reconciled `stream_order` into the final validated `public/data/rivers-index.json`), `rivers.pmtiles` (step ⑧)
 - `spatialIntersect.js` / `deriveStateCrossRefs.js` / `buildSearchIndex.js` (steps ⑪⑫⑬)
 - Everything in spec §5 onward
 
 ## Next step
-1. Continue rivers-index.json research: **Kaveri system + Tamil Nadu rivers** next (12 rivers, completes Peninsular-East), or reorder if you'd rather
-2. Resolve the Kopili/Kapili naming question above
+1. Continue rivers-index.json research: **Peninsular-West system** next (14 rivers — Narmada, Tapi, Mahi, Sabarmati, Periyar, Chaliyar, Bharathapuzha, Pamba, Kallada, Sharavati, Zuari, Mandovi, Purna, Girna), or reorder if you'd rather
+2. Resolve the "Vellar" and Kopili/Kapili naming questions above
 3. In parallel/after: rescoped Overpass for the 44 unmatched rivers' geometry
 4. Once both are further along: reconcile `research/rivers-index-draft.json` against Step 5c's `build/rivers-govt-metadata.json` seed (send it over if you have it), and re-verify all flagged weak entries, before running `prepareRivers.js`
 
