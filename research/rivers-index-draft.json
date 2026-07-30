@@ -1231,5 +1231,419 @@
       "ENTIRE ENTRY IS A PLACEHOLDER pending clarification — Wikipedia's Kopili River article states 'Kapili' is simply an alternate name for the Kopili river (previous entry), not a separate river. No independent Kapili data was found this session. All fields here (states, drainage/origin/seasonal type) are copied from the Kopili entry as a best guess only — do not treat as sourced."
     ],
     "_source": "None found independently — see needs_verification"
+  },
+  {
+    "id": "mahanadi",
+    "name": "Mahanadi",
+    "local_name_hi": "महानदी",
+    "basin": "mahanadi-basin",
+    "length_km_india": 851,
+    "basin_area_india_km2": 141600,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "chhattisgarh",
+      "odisha"
+    ],
+    "aliases": [],
+    "_needs_verification": [],
+    "_source": "Odisha govt geography notes / CWC: source Sihawa hills (Dhamtari district, Chhattisgarh), 851km, catchment ~141,600 km2, wholly India"
+  },
+  {
+    "id": "brahmani",
+    "name": "Brahmani",
+    "local_name_hi": "ब्राह्मणी",
+    "basin": "brahmani-basin",
+    "length_km_india": 799,
+    "basin_area_india_km2": 39033,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "jharkhand",
+      "odisha"
+    ],
+    "aliases": [
+      "South Koel"
+    ],
+    "_needs_verification": [],
+    "_source": "CWC Mahanadi & Eastern Rivers Organisation + Wikipedia (explicitly described as a 'major seasonal river'): source Nagri village (Ranchi, Jharkhand), 799km, basin 39,033 km2, wholly India"
+  },
+  {
+    "id": "baitarani",
+    "name": "Baitarani",
+    "local_name_hi": "बैतरणी",
+    "basin": "baitarani-basin",
+    "length_km_india": 360,
+    "basin_area_india_km2": 10982,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "jharkhand",
+      "odisha"
+    ],
+    "aliases": [],
+    "_needs_verification": [],
+    "_source": "CWC (\"flashy in nature\") + Wikipedia: source Keonjhar district hills (Odisha), 360km, catchment 10,982 km2, wholly India"
+  },
+  {
+    "id": "subarnarekha",
+    "name": "Subarnarekha",
+    "local_name_hi": "स्वर्णरेखा",
+    "basin": "subarnarekha-basin",
+    "length_km_india": 395,
+    "basin_area_india_km2": 18951,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "jharkhand",
+      "west-bengal",
+      "odisha"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "seasonal_type: assumed perennial, not independently confirmed"
+    ],
+    "_source": "CWC Mahanadi & Eastern Rivers Organisation: source Nagri village (Ranchi, Jharkhand), 395km, catchment 18,951 km2, wholly India"
+  },
+  {
+    "id": "rushikulya",
+    "name": "Rushikulya",
+    "local_name_hi": "ऋषिकुल्या",
+    "basin": "rushikulya-basin",
+    "length_km_india": 165,
+    "basin_area_india_km2": 7700,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "odisha"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: rough estimate, not directly confirmed this session (only catchment area was sourced)"
+    ],
+    "_source": "CWC Integrated Hydrological Data Book: catchment 7,700 km2, wholly Odisha, independent east-flowing river between Mahanadi and Vamsadhara"
+  },
+  {
+    "id": "vamsadhara",
+    "name": "Vamsadhara",
+    "local_name_hi": "वंशधारा",
+    "basin": "vamsadhara-basin",
+    "length_km_india": 254,
+    "basin_area_india_km2": 10830,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "odisha",
+      "andhra-pradesh"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: rough estimate, not directly confirmed this session (only catchment area was sourced)",
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "CWC Integrated Hydrological Data Book: catchment 10,830 km2, interstate river between Mahanadi and Godavari basins, Odisha and Andhra Pradesh"
+  },
+  {
+    "id": "nagavali",
+    "name": "Nagavali",
+    "local_name_hi": "नागावली",
+    "basin": "nagavali-basin",
+    "length_km_india": 256,
+    "basin_area_india_km2": 9510,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "odisha",
+      "andhra-pradesh"
+    ],
+    "aliases": [
+      "Langulya"
+    ],
+    "_needs_verification": [
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "Wikipedia + CWC (cross-confirmed): source Lakhbahal (Kalahandi district, Odisha), 256km (161km Odisha + rest Andhra Pradesh), catchment 9,510 km2, wholly India"
+  },
+  {
+    "id": "godavari",
+    "name": "Godavari",
+    "local_name_hi": "गोदावरी",
+    "basin": "godavari-basin",
+    "length_km_india": 1465,
+    "basin_area_india_km2": 312812,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "telangana",
+      "andhra-pradesh",
+      "chhattisgarh",
+      "odisha"
+    ],
+    "aliases": [
+      "Dakshin Ganga"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia + Britannica (cross-confirmed): source Trimbakeshwar (Nashik, Maharashtra), 1,465km, basin 312,812 km2 (~10% of India), wholly India, India's second-longest river"
+  },
+  {
+    "id": "krishna",
+    "name": "Krishna",
+    "local_name_hi": "कृष्णा",
+    "basin": "krishna-basin",
+    "length_km_india": 1400,
+    "basin_area_india_km2": 258948,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "karnataka",
+      "telangana",
+      "andhra-pradesh"
+    ],
+    "aliases": [
+      "Krishnaveni"
+    ],
+    "_needs_verification": [],
+    "_source": "Multiple corroborating sources (pendulumedu, testbook, nextias): source Mahabaleshwar (Satara district, Maharashtra), 1,400km, basin 258,948 km2 (~8% of India), wholly India, 4th largest river basin in India"
+  },
+  {
+    "id": "tungabhadra",
+    "name": "Tungabhadra",
+    "local_name_hi": "तुंगभद्रा",
+    "basin": "krishna-basin",
+    "length_km_india": 531,
+    "basin_area_india_km2": 71417,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka",
+      "andhra-pradesh"
+    ],
+    "aliases": [
+      "Pampa"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia: formed by Tunga + Bhadra confluence at Koodli (Shivamogga, Karnataka), 531km, basin 71,417 km2, longest Krishna tributary"
+  },
+  {
+    "id": "bhima",
+    "name": "Bhima",
+    "local_name_hi": "भीमा",
+    "basin": "krishna-basin",
+    "length_km_india": 861,
+    "basin_area_india_km2": 70614,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "karnataka",
+      "telangana"
+    ],
+    "aliases": [
+      "Chandrabhaga"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia (explicitly \"prone to drying up during the summer season\"): source Bhimashankar (Western Ghats, Maharashtra), 861km, basin 70,614 km2"
+  },
+  {
+    "id": "musi",
+    "name": "Musi",
+    "local_name_hi": "मूसी",
+    "basin": "krishna-basin",
+    "length_km_india": 250,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "telangana"
+    ],
+    "aliases": [
+      "Muchukunda",
+      "Musunuru"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: not found",
+      "seasonal_type: inferred (Deccan Plateau tributary, not independently confirmed)"
+    ],
+    "_source": "Wikipedia: source Ananthagiri Hills (Vikarabad, Telangana), 250km, flows through Hyderabad, tributary of Krishna"
+  },
+  {
+    "id": "manjira",
+    "name": "Manjira",
+    "local_name_hi": "मंजिरा",
+    "basin": "godavari-basin",
+    "length_km_india": 724,
+    "basin_area_india_km2": 30844,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "karnataka",
+      "telangana"
+    ],
+    "aliases": [
+      "Manjra",
+      "Manjara"
+    ],
+    "_needs_verification": [
+      "seasonal_type: assumed, not independently confirmed",
+      "length: one secondary source (waterwaymap) gives 702km vs Wikipedia's 724km infobox — used Wikipedia"
+    ],
+    "_source": "Wikipedia: source Balaghat range near Ahmednagar (Maharashtra), 724km, catchment 30,844 km2, wholly India, tributary of Godavari"
+  },
+  {
+    "id": "indravati",
+    "name": "Indravati",
+    "local_name_hi": "इंद्रावती",
+    "basin": "godavari-basin",
+    "length_km_india": 489,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "odisha",
+      "chhattisgarh",
+      "maharashtra",
+      "telangana"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: from a Wikidata-derived global river-length list (waterwaymap.org), not independently cross-checked against a primary source",
+      "basin_area_india_km2: not found",
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "waterwaymap.org (India river-length list): 489km; corroborated as a major left-bank Godavari tributary by CWC's RIVER BASINS document and geoportal.natmo.gov.in"
+  },
+  {
+    "id": "pranhita",
+    "name": "Pranhita",
+    "local_name_hi": "प्राणहिता",
+    "basin": "godavari-basin",
+    "length_km_india": 113,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "telangana"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: LOW CONFIDENCE placeholder — no figure found this session; Pranhita is the short combined-flow stretch carrying the Wainganga+Penganga+Wardha waters into the Godavari, commonly cited as one of India's shortest major named rivers, but the exact figure wasn't sourced",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "CWC RIVER BASINS document (geoportal.natmo.gov.in): confirms Pranhita conveys the united waters of Penganga, Wardha and Wainganga into the Godavari — no length data found"
+  },
+  {
+    "id": "wainganga",
+    "name": "Wainganga",
+    "local_name_hi": "वैनगंगा",
+    "basin": "godavari-basin",
+    "length_km_india": 562,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "maharashtra"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: from a Wikidata-derived global river-length list (waterwaymap.org), not independently cross-checked",
+      "basin_area_india_km2: not found",
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "waterwaymap.org (India river-length list): 562km; confirmed as a major Pranhita/Godavari tributary by CWC's RIVER BASINS document"
+  },
+  {
+    "id": "wardha",
+    "name": "Wardha",
+    "local_name_hi": "वर्धा",
+    "basin": "godavari-basin",
+    "length_km_india": 485,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "maharashtra",
+      "telangana"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: from a Wikidata-derived global river-length list (waterwaymap.org), not independently cross-checked",
+      "basin_area_india_km2: not found",
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "waterwaymap.org (India river-length list): 485km; confirmed as a major Pranhita/Godavari tributary by CWC's RIVER BASINS document"
   }
 ]
