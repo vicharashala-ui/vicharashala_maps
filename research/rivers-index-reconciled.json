@@ -1,0 +1,2515 @@
+[
+  {
+    "id": "indus",
+    "name": "Indus",
+    "local_name_hi": "सिन्धु",
+    "basin": "indus-basin",
+    "length_km_india": 709,
+    "basin_area_india_km2": 321289,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "ladakh"
+    ],
+    "aliases": [
+      "Sindhu",
+      "Singi Khamban"
+    ],
+    "_needs_verification": [],
+    "_source": "CWC Indus Basin Organisation (cwc.gov.in/ibo/about-basins): total 2880km/709km in India, catchment 321,289 km2 in India | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "jhelum",
+    "name": "Jhelum",
+    "local_name_hi": "झेलम",
+    "basin": "indus-basin",
+    "length_km_india": 165,
+    "basin_area_india_km2": 17622,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "spring-fed",
+    "navigable": true,
+    "transnational": true,
+    "states": [
+      "jammu-and-kashmir"
+    ],
+    "aliases": [
+      "Vyeth",
+      "Vitasta",
+      "Hydaspes"
+    ],
+    "_needs_verification": [],
+    "_source": "India-WRIS wiki: length 402km to border, 165km in India (Kashmir Valley), catchment 17,622 km2. Navigable: traditional shikara/boat traffic in Srinagar/Wular reaches."
+  },
+  {
+    "id": "chenab",
+    "name": "Chenab",
+    "local_name_hi": "चिनाब",
+    "basin": "indus-basin",
+    "length_km_india": 431.4,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "himachal-pradesh",
+      "jammu-and-kashmir"
+    ],
+    "aliases": [
+      "Chandrabhaga",
+      "Asikni"
+    ],
+    "_needs_verification": [
+      "length_km_india: estimated from CWC segment data (Chandra 125km + confluence-to-Akhnoor 504km + onward J&K stretch) — sources conflict (960-1180km claimed for total/India length across different pages), no single authoritative India-only figure found",
+      "basin_area_india_km2: not found in searched sources, left null"
+    ],
+    "_source": "India-WRIS chenab wiki (segment lengths); Wikipedia/Britannica (total length 974km); conflicting secondary sources | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "ravi",
+    "name": "Ravi",
+    "local_name_hi": "रावी",
+    "basin": "indus-basin",
+    "length_km_india": 725,
+    "basin_area_india_km2": 14442,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "himachal-pradesh",
+      "punjab"
+    ],
+    "aliases": [
+      "Iravati",
+      "Purushni"
+    ],
+    "_needs_verification": [],
+    "_source": "CWC Indus Basin Organisation: 725km, 14,442 km2 catchment in India"
+  },
+  {
+    "id": "beas",
+    "name": "Beas",
+    "local_name_hi": "ब्यास",
+    "basin": "indus-basin",
+    "length_km_india": 470,
+    "basin_area_india_km2": 20303,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "himachal-pradesh",
+      "punjab"
+    ],
+    "aliases": [
+      "Vipasha",
+      "Vipas",
+      "Hyphasis"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia: entirely within India, 470km, basin 20,303 km2 | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "sutlej",
+    "name": "Sutlej",
+    "local_name_hi": "सतलुज",
+    "basin": "indus-basin",
+    "length_km_india": 1050,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "himachal-pradesh",
+      "punjab"
+    ],
+    "aliases": [
+      "Satluj",
+      "Satadru",
+      "Zungbal"
+    ],
+    "_needs_verification": [
+      "length_km_india: single secondary source only (vajiramandravi.com, 1450km total/1050km India) — not cross-checked against CWC",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Vajiram & Ravi UPSC notes (secondary, not govt-sourced) — flagged, recommend CWC cross-check | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "spiti",
+    "name": "Spiti",
+    "local_name_hi": "स्पीति",
+    "basin": "indus-basin",
+    "length_km_india": 200,
+    "basin_area_india_km2": 6300,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "himachal-pradesh"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: approximate, no exact figure found in searched sources (only catchment area was confirmed)"
+    ],
+    "_source": "Wikipedia (Spiti river/valley): catchment 6,300 km2, entirely Himachal Pradesh, tributary of Sutlej at Khab"
+  },
+  {
+    "id": "zanskar",
+    "name": "Zanskar",
+    "local_name_hi": "जांस्कर",
+    "basin": "indus-basin",
+    "length_km_india": 134,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "ladakh"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Wikidata: 134km; Wikipedia: entirely within Ladakh, joins Indus near Nimmu"
+  },
+  {
+    "id": "shyok",
+    "name": "Shyok",
+    "local_name_hi": "श्योक",
+    "basin": "indus-basin",
+    "length_km_india": 400,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "ladakh"
+    ],
+    "aliases": [
+      "Shayok"
+    ],
+    "_needs_verification": [
+      "length_km_india: rough estimate — total length 550km (Wikipedia) but river crosses into Pakistan-administered Gilgit-Baltistan before joining Indus near Skardu; India-only portion not found in sources",
+      "basin_area_india_km2: not found (total basin 33,465 km2 spans India/Pakistan/China)"
+    ],
+    "_source": "Wikipedia: source Rimo Glacier (Ladakh), total length 550km, basin 33,465 km2"
+  },
+  {
+    "id": "ganga",
+    "name": "Ganga",
+    "local_name_hi": "गंगा",
+    "basin": "ganga-basin",
+    "length_km_india": 2525,
+    "basin_area_india_km2": 861452,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": true,
+    "transnational": true,
+    "states": [
+      "uttarakhand",
+      "uttar-pradesh",
+      "bihar",
+      "jharkhand",
+      "west-bengal"
+    ],
+    "aliases": [
+      "Ganges",
+      "Ganga Mata"
+    ],
+    "_needs_verification": [],
+    "_source": "India-WRIS wiki (indiawris.gov.in/wiki/doku.php?id=ganga): length 2525km source-to-Bay of Bengal via Bhagirathi-Hooghly, India basin area 861,452 km2 (26% of country) | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "bhagirathi",
+    "name": "Bhagirathi",
+    "local_name_hi": "भागीरथी",
+    "basin": "ganga-basin",
+    "length_km_india": 229.1,
+    "basin_area_india_km2": 6921,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "uttarakhand"
+    ],
+    "aliases": [],
+    "_needs_verification": [],
+    "_source": "CWC Upper Ganga Basin Organisation (cwc.gov.in/ugbo/gangabasin/bhagirathi): 205km, source Gaumukh Glacier, basin 6,921 km2 | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "alaknanda",
+    "name": "Alaknanda",
+    "local_name_hi": "अलकनंदा",
+    "basin": "ganga-basin",
+    "length_km_india": 206.4,
+    "basin_area_india_km2": 10882,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "uttarakhand"
+    ],
+    "aliases": [],
+    "_needs_verification": [],
+    "_source": "Wikipedia: source Satopanth/Bhagirathi Kharak glaciers, 195km, basin 10,882 km2 | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "yamuna",
+    "name": "Yamuna",
+    "local_name_hi": "यमुना",
+    "basin": "ganga-basin",
+    "length_km_india": 1376,
+    "basin_area_india_km2": 366223,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "uttarakhand",
+      "himachal-pradesh",
+      "haryana",
+      "delhi",
+      "uttar-pradesh"
+    ],
+    "aliases": [
+      "Jamuna",
+      "Jumna"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: 366,223 km2 is the commonly-cited textbook figure but wasn't directly confirmed in searched sources this session — one low-quality source gave an implausible 69,000 km2 (likely confusing a sub-basin), discarded"
+    ],
+    "_source": "Multiple secondary sources (adda247, class24, kvguruji) agree on 1,376km from Yamunotri Glacier; entirely within India | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "chambal",
+    "name": "Chambal",
+    "local_name_hi": "चंबल",
+    "basin": "ganga-basin",
+    "length_km_india": 988.5,
+    "basin_area_india_km2": 144591,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "rajasthan",
+      "uttar-pradesh"
+    ],
+    "aliases": [
+      "Charmanyavati"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia: 960km, basin 144,591 km2 up to Yamuna confluence; source-derived RAS Rajasthan exam notes independently confirm one of only two perennial rivers in Rajasthan | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "banas",
+    "name": "Banas",
+    "local_name_hi": "बनास",
+    "basin": "ganga-basin",
+    "length_km_india": 550,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "rajasthan"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "basin_area_india_km2: not found in searched sources"
+    ],
+    "_source": "RAS exam notes (justprepraj.com): 512km, source near Kumbhalgarh (Aravallis), entirely Rajasthan, joins Chambal at Rameshwaram (Sawai Madhopur); non-perennial per same source (\"only two perennial rivers in Rajasthan: Chambal and Mahi\") | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "kali-sindh",
+    "name": "Kali Sindh",
+    "local_name_hi": "काली सिंध",
+    "basin": "ganga-basin",
+    "length_km_india": 550,
+    "basin_area_india_km2": 48492,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "rajasthan"
+    ],
+    "aliases": [
+      "Kali Sindhu"
+    ],
+    "_needs_verification": [
+      "seasonal_type: inferred (not perennial per Rajasthan-rivers source), not independently confirmed"
+    ],
+    "_source": "Wikipedia: 550km (405km MP + 145km Rajasthan), basin 48,492 km2, tributary of Chambal"
+  },
+  {
+    "id": "parbati",
+    "name": "Parbati",
+    "local_name_hi": "पार्वती",
+    "basin": "ganga-basin",
+    "length_km_india": 444.2,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "rajasthan"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: single secondary source (waterwaymap.org), not cross-checked",
+      "basin_area_india_km2: not found",
+      "seasonal_type: inferred, not independently confirmed"
+    ],
+    "_source": "waterwaymap.org river-length list: 385km; jatland wiki confirms Parbati as Chambal tributary via Madhya Pradesh/Rajasthan | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "betwa",
+    "name": "Betwa",
+    "local_name_hi": "बेतवा",
+    "basin": "ganga-basin",
+    "length_km_india": 590,
+    "basin_area_india_km2": 46580,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "uttar-pradesh"
+    ],
+    "aliases": [
+      "Vetravati"
+    ],
+    "_needs_verification": [
+      "seasonal_type: inferred from general Bundelkhand-region drought/low-flow characteristics, not independently confirmed for this specific river"
+    ],
+    "_source": "India-WRIS Yamuna River System wiki: source Bhopal district MP, 590km, basin 46,580 km2 (31,971 MP + 14,609 UP) | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "ken",
+    "name": "Ken",
+    "local_name_hi": "केन",
+    "basin": "ganga-basin",
+    "length_km_india": 427,
+    "basin_area_india_km2": 28058,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "uttar-pradesh"
+    ],
+    "aliases": [
+      "Karnavati"
+    ],
+    "_needs_verification": [
+      "seasonal_type: inferred from general Bundelkhand-region drought/low-flow characteristics, not independently confirmed for this specific river"
+    ],
+    "_source": "Wikipedia: 427km (292km MP + 84km UP + 51km boundary), source Barner Range Katni district MP; India-WRIS: basin 28,058 km2 (24,472 MP + 3,386 UP)"
+  },
+  {
+    "id": "son",
+    "name": "Son",
+    "local_name_hi": "सोन",
+    "basin": "ganga-basin",
+    "length_km_india": 784,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "chhattisgarh",
+      "uttar-pradesh",
+      "jharkhand",
+      "bihar"
+    ],
+    "aliases": [
+      "Sone",
+      "Sonbhadra"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: not found in searched sources",
+      "seasonal_type: marked perennial as largest southern Ganga tributary with substantial baseflow, not independently confirmed against a govt source"
+    ],
+    "_source": "Wikipedia: 784km, source near Amarkantak MP, joins Ganga at Maner (Patna district, Bihar) | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "gomti",
+    "name": "Gomti",
+    "local_name_hi": "गोमती",
+    "basin": "ganga-basin",
+    "length_km_india": 960,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "uttar-pradesh"
+    ],
+    "aliases": [
+      "Gumti",
+      "Gomati"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: not found",
+      "length: sources split 900-960km (used Wikipedia infobox 960km); navigable historically per one colonial-era source, marked false for current-day pending confirmation"
+    ],
+    "_source": "Wikipedia: entirely UP, source Gomat Taal (Pilibhit), 960km to confluence at Kaithi/Varanasi | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "ghaghra",
+    "name": "Ghaghra (Karnali)",
+    "local_name_hi": "घाघरा",
+    "basin": "ganga-basin",
+    "length_km_india": 503,
+    "basin_area_india_km2": 57578,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "uttar-pradesh",
+      "bihar"
+    ],
+    "aliases": [
+      "Karnali",
+      "Manchu"
+    ],
+    "_needs_verification": [
+      "length_km_india and basin_area_india_km2 are DERIVED, not directly sourced: total length 1080km (CWC) minus Nepal's 507km (largest river in Nepal, per Wikipedia) minus ~70km Tibet stretch = ~503km estimate; basin_area = 45% of CWC's 127,000 km2 total catchment figure. Needs a direct India-only source.",
+      "navigable: historically used for steamer navigation per one source, not confirmed current-day"
+    ],
+    "_source": "CWC Upper Ganga Basin Organisation (cwc.gov.in/ugbo/gangabasin/ghaghra): total length 1080km to Ganga confluence at Doriganj Bihar, catchment 127,000 km2 (45% India); Wikipedia for Nepal-portion length | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "sarda",
+    "name": "Sarda (Sharda)",
+    "local_name_hi": "शारदा",
+    "basin": "ganga-basin",
+    "length_km_india": 350,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "uttarakhand",
+      "uttar-pradesh"
+    ],
+    "aliases": [
+      "Kali",
+      "Mahakali"
+    ],
+    "_needs_verification": [
+      "length_km_india: rough estimate, no precise figure found (Wikipedia confirms only a ~100km fully-in-UP segment near the end)",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Wikipedia (Sarda River): downstream name of Kali/Mahakali below Brahmadev Mandi barrage in Nepal; forms India-Nepal border, source Nanda Devi massif glaciers (Pithoragarh)"
+  },
+  {
+    "id": "gandak",
+    "name": "Gandak",
+    "local_name_hi": "गंडक",
+    "basin": "ganga-basin",
+    "length_km_india": 260,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "uttar-pradesh",
+      "bihar"
+    ],
+    "aliases": [
+      "Gandaki",
+      "Narayani",
+      "Sapt Gandaki"
+    ],
+    "_needs_verification": [
+      "length_km_india: rough estimate (total 814km, mostly Nepal per Wikipedia — India/Bihar-only portion not directly confirmed)",
+      "basin_area_india_km2: a Bihar-government-context source gave 40,553 km2 which is implausible (exceeds Wikipedia's total basin of 46,300 km2 'most of it in Nepal') — discarded as likely erroneous, left null pending a reliable figure"
+    ],
+    "_source": "Wikipedia (Gandaki River): source Nhubine Himal Glacier (Mustang, Nepal), total 814km, total basin 46,300 km2 | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "burhi-gandak",
+    "name": "Burhi Gandak",
+    "local_name_hi": "बूढ़ी गंडक",
+    "basin": "ganga-basin",
+    "length_km_india": 320,
+    "basin_area_india_km2": 10150,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "bihar"
+    ],
+    "aliases": [
+      "Sikrahna"
+    ],
+    "_needs_verification": [
+      "transnational: marked true because a Bihar-government source cites 2,420 km2 of hilly catchment in Nepal, though the main channel and length figure (320km) are wholly within Bihar per Wikipedia"
+    ],
+    "_source": "Wikipedia: source Chautarwa Chaur (West Champaran), 320km, basin 10,150 km2, wholly Bihar; Bihar govt source (studyiq) for Nepal catchment portion"
+  },
+  {
+    "id": "kosi",
+    "name": "Kosi",
+    "local_name_hi": "कोसी",
+    "basin": "ganga-basin",
+    "length_km_india": 260,
+    "basin_area_india_km2": 11410,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "bihar"
+    ],
+    "aliases": [
+      "Koshi",
+      "Saptakoshi",
+      "Sorrow of Bihar"
+    ],
+    "_needs_verification": [
+      "length_km_india: rough estimate — total length 729km (Wikipedia) spans Tibet+Nepal+Bihar, no direct India-only figure found"
+    ],
+    "_source": "Bihar govt source (FMISC/studyiq): India catchment 11,410 km2 of 74,030 km2 total (rest in Tibet/Nepal); Wikipedia for total length"
+  },
+  {
+    "id": "mahananda",
+    "name": "Mahananda",
+    "local_name_hi": "महानंदा",
+    "basin": "ganga-basin",
+    "length_km_india": 324,
+    "basin_area_india_km2": 11530,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "west-bengal",
+      "bihar"
+    ],
+    "aliases": [],
+    "_needs_verification": [],
+    "_source": "Wikipedia: source Paglajhora Falls (Darjeeling hills), 324km of 360km total in India, 11,530 km2 of 20,600 km2 total basin in India"
+  },
+  {
+    "id": "mechi",
+    "name": "Mechi",
+    "local_name_hi": "मेची",
+    "basin": "ganga-basin",
+    "length_km_india": 20,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "bihar"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: rough placeholder only — small border river, mostly forms the India-Nepal boundary before a short stretch into Kishanganj district (Bihar) to its Mahananda confluence; no direct figure found",
+      "basin_area_india_km2: not found for Mechi specifically (only the combined Mahananda-system India catchment of 11,520 km2 was found, which overlaps with the Mahananda entry above and shouldn't be double-counted)"
+    ],
+    "_source": "Wikipedia: source Mahabharat Range (Nepal), forms India-Nepal border, joins Mahananda at Kishanganj district, Bihar"
+  },
+  {
+    "id": "kamla",
+    "name": "Kamla",
+    "local_name_hi": "कमला",
+    "basin": "ganga-basin",
+    "length_km_india": null,
+    "basin_area_india_km2": 4488,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "bihar"
+    ],
+    "aliases": [
+      "Kamla Balan",
+      "Balan"
+    ],
+    "_needs_verification": [
+      "length_km_india: no figure found in searched sources, left null"
+    ],
+    "_source": "Bihar govt source (beams.fmiscwrdbihar.gov.in): India (Bihar) catchment 4,488 km2 of 7,232 km2 total (rest Nepal); enters India at Jaynagar, Madhubani district"
+  },
+  {
+    "id": "bagmati",
+    "name": "Bagmati",
+    "local_name_hi": "बागमती",
+    "basin": "ganga-basin",
+    "length_km_india": 394,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "bihar"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: single low-authority source (testbook trivia Q&A, 394km); Wikipedia's own infobox (586.3km total) and a secondary source (360km total) disagree — not reconciled",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "testbook.com trivia Q&A (394km India portion, low confidence); Wikipedia: source Baghdwar Falls (Shivapuri, Kathmandu), joins Kamla in Bihar"
+  },
+  {
+    "id": "damodar",
+    "name": "Damodar",
+    "local_name_hi": "दामोदर",
+    "basin": "ganga-basin",
+    "length_km_india": 592,
+    "basin_area_india_km2": 25820,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "jharkhand",
+      "west-bengal"
+    ],
+    "aliases": [
+      "River of Sorrows",
+      "Damuda"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia + multiple corroborating sources: source Khamarpat Hill (Chota Nagpur Plateau, Palamau), 592km, basin 25,820 km2, wholly Jharkhand/West Bengal | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "hooghly",
+    "name": "Hooghly",
+    "local_name_hi": "हुगली",
+    "basin": "ganga-basin",
+    "length_km_india": 260,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "mixed",
+    "navigable": true,
+    "transnational": false,
+    "states": [
+      "west-bengal"
+    ],
+    "aliases": [
+      "Bhagirathi-Hooghly"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: not applicable in the usual sense — Hooghly is a Ganga distributary, not an independently-basined river; left null rather than force a number"
+    ],
+    "_source": "Wikipedia: westernmost Ganga distributary, 260km, splits off at Giria and flows to Bay of Bengal via Kolkata; major shipping channel to Kolkata Port | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "barakar",
+    "name": "Barakar",
+    "local_name_hi": "बराकर",
+    "basin": "ganga-basin",
+    "length_km_india": 291.3,
+    "basin_area_india_km2": 6159,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "jharkhand",
+      "west-bengal"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "seasonal_type: inferred (smaller Chota Nagpur tributary), not independently confirmed"
+    ],
+    "_source": "Wikipedia: source near Padma (Hazaribagh district), 256km, catchment 6,159 km2, wholly India, main tributary of Damodar | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "ajay",
+    "name": "Ajay",
+    "local_name_hi": "अजय",
+    "basin": "ganga-basin",
+    "length_km_india": 308.4,
+    "basin_area_india_km2": 6000,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "bihar",
+      "jharkhand",
+      "west-bengal"
+    ],
+    "aliases": [],
+    "_needs_verification": [],
+    "_source": "Wikipedia (288km, cross-checked riversinsight): source Jamui Hills (Bihar), joins Bhagirathi-Hooghly at Katwa, catchment ~6,000 km2, explicitly described as seasonal by riversinsight | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "rupnarayan",
+    "name": "Rupnarayan",
+    "local_name_hi": "रूपनारायण",
+    "basin": "ganga-basin",
+    "length_km_india": 176,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "west-bengal"
+    ],
+    "aliases": [
+      "Dwarakeswar-Shilabati"
+    ],
+    "_needs_verification": [
+      "length_km_india: LOW CONFIDENCE placeholder (~176km) — not found/confirmed in this session's searches, needs a direct source",
+      "basin_area_india_km2: not found",
+      "seasonal_type: inferred, not independently confirmed"
+    ],
+    "_source": "General knowledge only (not verified this session) — formed by confluence of Dwarakeswar and Shilabati rivers, joins Hooghly near Geonkhali; flagged as the weakest-sourced entry in this batch, recommend priority re-check"
+  },
+  {
+    "id": "brahmaputra",
+    "name": "Brahmaputra",
+    "local_name_hi": "ब्रह्मपुत्र",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 916,
+    "basin_area_india_km2": 194413,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": true,
+    "transnational": true,
+    "states": [
+      "arunachal-pradesh",
+      "assam"
+    ],
+    "aliases": [
+      "Tsangpo",
+      "Yarlung Tsangpo",
+      "Siang",
+      "Dihang"
+    ],
+    "_needs_verification": [],
+    "_source": "India-WRIS wiki: source Kailash ranges (Konggyu Tsho, Tibet), 2900km total, 916km in India, basin 194,413 km2 in India (5.9% of country); navigable as National Waterway 2 | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "dibang",
+    "name": "Dibang",
+    "local_name_hi": "दिबांग",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 324,
+    "basin_area_india_km2": 13933,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "arunachal-pradesh"
+    ],
+    "aliases": [
+      "Talon"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia: source Dri/Tangon confluence, 324km, basin 13,933 km2, wholly Arunachal Pradesh, joins Lohit near Sadiya"
+  },
+  {
+    "id": "lohit",
+    "name": "Lohit",
+    "local_name_hi": "लोहित",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 200,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "arunachal-pradesh",
+      "assam"
+    ],
+    "aliases": [
+      "Zayul Chu"
+    ],
+    "_needs_verification": [
+      "length_km_india: rough estimate — total length 560km (Wikipedia) spans Tibet + Arunachal Pradesh + Assam, no direct India-only figure found",
+      "basin_area_india_km2: not found (total basin 41,499 km2 spans China/India)"
+    ],
+    "_source": "Wikipedia: source Kangri Karpo (Zayul County, Tibet), joins Siang near Sadiya, Assam to form Brahmaputra | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "subansiri",
+    "name": "Subansiri",
+    "local_name_hi": "सुबानसिरी",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 382,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "arunachal-pradesh",
+      "assam"
+    ],
+    "aliases": [
+      "Gold River"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "byjus.com: total 442km (192km Arunachal Pradesh + 190km Assam + rest Tibet); largest Brahmaputra tributary | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "kameng",
+    "name": "Kameng",
+    "local_name_hi": "कामेंग",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 150,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "arunachal-pradesh",
+      "assam"
+    ],
+    "aliases": [
+      "Jia Bharali",
+      "Bhareli"
+    ],
+    "_needs_verification": [
+      "origin/transnational: source described only as \"unsurveyed hills, presumably Tibet\" — not independently confirmed",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "byjus.com: ~250km total, 90km Arunachal Pradesh + 60km Assam | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "dhansiri",
+    "name": "Dhansiri",
+    "local_name_hi": "धनसिरी",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 352,
+    "basin_area_india_km2": 1220,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "nagaland",
+      "assam"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "basin_area_india_km2: 1,220 km2 (Wikipedia) seems small relative to a 352km-long river — flagging for a sanity-check re-source"
+    ],
+    "_source": "Wikipedia: source Laisang Peak (Nagaland), 352km, wholly India, joins Brahmaputra on south bank"
+  },
+  {
+    "id": "manas",
+    "name": "Manas",
+    "local_name_hi": "मानस",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 104,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "assam"
+    ],
+    "aliases": [
+      "Drangme Chhu"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: not found (total system large, India-only portion unclear)"
+    ],
+    "_source": "Wikipedia: total 400km (24km Tibet + 272km Bhutan + 104km Assam), joins Brahmaputra at Jogighopa"
+  },
+  {
+    "id": "sankosh",
+    "name": "Sankosh",
+    "local_name_hi": "संकोश",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 85,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "assam",
+      "west-bengal"
+    ],
+    "aliases": [
+      "Puna Tsang Chu"
+    ],
+    "_needs_verification": [
+      "length_km_india: LOW CONFIDENCE placeholder — no length figure found at all this session, not even a total length",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Wikipedia: rises northern Bhutan, forms part of Assam-West Bengal border before joining Brahmaputra — no length data in the article"
+  },
+  {
+    "id": "teesta",
+    "name": "Teesta",
+    "local_name_hi": "तीस्ता",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 414,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "sikkim",
+      "west-bengal"
+    ],
+    "aliases": [
+      "Tista"
+    ],
+    "_needs_verification": [
+      "length_km_india: single source gave 414km total; commonly-cited alternate figures (~309km) exist elsewhere and weren't reconciled this session",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Osmanian river-list (414km, low-to-medium authority): source Pahunri Glacier (Sikkim), flows through Sikkim/West Bengal into Bangladesh to join Brahmaputra | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "rangeet",
+    "name": "Rangeet",
+    "local_name_hi": "रंगीत",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 65,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "sikkim"
+    ],
+    "aliases": [
+      "Rangit",
+      "Ranjit"
+    ],
+    "_needs_verification": [
+      "length_km_india: LOW CONFIDENCE placeholder — no length figure found this session",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "waterwaymap.org confirms Rangeet as a Sikkim waterway and Teesta tributary — no length data found"
+  },
+  {
+    "id": "torsa",
+    "name": "Torsa",
+    "local_name_hi": "तोर्षा",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 100,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "west-bengal"
+    ],
+    "aliases": [
+      "Amo Chhu",
+      "Machu"
+    ],
+    "_needs_verification": [
+      "length_km_india: DERIVED (total 358km minus 113km Tibet minus 145km Bhutan = ~100km), not a direct source",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Wikipedia: source Chumbi Valley (Tibet), flows through Bhutan then India then Bangladesh to join Brahmaputra | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "jaldhaka",
+    "name": "Jaldhaka",
+    "local_name_hi": "जलढाका",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 193,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "spring-fed",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "sikkim",
+      "west-bengal"
+    ],
+    "aliases": [
+      "Dichu"
+    ],
+    "_needs_verification": [
+      "length_km_india: DERIVED (total 233km minus ~40km Bhutan stretch = ~193km) and doesn't separately account for a Bangladesh portion — treat as rough",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Wikipedia: source Bitang Lake (Kupup, Sikkim), flows Sikkim → Bhutan (~40km) → re-enters India at Bindu, Kalimpong → eventually Bangladesh | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "barak",
+    "name": "Barak",
+    "local_name_hi": "बराक",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 100.3,
+    "basin_area_india_km2": 41723,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": true,
+    "transnational": true,
+    "states": [
+      "manipur",
+      "mizoram",
+      "assam"
+    ],
+    "aliases": [],
+    "_needs_verification": [],
+    "_source": "Wikipedia: source Liyai Khullen village (Manipur), 524km of 900km total in India, basin 41,723 km2 of 52,000 km2 total in India; navigable — National Waterway 16 (Lakhipur-Bhanga, 121km) | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "kopili",
+    "name": "Kopili",
+    "local_name_hi": "कोपिली",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 333,
+    "basin_area_india_km2": 16420,
+    "drainage_type": "himalayan",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "meghalaya",
+      "assam"
+    ],
+    "aliases": [
+      "Kapili"
+    ],
+    "_needs_verification": [
+      "ALIAS FLAG: Wikipedia treats 'Kapili' as an alternate name for this same Kopili river, but spec §4.9 lists Kopili and Kapili as two separate entries. Recommend clarifying with the user whether Kapili should be (a) merged into this entry, (b) a genuinely distinct river, or (c) dropped as a duplicate before final validation."
+    ],
+    "_source": "Wikipedia: source Meghalaya plateau, 290km, basin 16,420 km2, wholly India (Meghalaya + Assam), largest south-bank Brahmaputra tributary | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "mahanadi",
+    "name": "Mahanadi",
+    "local_name_hi": "महानदी",
+    "basin": "mahanadi-basin",
+    "length_km_india": 851,
+    "basin_area_india_km2": 141600,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "chhattisgarh",
+      "odisha"
+    ],
+    "aliases": [],
+    "_needs_verification": [],
+    "_source": "Odisha govt geography notes / CWC: source Sihawa hills (Dhamtari district, Chhattisgarh), 851km, catchment ~141,600 km2, wholly India | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "brahmani",
+    "name": "Brahmani",
+    "local_name_hi": "ब्राह्मणी",
+    "basin": "brahmani-basin",
+    "length_km_india": 799,
+    "basin_area_india_km2": 39033,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "jharkhand",
+      "odisha"
+    ],
+    "aliases": [
+      "South Koel"
+    ],
+    "_needs_verification": [],
+    "_source": "CWC Mahanadi & Eastern Rivers Organisation + Wikipedia (explicitly described as a 'major seasonal river'): source Nagri village (Ranchi, Jharkhand), 799km, basin 39,033 km2, wholly India | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "baitarani",
+    "name": "Baitarani",
+    "local_name_hi": "बैतरणी",
+    "basin": "baitarani-basin",
+    "length_km_india": 414.3,
+    "basin_area_india_km2": 10982,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "jharkhand",
+      "odisha"
+    ],
+    "aliases": [],
+    "_needs_verification": [],
+    "_source": "CWC (\"flashy in nature\") + Wikipedia: source Keonjhar district hills (Odisha), 360km, catchment 10,982 km2, wholly India | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "subarnarekha",
+    "name": "Subarnarekha",
+    "local_name_hi": "स्वर्णरेखा",
+    "basin": "subarnarekha-basin",
+    "length_km_india": 479.5,
+    "basin_area_india_km2": 18951,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "jharkhand",
+      "west-bengal",
+      "odisha"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "seasonal_type: assumed perennial, not independently confirmed"
+    ],
+    "_source": "CWC Mahanadi & Eastern Rivers Organisation: source Nagri village (Ranchi, Jharkhand), 395km, catchment 18,951 km2, wholly India | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "rushikulya",
+    "name": "Rushikulya",
+    "local_name_hi": "ऋषिकुल्या",
+    "basin": "rushikulya-basin",
+    "length_km_india": 165,
+    "basin_area_india_km2": 7700,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "odisha"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: rough estimate, not directly confirmed this session (only catchment area was sourced)"
+    ],
+    "_source": "CWC Integrated Hydrological Data Book: catchment 7,700 km2, wholly Odisha, independent east-flowing river between Mahanadi and Vamsadhara"
+  },
+  {
+    "id": "vamsadhara",
+    "name": "Vamsadhara",
+    "local_name_hi": "वंशधारा",
+    "basin": "vamsadhara-basin",
+    "length_km_india": 287,
+    "basin_area_india_km2": 10830,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "odisha",
+      "andhra-pradesh"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: rough estimate, not directly confirmed this session (only catchment area was sourced)",
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "CWC Integrated Hydrological Data Book: catchment 10,830 km2, interstate river between Mahanadi and Godavari basins, Odisha and Andhra Pradesh | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "nagavali",
+    "name": "Nagavali",
+    "local_name_hi": "नागावली",
+    "basin": "nagavali-basin",
+    "length_km_india": 250.4,
+    "basin_area_india_km2": 9510,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "odisha",
+      "andhra-pradesh"
+    ],
+    "aliases": [
+      "Langulya"
+    ],
+    "_needs_verification": [
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "Wikipedia + CWC (cross-confirmed): source Lakhbahal (Kalahandi district, Odisha), 256km (161km Odisha + rest Andhra Pradesh), catchment 9,510 km2, wholly India | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "godavari",
+    "name": "Godavari",
+    "local_name_hi": "गोदावरी",
+    "basin": "godavari-basin",
+    "length_km_india": 1465,
+    "basin_area_india_km2": 312812,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "telangana",
+      "andhra-pradesh",
+      "chhattisgarh",
+      "odisha"
+    ],
+    "aliases": [
+      "Dakshin Ganga"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia + Britannica (cross-confirmed): source Trimbakeshwar (Nashik, Maharashtra), 1,465km, basin 312,812 km2 (~10% of India), wholly India, India's second-longest river | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "krishna",
+    "name": "Krishna",
+    "local_name_hi": "कृष्णा",
+    "basin": "krishna-basin",
+    "length_km_india": 1400,
+    "basin_area_india_km2": 258948,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "karnataka",
+      "telangana",
+      "andhra-pradesh"
+    ],
+    "aliases": [
+      "Krishnaveni"
+    ],
+    "_needs_verification": [],
+    "_source": "Multiple corroborating sources (pendulumedu, testbook, nextias): source Mahabaleshwar (Satara district, Maharashtra), 1,400km, basin 258,948 km2 (~8% of India), wholly India, 4th largest river basin in India | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "tungabhadra",
+    "name": "Tungabhadra",
+    "local_name_hi": "तुंगभद्रा",
+    "basin": "krishna-basin",
+    "length_km_india": 552.5,
+    "basin_area_india_km2": 71417,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka",
+      "andhra-pradesh"
+    ],
+    "aliases": [
+      "Pampa"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia: formed by Tunga + Bhadra confluence at Koodli (Shivamogga, Karnataka), 531km, basin 71,417 km2, longest Krishna tributary | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "bhima",
+    "name": "Bhima",
+    "local_name_hi": "भीमा",
+    "basin": "krishna-basin",
+    "length_km_india": 864.5,
+    "basin_area_india_km2": 70614,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "karnataka",
+      "telangana"
+    ],
+    "aliases": [
+      "Chandrabhaga"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia (explicitly \"prone to drying up during the summer season\"): source Bhimashankar (Western Ghats, Maharashtra), 861km, basin 70,614 km2 | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "musi",
+    "name": "Musi",
+    "local_name_hi": "मूसी",
+    "basin": "krishna-basin",
+    "length_km_india": 296.2,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "telangana"
+    ],
+    "aliases": [
+      "Muchukunda",
+      "Musunuru"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: not found",
+      "seasonal_type: inferred (Deccan Plateau tributary, not independently confirmed)"
+    ],
+    "_source": "Wikipedia: source Ananthagiri Hills (Vikarabad, Telangana), 250km, flows through Hyderabad, tributary of Krishna | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "manjira",
+    "name": "Manjira",
+    "local_name_hi": "मंजिरा",
+    "basin": "godavari-basin",
+    "length_km_india": 724,
+    "basin_area_india_km2": 30844,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "karnataka",
+      "telangana"
+    ],
+    "aliases": [
+      "Manjra",
+      "Manjara"
+    ],
+    "_needs_verification": [
+      "seasonal_type: assumed, not independently confirmed",
+      "length: one secondary source (waterwaymap) gives 702km vs Wikipedia's 724km infobox — used Wikipedia"
+    ],
+    "_source": "Wikipedia: source Balaghat range near Ahmednagar (Maharashtra), 724km, catchment 30,844 km2, wholly India, tributary of Godavari | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "indravati",
+    "name": "Indravati",
+    "local_name_hi": "इंद्रावती",
+    "basin": "godavari-basin",
+    "length_km_india": 489,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "odisha",
+      "chhattisgarh",
+      "maharashtra",
+      "telangana"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: from a Wikidata-derived global river-length list (waterwaymap.org), not independently cross-checked against a primary source",
+      "basin_area_india_km2: not found",
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "waterwaymap.org (India river-length list): 489km; corroborated as a major left-bank Godavari tributary by CWC's RIVER BASINS document and geoportal.natmo.gov.in | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "pranhita",
+    "name": "Pranhita",
+    "local_name_hi": "प्राणहिता",
+    "basin": "godavari-basin",
+    "length_km_india": 115.5,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "telangana"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: LOW CONFIDENCE placeholder — no figure found this session; Pranhita is the short combined-flow stretch carrying the Wainganga+Penganga+Wardha waters into the Godavari, commonly cited as one of India's shortest major named rivers, but the exact figure wasn't sourced",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "CWC RIVER BASINS document (geoportal.natmo.gov.in): confirms Pranhita conveys the united waters of Penganga, Wardha and Wainganga into the Godavari — no length data found | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "wainganga",
+    "name": "Wainganga",
+    "local_name_hi": "वैनगंगा",
+    "basin": "godavari-basin",
+    "length_km_india": 629.8,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "maharashtra"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: from a Wikidata-derived global river-length list (waterwaymap.org), not independently cross-checked",
+      "basin_area_india_km2: not found",
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "waterwaymap.org (India river-length list): 562km; confirmed as a major Pranhita/Godavari tributary by CWC's RIVER BASINS document | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "wardha",
+    "name": "Wardha",
+    "local_name_hi": "वर्धा",
+    "basin": "godavari-basin",
+    "length_km_india": 533.6,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "maharashtra",
+      "telangana"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: from a Wikidata-derived global river-length list (waterwaymap.org), not independently cross-checked",
+      "basin_area_india_km2: not found",
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "waterwaymap.org (India river-length list): 485km; confirmed as a major Pranhita/Godavari tributary by CWC's RIVER BASINS document | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "kaveri",
+    "name": "Kaveri",
+    "local_name_hi": "कावेरी",
+    "basin": "kaveri-basin",
+    "length_km_india": 800,
+    "basin_area_india_km2": 81155,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka",
+      "tamil-nadu",
+      "kerala",
+      "puducherry"
+    ],
+    "aliases": [
+      "Cauvery",
+      "Ponni"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia + worldatlas.com (cross-confirmed): source Talakaveri (Brahmagiri range, Kodagu, Karnataka), 800km, basin 81,155 km2, wholly India; explicitly perennial (one of few peninsular rivers fed by both monsoons) | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "amaravathi",
+    "name": "Amaravathi",
+    "local_name_hi": "अमरावती",
+    "basin": "kaveri-basin",
+    "length_km_india": 256,
+    "basin_area_india_km2": 8280,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala",
+      "tamil-nadu"
+    ],
+    "aliases": [
+      "Pournami"
+    ],
+    "_needs_verification": [
+      "length_km_india: one source (upsccolorfullnotes) gives 256km/8280km2 pairing, another (testbook) gives 282km — not reconciled"
+    ],
+    "_source": "upsccolorfullnotes.com: source Naimakad (Anaimalai, Western Ghats, Idukki district, Kerala), 256km, catchment 8,280 km2, joins Kaveri in Tamil Nadu"
+  },
+  {
+    "id": "kabini",
+    "name": "Kabini",
+    "local_name_hi": "काबिनी",
+    "basin": "kaveri-basin",
+    "length_km_india": 240,
+    "basin_area_india_km2": 7040,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala",
+      "karnataka"
+    ],
+    "aliases": [
+      "Kabani",
+      "Kapila"
+    ],
+    "_needs_verification": [
+      "length_km_india: approximate (\"~240km\") per source, not a precise figure"
+    ],
+    "_source": "upsccolorfullnotes.com (explicitly described as perennial): source Pakramthalam hills (North Wayanad, Kerala), ~240km, basin 7,040 km2"
+  },
+  {
+    "id": "hemavathi",
+    "name": "Hemavathi",
+    "local_name_hi": "हेमावती",
+    "basin": "kaveri-basin",
+    "length_km_india": 245,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "basin_area_india_km2: not found",
+      "seasonal_type: assumed (Karnataka Kaveri tributary, monsoon-fed), not independently confirmed"
+    ],
+    "_source": "adda247 UPSC notes: source Ballalarayana Durga (Chikmagalur district, Karnataka), 245km, joins Kaveri near Krishnarajasagar"
+  },
+  {
+    "id": "shimsha",
+    "name": "Shimsha",
+    "local_name_hi": "शिम्शा",
+    "basin": "kaveri-basin",
+    "length_km_india": 221,
+    "basin_area_india_km2": 8469,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "adda247 UPSC notes: source Devarayanadurga Hills (Tumkur district, Karnataka), 221km, catchment 8,469 km2"
+  },
+  {
+    "id": "arkavathi",
+    "name": "Arkavathi",
+    "local_name_hi": "अर्कावती",
+    "basin": "kaveri-basin",
+    "length_km_india": 190,
+    "basin_area_india_km2": 4351,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: Wikipedia infobox gives 190km but a secondary source (upsccolorfullnotes) gives 161km — not reconciled",
+      "seasonal_type: Bengaluru's main drinking-water source, known to have dried up in stretches from over-extraction — marked seasonal but this reflects degraded flow rather than a natural seasonal regime"
+    ],
+    "_source": "Wikipedia: source Nandi Hills (Chikkaballapura district, Karnataka), 190km, joins Kaveri near Kanakapura"
+  },
+  {
+    "id": "bhavani",
+    "name": "Bhavani",
+    "local_name_hi": "भवानी",
+    "basin": "kaveri-basin",
+    "length_km_india": 234,
+    "basin_area_india_km2": 1410,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala",
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: a secondary source (riversinsight) gives 217km vs Wikipedia's 234km — used Wikipedia"
+    ],
+    "_source": "Wikipedia (explicitly \"a 234km long perennial river fed by monsoons\"): source Nilgiris (Western Ghats, Tamil Nadu), basin 1,410 km2, second-largest river in Tamil Nadu"
+  },
+  {
+    "id": "palar",
+    "name": "Palar",
+    "local_name_hi": "पालार",
+    "basin": "palar-basin",
+    "length_km_india": 348,
+    "basin_area_india_km2": 5044,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka",
+      "andhra-pradesh",
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "_needs_verification": [],
+    "_source": "testbook (348km = 93km Karnataka + 33km Andhra Pradesh + 222km Tamil Nadu) + World Bank Climate Risk Country Profiles (catchment 5,044 km2, cross-confirmed independently) | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "ponnaiyar",
+    "name": "Ponnaiyar",
+    "local_name_hi": "पोन्नैयार",
+    "basin": "ponnaiyar-basin",
+    "length_km_india": 497,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka",
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "basin_area_india_km2: not found",
+      "length: Wikipedia gives 497km, a secondary source (testbook TN GK) gives 500km — close agreement, used Wikipedia"
+    ],
+    "_source": "Wikipedia: second-longest river wholly in Tamil Nadu/Karnataka (after Kaveri), 497km, flows through Bengaluru's eastern suburbs, Hosur, Chengam | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "vellar",
+    "name": "Vellar (Southern)",
+    "local_name_hi": "वेल्लार",
+    "basin": "vellar-basin",
+    "length_km_india": 137,
+    "basin_area_india_km2": 2034,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "NAMING AMBIGUITY: Tamil Nadu has two distinct Vellar rivers (Northern, near Cuddalore, and Southern, near Pudukkottai). This entry uses the Southern Vellar (Wikipedia: 137km, 2,034 km2). A separate source (World Bank Climate Risk Profiles) gives a different, larger 3,682 km2 basin figure that likely refers to the Northern Vellar or a combined figure — spec §4.9 just says \"Vellar\" with no disambiguation. Recommend confirming which one (or both) is intended."
+    ],
+    "_source": "Wikipedia (Vellar River, Southern Tamil Nadu): source Kumirikatti forest reserve, 137km, basin 2,034 km2, joins Palk Strait near Manamelkudi, Pudukkottai district"
+  },
+  {
+    "id": "vaigai",
+    "name": "Vaigai",
+    "local_name_hi": "वैगई",
+    "basin": "vaigai-basin",
+    "length_km_india": 312.2,
+    "basin_area_india_km2": 7230,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: two independent secondary sources (brainkart, andedge) agree on 258km/7,741km2, but Wikipedia's own infobox gives 295km/7,009km2 — used the 258km figure since two independent sources agree, but not fully reconciled with Wikipedia"
+    ],
+    "_source": "brainkart.com + andedge.com (independent agreement): source Varusanadu hills (Western Ghats, Tamil Nadu), 258km, wholly Tamil Nadu, drains into Palk Strait; Wikipedia describes it as \"semi-perennial\" | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "tamiraparani",
+    "name": "Tamiraparani",
+    "local_name_hi": "तामिरपरणी",
+    "basin": "tamiraparani-basin",
+    "length_km_india": 128,
+    "basin_area_india_km2": 5717,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "tamil-nadu"
+    ],
+    "aliases": [
+      "Thamirabarani",
+      "Tambraparni",
+      "Porunai"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia + grokipedia (cross-confirmed): source Pothigai Hills (Western Ghats, Ambasamudram taluk, Tirunelveli district), 128km, basin 5,717 km2, wholly Tamil Nadu — explicitly the ONLY perennial river fully within Tamil Nadu"
+  },
+  {
+    "id": "narmada",
+    "name": "Narmada",
+    "local_name_hi": "नर्मदा",
+    "basin": "narmada-basin",
+    "length_km_india": 1312,
+    "basin_area_india_km2": 98796,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "gujarat",
+      "maharashtra",
+      "chhattisgarh"
+    ],
+    "aliases": [
+      "Rewa"
+    ],
+    "_needs_verification": [],
+    "_source": "ResearchGate academic paper + Rau's IAS (cross-confirmed): source Maikala range near Amarkantak (Madhya Pradesh), 1,312km, basin 98,796 km2, wholly India, largest west-flowing peninsular river, traditional boundary between North and South India | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "tapi",
+    "name": "Tapi",
+    "local_name_hi": "तापी",
+    "basin": "tapi-basin",
+    "length_km_india": 779,
+    "basin_area_india_km2": 65145,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "maharashtra",
+      "gujarat"
+    ],
+    "aliases": [
+      "Tapti"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: Rau's IAS/vajiram/scribd agree on 65,145 km2, but Wikipedia's infobox gives 62,225 km2 — used the majority figure"
+    ],
+    "_source": "Rau's IAS + vajiramandravi (cross-confirmed): source Multai reserve forest (Betul district, Madhya Pradesh), 724km, basin 65,145 km2, wholly India, 'twin' of Narmada | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "mahi",
+    "name": "Mahi",
+    "local_name_hi": "माही",
+    "basin": "mahi-basin",
+    "length_km_india": 553.5,
+    "basin_area_india_km2": 34842,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "rajasthan",
+      "gujarat"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "lotusarise + pmfias (cross-confirmed): source northern Vindhya slopes (Dhar district, Madhya Pradesh), 583km, basin 34,842 km2, wholly India | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "sabarmati",
+    "name": "Sabarmati",
+    "local_name_hi": "साबरमती",
+    "basin": "sabarmati-basin",
+    "length_km_india": 371,
+    "basin_area_india_km2": 21674,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "rajasthan",
+      "gujarat"
+    ],
+    "aliases": [
+      "Wakal"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: Wikipedia's own article is internally inconsistent — infobox states 30,680 km2 while the body text gives a state-by-state breakdown (4,124 Rajasthan + 18,550 Gujarat) summing to 21,674 km2. Used the more detailed body-text figure but this needs a cleaner source."
+    ],
+    "_source": "Wikipedia (explicitly described as monsoon-fed): source Aravalli hills near Tepur (Udaipur district, Rajasthan), 371km (323km Gujarat + 48km Rajasthan) | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "periyar",
+    "name": "Periyar",
+    "local_name_hi": "पेरियार",
+    "basin": "periyar-basin",
+    "length_km_india": 244,
+    "basin_area_india_km2": 5398,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala",
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "seasonal_type: assumed (Kerala rivers are generally perennial given heavy Western Ghats rainfall), not independently confirmed"
+    ],
+    "_source": "Wikipedia: source Chokkampatti Mala (Periyar Tiger Reserve, Kerala), 244km, catchment 5,398 km2 (5,284 Kerala + 114 Tamil Nadu), longest river in Kerala | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "chaliyar",
+    "name": "Chaliyar",
+    "local_name_hi": "चालियार",
+    "basin": "chaliyar-basin",
+    "length_km_india": 169,
+    "basin_area_india_km2": 2933,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala"
+    ],
+    "aliases": [
+      "Beypore River"
+    ],
+    "_needs_verification": [
+      "seasonal_type: assumed, not independently confirmed",
+      "states: Wikipedia lists both Kerala and Tamil Nadu, but all named districts (Wayanad, Malappuram, Kozhikode) are in Kerala — the Tamil Nadu portion, if any, appears to be a very minor headwater sliver near the Coorg/Nilgiris border ('Tears of Coorg')"
+    ],
+    "_source": "Wikipedia: source Elambaleri Hills (Western Ghats, Wayanad), 169km, basin 2,933 km2, 4th-longest river in Kerala"
+  },
+  {
+    "id": "bharathapuzha",
+    "name": "Bharathapuzha",
+    "local_name_hi": "भरतपुझा",
+    "basin": "bharathapuzha-basin",
+    "length_km_india": 99.9,
+    "basin_area_india_km2": 6810,
+    "drainage_type": "peninsular",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala",
+      "tamil-nadu"
+    ],
+    "aliases": [
+      "Nila",
+      "Ponnani River"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia (explicitly \"almost no flow in most parts of the river\" in summer, due to drier Tamil Nadu/Palakkad Gap catchment and post-independence damming): 209km, basin 6,810 km2 (largest in Kerala), 4,400 km2 Kerala + 1,786 km2 Tamil Nadu | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "pamba",
+    "name": "Pamba",
+    "local_name_hi": "पम्बा",
+    "basin": "pamba-basin",
+    "length_km_india": 176,
+    "basin_area_india_km2": 2235,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala"
+    ],
+    "aliases": [
+      "Baris",
+      "Dakshina Bhageerathi"
+    ],
+    "_needs_verification": [
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "Wikipedia: source Pulachimala (Western Ghats), 176km, basin 2,235 km2, wholly Kerala, 3rd-longest river in Kerala, Sabarimala Temple on its banks"
+  },
+  {
+    "id": "kallada",
+    "name": "Kallada",
+    "local_name_hi": "कल्लदा",
+    "basin": "kallada-basin",
+    "length_km_india": 126.1,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "basin_area_india_km2: not found",
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "livekerala.com (Kerala river-length list): 121km, 8th-longest river in Kerala | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "sharavati",
+    "name": "Sharavati",
+    "local_name_hi": "शरावती",
+    "basin": "sharavati-basin",
+    "length_km_india": 134.2,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: an IISc academic paper gives 128km (used here) while Britannica gives a rounder 100km — not fully reconciled",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "IISc Centre for Ecological Sciences (Ramachandra et al., Water Resource Information System of India): source Western Ghats, 128km, joins Arabian Sea at Karki; famous for Jog Falls | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "zuari",
+    "name": "Zuari",
+    "local_name_hi": "जुआरी",
+    "basin": "zuari-basin",
+    "length_km_india": 92,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": true,
+    "transnational": false,
+    "states": [
+      "goa"
+    ],
+    "aliases": [
+      "Aghanashini"
+    ],
+    "_needs_verification": [
+      "length_km_india: Wikipedia's own article is internally inconsistent — infobox states 34km while the body text states 92km. Used the body-text figure since it's more specific about connections to other waterways.",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Wikipedia: source Hemad-Barshem (Western Ghats), largest river in Goa, forms Mormugao harbour with Mandovi; navigable — used for iron ore ship traffic via Cumbarjua Canal"
+  },
+  {
+    "id": "mandovi",
+    "name": "Mandovi",
+    "local_name_hi": "मांडवी",
+    "basin": "mandovi-basin",
+    "length_km_india": 81,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": true,
+    "transnational": false,
+    "states": [
+      "karnataka",
+      "goa",
+      "maharashtra"
+    ],
+    "aliases": [
+      "Mahadayi",
+      "Rio de Goa"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Wikipedia: source Bhimgad (Western Ghats, Belagavi district, Karnataka), 81km (1km Maharashtra + 35km Karnataka + 45km Goa), described as \"lifeline of Goa\"; navigable — forms Mormugao harbour"
+  },
+  {
+    "id": "purna",
+    "name": "Purna",
+    "local_name_hi": "पूर्णा",
+    "basin": "tapi-basin",
+    "length_km_india": 274,
+    "basin_area_india_km2": 18929,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "maharashtra"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "DISAMBIGUATION NOTE: India has three distinct rivers named Purna — (1) this one, a Tapi tributary via Khandesh/Vidarbha, the one used here since spec pairs it with Girna (both Tapi tributaries), (2) an independent coastal river in South Gujarat (180km), and (3) a separate Godavari tributary in Marathwada (373km). Confirm this is the intended one."
+    ],
+    "_source": "Wikipedia (Tapti's most important tributary, only one in the upper Tapi basin with year-round flow): source Gawilgarh hills, 274km, basin 18,929 km2"
+  },
+  {
+    "id": "girna",
+    "name": "Girna",
+    "local_name_hi": "गिरणा",
+    "basin": "tapi-basin",
+    "length_km_india": 260,
+    "basin_area_india_km2": 10061,
+    "drainage_type": "peninsular",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "upsccolorfullnotes.com: source Kem peak (Western Ghats, Nashik district), 260km, catchment 10,061 km2 (1/6 of the total Tapi basin), joins Tapi in Jalgaon district"
+  },
+  {
+    "id": "ulhas",
+    "name": "Ulhas",
+    "local_name_hi": "उल्हास",
+    "basin": "ulhas-basin",
+    "length_km_india": 146,
+    "basin_area_india_km2": 4637,
+    "drainage_type": "coastal",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra"
+    ],
+    "aliases": [],
+    "_needs_verification": [],
+    "_source": "India-WRIS wiki + vajiramandravi (cross-confirmed): source Sahyadri hills near Tungarli Lake (Lonavala, Raigad district), 122km, catchment 4,637 km2, wholly Maharashtra, longest river in the Konkan | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "vaitarna",
+    "name": "Vaitarna",
+    "local_name_hi": "वैतरणा",
+    "basin": "vaitarna-basin",
+    "length_km_india": 154,
+    "basin_area_india_km2": 3795,
+    "drainage_type": "coastal",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra"
+    ],
+    "aliases": [],
+    "_needs_verification": [],
+    "_source": "Wikipedia (154km) + Springer academic morphometric study (catchment 3,795 km2, 6th-order basin): source Trimbakeshwar (Nashik district), wholly Maharashtra, longest river in Konkan per some sources (conflicts with Ulhas claim above — not reconciled)"
+  },
+  {
+    "id": "savitri",
+    "name": "Savitri",
+    "local_name_hi": "सावित्री",
+    "basin": "savitri-basin",
+    "length_km_india": 110,
+    "basin_area_india_km2": null,
+    "drainage_type": "coastal",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: Wikipedia gives an approximate \"around 110km\"",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Wikipedia: source Savitri Point (Mahabaleshwar), ~110km, wholly Maharashtra, meets Arabian Sea near Harihareshwar"
+  },
+  {
+    "id": "vashisthi",
+    "name": "Vashisthi",
+    "local_name_hi": "वशिष्ठी",
+    "basin": "vashisthi-basin",
+    "length_km_india": null,
+    "basin_area_india_km2": null,
+    "drainage_type": "coastal",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: NOT FOUND — Wikipedia's own Vashishti River article gives no length figure at all",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Wikipedia: source Western Ghats, wholly Maharashtra, flows past Chiplun, no length/basin data available in the article — weakest-sourced entry in this batch"
+  },
+  {
+    "id": "kali-karnataka",
+    "name": "Kali (Karnataka)",
+    "local_name_hi": "काली नदी",
+    "basin": "kali-karnataka-basin",
+    "length_km_india": 178.7,
+    "basin_area_india_km2": null,
+    "drainage_type": "coastal",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [
+      "Kali Nadi",
+      "Kalinadi"
+    ],
+    "_needs_verification": [
+      "length_km_india: Wikipedia infobox gives 265km but the article's own body text later says \"184 kilometers\" — internally inconsistent, used the infobox figure",
+      "basin_area_india_km2: not found"
+    ],
+    "_source": "Wikipedia: source Diggi village (Uttara Kannada district), wholly Karnataka, joins Arabian Sea at Karwar; multiple dams including Supa Dam | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "netravati",
+    "name": "Netravati",
+    "local_name_hi": "नेत्रावती",
+    "basin": "netravati-basin",
+    "length_km_india": 115.7,
+    "basin_area_india_km2": 3502,
+    "drainage_type": "coastal",
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: sources range 84-106km across different pages — used Wikipedia's 106km",
+      "basin_area_india_km2: converted from a secondary source's 1,352 sq mi figure, not independently confirmed in km2"
+    ],
+    "_source": "Wikipedia: source Kudremukha (Chikkamagaluru district), wholly Karnataka, joins Arabian Sea south of Mangalore; known as 'Dakshina Kannada Jeeva Nadi' (lifeline river) | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "gurupur",
+    "name": "Gurupur",
+    "local_name_hi": "गुरुपुर",
+    "basin": "gurupur-basin",
+    "length_km_india": 48,
+    "basin_area_india_km2": null,
+    "drainage_type": "coastal",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "ENTIRE ENTRY IS A LOW-CONFIDENCE PLACEHOLDER — no reliable source found this session beyond confirming the river exists and flows through Mangalore/Ullal, joining the Arabian Sea near Netravati's mouth. Length is an unsourced estimate."
+    ],
+    "_source": "None found independently this session — see needs_verification"
+  },
+  {
+    "id": "aghanashini",
+    "name": "Aghanashini",
+    "local_name_hi": "अघनाशिनी",
+    "basin": "aghanashini-basin",
+    "length_km_india": 117,
+    "basin_area_india_km2": null,
+    "drainage_type": "coastal",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [
+      "Tadadi Hole"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: not found (one source gave 1,350 km2 but that figure appears to actually describe Netravati, contaminated in the same source paragraph — discarded)",
+      "seasonal_type: notable as one of the few undammed rivers in the Western Ghats, assumed perennial but not independently confirmed"
+    ],
+    "_source": "Wikipedia + IISc Centre for Ecological Sciences (cross-confirmed): source Gadihalli village near Sirsi (Uttara Kannada district), 117km, wholly Karnataka, joins Arabian Sea near Gokarna"
+  },
+  {
+    "id": "damanganga",
+    "name": "Damanganga",
+    "local_name_hi": "दमणगंगा",
+    "basin": "damanganga-basin",
+    "length_km_india": 131,
+    "basin_area_india_km2": null,
+    "drainage_type": "coastal",
+    "stream_order": null,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "gujarat",
+      "dadra-and-nagar-haveli-and-daman-and-diu"
+    ],
+    "aliases": [
+      "Dawan River"
+    ],
+    "_needs_verification": [
+      "basin_area_india_km2: not found",
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "Wikipedia: source Ambegaon (Dindori taluka, Nashik district, Maharashtra), 131.3km, wholly India, forms Daman Ganga Reservoir Project shared between Gujarat and DNHDD"
+  },
+  {
+    "id": "swarnamukhi",
+    "name": "Swarnamukhi",
+    "local_name_hi": "स्वर्णमुखी",
+    "basin": "swarnamukhi-basin",
+    "length_km_india": null,
+    "basin_area_india_km2": 3225,
+    "drainage_type": "coastal",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "andhra-pradesh"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "length_km_india: not found — only catchment area was sourced",
+      "seasonal_type: assumed, not independently confirmed"
+    ],
+    "_source": "vajiramandravi.com: small east-flowing river basin, catchment 3,225 km2, wholly Andhra Pradesh"
+  },
+  {
+    "id": "manimuktha",
+    "name": "Manimuktha",
+    "local_name_hi": "मणिमुक्ता",
+    "basin": "manimuktha-basin",
+    "length_km_india": null,
+    "basin_area_india_km2": null,
+    "drainage_type": "coastal",
+    "stream_order": null,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "ENTIRE ENTRY IS UNSOURCED THIS SESSION — no reliable length, basin, or detailed origin data found for a Tamil Nadu river by this name. Recommend dedicated re-research before relying on this entry at all."
+    ],
+    "_source": "None found this session — see needs_verification"
+  },
+  {
+    "id": "vaippar",
+    "name": "Vaippar",
+    "local_name_hi": "वैप्पार",
+    "basin": "vaippar-basin",
+    "length_km_india": 86.5,
+    "basin_area_india_km2": 5288,
+    "drainage_type": "coastal",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "_needs_verification": [
+      "seasonal_type: assumed (all Tamil Nadu rivers except Tamiraparani are non-perennial per earlier-batch sourcing), not independently re-confirmed for this specific river"
+    ],
+    "_source": "Wikipedia: source Varusanadu hills (Tenkasi district), 130km, catchment 5,288 km2, wholly Tamil Nadu, joins Gulf of Mannar near Sippikulam | length_km_india, stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "luni",
+    "name": "Luni",
+    "local_name_hi": "लूनी",
+    "basin": "luni-basin",
+    "length_km_india": 495,
+    "basin_area_india_km2": 37363,
+    "drainage_type": "inland",
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "rajasthan",
+      "gujarat"
+    ],
+    "aliases": [
+      "Sagarmati"
+    ],
+    "_needs_verification": [],
+    "_source": "Wikipedia: source Pushkar valley (Aravalli Range, near Ajmer), 495km, basin 37,363 km2, wholly India, terminates in the marshes of the Rann of Kutch — largest river of the Thar Desert, does not reach the sea | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  },
+  {
+    "id": "ghaggar-hakra",
+    "name": "Ghaggar-Hakra",
+    "local_name_hi": "घग्गर-हकरा",
+    "basin": "ghaggar-basin",
+    "length_km_india": 320,
+    "basin_area_india_km2": 42200,
+    "drainage_type": "inland",
+    "seasonal_type": "ephemeral",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "himachal-pradesh",
+      "punjab",
+      "haryana",
+      "rajasthan"
+    ],
+    "aliases": [
+      "Hakra",
+      "Sarasvati"
+    ],
+    "_needs_verification": [
+      "length_km_india: sources range widely (320-560km depending on whether the Pakistan Hakra segment and full historical channel are counted) — used the commonly-cited 320km 'present-day channel, majority in India' figure from two independent sources",
+      "basin_area_india_km2: an academic source (CSIR-NGRI) gives 42,200 km2 for the full basin across 5 states/UTs (used here); a secondary source gives a smaller 29,524 km2 — not reconciled",
+      "transnational: marked true since the river continues into Pakistan as the Hakra before drying out, though the bulk of flow and the segment India considers 'Ghaggar' stays domestic"
+    ],
+    "_source": "CSIR-National Geophysical Research Institute (basin area) + riversinsight.com/indiamapped.com (length, cross-confirmed): source Shivalik Hills (Himachal Pradesh), ephemeral/seasonal — explicitly described as carrying baseflow only in its upper reaches, dry Oct-Mar; possibly the historical Vedic Sarasvati river | stream_order from data.gov.in Rivers shapefile / HydroRIVERS (govt-authoritative, overrides web research)"
+  }
+]
