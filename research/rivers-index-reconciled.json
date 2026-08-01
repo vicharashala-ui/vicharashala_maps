@@ -76,7 +76,7 @@
     "name": "Ravi",
     "local_name_hi": "रावी",
     "basin": "indus-basin",
-    "length_km_india": 725,
+    "length_km_india": 320,
     "basin_area_india_km2": 14442,
     "drainage_type": "himalayan",
     "stream_order": null,
@@ -93,7 +93,7 @@
       "Purushni"
     ],
     "_needs_verification": [],
-    "_source": "CWC Indus Basin Organisation: 725km, 14,442 km2 catchment in India"
+    "_source": "CWC Indus Basin Organisation: 14,442 km2 catchment in India (confirmed, matches Wikipedia's India-catchment figure exactly). length_km_india CORRECTED from 725 to 320 — 725km is the river's TOTAL length (India+Pakistan); Britannica, Wikipedia, and Mershon Center (OSU) all independently agree only ~320km of the ~720-725km total lies within India before it forms the India-Pakistan border and enters Pakistan. The original 725 figure looks like a transcription of the total-length figure into the India-length field."
   },
   {
     "id": "beas",
