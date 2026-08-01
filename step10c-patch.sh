@@ -1,3 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Step 10c — diagnostic only. 5 of 8 batches returned real data (127 ways total) but
+# matched 0/43 rivers, which should be structurally impossible given Overpass itself
+# already filtered by name server-side. Dumps the first 5 raw features per successful
+# batch to build/rivers-overpass-debug-<region>.json so the actual property shape can
+# be inspected instead of guessed at further. Send back the contents of one of those
+# files (or paste the DIAGNOSTIC lines from the terminal).
+# The 3 batches that failed on rate-limit (429) should be worth a retry too.
+
+cat > scripts/fetchRivers.js << 'FETCH_EOF'
 // scripts/fetchRivers.js
 // Input:  none (queries OSM Overpass API directly)
 // Output: build/rivers-overpass.geojson (spec §4.7 step ⑥, rescoped to the 43 rivers
@@ -140,26 +152,10 @@ async function queryOverpass(query) {
 
 async function run() {
   const { default: osmtogeojson } = await import('osmtogeojson');
-
-  let allFeatures = [];
-  let report = { matched: [], unmatched: [], multiCandidate: [], batchErrors: [], completedBatches: [] };
-
-  // Resume instead of re-fetching everything — Overpass's rate limiting means not all
-  // batches reliably succeed in one run, and this script used to overwrite its own output
-  // from scratch every time, losing whatever had already succeeded. Delete build/rivers-
-  // overpass.geojson and build/rivers-overpass-report.json to force a clean start.
-  if (fs.existsSync(OUT_GEOJSON) && fs.existsSync(OUT_REPORT)) {
-    allFeatures = JSON.parse(fs.readFileSync(OUT_GEOJSON, 'utf-8')).features;
-    const prev = JSON.parse(fs.readFileSync(OUT_REPORT, 'utf-8'));
-    report = { ...report, ...prev, completedBatches: prev.completedBatches ?? [] };
-    console.log(`Resuming: ${report.completedBatches.length}/${BATCHES.length} batches already completed.`);
-  }
+  const allFeatures = [];
+  const report = { matched: [], unmatched: [], multiCandidate: [], batchErrors: [] };
 
   for (const batch of BATCHES) {
-    if (report.completedBatches.includes(batch.region)) {
-      console.log(`\n==> ${batch.region} — already completed, skipping`);
-      continue;
-    }
     console.log(`\n==> ${batch.region} (${Object.keys(batch.rivers).length} rivers)`);
     let osmData;
     try {
@@ -172,9 +168,17 @@ async function run() {
 
     const geojson = osmtogeojson(osmData);
     console.log(`  ways returned: ${geojson.features.length}`);
+    if (geojson.features.length > 0) {
+      // DIAGNOSTIC (Step 10c) — matching found 0/43 against real data despite non-zero
+      // ways returned, but the identical logic matched correctly in mocked testing. Dumping
+      // this to see what real OSM tag data actually looks like instead of guessing further.
+      fs.mkdirSync('build', { recursive: true });
+      fs.writeFileSync(`build/rivers-overpass-debug-${batch.region}.json`, JSON.stringify(geojson.features.slice(0, 5), null, 2));
+      console.log(`  DIAGNOSTIC: wrote first 5 features to build/rivers-overpass-debug-${batch.region}.json`);
+    }
 
     for (const [canonicalName, variants] of Object.entries(batch.rivers)) {
-      const matches = geojson.features.filter((f) => variants.includes(f.properties?.tags?.name));
+      const matches = geojson.features.filter((f) => variants.includes(f.properties?.name));
       if (matches.length === 0) {
         report.unmatched.push(canonicalName);
         continue;
@@ -190,8 +194,6 @@ async function run() {
     }
 
     // write after every batch — a later batch failing doesn't lose earlier progress
-    report.completedBatches.push(batch.region);
-    report.batchErrors = report.batchErrors.filter((b) => b.region !== batch.region);
     fs.mkdirSync('build', { recursive: true });
     fs.writeFileSync(OUT_GEOJSON, JSON.stringify({ type: 'FeatureCollection', features: allFeatures }));
     fs.writeFileSync(OUT_REPORT, JSON.stringify(report, null, 2));
@@ -214,3 +216,6 @@ run().catch((err) => {
   console.error(err.message);
   process.exit(1);
 });
+FETCH_EOF
+
+node scripts/fetchRivers.js

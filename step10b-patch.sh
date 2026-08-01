@@ -1,3 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Step 10 v2 — fixes a real hang: fetch() had no client-side timeout, only the
+# Overpass-side [timeout:60] query parameter, which does not bound a stalled HTTP
+# connection. Also splits the oversized ganga_plains batch (Bihar is the densest-mapped
+# river network in the set) into two smaller-bbox batches, and adds progress logging
+# so a slow request is distinguishable from a hang.
+# Run from the project root in Git Bash. Overwrites scripts/fetchRivers.js from Step 10.
+
+cat > scripts/fetchRivers.js << 'FETCH_EOF'
 // scripts/fetchRivers.js
 // Input:  none (queries OSM Overpass API directly)
 // Output: build/rivers-overpass.geojson (spec §4.7 step ⑥, rescoped to the 43 rivers
@@ -140,26 +151,10 @@ async function queryOverpass(query) {
 
 async function run() {
   const { default: osmtogeojson } = await import('osmtogeojson');
-
-  let allFeatures = [];
-  let report = { matched: [], unmatched: [], multiCandidate: [], batchErrors: [], completedBatches: [] };
-
-  // Resume instead of re-fetching everything — Overpass's rate limiting means not all
-  // batches reliably succeed in one run, and this script used to overwrite its own output
-  // from scratch every time, losing whatever had already succeeded. Delete build/rivers-
-  // overpass.geojson and build/rivers-overpass-report.json to force a clean start.
-  if (fs.existsSync(OUT_GEOJSON) && fs.existsSync(OUT_REPORT)) {
-    allFeatures = JSON.parse(fs.readFileSync(OUT_GEOJSON, 'utf-8')).features;
-    const prev = JSON.parse(fs.readFileSync(OUT_REPORT, 'utf-8'));
-    report = { ...report, ...prev, completedBatches: prev.completedBatches ?? [] };
-    console.log(`Resuming: ${report.completedBatches.length}/${BATCHES.length} batches already completed.`);
-  }
+  const allFeatures = [];
+  const report = { matched: [], unmatched: [], multiCandidate: [], batchErrors: [] };
 
   for (const batch of BATCHES) {
-    if (report.completedBatches.includes(batch.region)) {
-      console.log(`\n==> ${batch.region} — already completed, skipping`);
-      continue;
-    }
     console.log(`\n==> ${batch.region} (${Object.keys(batch.rivers).length} rivers)`);
     let osmData;
     try {
@@ -174,7 +169,7 @@ async function run() {
     console.log(`  ways returned: ${geojson.features.length}`);
 
     for (const [canonicalName, variants] of Object.entries(batch.rivers)) {
-      const matches = geojson.features.filter((f) => variants.includes(f.properties?.tags?.name));
+      const matches = geojson.features.filter((f) => variants.includes(f.properties?.name));
       if (matches.length === 0) {
         report.unmatched.push(canonicalName);
         continue;
@@ -190,8 +185,6 @@ async function run() {
     }
 
     // write after every batch — a later batch failing doesn't lose earlier progress
-    report.completedBatches.push(batch.region);
-    report.batchErrors = report.batchErrors.filter((b) => b.region !== batch.region);
     fs.mkdirSync('build', { recursive: true });
     fs.writeFileSync(OUT_GEOJSON, JSON.stringify({ type: 'FeatureCollection', features: allFeatures }));
     fs.writeFileSync(OUT_REPORT, JSON.stringify(report, null, 2));
@@ -214,3 +207,9 @@ run().catch((err) => {
   console.error(err.message);
   process.exit(1);
 });
+FETCH_EOF
+
+node scripts/fetchRivers.js
+
+echo
+echo "Check build/rivers-overpass-report.json for matched/unmatched/multiCandidate before using build/rivers-overpass.geojson."

@@ -1,3 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Step 12 — fetchRivers.js is now resumable: it loads its own previous output and
+# skips any batch already in completedBatches instead of re-fetching everything from
+# scratch every run. Overpass has been rate-limiting/timing out on a rotating subset of
+# batches each run (normal server load, not a script bug) — this means you can just
+# re-run this same script repeatedly until every batch succeeds once, instead of
+# needing all 8 to succeed in a single run. Verified: a second run against a batch that
+# already succeeded makes zero network calls for it.
+#
+# To force a clean start instead of resuming: delete build/rivers-overpass.geojson and
+# build/rivers-overpass-report.json first.
+
+cat > scripts/fetchRivers.js << 'FETCH_EOF'
 // scripts/fetchRivers.js
 // Input:  none (queries OSM Overpass API directly)
 // Output: build/rivers-overpass.geojson (spec §4.7 step ⑥, rescoped to the 43 rivers
@@ -214,3 +229,10 @@ run().catch((err) => {
   console.error(err.message);
   process.exit(1);
 });
+FETCH_EOF
+
+node scripts/fetchRivers.js
+node scripts/mergeOverpassRivers.js
+
+echo
+echo "If any BATCHES THAT FAILED remain above, just run: bash step12-patch.sh again — it will only retry those."

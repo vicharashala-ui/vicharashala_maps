@@ -1,3 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Step 10 — rescoped Overpass fetch for the 43 rivers not in the govt shapefile.
+# Run from the project root in Git Bash. Overpass reachability confirmed from your
+# machine (curl -> 200), but this exact script has not been run against live Overpass
+# by anyone — run it and report back what happens (matched count, any batch failures).
+
+cat > scripts/fetchRivers.js << 'FETCH_EOF'
 // scripts/fetchRivers.js
 // Input:  none (queries OSM Overpass API directly)
 // Output: build/rivers-overpass.geojson (spec §4.7 step ⑥, rescoped to the 43 rivers
@@ -41,14 +50,10 @@ const BATCHES = [
     rivers: { Jhelum: ['Jhelum'], Ravi: ['Ravi'], Spiti: ['Spiti'], Zanskar: ['Zanskar'], Shyok: ['Shyok'] },
   },
   {
-    region: 'ganga_upper',
-    bbox: [22, 74, 31, 82], // MP, Rajasthan, UP-west, Uttarakhand
-    rivers: { 'Kali Sindh': ['Kali Sindh'], Ken: ['Ken'], 'Sarda (Sharda)': ['Sarda', 'Sharda'] },
-  },
-  {
-    region: 'ganga_bihar_plains',
-    bbox: [24, 84, 28, 89], // Bihar, north WB, Nepal border — densest-mapped river network in the batch set, smallest bbox on purpose
+    region: 'ganga_plains',
+    bbox: [22, 76, 31, 89], // MP, Rajasthan, UP, Uttarakhand, Bihar, north WB
     rivers: {
+      'Kali Sindh': ['Kali Sindh'], Ken: ['Ken'], 'Sarda (Sharda)': ['Sarda', 'Sharda'],
       'Burhi Gandak': ['Burhi Gandak', 'Budhi Gandak'], Kosi: ['Kosi', 'Koshi'],
       Mahananda: ['Mahananda'], Mechi: ['Mechi'], Kamla: ['Kamla', 'Kamla Balan'],
       Bagmati: ['Bagmati'], Rupnarayan: ['Rupnarayan', 'Rupnarayana'],
@@ -110,28 +115,16 @@ out geom;
 async function queryOverpass(query) {
   let lastError;
   for (const endpoint of OVERPASS_ENDPOINTS) {
-    process.stdout.write(`  querying ${endpoint}... `);
-    const controller = new AbortController();
-    // client-side backstop — [timeout:${TIMEOUT_S}] in the query only bounds Overpass's own
-    // processing time, not the HTTP request. Without this, a stalled connection (no error,
-    // no response, just silence) hangs fetch() forever with zero feedback — exactly what
-    // happened on the first real run against the mirror endpoint.
-    const timer = setTimeout(() => controller.abort(), (TIMEOUT_S + 20) * 1000);
     try {
       const res = await fetch(endpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'text/plain', Accept: '*/*', 'User-Agent': 'vicharashala-maps-fetchRivers/2.1' },
+        headers: { 'Content-Type': 'text/plain', Accept: '*/*', 'User-Agent': 'vicharashala-maps-fetchRivers/2.0' },
         body: query,
-        signal: controller.signal,
       });
-      clearTimeout(timer);
       if (!res.ok) throw new Error(`${res.status} ${res.statusText}\n${await res.text()}`);
-      console.log('ok');
       return await res.json();
     } catch (err) {
-      clearTimeout(timer);
-      const msg = err.name === 'AbortError' ? `client-side timeout after ${TIMEOUT_S + 20}s (no response at all)` : err.message;
-      console.log(`FAILED: ${msg.split('\n')[0]}`);
+      console.log(`  ${endpoint} failed: ${err.message.split('\n')[0]}`);
       lastError = err;
     }
   }
@@ -140,26 +133,10 @@ async function queryOverpass(query) {
 
 async function run() {
   const { default: osmtogeojson } = await import('osmtogeojson');
-
-  let allFeatures = [];
-  let report = { matched: [], unmatched: [], multiCandidate: [], batchErrors: [], completedBatches: [] };
-
-  // Resume instead of re-fetching everything — Overpass's rate limiting means not all
-  // batches reliably succeed in one run, and this script used to overwrite its own output
-  // from scratch every time, losing whatever had already succeeded. Delete build/rivers-
-  // overpass.geojson and build/rivers-overpass-report.json to force a clean start.
-  if (fs.existsSync(OUT_GEOJSON) && fs.existsSync(OUT_REPORT)) {
-    allFeatures = JSON.parse(fs.readFileSync(OUT_GEOJSON, 'utf-8')).features;
-    const prev = JSON.parse(fs.readFileSync(OUT_REPORT, 'utf-8'));
-    report = { ...report, ...prev, completedBatches: prev.completedBatches ?? [] };
-    console.log(`Resuming: ${report.completedBatches.length}/${BATCHES.length} batches already completed.`);
-  }
+  const allFeatures = [];
+  const report = { matched: [], unmatched: [], multiCandidate: [], batchErrors: [] };
 
   for (const batch of BATCHES) {
-    if (report.completedBatches.includes(batch.region)) {
-      console.log(`\n==> ${batch.region} — already completed, skipping`);
-      continue;
-    }
     console.log(`\n==> ${batch.region} (${Object.keys(batch.rivers).length} rivers)`);
     let osmData;
     try {
@@ -174,7 +151,7 @@ async function run() {
     console.log(`  ways returned: ${geojson.features.length}`);
 
     for (const [canonicalName, variants] of Object.entries(batch.rivers)) {
-      const matches = geojson.features.filter((f) => variants.includes(f.properties?.tags?.name));
+      const matches = geojson.features.filter((f) => variants.includes(f.properties?.name));
       if (matches.length === 0) {
         report.unmatched.push(canonicalName);
         continue;
@@ -190,8 +167,6 @@ async function run() {
     }
 
     // write after every batch — a later batch failing doesn't lose earlier progress
-    report.completedBatches.push(batch.region);
-    report.batchErrors = report.batchErrors.filter((b) => b.region !== batch.region);
     fs.mkdirSync('build', { recursive: true });
     fs.writeFileSync(OUT_GEOJSON, JSON.stringify({ type: 'FeatureCollection', features: allFeatures }));
     fs.writeFileSync(OUT_REPORT, JSON.stringify(report, null, 2));
@@ -214,3 +189,9 @@ run().catch((err) => {
   console.error(err.message);
   process.exit(1);
 });
+FETCH_EOF
+
+node scripts/fetchRivers.js
+
+echo
+echo "Check build/rivers-overpass-report.json for matched/unmatched/multiCandidate before using build/rivers-overpass.geojson."

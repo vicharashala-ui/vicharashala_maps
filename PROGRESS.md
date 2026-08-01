@@ -16,7 +16,7 @@ Package manager: **pnpm**. Environment: **native Windows** (Git Bash, no WSL).
 - Linux-only native tools (tippecanoe) aren't available on native Windows. Sandbox builds them and hands over the finished artifact instead.
 - Source data comes from `https://github.com/vicharashala-ui/ecoguesser.git`, a sibling project with already-processed PA data matching this spec almost field-for-field.
 
-## Current status: Step 9 COMPLETE — 3 more rivers recovered from the govt shapefile via better name-matching, plus a real duplicate-rivname data bug fixed; `research/rivers-index-reconciled.json` now has 63 govt-matched rivers, 43 still need geometry
+## Current status: Step 12 delivered, NOT YET RUN to completion — `scripts/fetchRivers.js` is now resumable (skips already-completed batches instead of re-fetching from scratch), and `scripts/mergeOverpassRivers.js` merges same-river OSM segments with a length-based contamination check. Overpass has been rate-limiting/timing out a rotating subset of the 8 batches on every run so far — none have all 8 succeeded in one pass yet. Keep re-running `step12-patch.sh` until `BATCHES THAT FAILED` is empty, then send back `build/rivers-overpass-merge-report.json`.
 
 ### rivers-index.json research + reconciliation: done
 Built via web research (batched by river system per spec §4.9), then reconciled against Step 5c/6's govt shapefile + HydroRIVERS data in Step 8. `research/rivers-index-reconciled.json` (106 entries) is the current working file — supersedes `rivers-index-draft.json`, which is kept only as a historical record of the pre-reconciliation research.
@@ -45,21 +45,34 @@ Built via web research (batched by river system per spec §4.9), then reconciled
 - Everything in spec §5 onward
 
 ## Next step
-Name-matching improvements are exhausted (Step 9) — checked all 43 remaining names against every one of the raw shapefile's 110 features (exact, substring, and Levenshtein-distance-2 fuzzy matching); no further real matches, only coincidental near-misses (e.g. Ravi~Mahi, Kosi~Musi — different rivers, distance 2 purely by chance). This 110-feature shapefile is a "major rivers only" dataset; the remaining 43 are mid-size peninsular/coastal/Himalayan rivers genuinely outside its scope, not a matching problem.
+Keep re-running `step12-patch.sh` until `BATCHES THAT FAILED` prints empty — it's now resumable (skips batches already recorded as completed in `build/rivers-overpass-report.json`, only retries the ones that failed), so this is just re-running the same command, not wasted work. Overpass's rate limiting/timeouts have hit a different subset of the 8 batches on every run so far (normal server load, not a script bug).
 
-**43 rivers still need geometry**: Jhelum, Ravi, Spiti, Zanskar, Shyok, Kali Sindh, Ken, Sarda (Sharda), Burhi Gandak, Kosi, Mahananda, Mechi, Kamla, Bagmati, Rupnarayan, Dibang, Dhansiri, Manas, Sankosh, Rangeet, Rushikulya, Amaravathi, Kabini, Hemavathi, Shimsha, Arkavathi, Bhavani, Vellar (Southern), Tamiraparani, Chaliyar, Pamba, Zuari, Mandovi, Purna, Girna, Vaitarna, Savitri, Vashisthi, Gurupur, Aghanashini, Damanganga, Swarnamukhi, Manimuktha.
+Once all 43 rivers have a `matched` or `unmatched` verdict and `build/rivers-overpass-merge-report.json` has run against the complete set:
+- **`flagged`** entries (contamination — length way off from researched value, like the known Purna collision) need a manual look at `build/rivers-overpass.geojson` before merging into the final geometry.
+- **`clean`** entries are ready to merge as-is.
+- **Still `unmatched`** after a complete run (currently includes Spiti, Manas, Sankosh, Tamiraparani, Manimuktha — may change once all batches complete) is the genuinely-not-in-OSM-within-this-bbox list — manual research/digitizing territory, not more pipeline engineering.
 
-**Overpass is the only remaining path.** Still blocked on confirming reachability — run this in Git Bash and report the result:
-```bash
-curl -s -o /dev/null -w "%{http_code}\n" --max-time 15 \
-  -X POST -H "Content-Type: text/plain" --data '[out:json][timeout:10];way["waterway"="river"]["name"="Zuari"](14.8,73.9,15.6,74.5);out geom;' \
-  https://overpass-api.de/api/interpreter
-```
-`200` = reachable, safe to invest in a full rewrite of `scripts/fetchRivers.js` (bbox instead of the country-wide `area["ISO3166-1"="IN"]` lookup that likely caused the earlier 504, batched by river system so one timeout doesn't lose everything, rescoped to just these 43). Anything else = report back and we go manual-research-only for whatever's left.
+After that: merge script combining the govt-shapefile geometry (Step 9, 63 rivers) + the Overpass geometry (this step) into one `build/rivers-matched-final.geojson`, then `prepareRivers.js` (spec §4.7 step ⑦ — simplify, compute bounds, produce final `public/data/rivers-index.json` + `rivers.pmtiles`).
 
 ---
 
 ## Completed steps log
+
+### Step 11-12 — merge script + made fetchRivers.js resumable (delivered as `step11-patch.sh`, superseded by `step12-patch.sh`)
+- **`scripts/mergeOverpassRivers.js`**: real runs showed most "multi-candidate" rivers (Ravi: 11 candidates, Ken: 16, Sarda: 37, etc.) are normal — OSM maps long rivers as many separate way segments, not one line, so many matches per name is expected, not a name collision. Rather than manually eyeball coordinates for ~23 rivers, this merges same-name segments into one feature and sums their length, comparing the total against the web-researched `length_km_india` already in `rivers-index-reconciled.json`. A total far off from the researched figure is the real contamination signal (confirmed against the known Purna case — two unrelated rivers share that name, per Step 9 — synthetic segments summing to 2x the researched length correctly flagged; a normal 3-segment river at 1.0x correctly passed). Thresholds: <0.4x or >1.6x expected flags for manual review.
+- **`fetchRivers.js` made resumable**: real runs showed a rotating subset of the 8 batches failing on rate-limits/timeouts on every single run so far — different batches each time, never all 8 in one pass. The script used to overwrite its entire output from scratch every run, so a batch that succeeded once could get lost if a later run of the whole script failed elsewhere before writing. Fixed to load its own previous `build/rivers-overpass.geojson`/`-report.json` on startup and skip any batch already in `completedBatches`, only retrying what previously failed. Verified: a second run against an already-completed batch makes zero network calls for it, and results accumulate correctly across runs (5 matched in run 1 + 3 more in run 2 = 8 total, not overwritten).
+- Net effect: this is no longer "run once and report the result" — it's "keep re-running until `BATCHES THAT FAILED` is empty," and each re-run only costs whatever didn't succeed yet.
+
+### Step 10 (in progress) — fetchRivers.js debugged against real Overpass, 2 real bugs found and fixed
+Overpass reachability confirmed from your machine: `curl` to `overpass-api.de` returned `200`. Rewrote `scripts/fetchRivers.js`: bbox instead of `area["ISO3166-1"="IN"]` (the country-wide area lookup makes Overpass compute the whole India polygon before it can filter anything — almost certainly the real cause of the original v1 504, not the name regex), batched into 8 regions (indus_himalaya / ganga_upper / ganga_bihar_plains / brahmaputra_ne / kaveri_south_tn / kerala_west / konkan_goa_tapi / karnataka_andhra_coastal — `ganga_plains` was split into two after its first real run 504'd, being the largest bbox over the densest-mapped river network in the set), `waterway~"river|stream"` not just `river`, known name variants baked into each batch's query, multi-candidate rivers (Vellar, etc.) flagged rather than silently resolved.
+
+First real runs against live Overpass surfaced two genuine bugs mocked testing hadn't caught:
+1. **No client-side timeout on the HTTP request.** `[timeout:60]` in the query only bounds Overpass's own processing time, not the connection itself — when the mirror endpoint stalled without ever responding, `fetch()` hung forever. Fixed with an `AbortController` (query timeout + 20s) and `querying <endpoint>...` progress logging so a slow response is distinguishable from a dead one. Verified by mocking a `fetch` that truly never resolves — confirmed both endpoints now abort cleanly instead of hanging.
+2. **`osmtogeojson@2.2.12` (the version actually pinned in this project) nests tags under `properties.tags.{key}`, not flattened onto `properties` directly.** The matcher read `properties.name` — always `undefined` — so real runs matched 0/43 despite Overpass correctly returning 127 real ways across 5 successful batches (server-side name filtering worked fine; purely a client-side property-path bug). My own earlier "passing" mocked tests used a different, newer `osmtogeojson` version (3.0.0-beta.5, pulled by a bare `npm install osmtogeojson` in my own test sandbox) that happens to flatten tags by default — that version mismatch is exactly why the bug wasn't caught before a real run. Fixed to read `properties.tags.name`, verified directly against a real sample response you sent (5/5 Purna features matched) and against a full mock run redone using the *correctly pinned* 2.2.12.
+
+**Lesson logged**: when mocking a library's output shape for testing, pin the exact version from the project's lockfile, not whatever a fresh install resolves — different versions can have different default behavior and the mock will validate against the wrong one, giving false confidence.
+
+Rate-limiting (429) and transient timeouts on various batches across runs so far look like normal Overpass flakiness, not script bugs — per-batch error isolation makes re-running cheap (small batches, no incremental skip-if-already-matched logic, but that's fine at this scale).
 
 ### Step 9 — 3 more rivers recovered + a duplicate-rivname data bug fixed (delivered as `step9-patch.sh`)
 You uploaded `rivers-govt-raw.geojson` (the converted, pre-matching intermediate — 110 features). Checked all 43-at-the-time unmatched river names against it with exact/substring/Levenshtein(≤2) fuzzy matching:
