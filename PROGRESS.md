@@ -46,9 +46,25 @@ Built via web research (batched by river system per spec §4.9), then reconciled
 - Everything in spec §5 onward
 
 ## Next step
-Wire river layers + `RiverInfoPanel` into the frontend (mirrors `ProtectedAreasLayer.tsx`/`PAInfoPanel.tsx` from Steps 1–4), using `public/tiles/rivers.pmtiles` + `public/data/rivers-index.json` + `public/data/rivers-id-map.json`. Separately, whenever convenient: real research to backfill `basin_area_india_km2` for the 33 rivers currently shipping `null`, and manual digitizing for the 21 deferred rivers.
+This session confirmed the repo's `src/components/*` had never actually received the Step 1–4 frontend work from memory — only `.gitkeep` placeholders and a bare scaffold `index.astro` were committed. Rebuilt the whole core-map frontend from scratch this session (Step 19, below). Next:
+1. Pull `step19-patch.sh`, run it, `pnpm dev`, smoke-test in a browser (this session only verified `astro check` + `pnpm build` succeed — no browser/visual QA was possible in the sandbox).
+2. Real research to backfill `basin_area_india_km2` for the 33 rivers currently shipping `null`, and manual digitizing for the 21 deferred rivers.
+3. Not yet built (separate, larger spec sections): search, browse lists, filters, compare mode, state panel, header/footer, SEO pages, `basins.json` + basin badges/colors, per-river detail pages (`rivers/{id}.json`), `search-index-pa.json`.
 
 ## Completed steps log
+
+### Step 19 — Core map frontend, built from scratch (delivered as `step19-patch.sh`)
+- **Found the gap**: `src/components/{Map,Panels,...}` only had `.gitkeep` files; `MapView.tsx`/`ProtectedAreasLayer.tsx`/`PAInfoPanel.tsx`/`LayerControl.tsx`/`MapControls.tsx` referenced from earlier sessions were never actually committed. Built all of them plus the river-layer work fresh, in one pass.
+- **Fixed a pre-existing bug**: `package.json`'s `devEngines.packageManager.version` was `"^11.17.0"` — pnpm 11.17's corepack shim rejects a version range there and refuses to run *any* command. Pinned to exact `"11.17.0"`.
+- New: `src/utils/{types,geoUtils,dataStore,mapStore,urlState}.ts`, `src/scripts/themeInit.raw.ts`, `src/components/Map/{MapView,RiversLayer,ProtectedAreasLayer,LayerControl,MapControls}.tsx`, `src/components/Panels/{RiverDetailPanel,PAInfoPanel}.tsx`
+- Rewrote: `src/styles/global.css` (full §5.6/§6.1 token set), `src/pages/index.astro` (inlines `rivers-index.json`+`states.json` per §5.3, mounts everything), `tsconfig.json` (added `jsxImportSource: "preact"` — required for `astro check` to resolve Preact JSX types at all; build itself worked without it since esbuild doesn't type-check)
+- `RiversLayer.tsx`: vector layer from `rivers.pmtiles`, click/hover, feature-state selected/highlighted (no `setFilter`), fly-to on select, cross-highlights associated PA polygons via `river_ids` (only if PA data already loaded — doesn't force-load it)
+- `ProtectedAreasLayer.tsx`: 5 categories × fill+outline layer (np/wls/tr/br/ramsar), NP>TR>BR>Ramsar>WLS click priority, DOM markers with dashed-circle CSS for the 2 boundary-less TRs, category toggles wired to `LayerControl` via nanostores
+- `RiverDetailPanel.tsx` / `PAInfoPanel.tsx`: cross-link each other via `river_ids`; river panel only shows fields that actually exist in `rivers-index.json` (no source/sink/tributaries/basin badge — needs `basins.json` + `rivers/{id}.json`, neither built yet)
+- **Bug caught by `astro check`, not by `pnpm build`**: assumed `pa-id-map.json` was `Record<string, number[]>` (mirroring `rivers-id-map.json`'s multi-segment shape); it's actually `Record<string, number>` — one PA is always one polygon feature, unlike rivers which can be split into segments. Fixed in both `ProtectedAreasLayer.tsx` and `RiversLayer.tsx`'s PA cross-highlight code.
+- Added `@astrojs/check` + `typescript@5.7.3` as devDependencies — `astro check` needs TS <7 for now (TS 7's native compiler doesn't expose the API the checker relies on yet); `pnpm build` itself is unaffected by TS version since Vite/esbuild only strips types
+- Verified against a clean checkout: `pnpm install` → `astro check` (0 errors) → `pnpm build` (succeeds) — not just the dev sandbox
+- **Not verified**: no browser/visual QA (sandbox has no display). Test `pnpm dev` and click through both panels, marker highlighting, and layer toggles before trusting this beyond "compiles and builds."
 
 ### Step 18 — rivers.pmtiles (delivered as a binary file + scripts/mergeOverpassRivers.js fix, not a patch script)
 - Installed tippecanoe 2.49.0 in sandbox (same version as Step 3, unavailable on native Windows), built from source (felt/tippecanoe fork)

@@ -1,3 +1,87 @@
 @import "tailwindcss";
+@import "@fontsource/sora/600.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/600.css";
 
-/* Theme tokens (§6.1) land here in a later step — light/dark CSS custom properties */
+:root {
+  --color-bg: #FFFFFF;          --color-surface: #F4F6F9;    --color-border: #D1D9E0;
+  --color-text: #111827;        --color-text-muted: #4B5563; --color-accent: #1D6FE8;
+  --color-accent-warm: #A45A05; --color-land: #D4E6C3;       --color-state-border: #577E43;
+  --color-water: #B3D4F0;
+
+  --color-pa-np-label: #1B5E20;
+  --color-pa-wls-label: #2A712D;
+  --color-pa-tr-label: #AF3E00;
+  --color-pa-br-label: #4527A0;
+  --color-pa-ramsar-label: #0D47A1;
+
+  --color-river-default: #2E75B6;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0F1923;          --color-surface: #1A2634;    --color-border: #2D4159;
+  --color-text: #E8EFF7;        --color-text-muted: #8FA6BF; --color-accent: #3B9EFF;
+  --color-accent-warm: #F5A623; --color-land: #1E3A2F;       --color-state-border: #539278;
+  --color-water: #0A1520;
+
+  --color-pa-np-label: #30B439;
+  --color-pa-wls-label: #3EB344;
+  --color-pa-tr-label: #FF7225;
+  --color-pa-br-label: #A58FE6;
+  --color-pa-ramsar-label: #639DF6;
+
+  --color-river-default: #5B9BD5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #0F1923;          --color-surface: #1A2634;    --color-border: #2D4159;
+    --color-text: #E8EFF7;        --color-text-muted: #8FA6BF; --color-accent: #3B9EFF;
+    --color-accent-warm: #F5A623; --color-land: #1E3A2F;       --color-state-border: #539278;
+    --color-water: #0A1520;
+
+    --color-pa-np-label: #30B439;
+    --color-pa-wls-label: #3EB344;
+    --color-pa-tr-label: #FF7225;
+    --color-pa-br-label: #A58FE6;
+    --color-pa-ramsar-label: #639DF6;
+
+    --color-river-default: #5B9BD5;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.map-container {
+  touch-action: none;
+}
+
+/* Boundary-less TR marker (§4.6) */
+.pa-marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px dashed var(--color-pa-tr-label);
+  background: transparent;
+  cursor: pointer;
+}
+.pa-marker.highlighted {
+  background: color-mix(in srgb, var(--color-pa-tr-label) 35%, transparent);
+}
+
+.panel-slide-in {
+  animation: panel-slide-in 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes panel-slide-in {
+  from { transform: translateX(16px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel-slide-in { animation: none; }
+}

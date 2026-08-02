@@ -1,13 +1,33 @@
 ---
+import { readFileSync } from 'node:fs';
 import '../styles/global.css';
+import themeInit from '../scripts/themeInit.raw.ts?raw';
+import MapView from '../components/Map/MapView';
+import LayerControl from '../components/Map/LayerControl';
+import MapControls from '../components/Map/MapControls';
+import RiverDetailPanel from '../components/Panels/RiverDetailPanel';
+import PAInfoPanel from '../components/Panels/PAInfoPanel';
+
+const riversIndex = JSON.parse(readFileSync('public/data/rivers-index.json', 'utf-8'));
+const states = JSON.parse(readFileSync('public/data/states.json', 'utf-8'));
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vicharashala Maps</title>
+    <title>Vicharashala Maps — Rivers &amp; Protected Areas of India</title>
+    <script is:inline set:html={themeInit.trim()}></script>
   </head>
   <body>
-    <h1 class="text-2xl font-bold p-4">Vicharashala Maps — scaffold OK</h1>
+    <script is:inline type="application/json" id="core-data-rivers" set:html={JSON.stringify(riversIndex)} />
+    <script is:inline type="application/json" id="core-data-states" set:html={JSON.stringify(states)} />
+
+    <main class="h-screen w-screen relative overflow-hidden">
+      <MapView client:load />
+      <LayerControl client:load />
+      <MapControls client:load />
+      <RiverDetailPanel client:load />
+      <PAInfoPanel client:load />
+    </main>
   </body>
 </html>
