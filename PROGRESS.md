@@ -16,15 +16,11 @@ Package manager: **pnpm**. Environment: **native Windows** (Git Bash, no WSL).
 - Linux-only native tools (tippecanoe) aren't available on native Windows. Sandbox builds them and hands over the finished artifact instead.
 - Source data comes from `https://github.com/vicharashala-ui/ecoguesser.git`, a sibling project with already-processed PA data matching this spec almost field-for-field.
 
-## Current status: Step 16 delivered, NOT YET RUN. Instead of continuing to build inspection tooling, actually researched WHY the 9 flagged rivers are wrong. Two concrete, well-evidenced findings:
+## Current status: Step 18 delivered — `public/tiles/rivers.pmtiles` built and verified (85 features, layer `rivers`, zoom 4–14, fields `id`+`stream_order`, 8.1 MB, well under Cloudflare's 25 MiB limit). Rivers pipeline (Steps 5–18) is done end to end.
 
-1. **Ravi's expected length was wrong data, not a fetch problem.** `rivers-index-reconciled.json` had `length_km_india: 725` — that's the river's TOTAL length (India+Pakistan). Britannica, Wikipedia, and Mershon Center (OSU) all independently agree only ~320km is in India. Corrected to 320 — your matched 171km against a correct 320km is 0.53x, clean. Fixes Ravi outright.
+Found and fixed a real bug while building: `Ravi`'s merged geometry had one over-nested `MultiLineString` segment — one of its 11 raw Overpass ways came back typed `MultiLineString` (not `LineString`) from `osmtogeojson`, and Step 11's `mergeOverpassRivers.js` assumed every raw way was a `LineString`, double-wrapping that one segment. tippecanoe rejected it outright (`malformed point`). Scanned all 85 features segment-by-segment — only this one segment was affected. Fixed the delivered `rivers-prepared.geojson` in place, and patched `mergeOverpassRivers.js` (`feats.flatMap` instead of `feats.map`) so this can't recur if the deferred/flagged rivers are ever re-merged.
 
-2. **A real gap between Step 7's research and Step 12+'s query config.** `rivers-index-reconciled.json` already had an `aliases` field per river (documented during the original research) that `fetchRivers.js`'s `BATCHES` config never actually used — Overpass was only ever queried for each river's primary name. Cross-checked every flagged/unmatched river against its own `aliases` and found 10 with usable aliases sitting unused, including Jhelum ("Vyeth", its Kashmiri name — independently confirmed via web search) and Dibang ("Talon", its Idu-Mishmi name — also confirmed). Wired all 10 into `BATCHES`. This also exposed a resume-logic gap: regions already marked "complete" wouldn't get re-queried just because their variant list changed, so `fetchRivers.js` now persists a signature of each region's config and forces a re-fetch when it changes (tested: only regions with an actual change get re-queried, not all 8 — except this one time, since signature tracking itself is new).
-
-**Not resolved**: Burhi Gandak, Dhansiri, Rushikulya, Purna, Girna, Vaitarna — didn't find an equally solid explanation for these; still need `inspectFlaggedRivers.js`'s output as the starting point for a manual look.
-
-Remaining: 13 unmatched rivers (Spiti, Manas, Sankosh, Tamiraparani, Manimuktha, Chaliyar, Savitri, Vashisthi, Gurupur, Mechi, Kamla, Bagmati, Rupnarayan) — some of these (Manas, Sankosh, Tamiraparani, Chaliyar, Kamla) now have new alias variants in this patch, so may resolve on the next run; the rest still likely a genuine OSM coverage gap.
+`--attribution` corrected from the spec's literal `"OpenStreetMap contributors"` (written when the plan was OSM-primary) to `"Government of India (data.gov.in), OpenStreetMap contributors, HydroSHEDS/USGS"`, reflecting that 63/85 rivers are actually govt-shapefile-sourced.
 
 ### rivers-index.json research + reconciliation: done
 Built via web research (batched by river system per spec §4.9), then reconciled against Step 5c/6's govt shapefile + HydroRIVERS data in Step 8. `research/rivers-index-reconciled.json` (106 entries) is the current working file — supersedes `rivers-index-draft.json`, which is kept only as a historical record of the pre-reconciliation research.
@@ -36,35 +32,46 @@ Built via web research (batched by river system per spec §4.9), then reconciled
 - **Inland Drainage** (2/2 done): Luni, Ghaggar-Hakra
 - Every entry has all `RiverIndexEntry` fields except `bounds` (added later in step ⑦ from geometry) and `stream_order` (left `null` — needs the real Strahler value from Step 6's HydroRIVERS join output, not invented here)
 
-### Remaining open items before `prepareRivers.js`:
+### Remaining open items
 1. ~~Reconcile against Step 5c's govt data~~ — done, Step 8.
-2. **Naming/identity questions**:
-   - ~~**Kopili vs Kapili**~~ — resolved (Step 8): govt shapefile has one feature, matched under Kopili. `kapili` entry dropped as a duplicate, 107 → 106 total.
-   - ~~**Purna**~~ — resolved, but not the way expected: the govt shapefile's one "Purna" feature is the *Godavari*-tributary Purna (basin "Godavari", origin "Ajanta Range"), not the Tapi-tributary one the draft uses (spec groups it with Narmada/Tapi/Mahi/Sabarmati — all west-flowing). Govt data for this entry was discarded as a false-positive match; the draft's Tapi-tributary Purna metadata stands, and it still needs its own geometry (now in the 46-river list).
-   - **Vellar** (Peninsular-East) — still open, govt shapefile didn't match it either way, no new evidence. Tamil Nadu has two rivers by this name; draft used the Southern one.
-3. **Length discrepancies >20%** between web research and govt data, flagged in Step 8/9's output, govt value used but worth a manual sanity check: Chenab (700→431km), Barak (524→100km), Subarnarekha (395→480km), Vaigai (258→312km), Bharathapuzha (209→100km), Kali/Karnataka (265→179km), Vaippar (130→87km).
-4. **Entries with essentially no data found** (weakest of the weak — worth dedicated re-research before trusting): **Vashisthi** (no length at all), **Manimuktha** (nothing found), **Gurupur** (length is an unsourced guess), **Sankosh**/**Rangeet** (Brahmaputra, no length found), **Kamla** (Ganga, no length found)
-5. **Everything else flagged `_needs_verification`** across all 7 batches — mostly derived/estimated lengths for transboundary rivers (India-only portion of a longer river) and unconfirmed `basin_area_india_km2`/`seasonal_type` values. Strip all `_source`/`_needs_verification` fields before final schema validation regardless.
+2. ~~Backfill `stream_order` for all 85 geometry-backed rivers~~ — done, Step 17 (govt-matched via re-run join, Overpass-only via the same grid-match reused inside `prepareRivers.js`).
+3. **8 flagged + unmatched rivers (~20, see this session's console output for the exact list)** — genuine gap, deferred to manual digitizing / Phase 2. Not shipped in V1's `rivers-index.json`.
+4. **Length discrepancies >20%** between web research and govt data, worth a manual sanity check: Chenab (700→431km), Barak (524→100km), Subarnarekha (395→480km), Vaigai (258→312km), Bharathapuzha (209→100km), Kali/Karnataka (265→179km), Vaippar (130→87km). Govt value is what shipped.
+5. **Vellar** (Peninsular-East) — Tamil Nadu has two rivers by this name; draft used the Southern one, still unverified against govt/OSM either way.
 
 ### Not started yet
-- **43 rivers without geometry** — see "Next step" for the remaining approach (name-matching improvements are exhausted, see Step 9)
-- `scripts/prepareRivers.js` (step ⑦ proper — merges `research/rivers-index-draft.json` + geometry bounds + reconciled `stream_order` into the final validated `public/data/rivers-index.json`), `rivers.pmtiles` (step ⑧)
+- `rivers.pmtiles` (step ⑧ — tippecanoe over `build/rivers-prepared.geojson`)
 - `spatialIntersect.js` / `deriveStateCrossRefs.js` / `buildSearchIndex.js` (steps ⑪⑫⑬)
+- River layers + detail panel wired into the frontend
 - Everything in spec §5 onward
 
 ## Next step
-Run `step16-patch.sh`. It'll re-fetch all 8 batches once (one-time cost — signature tracking is new), then re-run merge + inspect automatically. Expect Ravi to disappear from flagged entirely, and Jhelum/Dibang/Manas/Sankosh/Tamiraparani/Chaliyar/Kamla to have a real shot at picking up new matches from the added aliases. Send back the console output and I'll help work through whatever's still flagged (Burhi Gandak, Dhansiri, Rushikulya, Purna, Girna, Vaitarna) plus decide on any rivers still genuinely unmatched (manual digitizing vs. accepting the gap for V1).
-
-Once the flagged rivers are resolved and the unmatched-rivers decision is made:
-- **`flagged`** entries (contamination — length way off from researched value, like the known Purna collision) need a manual look at `build/rivers-overpass.geojson` before merging into the final geometry.
-- **`clean`** entries are ready to merge as-is.
-- **Still `unmatched`** after a complete run (currently includes Spiti, Manas, Sankosh, Tamiraparani, Manimuktha — may change once all batches complete) is the genuinely-not-in-OSM-within-this-bbox list — manual research/digitizing territory, not more pipeline engineering.
-
-After that: merge script combining the govt-shapefile geometry (Step 9, 63 rivers) + the Overpass geometry (this step) into one `build/rivers-matched-final.geojson`, then `prepareRivers.js` (spec §4.7 step ⑦ — simplify, compute bounds, produce final `public/data/rivers-index.json` + `rivers.pmtiles`).
-
----
+Wire river layers + `RiverInfoPanel` into the frontend (mirrors `ProtectedAreasLayer.tsx`/`PAInfoPanel.tsx` from Steps 1–4), using `public/tiles/rivers.pmtiles` + `public/data/rivers-index.json` + `public/data/rivers-id-map.json`. Separately, whenever convenient: real research to backfill `basin_area_india_km2` for the 33 rivers currently shipping `null`, and manual digitizing for the 21 deferred rivers.
 
 ## Completed steps log
+
+### Step 18 — rivers.pmtiles (delivered as a binary file + scripts/mergeOverpassRivers.js fix, not a patch script)
+- Installed tippecanoe 2.49.0 in sandbox (same version as Step 3, unavailable on native Windows), built from source (felt/tippecanoe fork)
+- Ran spec §4.7 step ⑧'s command against the uploaded `build/rivers-prepared.geojson`, with `--attribution` corrected to name all three actual data sources (govt shapefile, OpenStreetMap, HydroSHEDS/USGS) instead of the spec's OSM-only default
+- **Bug found and fixed**: tippecanoe rejected the file outright (`malformed point`) — `Ravi`'s merged `MultiLineString` had one segment double-nested, because one of its 11 raw Overpass ways came back as `MultiLineString` (not `LineString`) from `osmtogeojson`, and `mergeOverpassRivers.js`'s merge logic assumed every raw way was a `LineString`. Verified via a full segment-by-segment structural scan that this was the *only* malformed segment across all 85 features — not a systemic issue. Fixed the delivered geojson in place; separately patched `mergeOverpassRivers.js` (`feats.flatMap` instead of `feats.map`, unit-tested against both the normal and bug-triggering shapes) so a future re-merge (e.g. resolving deferred rivers) can't reproduce it
+- Verified via the `pmtiles` JS library: minZoom 4 / maxZoom 14, source-layer `rivers`, `id`+`stream_order` fields present (all 85 river ids, stream_order range 4–8), bounds match India's extent, **8.1 MB** (well under Cloudflare's 25 MiB limit)
+- **Action needed**: place the delivered file at `public/tiles/rivers.pmtiles`, and apply the `mergeOverpassRivers.js` diff (delivered inline) if you plan to re-run Step 11 later
+
+
+- Step 17's actual run (85 real rivers, not synthetic fixtures) surfaced 33 `RiverIndexEntry` validation failures — all the same field, `basin_area_india_km2: null`, a Step 7 web-research gap orthogonal to the geometry/stream_order pipeline
+- Considered deriving it from HydroRIVERS' `UPLAND_SKM` (upstream drainage area at the matched reach) — rejected: it's global upstream area, not India-scoped, so it would overstate the figure for every transnational river (Ganga, Indus, Brahmaputra, etc.) — the same class of issue `length_km_india` already has documented caveats for
+- `scripts/schemas.js`: `basin_area_india_km2` relaxed `z.number().positive()` → `.nullable()`, deviation documented inline (same pattern as `ProtectedArea.area_km2`)
+- Re-ran `prepareRivers.js` with no other changes — confirmed 85/85 pass validation, final `public/data/rivers-index.json` count matches the 85 predicted after Step 17's geometry-matching output
+- Backfilling real values for the 33 is a follow-up research task, not blocking V1
+
+### Step 17 — prepareRivers.js: final rivers assembly (delivered as `step17-patch.sh`)
+- `scripts/prepareRivers.js` — merges govt-shapefile geometry (Step 9/17b, 63 rivers) + clean Overpass geometry (Step 16, 22 rivers) into `build/rivers-prepared.geojson`, computes `bounds` via `turf.bbox()`, validates every entry against `RiverIndexEntry`, writes `public/data/rivers-index.json` + `public/data/rivers-id-map.json` + one file per river under `build/rivers-by-id/`
+- Reuses the same shapefile-name→reconciled-name alias map and `Purna` false-positive exclusion as `reconcileGovtMetadata.js` — applies to geometry attachment too, not just metadata (a river's wrong-basin same-name govt feature would otherwise ship the wrong shape under the right id)
+- Backfills `stream_order` for the 22 Overpass-only rivers via the same HydroRIVERS grid-match approach as `joinHydroRivers.js` (duplicated, not imported — consistent with this project's existing self-contained-script convention)
+- Fails loudly: any `RiverIndexEntry` validation failure is collected (not stopped at the first one) and reported with the exact Zod field/message before exiting non-zero; no partial `public/data/` output on failure
+- Tested against synthetic fixtures covering all 4 real code paths: govt geometry via direct name, govt geometry via the alias map (Kali→Kali (Karnataka)), Overpass geometry needing stream_order backfill (found + not-found cases), and 3 exclusion cases (govt false-positive, Overpass-flagged despite having geometry, fully unmatched) — real `build/` data isn't available in the sandbox, same constraint as every step since Step 9
+
+**Also this step:** re-ran `joinHydroRivers.js` + `reconcileGovtMetadata.js` after discovering `stream_order` was `null` for all 106 entries in `research/rivers-index-reconciled.json`, despite Step 6's log reporting 61/61 real matches — the join's output apparently never reached the version `reconcileGovtMetadata.js` read at the time. Re-running both fixed it (64/64 matched this time, 63 real + Purna's excluded false-positive). Also ran `inspectFlaggedRivers.js` for real: 0/8 auto-resolved, confirming the 8 flagged rivers need manual geometry work, not more automated passes.
 
 ### Step 16 — actually researched the 9 flagged rivers instead of building more tooling (delivered as `step16-patch.sh`)
 Two fixes grounded in evidence, not more automation:

@@ -54,7 +54,15 @@ function run() {
     merged.push({
       type: 'Feature',
       properties: { name, segment_count: feats.length, total_length_km: Math.round(totalLength * 10) / 10 },
-      geometry: feats.length === 1 ? feats[0].geometry : { type: 'MultiLineString', coordinates: feats.map((f) => f.geometry.coordinates) },
+      geometry: feats.length === 1 ? feats[0].geometry : {
+        type: 'MultiLineString',
+        // osmtogeojson occasionally returns a raw way as MultiLineString (not LineString) —
+        // e.g. Ravi/Step 17c. Naively pushing f.geometry.coordinates for every feat double-nests
+        // those, producing a malformed MultiLineString tippecanoe rejects. Flatten one level.
+        coordinates: feats.flatMap((f) =>
+          f.geometry.type === 'MultiLineString' ? f.geometry.coordinates : [f.geometry.coordinates]
+        ),
+      },
     });
 
     if (expected == null) {

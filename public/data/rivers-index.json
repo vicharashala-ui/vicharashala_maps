@@ -1,0 +1,2273 @@
+[
+  {
+    "id": "indus",
+    "name": "Indus",
+    "local_name_hi": "सिन्धु",
+    "basin": "indus-basin",
+    "length_km_india": 709,
+    "basin_area_india_km2": 321289,
+    "drainage_type": "himalayan",
+    "stream_order": 8,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "ladakh"
+    ],
+    "aliases": [
+      "Sindhu",
+      "Singi Khamban"
+    ],
+    "bounds": [
+      73.77077043034254,
+      32.636536070492134,
+      79.53821972591814,
+      35.85081830154183
+    ]
+  },
+  {
+    "id": "chenab",
+    "name": "Chenab",
+    "local_name_hi": "चिनाब",
+    "basin": "indus-basin",
+    "length_km_india": 431.4,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "himachal-pradesh",
+      "jammu-and-kashmir"
+    ],
+    "aliases": [
+      "Chandrabhaga",
+      "Asikni"
+    ],
+    "bounds": [
+      74.52253131117732,
+      32.5505695933755,
+      76.97652394875051,
+      33.388611960437444
+    ]
+  },
+  {
+    "id": "ravi",
+    "name": "Ravi",
+    "local_name_hi": "रावी",
+    "basin": "indus-basin",
+    "length_km_india": 725,
+    "basin_area_india_km2": 14442,
+    "drainage_type": "himalayan",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "himachal-pradesh",
+      "punjab"
+    ],
+    "aliases": [
+      "Iravati",
+      "Purushni"
+    ],
+    "bounds": [
+      74.7822782,
+      31.932843,
+      76.4495015,
+      32.6207819
+    ]
+  },
+  {
+    "id": "beas",
+    "name": "Beas",
+    "local_name_hi": "ब्यास",
+    "basin": "indus-basin",
+    "length_km_india": 470,
+    "basin_area_india_km2": 20303,
+    "drainage_type": "himalayan",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "himachal-pradesh",
+      "punjab"
+    ],
+    "aliases": [
+      "Vipasha",
+      "Vipas",
+      "Hyphasis"
+    ],
+    "bounds": [
+      74.95016487168179,
+      31.147332683277615,
+      77.24799993759588,
+      32.37295160552816
+    ]
+  },
+  {
+    "id": "sutlej",
+    "name": "Sutlej",
+    "local_name_hi": "सतलुज",
+    "basin": "indus-basin",
+    "length_km_india": 1050,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "himachal-pradesh",
+      "punjab"
+    ],
+    "aliases": [
+      "Satluj",
+      "Satadru",
+      "Zungbal"
+    ],
+    "bounds": [
+      74.54535312496029,
+      30.956794887033652,
+      78.73961608289386,
+      31.843136593880626
+    ]
+  },
+  {
+    "id": "zanskar",
+    "name": "Zanskar",
+    "local_name_hi": "जांस्कर",
+    "basin": "indus-basin",
+    "length_km_india": 134,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "ladakh"
+    ],
+    "aliases": [],
+    "bounds": [
+      76.8414333,
+      33.5168359,
+      77.3319365,
+      34.1654572
+    ]
+  },
+  {
+    "id": "shyok",
+    "name": "Shyok",
+    "local_name_hi": "श्योक",
+    "basin": "indus-basin",
+    "length_km_india": 400,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 7,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "ladakh"
+    ],
+    "aliases": [
+      "Shayok"
+    ],
+    "bounds": [
+      77.6176722,
+      34.1264559,
+      78.334461,
+      35.3526829
+    ]
+  },
+  {
+    "id": "ganga",
+    "name": "Ganga",
+    "local_name_hi": "गंगा",
+    "basin": "ganga-basin",
+    "length_km_india": 2525,
+    "basin_area_india_km2": 861452,
+    "drainage_type": "himalayan",
+    "stream_order": 8,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": true,
+    "transnational": true,
+    "states": [
+      "uttarakhand",
+      "uttar-pradesh",
+      "bihar",
+      "jharkhand",
+      "west-bengal"
+    ],
+    "aliases": [
+      "Ganges",
+      "Ganga Mata"
+    ],
+    "bounds": [
+      78.03045935028754,
+      24.556482584180397,
+      88.16130121003667,
+      30.145455810237248
+    ]
+  },
+  {
+    "id": "bhagirathi",
+    "name": "Bhagirathi",
+    "local_name_hi": "भागीरथी",
+    "basin": "ganga-basin",
+    "length_km_india": 229.1,
+    "basin_area_india_km2": 6921,
+    "drainage_type": "himalayan",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "uttarakhand"
+    ],
+    "aliases": [],
+    "bounds": [
+      78.31467435063402,
+      30.145455810237248,
+      79.25203598850842,
+      31.047409290960296
+    ]
+  },
+  {
+    "id": "alaknanda",
+    "name": "Alaknanda",
+    "local_name_hi": "अलकनंदा",
+    "basin": "ganga-basin",
+    "length_km_india": 206.4,
+    "basin_area_india_km2": 10882,
+    "drainage_type": "himalayan",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "uttarakhand"
+    ],
+    "aliases": [],
+    "bounds": [
+      78.59742698346808,
+      30.143258397438387,
+      79.57664852602751,
+      30.8196478547323
+    ]
+  },
+  {
+    "id": "yamuna",
+    "name": "Yamuna",
+    "local_name_hi": "यमुना",
+    "basin": "ganga-basin",
+    "length_km_india": 1376,
+    "basin_area_india_km2": 366223,
+    "drainage_type": "himalayan",
+    "stream_order": 8,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "uttarakhand",
+      "himachal-pradesh",
+      "haryana",
+      "delhi",
+      "uttar-pradesh"
+    ],
+    "aliases": [
+      "Jamuna",
+      "Jumna"
+    ],
+    "bounds": [
+      77.09580825397633,
+      25.25677421362755,
+      81.89069052499315,
+      31.02644107364941
+    ]
+  },
+  {
+    "id": "chambal",
+    "name": "Chambal",
+    "local_name_hi": "चंबल",
+    "basin": "ganga-basin",
+    "length_km_india": 988.5,
+    "basin_area_india_km2": 144591,
+    "drainage_type": "peninsular",
+    "stream_order": 7,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "rajasthan",
+      "uttar-pradesh"
+    ],
+    "aliases": [
+      "Charmanyavati"
+    ],
+    "bounds": [
+      75.2656294186882,
+      22.48168138455151,
+      79.24829977444949,
+      26.870061913024653
+    ]
+  },
+  {
+    "id": "banas",
+    "name": "Banas",
+    "local_name_hi": "बनास",
+    "basin": "ganga-basin",
+    "length_km_india": 550,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": 7,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "rajasthan"
+    ],
+    "aliases": [],
+    "bounds": [
+      73.47760748160958,
+      24.859022964804577,
+      76.73951453746561,
+      26.216460917308975
+    ]
+  },
+  {
+    "id": "kali-sindh",
+    "name": "Kali Sindh",
+    "local_name_hi": "काली सिंध",
+    "basin": "ganga-basin",
+    "length_km_india": 550,
+    "basin_area_india_km2": 48492,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "rajasthan"
+    ],
+    "aliases": [
+      "Kali Sindhu"
+    ],
+    "bounds": [
+      76.1608336,
+      22.6683423,
+      76.4700077,
+      25.5351348
+    ]
+  },
+  {
+    "id": "parbati",
+    "name": "Parbati",
+    "local_name_hi": "पार्वती",
+    "basin": "ganga-basin",
+    "length_km_india": 444.2,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "rajasthan"
+    ],
+    "aliases": [],
+    "bounds": [
+      76.47283808297156,
+      22.790213396145333,
+      77.2254316842215,
+      25.85304314552687
+    ]
+  },
+  {
+    "id": "betwa",
+    "name": "Betwa",
+    "local_name_hi": "बेतवा",
+    "basin": "ganga-basin",
+    "length_km_india": 590,
+    "basin_area_india_km2": 46580,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "uttar-pradesh"
+    ],
+    "aliases": [
+      "Vetravati"
+    ],
+    "bounds": [
+      77.35069594057963,
+      23.037520739152747,
+      80.21453290940721,
+      25.954284857284005
+    ]
+  },
+  {
+    "id": "ken",
+    "name": "Ken",
+    "local_name_hi": "केन",
+    "basin": "ganga-basin",
+    "length_km_india": 427,
+    "basin_area_india_km2": 28058,
+    "drainage_type": "peninsular",
+    "stream_order": 8,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "uttar-pradesh"
+    ],
+    "aliases": [
+      "Karnavati"
+    ],
+    "bounds": [
+      79.825495,
+      23.8982047,
+      80.5268025,
+      25.7776994
+    ]
+  },
+  {
+    "id": "son",
+    "name": "Son",
+    "local_name_hi": "सोन",
+    "basin": "ganga-basin",
+    "length_km_india": 784,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "chhattisgarh",
+      "uttar-pradesh",
+      "jharkhand",
+      "bihar"
+    ],
+    "aliases": [
+      "Sone",
+      "Sonbhadra"
+    ],
+    "bounds": [
+      81.00285471291238,
+      22.691992859576125,
+      84.87313927242172,
+      25.705411884759577
+    ]
+  },
+  {
+    "id": "gomti",
+    "name": "Gomti",
+    "local_name_hi": "गोमती",
+    "basin": "ganga-basin",
+    "length_km_india": 960,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 8,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "uttar-pradesh"
+    ],
+    "aliases": [
+      "Gumti",
+      "Gomati"
+    ],
+    "bounds": [
+      80.06758185476069,
+      25.491925717643827,
+      83.17183763955266,
+      28.620575271236824
+    ]
+  },
+  {
+    "id": "ghaghra",
+    "name": "Ghaghra (Karnali)",
+    "local_name_hi": "घाघरा",
+    "basin": "ganga-basin",
+    "length_km_india": 503,
+    "basin_area_india_km2": 57578,
+    "drainage_type": "himalayan",
+    "stream_order": 8,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "uttar-pradesh",
+      "bihar"
+    ],
+    "aliases": [
+      "Karnali",
+      "Manchu"
+    ],
+    "bounds": [
+      81.01595322248862,
+      25.73826536008539,
+      84.79178997303465,
+      28.420637560557953
+    ]
+  },
+  {
+    "id": "sarda",
+    "name": "Sarda (Sharda)",
+    "local_name_hi": "शारदा",
+    "basin": "ganga-basin",
+    "length_km_india": 350,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 7,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "uttarakhand",
+      "uttar-pradesh"
+    ],
+    "aliases": [
+      "Kali",
+      "Mahakali"
+    ],
+    "bounds": [
+      80.0942087,
+      27.6393885,
+      81.285975,
+      30.1262914
+    ]
+  },
+  {
+    "id": "gandak",
+    "name": "Gandak",
+    "local_name_hi": "गंडक",
+    "basin": "ganga-basin",
+    "length_km_india": 260,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 7,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "uttar-pradesh",
+      "bihar"
+    ],
+    "aliases": [
+      "Gandaki",
+      "Narayani",
+      "Sapt Gandaki"
+    ],
+    "bounds": [
+      83.96470543454804,
+      25.64481649473058,
+      85.28242514895892,
+      27.182874766559497
+    ]
+  },
+  {
+    "id": "kosi",
+    "name": "Kosi",
+    "local_name_hi": "कोसी",
+    "basin": "ganga-basin",
+    "length_km_india": 260,
+    "basin_area_india_km2": 11410,
+    "drainage_type": "himalayan",
+    "stream_order": 7,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "bihar"
+    ],
+    "aliases": [
+      "Koshi",
+      "Saptakoshi",
+      "Sorrow of Bihar"
+    ],
+    "bounds": [
+      86.438713,
+      25.4055708,
+      87.2586201,
+      26.9102464
+    ]
+  },
+  {
+    "id": "mahananda",
+    "name": "Mahananda",
+    "local_name_hi": "महानंदा",
+    "basin": "ganga-basin",
+    "length_km_india": 324,
+    "basin_area_india_km2": 11530,
+    "drainage_type": "himalayan",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "west-bengal",
+      "bihar"
+    ],
+    "aliases": [],
+    "bounds": [
+      87.9849467,
+      24.4906245,
+      88.3062718,
+      25.3421337
+    ]
+  },
+  {
+    "id": "damodar",
+    "name": "Damodar",
+    "local_name_hi": "दामोदर",
+    "basin": "ganga-basin",
+    "length_km_india": 592,
+    "basin_area_india_km2": 25820,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "jharkhand",
+      "west-bengal"
+    ],
+    "aliases": [
+      "River of Sorrows",
+      "Damuda"
+    ],
+    "bounds": [
+      84.66737282933904,
+      22.280578271576072,
+      88.09519596136906,
+      23.77133833119507
+    ]
+  },
+  {
+    "id": "hooghly",
+    "name": "Hooghly",
+    "local_name_hi": "हुगली",
+    "basin": "ganga-basin",
+    "length_km_india": 260,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "mixed",
+    "navigable": true,
+    "transnational": false,
+    "states": [
+      "west-bengal"
+    ],
+    "aliases": [
+      "Bhagirathi-Hooghly"
+    ],
+    "bounds": [
+      87.90662507114797,
+      21.617535606166282,
+      88.51388332406779,
+      23.410745391892515
+    ]
+  },
+  {
+    "id": "barakar",
+    "name": "Barakar",
+    "local_name_hi": "बराकर",
+    "basin": "ganga-basin",
+    "length_km_india": 291.3,
+    "basin_area_india_km2": 6159,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "jharkhand",
+      "west-bengal"
+    ],
+    "aliases": [],
+    "bounds": [
+      85.29610443065005,
+      23.690933445416203,
+      86.82527126446439,
+      24.35441547426065
+    ]
+  },
+  {
+    "id": "ajay",
+    "name": "Ajay",
+    "local_name_hi": "अजय",
+    "basin": "ganga-basin",
+    "length_km_india": 308.4,
+    "basin_area_india_km2": 6000,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "bihar",
+      "jharkhand",
+      "west-bengal"
+    ],
+    "aliases": [],
+    "bounds": [
+      86.29661914512434,
+      23.54173521349504,
+      88.13406588557294,
+      24.525749584633708
+    ]
+  },
+  {
+    "id": "brahmaputra",
+    "name": "Brahmaputra",
+    "local_name_hi": "ब्रह्मपुत्र",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 916,
+    "basin_area_india_km2": 194413,
+    "drainage_type": "himalayan",
+    "stream_order": 8,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": true,
+    "transnational": true,
+    "states": [
+      "arunachal-pradesh",
+      "assam"
+    ],
+    "aliases": [
+      "Tsangpo",
+      "Yarlung Tsangpo",
+      "Siang",
+      "Dihang"
+    ],
+    "bounds": [
+      89.84631240391785,
+      25.714658761413023,
+      95.05865167255253,
+      27.586808342973157
+    ]
+  },
+  {
+    "id": "lohit",
+    "name": "Lohit",
+    "local_name_hi": "लोहित",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 200,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 8,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "arunachal-pradesh",
+      "assam"
+    ],
+    "aliases": [
+      "Zayul Chu"
+    ],
+    "bounds": [
+      95.06251093844085,
+      27.53922008551963,
+      97.03797597084552,
+      28.35242468020038
+    ]
+  },
+  {
+    "id": "subansiri",
+    "name": "Subansiri",
+    "local_name_hi": "सुबानसिरी",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 382,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 7,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "arunachal-pradesh",
+      "assam"
+    ],
+    "aliases": [
+      "Gold River"
+    ],
+    "bounds": [
+      93.18749359005344,
+      26.847467804923042,
+      94.35592249887554,
+      28.44254399798272
+    ]
+  },
+  {
+    "id": "kameng",
+    "name": "Kameng",
+    "local_name_hi": "कामेंग",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 150,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 8,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "arunachal-pradesh",
+      "assam"
+    ],
+    "aliases": [
+      "Jia Bharali",
+      "Bhareli"
+    ],
+    "bounds": [
+      92.58898950849525,
+      26.612829446352467,
+      93.1431407450182,
+      27.728913865438823
+    ]
+  },
+  {
+    "id": "manas",
+    "name": "Manas",
+    "local_name_hi": "मानस",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 104,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "assam"
+    ],
+    "aliases": [
+      "Drangme Chhu"
+    ],
+    "bounds": [
+      90.9491855,
+      26.8370816,
+      91.6856817,
+      27.5000553
+    ]
+  },
+  {
+    "id": "teesta",
+    "name": "Teesta",
+    "local_name_hi": "तीस्ता",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 414,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "sikkim",
+      "west-bengal"
+    ],
+    "aliases": [
+      "Tista"
+    ],
+    "bounds": [
+      88.42554450935079,
+      26.240831281588882,
+      88.97819994179304,
+      28.041509088722666
+    ]
+  },
+  {
+    "id": "rangeet",
+    "name": "Rangeet",
+    "local_name_hi": "रंगीत",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 65,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "sikkim"
+    ],
+    "aliases": [
+      "Rangit",
+      "Ranjit"
+    ],
+    "bounds": [
+      88.275168,
+      27.0795165,
+      88.433163,
+      27.4916648
+    ]
+  },
+  {
+    "id": "torsa",
+    "name": "Torsa",
+    "local_name_hi": "तोर्षा",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 100,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "west-bengal"
+    ],
+    "aliases": [
+      "Amo Chhu",
+      "Machu"
+    ],
+    "bounds": [
+      89.30958793096254,
+      26.221253203857756,
+      89.64199169755942,
+      26.865660527402373
+    ]
+  },
+  {
+    "id": "jaldhaka",
+    "name": "Jaldhaka",
+    "local_name_hi": "जलढाका",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 193,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "spring-fed",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "sikkim",
+      "west-bengal"
+    ],
+    "aliases": [
+      "Dichu"
+    ],
+    "bounds": [
+      88.85502592570062,
+      26.001349514871922,
+      89.46718126923705,
+      27.108923876128564
+    ]
+  },
+  {
+    "id": "barak",
+    "name": "Barak",
+    "local_name_hi": "बराक",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 100.3,
+    "basin_area_india_km2": 41723,
+    "drainage_type": "himalayan",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": true,
+    "transnational": true,
+    "states": [
+      "manipur",
+      "mizoram",
+      "assam"
+    ],
+    "aliases": [],
+    "bounds": [
+      92.48857005191893,
+      24.750038367013122,
+      92.9100994670463,
+      24.915926193600225
+    ]
+  },
+  {
+    "id": "kopili",
+    "name": "Kopili",
+    "local_name_hi": "कोपिली",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 333,
+    "basin_area_india_km2": 16420,
+    "drainage_type": "himalayan",
+    "stream_order": 7,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "meghalaya",
+      "assam"
+    ],
+    "aliases": [
+      "Kapili"
+    ],
+    "bounds": [
+      91.95332680305376,
+      25.210483981642756,
+      92.93263207993498,
+      26.252027844153837
+    ]
+  },
+  {
+    "id": "mahanadi",
+    "name": "Mahanadi",
+    "local_name_hi": "महानदी",
+    "basin": "mahanadi-basin",
+    "length_km_india": 851,
+    "basin_area_india_km2": 141600,
+    "drainage_type": "peninsular",
+    "stream_order": 7,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "chhattisgarh",
+      "odisha"
+    ],
+    "aliases": [],
+    "bounds": [
+      81.37026912475861,
+      20.224242676325407,
+      86.72521978529936,
+      21.74527042081266
+    ]
+  },
+  {
+    "id": "brahmani",
+    "name": "Brahmani",
+    "local_name_hi": "ब्राह्मणी",
+    "basin": "brahmani-basin",
+    "length_km_india": 799,
+    "basin_area_india_km2": 39033,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "jharkhand",
+      "odisha"
+    ],
+    "aliases": [
+      "South Koel"
+    ],
+    "bounds": [
+      84.79748455335147,
+      20.5665438064675,
+      86.97685988395413,
+      22.238434311322
+    ]
+  },
+  {
+    "id": "baitarani",
+    "name": "Baitarani",
+    "local_name_hi": "बैतरणी",
+    "basin": "baitarani-basin",
+    "length_km_india": 414.3,
+    "basin_area_india_km2": 10982,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "jharkhand",
+      "odisha"
+    ],
+    "aliases": [],
+    "bounds": [
+      85.36456107267172,
+      20.733154229330484,
+      86.8221903868247,
+      22.09559971863791
+    ]
+  },
+  {
+    "id": "subarnarekha",
+    "name": "Subarnarekha",
+    "local_name_hi": "स्वर्णरेखा",
+    "basin": "subarnarekha-basin",
+    "length_km_india": 479.5,
+    "basin_area_india_km2": 18951,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "jharkhand",
+      "west-bengal",
+      "odisha"
+    ],
+    "aliases": [],
+    "bounds": [
+      85.20311029155947,
+      21.577435352953728,
+      87.34538278997891,
+      23.463012545710736
+    ]
+  },
+  {
+    "id": "vamsadhara",
+    "name": "Vamsadhara",
+    "local_name_hi": "वंशधारा",
+    "basin": "vamsadhara-basin",
+    "length_km_india": 287,
+    "basin_area_india_km2": 10830,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "odisha",
+      "andhra-pradesh"
+    ],
+    "aliases": [],
+    "bounds": [
+      83.35435699737342,
+      18.33094484777648,
+      84.1315547126176,
+      19.80212716889233
+    ]
+  },
+  {
+    "id": "nagavali",
+    "name": "Nagavali",
+    "local_name_hi": "नागावली",
+    "basin": "nagavali-basin",
+    "length_km_india": 250.4,
+    "basin_area_india_km2": 9510,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "odisha",
+      "andhra-pradesh"
+    ],
+    "aliases": [
+      "Langulya"
+    ],
+    "bounds": [
+      83.24411017864725,
+      18.217088974909256,
+      83.93261732268701,
+      19.710748294225
+    ]
+  },
+  {
+    "id": "godavari",
+    "name": "Godavari",
+    "local_name_hi": "गोदावरी",
+    "basin": "godavari-basin",
+    "length_km_india": 1465,
+    "basin_area_india_km2": 312812,
+    "drainage_type": "peninsular",
+    "stream_order": 8,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "telangana",
+      "andhra-pradesh",
+      "chhattisgarh",
+      "odisha"
+    ],
+    "aliases": [
+      "Dakshin Ganga"
+    ],
+    "bounds": [
+      73.52414487929967,
+      16.304956335835044,
+      82.3217789933934,
+      20.051462112193537
+    ]
+  },
+  {
+    "id": "krishna",
+    "name": "Krishna",
+    "local_name_hi": "कृष्णा",
+    "basin": "krishna-basin",
+    "length_km_india": 1400,
+    "basin_area_india_km2": 258948,
+    "drainage_type": "peninsular",
+    "stream_order": 8,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "karnataka",
+      "telangana",
+      "andhra-pradesh"
+    ],
+    "aliases": [
+      "Krishnaveni"
+    ],
+    "bounds": [
+      73.63156421474659,
+      15.711093967707615,
+      81.12554369747741,
+      17.989307007295437
+    ]
+  },
+  {
+    "id": "tungabhadra",
+    "name": "Tungabhadra",
+    "local_name_hi": "तुंगभद्रा",
+    "basin": "krishna-basin",
+    "length_km_india": 552.5,
+    "basin_area_india_km2": 71417,
+    "drainage_type": "peninsular",
+    "stream_order": 7,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka",
+      "andhra-pradesh"
+    ],
+    "aliases": [
+      "Pampa"
+    ],
+    "bounds": [
+      75.6226768367887,
+      14.014661079550713,
+      78.24851314935961,
+      15.963924308325865
+    ]
+  },
+  {
+    "id": "bhima",
+    "name": "Bhima",
+    "local_name_hi": "भीमा",
+    "basin": "krishna-basin",
+    "length_km_india": 864.5,
+    "basin_area_india_km2": 70614,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "karnataka",
+      "telangana"
+    ],
+    "aliases": [
+      "Chandrabhaga"
+    ],
+    "bounds": [
+      73.53580196101383,
+      16.408230853798717,
+      77.28305999974481,
+      19.073752593447306
+    ]
+  },
+  {
+    "id": "musi",
+    "name": "Musi",
+    "local_name_hi": "मूसी",
+    "basin": "krishna-basin",
+    "length_km_india": 296.2,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "telangana"
+    ],
+    "aliases": [
+      "Muchukunda",
+      "Musunuru"
+    ],
+    "bounds": [
+      77.9131630238338,
+      16.69204461116172,
+      79.67580559565174,
+      17.446958461717667
+    ]
+  },
+  {
+    "id": "manjira",
+    "name": "Manjira",
+    "local_name_hi": "मंजिरा",
+    "basin": "godavari-basin",
+    "length_km_india": 724,
+    "basin_area_india_km2": 30844,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "karnataka",
+      "telangana"
+    ],
+    "aliases": [
+      "Manjra",
+      "Manjara"
+    ],
+    "bounds": [
+      75.38526227335987,
+      17.64757056487456,
+      78.21336298638079,
+      18.89667704112967
+    ]
+  },
+  {
+    "id": "indravati",
+    "name": "Indravati",
+    "local_name_hi": "इंद्रावती",
+    "basin": "godavari-basin",
+    "length_km_india": 489,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "odisha",
+      "chhattisgarh",
+      "maharashtra",
+      "telangana"
+    ],
+    "aliases": [],
+    "bounds": [
+      80.24474344121495,
+      18.72386714506009,
+      83.06480967767898,
+      19.596209107234742
+    ]
+  },
+  {
+    "id": "pranhita",
+    "name": "Pranhita",
+    "local_name_hi": "प्राणहिता",
+    "basin": "godavari-basin",
+    "length_km_india": 115.5,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": 7,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "telangana"
+    ],
+    "aliases": [],
+    "bounds": [
+      79.78981842531098,
+      18.82680265365891,
+      79.97518129505508,
+      19.596556934666257
+    ]
+  },
+  {
+    "id": "wainganga",
+    "name": "Wainganga",
+    "local_name_hi": "वैनगंगा",
+    "basin": "godavari-basin",
+    "length_km_india": 629.8,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": 7,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "maharashtra"
+    ],
+    "aliases": [],
+    "bounds": [
+      79.45461689257111,
+      19.611196258917847,
+      80.1950004517294,
+      22.458455329505835
+    ]
+  },
+  {
+    "id": "wardha",
+    "name": "Wardha",
+    "local_name_hi": "वर्धा",
+    "basin": "godavari-basin",
+    "length_km_india": 533.6,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "maharashtra",
+      "telangana"
+    ],
+    "aliases": [],
+    "bounds": [
+      78.05215641796468,
+      19.50692035042399,
+      79.78981842531098,
+      21.820233691261485
+    ]
+  },
+  {
+    "id": "kaveri",
+    "name": "Kaveri",
+    "local_name_hi": "कावेरी",
+    "basin": "kaveri-basin",
+    "length_km_india": 800,
+    "basin_area_india_km2": 81155,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka",
+      "tamil-nadu",
+      "kerala",
+      "puducherry"
+    ],
+    "aliases": [
+      "Cauvery",
+      "Ponni"
+    ],
+    "bounds": [
+      75.4923320125614,
+      10.828756696805454,
+      79.8568636459128,
+      12.623643824642304
+    ]
+  },
+  {
+    "id": "amaravathi",
+    "name": "Amaravathi",
+    "local_name_hi": "अमरावती",
+    "basin": "kaveri-basin",
+    "length_km_india": 256,
+    "basin_area_india_km2": 8280,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala",
+      "tamil-nadu"
+    ],
+    "aliases": [
+      "Pournami"
+    ],
+    "bounds": [
+      77.2513476,
+      10.3514674,
+      78.1940615,
+      10.9717029
+    ]
+  },
+  {
+    "id": "kabini",
+    "name": "Kabini",
+    "local_name_hi": "काबिनी",
+    "basin": "kaveri-basin",
+    "length_km_india": 240,
+    "basin_area_india_km2": 7040,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala",
+      "karnataka"
+    ],
+    "aliases": [
+      "Kabani",
+      "Kapila"
+    ],
+    "bounds": [
+      76.0750989,
+      11.79938,
+      76.913867,
+      12.234668
+    ]
+  },
+  {
+    "id": "hemavathi",
+    "name": "Hemavathi",
+    "local_name_hi": "हेमावती",
+    "basin": "kaveri-basin",
+    "length_km_india": 245,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [],
+    "bounds": [
+      75.8527873,
+      12.4967118,
+      76.4606541,
+      12.8564788
+    ]
+  },
+  {
+    "id": "shimsha",
+    "name": "Shimsha",
+    "local_name_hi": "शिम्शा",
+    "basin": "kaveri-basin",
+    "length_km_india": 221,
+    "basin_area_india_km2": 8469,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [],
+    "bounds": [
+      76.8084075,
+      12.3101556,
+      77.2385484,
+      13.3930222
+    ]
+  },
+  {
+    "id": "arkavathi",
+    "name": "Arkavathi",
+    "local_name_hi": "अर्कावती",
+    "basin": "kaveri-basin",
+    "length_km_india": 190,
+    "basin_area_india_km2": 4351,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [],
+    "bounds": [
+      77.2767544,
+      12.2865068,
+      77.4915969,
+      13.1430248
+    ]
+  },
+  {
+    "id": "bhavani",
+    "name": "Bhavani",
+    "local_name_hi": "भवानी",
+    "basin": "kaveri-basin",
+    "length_km_india": 234,
+    "basin_area_india_km2": 1410,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala",
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "bounds": [
+      76.4591454,
+      11.0654582,
+      77.6864399,
+      11.5252056
+    ]
+  },
+  {
+    "id": "palar",
+    "name": "Palar",
+    "local_name_hi": "पालार",
+    "basin": "palar-basin",
+    "length_km_india": 348,
+    "basin_area_india_km2": 5044,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka",
+      "andhra-pradesh",
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "bounds": [
+      77.89213850920602,
+      12.468106945856002,
+      80.14949522641106,
+      13.434405259164654
+    ]
+  },
+  {
+    "id": "ponnaiyar",
+    "name": "Ponnaiyar",
+    "local_name_hi": "पोन्नैयार",
+    "basin": "ponnaiyar-basin",
+    "length_km_india": 497,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka",
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "bounds": [
+      77.73517966669773,
+      11.76783781349111,
+      79.80706571120056,
+      13.402827339243675
+    ]
+  },
+  {
+    "id": "vellar",
+    "name": "Vellar (Southern)",
+    "local_name_hi": "वेल्लार",
+    "basin": "vellar-basin",
+    "length_km_india": 137,
+    "basin_area_india_km2": 2034,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "bounds": [
+      78.4356204,
+      10.0639014,
+      79.7789705,
+      11.7087141
+    ]
+  },
+  {
+    "id": "vaigai",
+    "name": "Vaigai",
+    "local_name_hi": "वैगई",
+    "basin": "vaigai-basin",
+    "length_km_india": 312.2,
+    "basin_area_india_km2": 7230,
+    "drainage_type": "peninsular",
+    "stream_order": 4,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "bounds": [
+      77.37606151383869,
+      9.327817167429753,
+      79.00198625812632,
+      10.1153130845768
+    ]
+  },
+  {
+    "id": "narmada",
+    "name": "Narmada",
+    "local_name_hi": "नर्मदा",
+    "basin": "narmada-basin",
+    "length_km_india": 1312,
+    "basin_area_india_km2": 98796,
+    "drainage_type": "peninsular",
+    "stream_order": 7,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "gujarat",
+      "maharashtra",
+      "chhattisgarh"
+    ],
+    "aliases": [
+      "Rewa"
+    ],
+    "bounds": [
+      72.59426228347786,
+      21.634945576327375,
+      81.75927463840323,
+      23.14365952594254
+    ]
+  },
+  {
+    "id": "tapi",
+    "name": "Tapi",
+    "local_name_hi": "तापी",
+    "basin": "tapi-basin",
+    "length_km_india": 779,
+    "basin_area_india_km2": 65145,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "maharashtra",
+      "gujarat"
+    ],
+    "aliases": [
+      "Tapti"
+    ],
+    "bounds": [
+      72.7206974034038,
+      21.058948936764878,
+      78.26246195535794,
+      21.821313685286373
+    ]
+  },
+  {
+    "id": "mahi",
+    "name": "Mahi",
+    "local_name_hi": "माही",
+    "basin": "mahi-basin",
+    "length_km_india": 553.5,
+    "basin_area_india_km2": 34842,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "rajasthan",
+      "gujarat"
+    ],
+    "aliases": [],
+    "bounds": [
+      72.82211814143649,
+      22.233342058648603,
+      75.0429379767034,
+      23.925792721788696
+    ]
+  },
+  {
+    "id": "sabarmati",
+    "name": "Sabarmati",
+    "local_name_hi": "साबरमती",
+    "basin": "sabarmati-basin",
+    "length_km_india": 371,
+    "basin_area_india_km2": 21674,
+    "drainage_type": "peninsular",
+    "stream_order": 6,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "rajasthan",
+      "gujarat"
+    ],
+    "aliases": [
+      "Wakal"
+    ],
+    "bounds": [
+      72.35918320936958,
+      22.215140000422707,
+      73.23045557263175,
+      24.620094861896106
+    ]
+  },
+  {
+    "id": "periyar",
+    "name": "Periyar",
+    "local_name_hi": "पेरियार",
+    "basin": "periyar-basin",
+    "length_km_india": 244,
+    "basin_area_india_km2": 5398,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala",
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "bounds": [
+      76.1688642624959,
+      9.286881629988537,
+      77.31615423793907,
+      10.19586537136468
+    ]
+  },
+  {
+    "id": "bharathapuzha",
+    "name": "Bharathapuzha",
+    "local_name_hi": "भरतपुझा",
+    "basin": "bharathapuzha-basin",
+    "length_km_india": 99.9,
+    "basin_area_india_km2": 6810,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala",
+      "tamil-nadu"
+    ],
+    "aliases": [
+      "Nila",
+      "Ponnani River"
+    ],
+    "bounds": [
+      75.91200389085114,
+      10.742969630404579,
+      76.55660459992816,
+      10.866102454916739
+    ]
+  },
+  {
+    "id": "pamba",
+    "name": "Pamba",
+    "local_name_hi": "पम्बा",
+    "basin": "pamba-basin",
+    "length_km_india": 176,
+    "basin_area_india_km2": 2235,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala"
+    ],
+    "aliases": [
+      "Baris",
+      "Dakshina Bhageerathi"
+    ],
+    "bounds": [
+      76.3623512,
+      9.3237648,
+      77.2122366,
+      9.5178624
+    ]
+  },
+  {
+    "id": "kallada",
+    "name": "Kallada",
+    "local_name_hi": "कल्लदा",
+    "basin": "kallada-basin",
+    "length_km_india": 126.1,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": 4,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala"
+    ],
+    "aliases": [],
+    "bounds": [
+      76.54054188446342,
+      8.813178087716423,
+      77.23582543594257,
+      9.090340469116933
+    ]
+  },
+  {
+    "id": "sharavati",
+    "name": "Sharavati",
+    "local_name_hi": "शरावती",
+    "basin": "sharavati-basin",
+    "length_km_india": 134.2,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [],
+    "bounds": [
+      74.42135681122524,
+      13.719693247016119,
+      75.14486967969829,
+      14.300502576413363
+    ]
+  },
+  {
+    "id": "zuari",
+    "name": "Zuari",
+    "local_name_hi": "जुआरी",
+    "basin": "zuari-basin",
+    "length_km_india": 92,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": 4,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": true,
+    "transnational": false,
+    "states": [
+      "goa"
+    ],
+    "aliases": [
+      "Aghanashini"
+    ],
+    "bounds": [
+      74.0739335,
+      15.1873344,
+      74.3163965,
+      15.2778084
+    ]
+  },
+  {
+    "id": "mandovi",
+    "name": "Mandovi",
+    "local_name_hi": "मांडवी",
+    "basin": "mandovi-basin",
+    "length_km_india": 81,
+    "basin_area_india_km2": null,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": true,
+    "transnational": false,
+    "states": [
+      "karnataka",
+      "goa",
+      "maharashtra"
+    ],
+    "aliases": [
+      "Mahadayi",
+      "Rio de Goa"
+    ],
+    "bounds": [
+      73.8065575,
+      15.4514362,
+      74.0415752,
+      15.5499651
+    ]
+  },
+  {
+    "id": "ulhas",
+    "name": "Ulhas",
+    "local_name_hi": "उल्हास",
+    "basin": "ulhas-basin",
+    "length_km_india": 146,
+    "basin_area_india_km2": 4637,
+    "drainage_type": "coastal",
+    "stream_order": 6,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra"
+    ],
+    "aliases": [],
+    "bounds": [
+      72.79720430676036,
+      18.76206758217679,
+      73.41147093906629,
+      19.324021291777004
+    ]
+  },
+  {
+    "id": "kali-karnataka",
+    "name": "Kali (Karnataka)",
+    "local_name_hi": "काली नदी",
+    "basin": "kali-karnataka-basin",
+    "length_km_india": 178.7,
+    "basin_area_india_km2": null,
+    "drainage_type": "coastal",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [
+      "Kali Nadi",
+      "Kalinadi"
+    ],
+    "bounds": [
+      74.12087474160343,
+      14.841564548681095,
+      74.73253759863496,
+      15.279046625790937
+    ]
+  },
+  {
+    "id": "netravati",
+    "name": "Netravati",
+    "local_name_hi": "नेत्रावती",
+    "basin": "netravati-basin",
+    "length_km_india": 115.7,
+    "basin_area_india_km2": 3502,
+    "drainage_type": "coastal",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [],
+    "bounds": [
+      74.82491257105623,
+      12.836685584590517,
+      75.37187787177068,
+      13.17006197923674
+    ]
+  },
+  {
+    "id": "aghanashini",
+    "name": "Aghanashini",
+    "local_name_hi": "अघनाशिनी",
+    "basin": "aghanashini-basin",
+    "length_km_india": 117,
+    "basin_area_india_km2": null,
+    "drainage_type": "coastal",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [
+      "Tadadi Hole"
+    ],
+    "bounds": [
+      74.3577935,
+      14.3918558,
+      74.8256987,
+      14.5616469
+    ]
+  },
+  {
+    "id": "damanganga",
+    "name": "Damanganga",
+    "local_name_hi": "दमणगंगा",
+    "basin": "damanganga-basin",
+    "length_km_india": 131,
+    "basin_area_india_km2": null,
+    "drainage_type": "coastal",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra",
+      "gujarat",
+      "dadra-and-nagar-haveli-and-daman-and-diu"
+    ],
+    "aliases": [
+      "Dawan River"
+    ],
+    "bounds": [
+      72.8298759,
+      20.1430635,
+      73.5713949,
+      20.4118883
+    ]
+  },
+  {
+    "id": "vaippar",
+    "name": "Vaippar",
+    "local_name_hi": "वैप्पार",
+    "basin": "vaippar-basin",
+    "length_km_india": 86.5,
+    "basin_area_india_km2": 5288,
+    "drainage_type": "coastal",
+    "stream_order": 5,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "tamil-nadu"
+    ],
+    "aliases": [],
+    "bounds": [
+      77.6954633557735,
+      9.031645774732576,
+      78.2320575066458,
+      9.35347633453861
+    ]
+  },
+  {
+    "id": "luni",
+    "name": "Luni",
+    "local_name_hi": "लूनी",
+    "basin": "luni-basin",
+    "length_km_india": 495,
+    "basin_area_india_km2": 37363,
+    "drainage_type": "inland",
+    "stream_order": 6,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "rajasthan",
+      "gujarat"
+    ],
+    "aliases": [
+      "Sagarmati"
+    ],
+    "bounds": [
+      71.19828923224328,
+      24.58746141897201,
+      74.37350225120252,
+      26.530231569575857
+    ]
+  },
+  {
+    "id": "ghaggar-hakra",
+    "name": "Ghaggar-Hakra",
+    "local_name_hi": "घग्गर-हकरा",
+    "basin": "ghaggar-basin",
+    "length_km_india": 320,
+    "basin_area_india_km2": 42200,
+    "drainage_type": "inland",
+    "stream_order": 5,
+    "seasonal_type": "ephemeral",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "himachal-pradesh",
+      "punjab",
+      "haryana",
+      "rajasthan"
+    ],
+    "aliases": [
+      "Hakra",
+      "Sarasvati"
+    ],
+    "bounds": [
+      74.644285962054,
+      29.47186992186666,
+      77.09554217917423,
+      30.80717061657729
+    ]
+  }
+]

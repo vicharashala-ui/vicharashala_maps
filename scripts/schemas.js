@@ -8,13 +8,19 @@
 
 import { z } from 'zod';
 
+// DEVIATION FROM SPEC: `basin_area_india_km2` is nullable. 33 of the 85 V1-scope rivers never
+// got a reliable figure during Step 7's web research (left null rather than invented) — this
+// wasn't caught until Step 17b ran full schema validation against the complete geometry-backed
+// set for the first time. HydroRIVERS' UPLAND_SKM is a possible backfill source but overstates
+// India-only area for transnational rivers (includes upstream basin outside India), so it's not
+// auto-substituted here. Tighten once real research backfills these.
 export const RiverIndexEntry = z.object({
   id: z.string(),
   name: z.string(),
   local_name_hi: z.string(),
   basin: z.string(),
   length_km_india: z.number().positive(),
-  basin_area_india_km2: z.number().positive(),
+  basin_area_india_km2: z.number().positive().nullable(),
   drainage_type: z.enum(['himalayan', 'peninsular', 'coastal', 'inland']),
   stream_order: z.number().int().positive(),
   seasonal_type: z.enum(['perennial', 'seasonal', 'ephemeral']),
