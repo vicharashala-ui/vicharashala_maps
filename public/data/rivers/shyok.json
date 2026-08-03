@@ -1,0 +1,44 @@
+{
+  "id": "shyok",
+  "name": "Shyok",
+  "aliases": ["Shayok"],
+  "local_names": { "hi": "श्योक" },
+  "basin": "indus-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 7,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Rimo Glacier",
+    "state": "ladakh",
+    "altitude_m": 5000,
+    "coordinates": [77.5, 35.3]
+  },
+  "sink": {
+    "name": "Confluence with the Indus",
+    "type": "river",
+    "location": "Near Skardu, Gilgit-Baltistan",
+    "coordinates": [75.67, 35.3]
+  },
+  "length_km_india": 400,
+  "length_km_total": 550,
+  "basin_area_total_km2": 33465,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["ladakh"],
+  "basin_states": ["ladakh"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": ["changthang-wls", "karakoram-nubra-shyok-wls"],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["pakistan"],
+  "significance": ["strategic", "glacial hydrology"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Shyok rises near the Siachen Glacier, in one of the highest and most militarized terrains on Earth.",
+    "The Shyok is prone to glacial lake outburst floods (GLOFs), historically some of the most destructive flash floods in the western Himalaya."
+  ]
+}

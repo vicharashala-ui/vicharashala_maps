@@ -1,0 +1,44 @@
+{
+  "id": "ravi",
+  "name": "Ravi",
+  "aliases": ["Iravati", "Purushni"],
+  "local_names": { "hi": "रावी" },
+  "basin": "indus-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Bara Bhangal (confluence of the Budhil and Tantgari streams)",
+    "state": "himachal-pradesh",
+    "altitude_m": 4000,
+    "coordinates": [77.05, 32.25]
+  },
+  "sink": {
+    "name": "Confluence with the Chenab",
+    "type": "river",
+    "location": "Near Ahmadpur Sial, Jhang district, Punjab, Pakistan",
+    "coordinates": [72.25, 30.75]
+  },
+  "length_km_india": 725,
+  "length_km_total": 725,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": 14442,
+  "states_flows_through": ["himachal-pradesh", "punjab"],
+  "basin_states": ["himachal-pradesh", "punjab"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": ["kathlaur-kushlian-wls"],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["pakistan"],
+  "significance": ["irrigation", "hydropower", "historical"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Ravi is the smallest of the five rivers that give Punjab its name (panj-ab, 'five waters').",
+    "Known as Iravati in the Rigveda, the Ravi is traditionally associated with the site of the Battle of the Ten Kings."
+  ]
+}

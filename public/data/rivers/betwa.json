@@ -1,0 +1,44 @@
+{
+  "id": "betwa",
+  "name": "Betwa",
+  "aliases": ["Vetravati"],
+  "local_names": { "hi": "बेतवा" },
+  "basin": "ganga-basin",
+  "type": "tributary",
+  "drainage_type": "peninsular",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Kumra village, Vindhya Range",
+    "state": "madhya-pradesh",
+    "altitude_m": 550,
+    "coordinates": [77.6, 23.1]
+  },
+  "sink": {
+    "name": "Confluence with the Yamuna",
+    "type": "river",
+    "location": "Hamirpur, Uttar Pradesh",
+    "coordinates": [80.15, 25.95]
+  },
+  "length_km_india": 590,
+  "length_km_total": 590,
+  "basin_area_total_km2": 46580,
+  "basin_area_india_km2": 46580,
+  "states_flows_through": ["madhya-pradesh", "uttar-pradesh"],
+  "basin_states": ["madhya-pradesh", "uttar-pradesh"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["irrigation", "historical", "heritage sites"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The cenotaphs (chhatris) of Orchha's former rulers stand directly on the Betwa's banks, one of Madhya Pradesh's best-known heritage riverfronts.",
+    "Known as Vetravati in ancient texts, the Betwa is mentioned in Kalidasa's Raghuvamsha."
+  ]
+}

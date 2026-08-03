@@ -1,0 +1,44 @@
+{
+  "id": "bhagirathi",
+  "name": "Bhagirathi",
+  "aliases": [],
+  "local_names": { "hi": "भागीरथी" },
+  "basin": "ganga-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Gaumukh, Gangotri Glacier",
+    "state": "uttarakhand",
+    "altitude_m": 3892,
+    "coordinates": [79.0819, 30.9928]
+  },
+  "sink": {
+    "name": "Confluence with the Alaknanda, forming the Ganga",
+    "type": "river",
+    "location": "Devprayag, Uttarakhand",
+    "coordinates": [78.598, 30.1461]
+  },
+  "length_km_india": 229.1,
+  "length_km_total": 229.1,
+  "basin_area_total_km2": 6921,
+  "basin_area_india_km2": 6921,
+  "states_flows_through": ["uttarakhand"],
+  "basin_states": ["uttarakhand"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["religious", "glacial hydrology"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Hindu tradition regards the Bhagirathi, not the higher-discharge Alaknanda, as the true source stream of the Ganga.",
+    "The Gangotri Glacier feeding it is retreating by tens of metres a year, a frequently cited case study in Himalayan glacial melt."
+  ]
+}

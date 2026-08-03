@@ -1,0 +1,44 @@
+{
+  "id": "indus",
+  "name": "Indus",
+  "aliases": ["Sindhu", "Singi Khamban"],
+  "local_names": { "hi": "सिन्धु" },
+  "basin": "indus-basin",
+  "type": "main",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 8,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Sengge Zangbo (Senge Khabab, near Mount Kailash)",
+    "state": "tibet",
+    "altitude_m": 5469,
+    "coordinates": [81.8117, 31.3122]
+  },
+  "sink": {
+    "name": "Indus River Delta",
+    "type": "sea",
+    "location": "Arabian Sea, Sindh, Pakistan",
+    "coordinates": [67.435, 23.995]
+  },
+  "length_km_india": 709,
+  "length_km_total": 2880,
+  "basin_area_total_km2": 1120000,
+  "basin_area_india_km2": 321289,
+  "states_flows_through": ["ladakh"],
+  "basin_states": ["ladakh"],
+  "tributaries": { "left": ["zanskar"], "right": ["shyok"] },
+  "distributaries": [],
+  "protected_area_ids": ["changthang-wls"],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["china", "pakistan"],
+  "significance": ["irrigation", "strategic", "cultural"],
+  "notable_city_ids": ["leh"],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "India's name is derived from the Sanskrit Sindhu, the ancient name of the Indus.",
+    "In India the Indus flows only through Ladakh, entering near Demchok and exiting near Domkhar."
+  ]
+}

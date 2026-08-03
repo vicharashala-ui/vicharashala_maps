@@ -1,0 +1,44 @@
+{
+  "id": "chenab",
+  "name": "Chenab",
+  "aliases": ["Chandrabhaga", "Asikni"],
+  "local_names": { "hi": "चिनाब" },
+  "basin": "indus-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Confluence of Chandra and Bhaga rivers, Tandi",
+    "state": "himachal-pradesh",
+    "altitude_m": 4890,
+    "coordinates": [77.4808, 32.6358]
+  },
+  "sink": {
+    "name": "Confluence with Sutlej, forming the Panjnad",
+    "type": "river",
+    "location": "Bahawalpur district, Punjab, Pakistan",
+    "coordinates": [71.0281, 29.3492]
+  },
+  "length_km_india": 431.4,
+  "length_km_total": 974,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["himachal-pradesh", "jammu-and-kashmir"],
+  "basin_states": ["himachal-pradesh", "jammu-and-kashmir"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["pakistan"],
+  "significance": ["irrigation", "hydropower"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Chenab is formed by the union of the Chandra and Bhaga rivers at Tandi in Himachal Pradesh's Lahaul valley.",
+    "Under the Indus Waters Treaty, the Chenab's waters are allocated mainly to Pakistan, with India permitted only limited, non-consumptive uses."
+  ]
+}

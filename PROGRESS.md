@@ -16,7 +16,7 @@ Package manager: **pnpm**. Environment: **native Windows** (Git Bash, no WSL).
 - Linux-only native tools (tippecanoe) aren't available on native Windows. Sandbox builds them and hands over the finished artifact instead.
 - Source data comes from `https://github.com/vicharashala-ui/ecoguesser.git`, a sibling project with already-processed PA data matching this spec almost field-for-field.
 
-## Current status: Step 18 delivered — `public/tiles/rivers.pmtiles` built and verified (85 features, layer `rivers`, zoom 4–14, fields `id`+`stream_order`, 8.1 MB, well under Cloudflare's 25 MiB limit). Rivers pipeline (Steps 5–18) is done end to end.
+## Current status: Step 24 delivered — all 21 Ganga-system `rivers/{id}.json` authored, schema-validated, and cross-checked against `rivers-index.json` for transcription errors. `rivers/{id}.json` coverage now 28/85 (Indus + Ganga systems complete). Ravi's length reverted to 725/725 per Ashwin's decision to keep `rivers-index.json` unpatched.
 
 Found and fixed a real bug while building: `Ravi`'s merged geometry had one over-nested `MultiLineString` segment — one of its 11 raw Overpass ways came back typed `MultiLineString` (not `LineString`) from `osmtogeojson`, and Step 11's `mergeOverpassRivers.js` assumed every raw way was a `LineString`, double-wrapping that one segment. tippecanoe rejected it outright (`malformed point`). Scanned all 85 features segment-by-segment — only this one segment was affected. Fixed the delivered `rivers-prepared.geojson` in place, and patched `mergeOverpassRivers.js` (`feats.flatMap` instead of `feats.map`) so this can't recur if the deferred/flagged rivers are ever re-merged.
 
@@ -46,10 +46,56 @@ Built via web research (batched by river system per spec §4.9), then reconciled
 - Everything in spec §5 onward
 
 ## Next step
-This session confirmed the repo's `src/components/*` had never actually received the Step 1–4 frontend work from memory — only `.gitkeep` placeholders and a bare scaffold `index.astro` were committed. Rebuilt the whole core-map frontend from scratch this session (Step 19, below). Next:
-1. Pull `step19-patch.sh`, run it, `pnpm dev`, smoke-test in a browser (this session only verified `astro check` + `pnpm build` succeed — no browser/visual QA was possible in the sandbox).
-2. Real research to backfill `basin_area_india_km2` for the 33 rivers currently shipping `null`, and manual digitizing for the 21 deferred rivers.
-3. Not yet built (separate, larger spec sections): search, browse lists, filters, compare mode, state panel, header/footer, SEO pages, `basins.json` + basin badges/colors, per-river detail pages (`rivers/{id}.json`), `search-index-pa.json`.
+1. Run `step24-patch.sh`.
+2. `protected_area_ids` for all 21 new Ganga-system rivers are still `[]` placeholders — same pattern as the Indus batch. Re-run `node scripts/spatialIntersect.js` (it's safe to re-run any time; idempotent) and paste the new rivers' entries from `build/river-protected-area-ids.json` so they can be merged in, same as Step 23.
+3. Continue `rivers/{id}.json` in batches — 57/85 rivers remain. Natural next batches by system: Brahmaputra (barak, brahmaputra, kameng, kopili, lohit, manas, subansiri...), then Peninsular (godavari, krishna, kaveri, narmada, tapi and their tributaries), then coastal/minor rivers.
+4. `deriveStateCrossRefs.js` (step ⑫) — 28/85 rivers and 14 cities now exist. Getting closer, but still worth deciding whether to wait for full coverage or run it now for partial/best-effort `states.json` and re-run later as more batches land.
+5. `buildSearchIndex.js` (step ⑬) — after ⑪/⑫.
+6. Real research to backfill `basin_area_india_km2` for the rivers currently shipping `null` (many of Step 24's Ganga tributaries — Banas, Parbati, Son, Gomti, Ghaghra's exact figure, Sarda, Gandak, Mahananda — don't have a confidently-sourced total; check `rivers-index.json`'s `_needs_verification` flags from Step 7 research if any exist for these).
+7. Not yet built: search, browse lists, filters, compare mode, state panel, header/footer, SEO pages, `basins.json` + basin badges/colors, `search-index-pa.json`.
+
+### Step 24 — Ganga-system `rivers/{id}.json` batch (delivered as `step24-patch.sh`)
+- All 21 geometry-backed Ganga-basin rivers authored: ganga, bhagirathi, alaknanda, yamuna, chambal, banas, kali-sindh, parbati, betwa, ken, son, gomti, ghaghra, sarda, gandak, kosi, mahananda, damodar, hooghly, barakar, ajay. (5 spec rivers not shipped/no geometry — burhi-gandak, mechi, kamla, bagmati, rupnarayan — skipped, same as Indus's jhelum/spiti.)
+- Also reverts `rivers/ravi.json`'s `length_km_india`/`length_km_total` from the Step 21 correction (320/725) back to 725/725, to match Ashwin's decision to leave `rivers-index.json` as-is — the two files were disagreeing after Step 21 and before this fix.
+- **Confidence note, same caveat as Step 21**: source/sink coordinates and altitudes for the lesser-known Malwa Plateau tributaries (Banas, Kali Sindh, Parbati) and the high-Himalaya transnational sources (Ghaghra/Karnali, Sarda/Mahakali, Gandak/Narayani, Kosi) are standard-reference-level facts, not individually search-verified — a few coordinates are reasonable estimates rather than pinpoint-precise. All numeric fields that exist in `rivers-index.json` (length, stream_order, states, transnational, navigable) were transcribed from there directly and cross-checked programmatically, so those are exact, not estimated.
+- **`protected_area_ids` left as `[]`** in all 21 files — same as Indus batch pre-Step-23, needs a `spatialIntersect.js` re-run + merge (see Next step item 2).
+- **`basin_area_total_km2`/`basin_area_india_km2`**: used the shipped index value where present; left `null` where the index also has `null` (Banas, Parbati, Son, Gomti, Ghaghra's total, Sarda, Gandak, Mahananda's total) rather than guessing.
+- **Interesting cross-reference**: Hooghly's `tributaries.right` includes both `damodar` and `ajay` — worth double-checking this reads correctly in the frontend once built, since Hooghly is itself a `distributary` (of the Ganga) that also *receives* tributaries, a slightly unusual combination the UI may not have been designed around yet.
+- **Verified**: all 28 `rivers/{id}.json` files (7 Indus + 21 Ganga) pass `RiverDetail.parse()`; every `river`/`notable_city_ids`/`tributaries`/`distributaries` cross-reference resolves to a real id; every numeric/boolean field that exists in both `rivers-index.json` and the new detail files matches exactly (scripted diff, zero mismatches); `step24-patch.sh` tested end-to-end on a clean clone.
+
+### Step 23 — Real `protected_area_ids` merged into the Indus batch (delivered as `step23-patch.sh`)
+- Pulled the real per-river PA lists from your `build/river-protected-area-ids.json` (Step 20/22's actual output) into `rivers/{indus,ravi,beas,sutlej,zanskar,shyok}.json`. `chenab.json` unchanged — its list is genuinely `[]`, no PA intersects the Chenab in the current data.
+- Notable results: Beas and Sutlej each pick up several Ramsar/WLS sites around Harike and Pong Dam (expected — those are well-known wetland PAs on these rivers); Zanskar → Hemis NP (correct, Hemis extends into the Zanskar valley); Ravi → Kathlaur-Kushlian WLS (a real, if less well-known, Punjab sanctuary on the Ravi).
+- **Verified**: all 7 files re-validated against `RiverDetail`; `step23-patch.sh` tested end-to-end on a clean clone.
+
+### Step 22 — Fix Ravi's malformed geometry (delivered as `step22-patch.sh`)
+- **Bug**: Step 20's real `spatialIntersect.js` run crashed on `turf.booleanIntersects` (`coord must be GeoJSON Point or an Array of numbers`). Traced to one raw Overpass way in Ravi's geometry: typed `LineString`, but with a ~30-position sub-array embedded where one single `[lng,lat]` position should be — nesting corruption *within* one way's own coordinates, not *across* separate ways (Step 18 already fixed the across-ways case; this is a different bug in the same family).
+- `scripts/mergeOverpassRivers.js`: replaced the type-trusting flatten with `wayToLineStrings()` — a `MultiLineString`-typed way's top-level segments stay separate (they can be genuinely disjoint, per Step 18), but any nesting found *within* a segment (or within a plain `LineString` way) is now deep-flattened in place via `deepFlattenPositions()`, regardless of what `geometry.type` claims. Fixes this bug class for any future full-pipeline re-run.
+- `fix-ravi-geometry.mjs`: standalone one-off repair for the already-corrupted `build/rivers-by-id/ravi.geojson` on disk — same logic, doesn't need the raw Step 10 Overpass data. Validates the repaired geometry (every position finite `[lng,lat]`, segment count unchanged from before) before writing; throws instead of silently shipping a bad fix if either check fails.
+- **Caught my own bug while testing**: first attempt at the fix (`extractLineStrings`, checked only the first array element to decide nesting depth) missed exactly this failure mode — a segment with a mix of valid positions and one corrupted embedded sub-array doesn't get caught by a first-element check. Found this with a fixture built directly from Ashwin's actual bad-coordinate output before shipping; rewrote as the current segment-preserving `deepFlattenPositions`/`wayToLineStrings` approach and re-verified.
+- **Verified**: fixture built from Ashwin's real diagnostic output (2-segment `MultiLineString`, one segment with the exact corruption pattern found) — repair produces a valid geometry, correct segment count (2, unchanged), all positions pass `turf.coordAll` + `booleanIntersects` without throwing. `step22-patch.sh` tested end-to-end on a clean clone.
+- **Not yet done**: hasn't run against your actual `build/rivers-by-id/ravi.geojson` — that's the next step, on your machine.
+
+
+
+## Completed steps log (continued above Step 19)
+
+### Step 21 — `cities.json` + `rivers/{id}.json` batch 1 (delivered as `step21-patch.sh`)
+- `scripts/schemas.js`: added `RiverDetail` (spec §4.1) and `City` (spec §4.5) zod schemas
+- `public/data/cities.json`: 14 major river cities (Leh, Haridwar, Rishikesh, Varanasi, Prayagraj, Patna, Kolkata, Delhi, Agra, Guwahati, Ahmedabad, Nashik, Hyderabad, Ludhiana), each referencing a real shipped river id, with ghats for the religiously-significant ones
+- `public/data/rivers/{indus,chenab,ravi,beas,sutlej,zanskar,shyok}.json`: full detail records for all 7 geometry-backed Indus-system rivers (2 of the spec's 9 — jhelum, spiti — aren't shipped in V1, no geometry, so skipped)
+- **Confidence note**: unlike the numeric index data (Step 7's rigorously multi-sourced, `_source`/`_needs_verification`-tracked research), this batch's source/sink coordinates and altitudes are standard, well-established geography facts (Wikipedia-infobox-level) rather than individually search-verified to the same standard — a few (Bara Bhangal, Rimo Glacier, Padum coordinates) are reasonable estimates, not pinpoint-precise. Fine for map/info-panel display; flag if exam-grade precision is needed later.
+- **`protected_area_ids` left as `[]`** in all 7 files — real values need `build/river-protected-area-ids.json` (Step 20's output), which requires running on your machine (see item 2 above).
+- **Ravi length correction** — see item 3 above, needs your decision.
+- **Verified**: all 7 river files + 14 cities pass `RiverDetail.parse()`/`City.parse()`; cross-checked every `river` (cities→rivers), `notable_city_ids` (rivers→cities), and `tributaries`/`distributaries` (rivers→rivers) reference resolves to a real shipped id; `step21-patch.sh` tested end-to-end against two independent clean clones.
+
+### Step 20 — spatialIntersect.js (delivered as `step20-patch.sh`)
+- `scripts/spatialIntersect.js` — Turf.js `booleanIntersects`, PA-bbox pre-filtered before the real check (837 PAs × 85 rivers would otherwise be needlessly expensive)
+- Updates `public/data/protected-areas.json`'s `river_ids` in place
+- **Deviation**: spec's step ⑪ says this writes `protected_area_ids` into `rivers/{id}.json`. Those detail files weren't authored yet at the time (Step 20 ran before Step 21), so writing into them would have meant inventing placeholder records. Writes `build/river-protected-area-ids.json` instead (`{ river_id: [pa_id, ...] }`) as an intermediate — now that Step 21 has authored 7 real `rivers/{id}.json` files, this can be merged in (see Next step item 2).
+- **v2 fix (real run on your machine crashed)**: `turf.booleanIntersects` threw `coord must be GeoJSON Point or an Array of numbers` deep inside `@turf/invariant`, on a real PA in `build/pa-merged.geojson` with a malformed coordinate — some ring point isn't a valid `[x,y]` pair. v2 adds a pre-flight `isGeometryValid()` check (via `turf.coordAll`) that names and skips any malformed PA/river feature instead of crashing the whole 837×85 run; a skipped PA's existing `river_ids` is left untouched (not wiped), and the console prints exactly which PA/river id(s) were skipped so the root cause (almost certainly in `mergeFeatures.js`'s source boundary file, or a river's Overpass geometry) can be tracked down separately. Caught a real bug in my own fix while testing it: the first version of this skip-logic still zeroed out the skipped PA's `river_ids` — fixed and re-verified before shipping v2.
+- **Verified**: synthetic 3-PA/1-river fixture including one deliberately malformed PA (a ring point with only 1 coordinate) — malformed PA correctly named, skipped, and its `river_ids` left untouched; the other 2 PAs processed correctly; run completes instead of crashing. Not run against your real `build/pa-merged.geojson`/`build/rivers-by-id/` — gitignored, not in the sandbox.
+- **Action needed from you**: once v2 runs cleanly, check its stderr for `SKIPPED N PA(s)` — if any print, note the id(s) so the malformed-geometry root cause can be found in `mergeFeatures.js`/the source boundary GeoJSON later.
 
 ## Completed steps log
 

@@ -1,0 +1,44 @@
+{
+  "id": "zanskar",
+  "name": "Zanskar",
+  "aliases": [],
+  "local_names": { "hi": "जांस्कर" },
+  "basin": "indus-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Confluence of the Doda and Tsarap (Lungnak) rivers, near Padum",
+    "state": "ladakh",
+    "altitude_m": 3657,
+    "coordinates": [76.87, 33.47]
+  },
+  "sink": {
+    "name": "Confluence with the Indus",
+    "type": "river",
+    "location": "Nimmu, Ladakh",
+    "coordinates": [77.25, 34.15]
+  },
+  "length_km_india": 134,
+  "length_km_total": 134,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["ladakh"],
+  "basin_states": ["ladakh"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": ["hemis-np"],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["tourism", "adventure sports"],
+  "notable_city_ids": [],
+  "upsc_relevant": false,
+  "did_you_know": [
+    "The Zanskar freezes solid enough in winter to form the 'Chadar' trek, once the region's only reliable winter route.",
+    "The Zanskar–Indus confluence at Nimmu is a popular viewpoint: muddy Zanskar water visibly meeting the clearer Indus."
+  ]
+}

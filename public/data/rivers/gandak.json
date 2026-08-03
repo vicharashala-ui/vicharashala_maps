@@ -1,0 +1,44 @@
+{
+  "id": "gandak",
+  "name": "Gandak",
+  "aliases": ["Gandaki", "Narayani", "Sapt Gandaki"],
+  "local_names": { "hi": "गंडक" },
+  "basin": "ganga-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 7,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Nhubine Himal Glacier (Kali Gandaki headwaters), Mustang district",
+    "state": "nepal",
+    "altitude_m": 6268,
+    "coordinates": [83.6, 29.3]
+  },
+  "sink": {
+    "name": "Confluence with the Ganga",
+    "type": "river",
+    "location": "Near Sonpur/Hajipur, Bihar",
+    "coordinates": [85.13, 25.72]
+  },
+  "length_km_india": 260,
+  "length_km_total": 630,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["uttar-pradesh", "bihar"],
+  "basin_states": ["uttar-pradesh", "bihar"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["nepal"],
+  "significance": ["irrigation (Gandak Barrage)", "India-Nepal treaty river"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Called the Narayani in Nepal and Sapt Gandaki for its seven Himalayan headstreams, the Gandak is one of the Ganga's largest north-bank tributaries.",
+    "The 1959 Gandak Treaty between India and Nepal governs irrigation and hydropower sharing on the river."
+  ]
+}

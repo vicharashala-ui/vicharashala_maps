@@ -1,0 +1,159 @@
+[
+  {
+    "id": "leh",
+    "name": "Leh",
+    "state": "ladakh",
+    "river": "indus",
+    "river_bank": "left",
+    "coordinates": [77.5771, 34.1526],
+    "significance": ["tourism", "trade", "religious"],
+    "ghats": []
+  },
+  {
+    "id": "haridwar",
+    "name": "Haridwar",
+    "state": "uttarakhand",
+    "river": "ganga",
+    "river_bank": "left",
+    "coordinates": [78.1642, 29.9457],
+    "significance": ["religious", "tourism"],
+    "ghats": [
+      { "id": "har-ki-pauri", "name": "Har Ki Pauri", "significance": "religious" }
+    ]
+  },
+  {
+    "id": "rishikesh",
+    "name": "Rishikesh",
+    "state": "uttarakhand",
+    "river": "ganga",
+    "river_bank": "left",
+    "coordinates": [78.2676, 30.0869],
+    "significance": ["religious", "tourism"],
+    "ghats": [
+      { "id": "triveni-ghat", "name": "Triveni Ghat", "significance": "religious" }
+    ]
+  },
+  {
+    "id": "varanasi",
+    "name": "Varanasi",
+    "state": "uttar-pradesh",
+    "river": "ganga",
+    "river_bank": "left",
+    "coordinates": [83.0047, 25.3176],
+    "significance": ["religious", "tourism"],
+    "ghats": [
+      { "id": "dashashwamedh-ghat", "name": "Dashashwamedh Ghat", "significance": "religious" },
+      { "id": "manikarnika-ghat", "name": "Manikarnika Ghat", "significance": "religious" }
+    ]
+  },
+  {
+    "id": "prayagraj",
+    "name": "Prayagraj",
+    "state": "uttar-pradesh",
+    "river": "ganga",
+    "river_bank": "left",
+    "coordinates": [81.8463, 25.4358],
+    "significance": ["religious", "tourism"],
+    "ghats": [
+      { "id": "sangam", "name": "Triveni Sangam", "significance": "religious" }
+    ]
+  },
+  {
+    "id": "patna",
+    "name": "Patna",
+    "state": "bihar",
+    "river": "ganga",
+    "river_bank": "right",
+    "coordinates": [85.1376, 25.5941],
+    "significance": ["administrative", "religious"],
+    "ghats": [
+      { "id": "gandhi-ghat", "name": "Gandhi Ghat", "significance": "civic" }
+    ]
+  },
+  {
+    "id": "kolkata",
+    "name": "Kolkata",
+    "state": "west-bengal",
+    "river": "hooghly",
+    "river_bank": "left",
+    "coordinates": [88.3639, 22.5726],
+    "significance": ["administrative", "religious", "tourism"],
+    "ghats": [
+      { "id": "babughat", "name": "Babughat", "significance": "religious" }
+    ]
+  },
+  {
+    "id": "delhi",
+    "name": "Delhi",
+    "state": "delhi",
+    "river": "yamuna",
+    "river_bank": "right",
+    "coordinates": [77.209, 28.6139],
+    "significance": ["administrative", "religious"],
+    "ghats": []
+  },
+  {
+    "id": "agra",
+    "name": "Agra",
+    "state": "uttar-pradesh",
+    "river": "yamuna",
+    "river_bank": "right",
+    "coordinates": [78.0081, 27.1767],
+    "significance": ["tourism", "historical"],
+    "ghats": []
+  },
+  {
+    "id": "guwahati",
+    "name": "Guwahati",
+    "state": "assam",
+    "river": "brahmaputra",
+    "river_bank": "left",
+    "coordinates": [91.7362, 26.1445],
+    "significance": ["religious", "tourism"],
+    "ghats": [
+      { "id": "umananda-ghat", "name": "Umananda Ghat", "significance": "religious" }
+    ]
+  },
+  {
+    "id": "ahmedabad",
+    "name": "Ahmedabad",
+    "state": "gujarat",
+    "river": "sabarmati",
+    "river_bank": "right",
+    "coordinates": [72.5714, 23.0225],
+    "significance": ["commercial", "tourism"],
+    "ghats": []
+  },
+  {
+    "id": "nashik",
+    "name": "Nashik",
+    "state": "maharashtra",
+    "river": "godavari",
+    "river_bank": "right",
+    "coordinates": [73.7898, 19.9975],
+    "significance": ["religious", "tourism"],
+    "ghats": [
+      { "id": "ramkund", "name": "Ramkund", "significance": "religious" }
+    ]
+  },
+  {
+    "id": "hyderabad",
+    "name": "Hyderabad",
+    "state": "telangana",
+    "river": "musi",
+    "river_bank": "right",
+    "coordinates": [78.4867, 17.385],
+    "significance": ["administrative", "commercial"],
+    "ghats": []
+  },
+  {
+    "id": "ludhiana",
+    "name": "Ludhiana",
+    "state": "punjab",
+    "river": "sutlej",
+    "river_bank": "left",
+    "coordinates": [75.8573, 30.901],
+    "significance": ["commercial"],
+    "ghats": []
+  }
+]

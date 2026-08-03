@@ -1,0 +1,44 @@
+{
+  "id": "ghaghra",
+  "name": "Ghaghra",
+  "aliases": ["Karnali", "Manchu"],
+  "local_names": { "hi": "घाघरा" },
+  "basin": "ganga-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 8,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Mapchachungo Glacier, near Lake Manasarovar",
+    "state": "tibet",
+    "altitude_m": 5000,
+    "coordinates": [81.5, 30.5]
+  },
+  "sink": {
+    "name": "Confluence with the Ganga",
+    "type": "river",
+    "location": "Near Chhapra (Revelganj), Bihar",
+    "coordinates": [84.75, 25.78]
+  },
+  "length_km_india": 503,
+  "length_km_total": 503,
+  "basin_area_total_km2": 57578,
+  "basin_area_india_km2": 57578,
+  "states_flows_through": ["uttar-pradesh", "bihar"],
+  "basin_states": ["uttar-pradesh", "bihar"],
+  "tributaries": { "left": [], "right": ["sarda"] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["china", "nepal"],
+  "significance": ["frequent flooding", "irrigation"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Known as the Karnali in Nepal, the Ghaghra is one of the longest rivers in Nepal before it crosses into India.",
+    "It is among the most flood-prone rivers of the Indo-Gangetic plain, regularly shifting course across the Terai lowlands."
+  ]
+}

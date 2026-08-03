@@ -1,0 +1,50 @@
+{
+  "id": "beas",
+  "name": "Beas",
+  "aliases": ["Vipasha", "Vipas", "Hyphasis"],
+  "local_names": { "hi": "ब्यास" },
+  "basin": "indus-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Beas Kund, near Rohtang Pass",
+    "state": "himachal-pradesh",
+    "altitude_m": 4361,
+    "coordinates": [77.25, 32.37]
+  },
+  "sink": {
+    "name": "Confluence with the Sutlej",
+    "type": "river",
+    "location": "Harike Wetland, Punjab, India",
+    "coordinates": [74.95, 31.17]
+  },
+  "length_km_india": 470,
+  "length_km_total": 470,
+  "basin_area_total_km2": 20303,
+  "basin_area_india_km2": 20303,
+  "states_flows_through": ["himachal-pradesh", "punjab"],
+  "basin_states": ["himachal-pradesh", "punjab"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [
+    "beas-conservation-reserve-ramsar",
+    "harike-lake-ramsar",
+    "harike-lake-wls",
+    "pong-dam-lake-ramsar",
+    "pong-dam-lake-wls"
+  ],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["irrigation", "hydropower"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Beas is the only major Himalayan tributary of the Indus system that flows entirely within India.",
+    "Alexander the Great's army turned back at the Beas (the ancient Hyphasis) in 326 BCE, marking the easternmost limit of his campaign in South Asia."
+  ]
+}

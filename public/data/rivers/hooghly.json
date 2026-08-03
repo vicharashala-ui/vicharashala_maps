@@ -1,0 +1,44 @@
+{
+  "id": "hooghly",
+  "name": "Hooghly",
+  "aliases": ["Bhagirathi-Hooghly"],
+  "local_names": { "hi": "हुगली" },
+  "basin": "ganga-basin",
+  "type": "distributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "mixed",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Bifurcation from the Ganga at the Farakka Barrage",
+    "state": "west-bengal",
+    "altitude_m": 15,
+    "coordinates": [87.93, 24.8]
+  },
+  "sink": {
+    "name": "Hooghly estuary",
+    "type": "sea",
+    "location": "Bay of Bengal, near Sagar Island, West Bengal",
+    "coordinates": [88.03, 21.65]
+  },
+  "length_km_india": 260,
+  "length_km_total": 260,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["west-bengal"],
+  "basin_states": ["west-bengal"],
+  "tributaries": { "left": [], "right": ["damodar", "ajay"] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": true,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["Kolkata Port navigation channel", "colonial-era trade route", "Ganga's principal India-only distributary"],
+  "notable_city_ids": ["kolkata"],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Called the Bhagirathi from Farakka to Nabadwip and the Hooghly from Nabadwip to the sea, this channel is the Ganga's main distributary that stays entirely within India.",
+    "The Farakka Barrage (1975) regulates how much Ganga water is diverted into the Hooghly versus continuing into Bangladesh as the Padma — a long-running point of India-Bangladesh water-sharing negotiation."
+  ]
+}

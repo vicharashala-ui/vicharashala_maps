@@ -1,0 +1,44 @@
+{
+  "id": "gomti",
+  "name": "Gomti",
+  "aliases": ["Gumti", "Gomati"],
+  "local_names": { "hi": "गोमती" },
+  "basin": "ganga-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "spring-fed",
+  "stream_order": 8,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Gomat Taal (Fulhar Jheel), near Madhotanda",
+    "state": "uttar-pradesh",
+    "altitude_m": 200,
+    "coordinates": [80.1, 28.7]
+  },
+  "sink": {
+    "name": "Confluence with the Ganga",
+    "type": "river",
+    "location": "Near Ghazipur, Uttar Pradesh",
+    "coordinates": [83.2, 25.5]
+  },
+  "length_km_india": 960,
+  "length_km_total": 960,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["uttar-pradesh"],
+  "basin_states": ["uttar-pradesh"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["flows through Lucknow", "historic navigation route"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Unlike most Himalayan-belt tributaries of the Ganga, the Gomti doesn't rise from a glacier — it begins at Gomat Taal, a terai swamp near Pilibhit.",
+    "The Gomti flows through the heart of Lucknow, Uttar Pradesh's capital, and was historically navigable up to the city."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "sarda",
+  "name": "Sarda",
+  "aliases": ["Kali", "Mahakali"],
+  "local_names": { "hi": "शारदा" },
+  "basin": "ganga-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 7,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Limpiyadhura, near the India-Nepal-China tri-junction",
+    "state": "uttarakhand",
+    "altitude_m": 3600,
+    "coordinates": [80.44, 30.2]
+  },
+  "sink": {
+    "name": "Confluence with the Ghaghra",
+    "type": "river",
+    "location": "Bahramghat, Uttar Pradesh",
+    "coordinates": [81.2, 27.3]
+  },
+  "length_km_india": 350,
+  "length_km_total": 350,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["uttarakhand", "uttar-pradesh"],
+  "basin_states": ["uttarakhand", "uttar-pradesh"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["nepal"],
+  "significance": ["India-Nepal border river", "major irrigation canal (Sarda Canal)", "territorial dispute"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Known as the Mahakali or Kali in Nepal, the Sarda forms part of the India-Nepal border and is at the centre of the long-running Kalapani-Limpiyadhura territorial dispute.",
+    "The Sarda Canal, built in the 1920s off the Sarda Barrage, was one of the earliest large-scale irrigation projects in colonial India."
+  ]
+}

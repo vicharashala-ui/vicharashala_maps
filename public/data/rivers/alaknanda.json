@@ -1,0 +1,44 @@
+{
+  "id": "alaknanda",
+  "name": "Alaknanda",
+  "aliases": [],
+  "local_names": { "hi": "अलकनंदा" },
+  "basin": "ganga-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Satopanth and Bhagirath Kharak glaciers, near Badrinath",
+    "state": "uttarakhand",
+    "altitude_m": 4600,
+    "coordinates": [79.4, 30.75]
+  },
+  "sink": {
+    "name": "Confluence with the Bhagirathi, forming the Ganga",
+    "type": "river",
+    "location": "Devprayag, Uttarakhand",
+    "coordinates": [78.598, 30.1461]
+  },
+  "length_km_india": 206.4,
+  "length_km_total": 206.4,
+  "basin_area_total_km2": 10882,
+  "basin_area_india_km2": 10882,
+  "states_flows_through": ["uttarakhand"],
+  "basin_states": ["uttarakhand"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["religious", "hydropower", "tourism"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "By volume the Alaknanda carries more water than the Bhagirathi at their Devprayag confluence, even though the Bhagirathi is conventionally treated as the Ganga's source stream.",
+    "The 2013 Uttarakhand floods, one of India's worst Himalayan disasters, were driven largely by extreme rainfall and glacial-lake outburst flooding in the Alaknanda basin."
+  ]
+}

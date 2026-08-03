@@ -1,0 +1,44 @@
+{
+  "id": "ken",
+  "name": "Ken",
+  "aliases": ["Karnavati"],
+  "local_names": { "hi": "केन" },
+  "basin": "ganga-basin",
+  "type": "tributary",
+  "drainage_type": "peninsular",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 8,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Ahirgawan village, Kaimur Range",
+    "state": "madhya-pradesh",
+    "altitude_m": 550,
+    "coordinates": [80.3, 23.4]
+  },
+  "sink": {
+    "name": "Confluence with the Yamuna",
+    "type": "river",
+    "location": "Banda district, Uttar Pradesh",
+    "coordinates": [80.4, 25.75]
+  },
+  "length_km_india": 427,
+  "length_km_total": 427,
+  "basin_area_total_km2": 28058,
+  "basin_area_india_km2": 28058,
+  "states_flows_through": ["madhya-pradesh", "uttar-pradesh"],
+  "basin_states": ["madhya-pradesh", "uttar-pradesh"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["irrigation", "river-interlinking project", "tiger reserve"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Ken flows through Panna Tiger Reserve, one of Madhya Pradesh's premier tiger habitats.",
+    "The Ken-Betwa Link is India's first river-interlinking project under the National Perspective Plan, meant to transfer 'surplus' Ken water to the water-stressed Betwa basin."
+  ]
+}

@@ -52,6 +52,68 @@ export const ProtectedArea = z.object({
   endemic_species: z.array(z.string()).max(3),
 });
 
+// rivers/{id}.json — spec §4.1. Manually authored; validated by authorRiverDetails.js
+// before writing, same fail-loud pattern as the generated pipeline files.
+export const RiverDetail = z.object({
+  id: z.string(),
+  name: z.string(),
+  aliases: z.array(z.string()),
+  local_names: z.record(z.string(), z.string()),
+  basin: z.string(),
+  type: z.enum(['main', 'tributary', 'distributary']),
+  drainage_type: z.enum(['himalayan', 'peninsular', 'coastal', 'inland']),
+  seasonal_type: z.enum(['perennial', 'seasonal', 'ephemeral']),
+  origin_type: z.enum(['glacial', 'rain-fed', 'spring-fed', 'mixed']),
+  stream_order: z.number().int().positive(),
+  wikimedia_image_id: z.string().nullable(),
+  source: z.object({
+    name: z.string(),
+    state: z.string(),
+    altitude_m: z.number(),
+    coordinates: z.tuple([z.number(), z.number()]),
+  }),
+  sink: z.object({
+    name: z.string(),
+    type: z.enum(['sea', 'river', 'lake']),
+    location: z.string(),
+    coordinates: z.tuple([z.number(), z.number()]),
+  }),
+  length_km_india: z.number().positive(),
+  length_km_total: z.number().positive(),
+  basin_area_total_km2: z.number().positive().nullable(),
+  basin_area_india_km2: z.number().positive().nullable(),
+  states_flows_through: z.array(z.string()),
+  basin_states: z.array(z.string()),
+  tributaries: z.object({ left: z.array(z.string()), right: z.array(z.string()) }),
+  distributaries: z.array(z.string()),
+  protected_area_ids: z.array(z.string()),
+  navigable: z.boolean(),
+  transnational: z.boolean(),
+  transnational_countries: z.array(z.string()),
+  significance: z.array(z.string()),
+  notable_city_ids: z.array(z.string()),
+  upsc_relevant: z.boolean(),
+  did_you_know: z.array(z.string()),
+});
+
+// cities.json — spec §4.5. Manually authored, no generation script.
+export const City = z.object({
+  id: z.string(),
+  name: z.string(),
+  state: z.string(),
+  river: z.string(),
+  river_bank: z.enum(['left', 'right']),
+  coordinates: z.tuple([z.number(), z.number()]),
+  significance: z.array(z.string()),
+  ghats: z.array(
+    z.object({
+      id: z.string(),
+      name: z.string(),
+      significance: z.string(),
+    })
+  ),
+});
+
 export const State = z.object({
   id: z.string(),
   name: z.string(),

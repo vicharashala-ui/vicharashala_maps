@@ -1,0 +1,44 @@
+{
+  "id": "ganga",
+  "name": "Ganga",
+  "aliases": ["Ganges", "Ganga Mata"],
+  "local_names": { "hi": "गंगा" },
+  "basin": "ganga-basin",
+  "type": "main",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 8,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Gaumukh (Gangotri Glacier), traditionally regarded as the Ganga's source",
+    "state": "uttarakhand",
+    "altitude_m": 3892,
+    "coordinates": [79.0819, 30.9928]
+  },
+  "sink": {
+    "name": "Ganges Delta",
+    "type": "sea",
+    "location": "Bay of Bengal, near Sagar Island, West Bengal / Bangladesh",
+    "coordinates": [88.03, 21.65]
+  },
+  "length_km_india": 2525,
+  "length_km_total": 2704,
+  "basin_area_total_km2": 1080000,
+  "basin_area_india_km2": 861452,
+  "states_flows_through": ["uttarakhand", "uttar-pradesh", "bihar", "jharkhand", "west-bengal"],
+  "basin_states": ["uttarakhand", "uttar-pradesh", "bihar", "jharkhand", "west-bengal"],
+  "tributaries": { "left": ["gomti", "ghaghra", "gandak", "kosi", "mahananda"], "right": ["yamuna", "son"] },
+  "distributaries": ["hooghly"],
+  "protected_area_ids": [],
+  "navigable": true,
+  "transnational": true,
+  "transnational_countries": ["bangladesh"],
+  "significance": ["religious", "cultural", "irrigation", "navigation"],
+  "notable_city_ids": ["haridwar", "rishikesh", "varanasi", "prayagraj", "patna"],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Ganga's source is officially reckoned at Gaumukh, the terminus of the Gangotri Glacier — though the river only takes the name 'Ganga' after the Bhagirathi and Alaknanda meet at Devprayag.",
+    "The Ganga basin, covering about a quarter of India's land area, supports more than 40% of India's population."
+  ]
+}

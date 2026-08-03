@@ -1,0 +1,44 @@
+{
+  "id": "kosi",
+  "name": "Kosi",
+  "aliases": ["Koshi", "Saptakoshi", "Sorrow of Bihar"],
+  "local_names": { "hi": "कोसी" },
+  "basin": "ganga-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 7,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Arun River headwaters, eastern Nepal/Tibet Himalaya",
+    "state": "nepal",
+    "altitude_m": 5000,
+    "coordinates": [87.0, 28.0]
+  },
+  "sink": {
+    "name": "Confluence with the Ganga",
+    "type": "river",
+    "location": "Near Kursela, Bihar",
+    "coordinates": [87.35, 25.75]
+  },
+  "length_km_india": 260,
+  "length_km_total": 720,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": 11410,
+  "states_flows_through": ["bihar"],
+  "basin_states": ["bihar"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["nepal", "china"],
+  "significance": ["frequent, severe flooding", "embankment/barrage engineering"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Nicknamed the 'Sorrow of Bihar,' the Kosi has a long history of catastrophic floods and dramatic channel shifts across the plains — it has moved over 100km westward over the past two centuries.",
+    "The 2008 Kosi flood, triggered by an embankment breach, was one of independent India's worst river disasters."
+  ]
+}
