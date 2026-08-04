@@ -1,0 +1,45 @@
+{
+  "id": "ponnaiyar",
+  "name": "Ponnaiyar",
+  "aliases": [],
+  "local_names": { "hi": "पोन्नैयार" },
+  "basin": "ponnaiyar-basin",
+  "type": "main",
+  "drainage_type": "peninsular",
+  "seasonal_type": "seasonal",
+  "origin_type": "rain-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Nandi Hills, Chikkaballapura district",
+    "state": "karnataka",
+    "altitude_m": 1276,
+    "coordinates": [77.9, 13.37]
+  },
+  "sink": {
+    "name": "Near Cuddalore",
+    "type": "sea",
+    "location": "Cuddalore district, Tamil Nadu, Bay of Bengal",
+    "coordinates": [79.7945, 11.772]
+  },
+  "length_km_india": 497,
+  "length_km_total": 497,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["karnataka", "tamil-nadu"],
+  "basin_states": ["karnataka", "tamil-nadu"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["irrigation (Sathanur, Krishnagiri dams)", "drought-prone flow"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Also called the South Pennar or Thenpennai to distinguish it from the separate (northern) Pennar river of Andhra Pradesh, the Ponnaiyar rises, like the Palar, in Karnataka's Nandi Hills.",
+    "It passes near Bangalore before crossing into Tamil Nadu, where the Krishnagiri and Sathanur dams regulate its flow for irrigation.",
+    "Despite its length of nearly 500 km, the river's flow is highly erratic and it frequently runs dry for extended stretches of the year."
+  ]
+}

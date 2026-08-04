@@ -1,0 +1,45 @@
+{
+  "id": "kallada",
+  "name": "Kallada",
+  "aliases": [],
+  "local_names": { "hi": "कल्लदा" },
+  "basin": "kallada-basin",
+  "type": "main",
+  "drainage_type": "peninsular",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 4,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Confluence of the Kulathupuzha, Chendurni and Kalthuruthy streams, near Ponmudi",
+    "state": "kerala",
+    "altitude_m": 900,
+    "coordinates": [77.1, 8.85]
+  },
+  "sink": {
+    "name": "Ashtamudi Lake, near Neendakara",
+    "type": "sea",
+    "location": "Kollam district, Kerala, Arabian Sea",
+    "coordinates": [76.53, 8.93]
+  },
+  "length_km_india": 126.1,
+  "length_km_total": 126.1,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["kerala"],
+  "basin_states": ["kerala"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["irrigation (Kallada Irrigation Project)", "flood protection for Kollam"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Kallada is Kollam district's longest river and is formed by the confluence of three streams draining the Shendurney Wildlife Sanctuary.",
+    "The Kallada Irrigation Project on the river is the largest irrigation scheme in Kerala.",
+    "Its estuary, the Ashtamudi Lake, is a Ramsar-listed wetland known for its distinctive eight-branched, palm-shaped shoreline."
+  ]
+}

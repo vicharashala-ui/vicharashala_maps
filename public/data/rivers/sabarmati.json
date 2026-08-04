@@ -1,0 +1,45 @@
+{
+  "id": "sabarmati",
+  "name": "Sabarmati",
+  "aliases": ["Wakal"],
+  "local_names": { "hi": "साबरमती" },
+  "basin": "sabarmati-basin",
+  "type": "main",
+  "drainage_type": "peninsular",
+  "seasonal_type": "seasonal",
+  "origin_type": "rain-fed",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Aravalli Range, near village Tepur",
+    "state": "rajasthan",
+    "altitude_m": 762,
+    "coordinates": [73.2, 24.6]
+  },
+  "sink": {
+    "name": "Gulf of Khambhat",
+    "type": "sea",
+    "location": "Gujarat, Arabian Sea",
+    "coordinates": [72.36, 22.22]
+  },
+  "length_km_india": 371,
+  "length_km_total": 371,
+  "basin_area_total_km2": 21674,
+  "basin_area_india_km2": 21674,
+  "states_flows_through": ["rajasthan", "gujarat"],
+  "basin_states": ["rajasthan", "gujarat"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["urban riverfront (Ahmedabad)", "irrigation", "monsoon-fed regulation"],
+  "notable_city_ids": ["ahmedabad"],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "In its uppermost reach through Rajasthan the Sabarmati is locally called the Wakal before taking its better-known name.",
+    "The river bisects Ahmedabad, founded on its banks in 1411, and today its urban stretch is regulated by the Sabarmati Riverfront Development project.",
+    "Being monsoon-fed rather than glacier- or spring-fed, the river historically ran dry for much of the year before dam and canal regulation evened out its flow."
+  ]
+}

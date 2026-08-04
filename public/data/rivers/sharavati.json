@@ -1,0 +1,45 @@
+{
+  "id": "sharavati",
+  "name": "Sharavati",
+  "aliases": [],
+  "local_names": { "hi": "शरावती" },
+  "basin": "sharavati-basin",
+  "type": "main",
+  "drainage_type": "peninsular",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Ambutheertha, Thirthahalli taluk",
+    "state": "karnataka",
+    "altitude_m": 730,
+    "coordinates": [75.1764, 13.7925]
+  },
+  "sink": {
+    "name": "Near Honnavar",
+    "type": "sea",
+    "location": "Uttara Kannada district, Karnataka, Arabian Sea",
+    "coordinates": [74.4236, 14.2992]
+  },
+  "length_km_india": 134.2,
+  "length_km_total": 134.2,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["karnataka"],
+  "basin_states": ["karnataka"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["hydropower (Jog Falls / Mahatma Gandhi Hydroelectric Station)", "Western Ghats biodiversity"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "About 29 km from the sea, the Sharavati plunges roughly 250 metres to form Jog Falls, one of India's highest waterfalls, split into four cataracts.",
+    "By legend, the river's name comes from Shara ('arrow'): Rama is said to have shot an arrow into the ground here to summon water for Sita.",
+    "The Linganamakki Dam upstream of Jog Falls and the Mahatma Gandhi Hydroelectric Station just below it together supply a significant share of Karnataka's electricity."
+  ]
+}

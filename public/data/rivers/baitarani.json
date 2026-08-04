@@ -1,0 +1,45 @@
+{
+  "id": "baitarani",
+  "name": "Baitarani",
+  "aliases": ["Vaitarani"],
+  "local_names": { "hi": "बैतरणी" },
+  "basin": "baitarani-basin",
+  "type": "main",
+  "drainage_type": "peninsular",
+  "seasonal_type": "seasonal",
+  "origin_type": "rain-fed",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Gonasika (Guptaganga) Hills, Keonjhar district",
+    "state": "odisha",
+    "altitude_m": 900,
+    "coordinates": [85.5519, 21.5048]
+  },
+  "sink": {
+    "name": "Brahmani-Baitarani joint delta, Dhamra estuary near Chandbali",
+    "type": "sea",
+    "location": "Bhadrak district, Odisha, Bay of Bengal",
+    "coordinates": [86.9548, 20.7768]
+  },
+  "length_km_india": 414.3,
+  "length_km_total": 414.3,
+  "basin_area_total_km2": 10982,
+  "basin_area_india_km2": 10982,
+  "states_flows_through": ["jharkhand", "odisha"],
+  "basin_states": ["jharkhand", "odisha"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["religious", "irrigation", "delta ecology"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "At its source in Gonasika, the river emerges from a rock formation shaped like a cow's nostril and flows underground for about half a kilometre before resurfacing, giving it the name Guptaganga ('hidden Ganga').",
+    "For part of its upper course the Baitarani forms the boundary between Odisha and Jharkhand.",
+    "Together with the Brahmani, it forms a large joint delta at Dhamra that includes the Bhitarkanika mangrove and estuarine-crocodile sanctuary."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "vaigai",
+  "name": "Vaigai",
+  "aliases": [],
+  "local_names": { "hi": "वैगई" },
+  "basin": "vaigai-basin",
+  "type": "main",
+  "drainage_type": "peninsular",
+  "seasonal_type": "seasonal",
+  "origin_type": "rain-fed",
+  "stream_order": 4,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Varushanadu Hills, near Kottaimalai",
+    "state": "tamil-nadu",
+    "altitude_m": 1200,
+    "coordinates": [77.383, 9.533]
+  },
+  "sink": {
+    "name": "Near Uchipuli, close to Pamban Bridge",
+    "type": "sea",
+    "location": "Ramanathapuram district, Tamil Nadu, Palk Strait",
+    "coordinates": [79.19, 9.28]
+  },
+  "length_km_india": 312.2,
+  "length_km_total": 312.2,
+  "basin_area_total_km2": 7230,
+  "basin_area_india_km2": 7230,
+  "states_flows_through": ["tamil-nadu"],
+  "basin_states": ["tamil-nadu"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["Madurai water supply", "Sangam-era cultural heritage", "interbasin transfer (Periyar-Vaigai project)"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Celebrated in Sangam-era Tamil literature as 'Kritamaala', the Vaigai is said to encircle the temple city of Madurai like a garland.",
+    "Much of its flow today comes not from its own catchment but from the Periyar-Vaigai project, which tunnels water from the Periyar River in Kerala across the Western Ghats.",
+    "It rarely floods and is often reduced to a dry, sandy bed for long stretches, despite being the longest river south of the Kaveri delta."
+  ]
+}

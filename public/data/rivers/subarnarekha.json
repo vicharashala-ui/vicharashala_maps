@@ -1,0 +1,45 @@
+{
+  "id": "subarnarekha",
+  "name": "Subarnarekha",
+  "aliases": ["Swarnarekha"],
+  "local_names": { "hi": "स्वर्णरेखा" },
+  "basin": "subarnarekha-basin",
+  "type": "main",
+  "drainage_type": "peninsular",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Near Piska/Nagri village, Ranchi district",
+    "state": "jharkhand",
+    "altitude_m": 610,
+    "coordinates": [85.183, 23.3]
+  },
+  "sink": {
+    "name": "Near Talsari",
+    "type": "sea",
+    "location": "Balasore district, Odisha, Bay of Bengal",
+    "coordinates": [87.392, 21.555]
+  },
+  "length_km_india": 479.5,
+  "length_km_total": 479.5,
+  "basin_area_total_km2": 18951,
+  "basin_area_india_km2": 18951,
+  "states_flows_through": ["jharkhand", "west-bengal", "odisha"],
+  "basin_states": ["jharkhand", "west-bengal", "odisha"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["industrial", "mining economy", "gold-panning tradition"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The name Subarnarekha ('streak of gold') comes from the tradition of panning fine gold particles from its sandy bed near its source at Piska.",
+    "The river and its Kharkai tributary underpin the industrial city of Jamshedpur, one of India's earliest planned steel towns.",
+    "It drops over Hundru Falls, about 98 metres, as it exits the Chota Nagpur Plateau."
+  ]
+}

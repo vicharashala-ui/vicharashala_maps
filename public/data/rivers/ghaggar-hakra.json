@@ -1,0 +1,45 @@
+{
+  "id": "ghaggar-hakra",
+  "name": "Ghaggar-Hakra",
+  "aliases": ["Hakra", "Sarasvati"],
+  "local_names": { "hi": "घग्गर-हकरा" },
+  "basin": "ghaggar-basin",
+  "type": "main",
+  "drainage_type": "inland",
+  "seasonal_type": "ephemeral",
+  "origin_type": "rain-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Near Dagshai, Shivalik Hills, Solan district",
+    "state": "himachal-pradesh",
+    "altitude_m": 1927,
+    "coordinates": [77.099, 30.877]
+  },
+  "sink": {
+    "name": "Cholistan Desert (as the Hakra), where the channel dissipates",
+    "type": "lake",
+    "location": "Punjab province, Pakistan",
+    "coordinates": [70.25, 28.35]
+  },
+  "length_km_india": 320,
+  "length_km_total": 320,
+  "basin_area_total_km2": 42200,
+  "basin_area_india_km2": 42200,
+  "states_flows_through": ["himachal-pradesh", "punjab", "haryana", "rajasthan"],
+  "basin_states": ["himachal-pradesh", "punjab", "haryana", "rajasthan"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["pakistan"],
+  "significance": ["candidate identification with the Vedic Saraswati river", "Indus Valley Civilization sites along its paleochannel", "endorheic/ephemeral flow"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The river is called Ghaggar in India and Hakra after it crosses into Pakistan, where it eventually disappears into the sands of the Cholistan Desert without reaching the sea.",
+    "It is a leading — though scientifically contested — candidate for the Rigvedic Saraswati river; recent geophysical studies suggest its paleochannel was fed by monsoon rainfall rather than Himalayan glaciers.",
+    "Numerous Indus Valley Civilization sites, including Kalibangan, lie along its dry former course, making the basin one of the most archaeologically significant river valleys in South Asia despite carrying almost no water today outside the monsoon."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "palar",
+  "name": "Palar",
+  "aliases": [],
+  "local_names": { "hi": "पालार" },
+  "basin": "palar-basin",
+  "type": "main",
+  "drainage_type": "peninsular",
+  "seasonal_type": "seasonal",
+  "origin_type": "rain-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Nandi Hills, Chikkaballapura district",
+    "state": "karnataka",
+    "altitude_m": 900,
+    "coordinates": [77.9, 13.37]
+  },
+  "sink": {
+    "name": "Near Vayalur",
+    "type": "sea",
+    "location": "Chengalpattu district, Tamil Nadu, Bay of Bengal",
+    "coordinates": [80.15, 12.53]
+  },
+  "length_km_india": 348,
+  "length_km_total": 348,
+  "basin_area_total_km2": 5044,
+  "basin_area_india_km2": 5044,
+  "states_flows_through": ["karnataka", "andhra-pradesh", "tamil-nadu"],
+  "basin_states": ["karnataka", "andhra-pradesh", "tamil-nadu"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["irrigation", "Chennai water supply (Poondi, Chembarambakkam reservoirs)", "tannery-belt pollution"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "'Palar' means 'river of milk' in Tamil, but the river runs as an underground stream (Guptagamini) for a long stretch near its source before re-emerging near Bethamangala.",
+    "Water diverted from the Palar has historically fed the Poondi and Chembarambakkam reservoirs, once among Chennai's primary drinking-water sources.",
+    "Its banks host major historic temple towns, including Kanchipuram, though the tannery industry clustered along its middle course has long been a source of pollution concern."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "mandovi",
+  "name": "Mandovi",
+  "aliases": ["Mahadayi", "Rio de Goa"],
+  "local_names": { "hi": "मांडवी" },
+  "basin": "mandovi-basin",
+  "type": "main",
+  "drainage_type": "peninsular",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Bhimgad, Belagavi district, Western Ghats",
+    "state": "karnataka",
+    "altitude_m": 650,
+    "coordinates": [74.35, 15.58]
+  },
+  "sink": {
+    "name": "Near Panaji",
+    "type": "sea",
+    "location": "North Goa district, Goa, Arabian Sea",
+    "coordinates": [73.8111, 15.4939]
+  },
+  "length_km_india": 81,
+  "length_km_total": 81,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["karnataka", "goa", "maharashtra"],
+  "basin_states": ["karnataka", "goa", "maharashtra"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": true,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["lifeline of Goa", "iron ore navigation", "interstate water dispute (Mahadayi Tribunal)"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Known as the Mahadayi ('great mother') in its upper Karnataka reaches and the Mandovi once it enters Goa, the river carries two identities across a single course.",
+    "Panaji, Goa's capital, and Old Goa, the former Portuguese capital, both sit on its left bank.",
+    "A long-running Mahadayi water-sharing dispute between Karnataka and Goa, adjudicated by a tribunal set up in 2010, centres on how much of the river's upper flow Karnataka can divert to its Malaprabha basin."
+  ]
+}

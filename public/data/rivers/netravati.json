@@ -1,0 +1,45 @@
+{
+  "id": "netravati",
+  "name": "Netravati",
+  "aliases": [],
+  "local_names": { "hi": "नेत्रावती" },
+  "basin": "netravati-basin",
+  "type": "main",
+  "drainage_type": "coastal",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Bangrabalige Valley, Yelaneeru Ghat, Kudremukha Range",
+    "state": "karnataka",
+    "altitude_m": 1300,
+    "coordinates": [75.15, 13.15]
+  },
+  "sink": {
+    "name": "Near Mangalore",
+    "type": "sea",
+    "location": "Dakshina Kannada district, Karnataka, Arabian Sea",
+    "coordinates": [74.82, 12.85]
+  },
+  "length_km_india": 115.7,
+  "length_km_total": 115.7,
+  "basin_area_total_km2": 3502,
+  "basin_area_india_km2": 3502,
+  "states_flows_through": ["karnataka"],
+  "basin_states": ["karnataka"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["pilgrimage (Dharmasthala)", "Mangalore water supply", "Western Ghats biodiversity"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Netravati passes through Dharmasthala, one of Karnataka's most visited pilgrimage towns, and is considered one of India's holy rivers.",
+    "It rises within Kudremukh, a UNESCO-recognised biodiversity hotspot in the Western Ghats, and is the main water source for Mangalore and Bantwal.",
+    "In the early 20th century the river was known locally as the Bantwal River, after the riverside town of the same name."
+  ]
+}

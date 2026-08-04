@@ -1,0 +1,45 @@
+{
+  "id": "vaippar",
+  "name": "Vaippar",
+  "aliases": [],
+  "local_names": { "hi": "वैप्पार" },
+  "basin": "vaippar-basin",
+  "type": "main",
+  "drainage_type": "coastal",
+  "seasonal_type": "seasonal",
+  "origin_type": "rain-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Varushanadu Hills, near Sivagiri, Western Ghats",
+    "state": "tamil-nadu",
+    "altitude_m": 900,
+    "coordinates": [77.72, 9.15]
+  },
+  "sink": {
+    "name": "Gulf of Mannar, near Vaippar village",
+    "type": "sea",
+    "location": "Thoothukudi district, Tamil Nadu",
+    "coordinates": [78.23, 9.03]
+  },
+  "length_km_india": 86.5,
+  "length_km_total": 86.5,
+  "basin_area_total_km2": 5288,
+  "basin_area_india_km2": 5288,
+  "states_flows_through": ["tamil-nadu"],
+  "basin_states": ["tamil-nadu"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["irrigation in arid Virudhunagar/Thoothukudi plains", "salt production"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Vaippar flows through some of Tamil Nadu's driest districts, where it is largely dependent on the northeast monsoon and runs for only a limited number of days a year in its lower reaches.",
+    "Its waters are important for salt-pan production near the coast in Thoothukudi district.",
+    "The proposed Pamba-Achankovil-Vaippar link would divert monsoon surplus from Kerala's Pamba and Achankovil rivers into the Vaippar basin — a long-debated interstate river-linking proposal."
+  ]
+}

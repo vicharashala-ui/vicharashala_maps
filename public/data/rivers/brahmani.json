@@ -1,0 +1,45 @@
+{
+  "id": "brahmani",
+  "name": "Brahmani",
+  "aliases": ["South Koel"],
+  "local_names": { "hi": "ब्राह्मणी" },
+  "basin": "brahmani-basin",
+  "type": "main",
+  "drainage_type": "peninsular",
+  "seasonal_type": "seasonal",
+  "origin_type": "rain-fed",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Confluence of the Sankh and South Koel rivers at Vedavyas, near Rourkela",
+    "state": "odisha",
+    "altitude_m": 219,
+    "coordinates": [84.7838, 22.2458]
+  },
+  "sink": {
+    "name": "Brahmani-Baitarani joint delta, near Dhamra",
+    "type": "sea",
+    "location": "Bhadrak district, Odisha, Bay of Bengal",
+    "coordinates": [86.95, 20.8]
+  },
+  "length_km_india": 799,
+  "length_km_total": 799,
+  "basin_area_total_km2": 39033,
+  "basin_area_india_km2": 39033,
+  "states_flows_through": ["jharkhand", "odisha"],
+  "basin_states": ["jharkhand", "odisha"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["mining and industry", "hydropower", "delta ecology"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Brahmani is formed not by a single spring but by the confluence of the Sankh and South Koel rivers near the industrial town of Rourkela.",
+    "It is one of the few Indian rivers that cuts across the Eastern Ghats, carving a small gorge at Rengali where a dam has been built.",
+    "Together with the Baitarani, the Brahmani forms a large joint delta at Dhamra that includes the Bhitarkanika mangroves, a key nesting site for estuarine crocodiles."
+  ]
+}

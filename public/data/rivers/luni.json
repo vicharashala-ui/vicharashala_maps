@@ -1,0 +1,45 @@
+{
+  "id": "luni",
+  "name": "Luni",
+  "aliases": ["Sagarmati"],
+  "local_names": { "hi": "लूनी" },
+  "basin": "luni-basin",
+  "type": "main",
+  "drainage_type": "inland",
+  "seasonal_type": "seasonal",
+  "origin_type": "rain-fed",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Naga Hills, Pushkar valley, Aravalli Range",
+    "state": "rajasthan",
+    "altitude_m": 550,
+    "coordinates": [74.5511, 26.4899]
+  },
+  "sink": {
+    "name": "Rann of Kutch, near Nadabet",
+    "type": "lake",
+    "location": "Banaskantha district, Gujarat",
+    "coordinates": [71.183, 24.65]
+  },
+  "length_km_india": 495,
+  "length_km_total": 495,
+  "basin_area_total_km2": 37363,
+  "basin_area_india_km2": 37363,
+  "states_flows_through": ["rajasthan", "gujarat"],
+  "basin_states": ["rajasthan", "gujarat"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["only significant river system of the Thar Desert", "irrigation despite salinity", "endorheic terminus"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Luni is called Sagarmati near its Pushkar-valley source and only takes its familiar name after merging with the Saraswati stream near Govindgarh.",
+    "Its name derives from the Sanskrit Lavanavari, 'salt river': the water stays fresh until around Balotra, after which high soil salinity turns it increasingly saline.",
+    "Rather than reaching the sea, the Luni dissipates into the marshy salt flats of the Rann of Kutch, making it an endorheic river typical of the Thar Desert region it drains."
+  ]
+}

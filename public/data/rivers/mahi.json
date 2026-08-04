@@ -1,0 +1,45 @@
+{
+  "id": "mahi",
+  "name": "Mahi",
+  "aliases": [],
+  "local_names": { "hi": "माही" },
+  "basin": "mahi-basin",
+  "type": "main",
+  "drainage_type": "peninsular",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Near Bhopawar village, Sardarpur tehsil, Vindhya Range",
+    "state": "madhya-pradesh",
+    "altitude_m": 500,
+    "coordinates": [75.0, 22.6]
+  },
+  "sink": {
+    "name": "Gulf of Khambhat, near Kathana",
+    "type": "sea",
+    "location": "Anand district, Gujarat, Arabian Sea",
+    "coordinates": [72.65, 22.35]
+  },
+  "length_km_india": 553.5,
+  "length_km_total": 553.5,
+  "basin_area_total_km2": 34842,
+  "basin_area_india_km2": 34842,
+  "states_flows_through": ["madhya-pradesh", "rajasthan", "gujarat"],
+  "basin_states": ["madhya-pradesh", "rajasthan", "gujarat"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["irrigation", "hydropower", "silt deposition at Gulf of Khambhat"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Mahi is one of the few Indian rivers that crosses the Tropic of Cancer twice, first flowing north out of Madhya Pradesh and then looping back south through Rajasthan into Gujarat.",
+    "Silt carried down by the Mahi has steadily shallowed the Gulf of Khambhat over centuries, contributing to the decline of the once-prosperous port of Khambhat.",
+    "The river gives its name to Gujarat's Mahisagar district, and is popularly called 'Mahisagar' for its considerable width in its lower course."
+  ]
+}
