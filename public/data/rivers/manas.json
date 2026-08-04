@@ -1,0 +1,44 @@
+{
+  "id": "manas",
+  "name": "Manas",
+  "aliases": ["Drangme Chhu"],
+  "local_names": { "hi": "मानस" },
+  "basin": "brahmaputra-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Black Mountains of central Bhutan (as the Drangme Chhu)",
+    "state": "bhutan",
+    "altitude_m": 3000,
+    "coordinates": [90.5, 27.5]
+  },
+  "sink": {
+    "name": "Confluence with the Brahmaputra",
+    "type": "river",
+    "location": "Jogighopa, Assam",
+    "coordinates": [90.55, 26.23]
+  },
+  "length_km_india": 104,
+  "length_km_total": 376,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["assam"],
+  "basin_states": ["assam"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["bhutan"],
+  "significance": ["ecological", "hydropower"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Manas is the Brahmaputra's largest north-bank tributary, contributing over 5% of its total average discharge.",
+    "It gives its name to Manas National Park, a UNESCO World Heritage Site and tiger reserve straddling its Assam banks."
+  ]
+}

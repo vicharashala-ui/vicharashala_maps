@@ -1,0 +1,45 @@
+{
+  "id": "brahmaputra",
+  "name": "Brahmaputra",
+  "aliases": ["Tsangpo", "Yarlung Tsangpo", "Siang", "Dihang", "Jamuna"],
+  "local_names": { "hi": "ब्रह्मपुत्र" },
+  "basin": "brahmaputra-basin",
+  "type": "main",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 8,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Angsi Glacier (Chemayungdung), near Mount Kailash",
+    "state": "tibet",
+    "altitude_m": 5210,
+    "coordinates": [82.01, 30.42]
+  },
+  "sink": {
+    "name": "Meghna Estuary, formed with the Ganga-Padma and Meghna",
+    "type": "sea",
+    "location": "Bay of Bengal, Bangladesh",
+    "coordinates": [90.5, 22.0]
+  },
+  "length_km_india": 916,
+  "length_km_total": 2900,
+  "basin_area_total_km2": 580000,
+  "basin_area_india_km2": 194413,
+  "states_flows_through": ["arunachal-pradesh", "assam"],
+  "basin_states": ["arunachal-pradesh", "assam", "sikkim", "west-bengal", "meghalaya", "nagaland"],
+  "tributaries": { "left": ["kopili"], "right": ["lohit", "subansiri", "kameng", "manas", "teesta", "torsa"] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": true,
+  "transnational": true,
+  "transnational_countries": ["china", "bangladesh"],
+  "significance": ["irrigation", "navigation", "hydropower", "strategic", "cultural"],
+  "notable_city_ids": ["guwahati"],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Brahmaputra is the only major Indian river with a masculine name; its Sanskrit name means 'son of Brahma'.",
+    "It enters India as the Siang near the McMahon Line, is joined by the Lohit and Dibang near Kobo, Assam, and only then is called the Brahmaputra.",
+    "In its Assam valley stretch the river becomes heavily braided, at places over 10 km wide, hosting the world's largest river island, Majuli."
+  ]
+}

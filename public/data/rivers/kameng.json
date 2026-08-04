@@ -1,0 +1,44 @@
+{
+  "id": "kameng",
+  "name": "Kameng",
+  "aliases": ["Jia Bharali", "Bhareli"],
+  "local_names": { "hi": "कामेंग" },
+  "basin": "brahmaputra-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 8,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Glacial lake below Gori Chen peak, Tawang district, on the India-Tibet border",
+    "state": "arunachal-pradesh",
+    "altitude_m": 6300,
+    "coordinates": [92.4439, 27.81]
+  },
+  "sink": {
+    "name": "Confluence with the Brahmaputra",
+    "type": "river",
+    "location": "Near Tezpur, Assam",
+    "coordinates": [92.79, 26.63]
+  },
+  "length_km_india": 150,
+  "length_km_total": 264,
+  "basin_area_total_km2": 11843,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["arunachal-pradesh", "assam"],
+  "basin_states": ["arunachal-pradesh", "assam"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["china"],
+  "significance": ["hydropower", "ecological"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Kameng flows entirely within India but its source glacier sits right on the India-Tibet border.",
+    "It forms the boundary between the Eaglenest and Pakke Tiger Reserve sanctuaries before joining the Brahmaputra at Tezpur."
+  ]
+}

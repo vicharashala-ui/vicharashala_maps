@@ -1,0 +1,44 @@
+{
+  "id": "teesta",
+  "name": "Teesta",
+  "aliases": ["Tista"],
+  "local_names": { "hi": "तीस्ता" },
+  "basin": "brahmaputra-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Zemu Glacier and Tso Lhamo Lake, near Kangchenjunga",
+    "state": "sikkim",
+    "altitude_m": 5330,
+    "coordinates": [88.75, 28.05]
+  },
+  "sink": {
+    "name": "Confluence with the Brahmaputra (Jamuna)",
+    "type": "river",
+    "location": "Near Chilmari, Bangladesh",
+    "coordinates": [89.7, 25.55]
+  },
+  "length_km_india": 414,
+  "length_km_total": 414,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["sikkim", "west-bengal"],
+  "basin_states": ["sikkim", "west-bengal"],
+  "tributaries": { "left": ["rangeet"], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["bangladesh"],
+  "significance": ["hydropower", "irrigation", "ecological"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Teesta drops nearly 5,000m from its glacial source to the plains of West Bengal in under 200km, making it one of India's steepest major rivers.",
+    "Water-sharing of the Teesta is a long-running point of discussion between India and Bangladesh, where the river is a major lifeline for irrigation."
+  ]
+}

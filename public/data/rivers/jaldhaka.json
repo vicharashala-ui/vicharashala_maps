@@ -1,0 +1,44 @@
+{
+  "id": "jaldhaka",
+  "name": "Jaldhaka",
+  "aliases": ["Dichu"],
+  "local_names": { "hi": "जलढाका" },
+  "basin": "brahmaputra-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "spring-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Bidang Cliff area, Sikkim-West Bengal border",
+    "state": "sikkim",
+    "altitude_m": 3000,
+    "coordinates": [88.86, 27.1]
+  },
+  "sink": {
+    "name": "Confluence with the Dharla, a Brahmaputra tributary",
+    "type": "river",
+    "location": "Kurigram District, Bangladesh",
+    "coordinates": [89.65, 26.0]
+  },
+  "length_km_india": 193,
+  "length_km_total": 193,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["sikkim", "west-bengal"],
+  "basin_states": ["sikkim", "west-bengal"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["bangladesh"],
+  "significance": ["hydropower", "ecological"],
+  "notable_city_ids": [],
+  "upsc_relevant": false,
+  "did_you_know": [
+    "The Jaldhaka feeds the Bindu and Jaldhaka hydel projects before crossing into Bangladesh's Dooars-adjacent plains.",
+    "It flows past Kalimpong's forested slopes, one of the wetter corners of the eastern Himalayan foothills."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "rangeet",
+  "name": "Rangeet",
+  "aliases": ["Rangit", "Ranjit"],
+  "local_names": { "hi": "रंगीत" },
+  "basin": "brahmaputra-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Rathong Glacier, near Mount Kabru",
+    "state": "sikkim",
+    "altitude_m": 4900,
+    "coordinates": [88.15, 27.6]
+  },
+  "sink": {
+    "name": "Confluence with the Teesta",
+    "type": "river",
+    "location": "Melli, Sikkim-West Bengal border",
+    "coordinates": [88.42, 27.03]
+  },
+  "length_km_india": 65,
+  "length_km_total": 65,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["sikkim"],
+  "basin_states": ["sikkim"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["hydropower", "ecological"],
+  "notable_city_ids": [],
+  "upsc_relevant": false,
+  "did_you_know": [
+    "The Rangeet forms the boundary between West and South Sikkim for much of its course before meeting the Teesta at Melli.",
+    "It's fed by two headstreams, the Rathong and Rangeet proper, draining glaciers on the southern flank of Kangchenjunga."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "indravati",
+  "name": "Indravati",
+  "aliases": [],
+  "local_names": { "hi": "इंद्रावती" },
+  "basin": "godavari-basin",
+  "type": "tributary",
+  "drainage_type": "peninsular",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Dandakaranya Range, near Mardiguda village, Thuamul Rampur block",
+    "state": "odisha",
+    "altitude_m": 914,
+    "coordinates": [83.06, 19.6]
+  },
+  "sink": {
+    "name": "Confluence with the Godavari",
+    "type": "river",
+    "location": "Near Bhadrakali, at the Chhattisgarh-Maharashtra-Telangana tri-junction",
+    "coordinates": [80.15, 19.1]
+  },
+  "length_km_india": 489,
+  "length_km_total": 535,
+  "basin_area_total_km2": 41665,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["odisha", "chhattisgarh", "maharashtra", "telangana"],
+  "basin_states": ["odisha", "chhattisgarh", "maharashtra", "telangana"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["irrigation", "cultural", "ecological"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Known as the 'lifeline' of Chhattisgarh's Bastar district, the Indravati forms the spectacular Chitrakoot Falls, often called the 'Niagara of India'.",
+    "For long stretches it forms the boundary between Chhattisgarh and Maharashtra before joining the Godavari at a tri-state junction."
+  ]
+}

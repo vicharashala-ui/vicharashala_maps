@@ -1,0 +1,44 @@
+{
+  "id": "lohit",
+  "name": "Lohit",
+  "aliases": ["Zayul Chu", "Rongto Tsangpo"],
+  "local_names": { "hi": "लोहित" },
+  "basin": "brahmaputra-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 8,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Glaciers of the Kangri Karpo range, near Rima",
+    "state": "tibet",
+    "altitude_m": 5330,
+    "coordinates": [97.62, 28.75]
+  },
+  "sink": {
+    "name": "Confluence with the Siang and Dibang, forming the Brahmaputra",
+    "type": "river",
+    "location": "Near Kobo/Sadiya, Assam",
+    "coordinates": [95.68, 27.83]
+  },
+  "length_km_india": 200,
+  "length_km_total": 274,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["arunachal-pradesh", "assam"],
+  "basin_states": ["arunachal-pradesh", "assam"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["china"],
+  "significance": ["hydropower", "strategic"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Lohit is one of the two rivers (with the Dibang) that join the Siang near Sadiya to form the Brahmaputra proper.",
+    "It drains one of the wettest and most seismically active corners of the eastern Himalaya, Arunachal Pradesh's Lohit district."
+  ]
+}

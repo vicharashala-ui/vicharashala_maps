@@ -1,0 +1,44 @@
+{
+  "id": "torsa",
+  "name": "Torsa",
+  "aliases": ["Amo Chhu", "Machu"],
+  "local_names": { "hi": "तोर्षा" },
+  "basin": "brahmaputra-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Chumbi Valley (as the Machu)",
+    "state": "tibet",
+    "altitude_m": 4000,
+    "coordinates": [88.85, 27.5]
+  },
+  "sink": {
+    "name": "Confluence with the Brahmaputra (Jamuna)",
+    "type": "river",
+    "location": "Bangladesh",
+    "coordinates": [89.7, 25.9]
+  },
+  "length_km_india": 100,
+  "length_km_total": 358,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["west-bengal"],
+  "basin_states": ["west-bengal"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["china", "bhutan", "bangladesh"],
+  "significance": ["ecological"],
+  "notable_city_ids": [],
+  "upsc_relevant": false,
+  "did_you_know": [
+    "The Torsa crosses four territories on its way to the Brahmaputra: Tibet (as the Machu), Bhutan (as the Amo Chhu), West Bengal, and Bangladesh.",
+    "It passes through the Bhutanese border town of Phuntsholing before entering the Dooars region of West Bengal."
+  ]
+}

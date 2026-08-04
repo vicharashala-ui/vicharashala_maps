@@ -1,0 +1,44 @@
+{
+  "id": "subansiri",
+  "name": "Subansiri",
+  "aliases": ["Gold River"],
+  "local_names": { "hi": "सुबानसिरी" },
+  "basin": "brahmaputra-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 7,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Tsari region of the Tibetan plateau, near Migyitun",
+    "state": "tibet",
+    "altitude_m": 5000,
+    "coordinates": [93.77, 29.03]
+  },
+  "sink": {
+    "name": "Confluence with the Brahmaputra",
+    "type": "river",
+    "location": "Near Majuli/Lakhimpur, Assam",
+    "coordinates": [94.05, 27.28]
+  },
+  "length_km_india": 382,
+  "length_km_total": 442,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["arunachal-pradesh", "assam"],
+  "basin_states": ["arunachal-pradesh", "assam"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["china"],
+  "significance": ["hydropower", "irrigation"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Subansiri is the Brahmaputra's largest tributary by discharge on the north bank.",
+    "Its name means 'river of gold' — gold dust was historically panned from its waters in Assam."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "kaveri",
+  "name": "Kaveri",
+  "aliases": ["Cauvery", "Ponni"],
+  "local_names": { "hi": "कावेरी" },
+  "basin": "kaveri-basin",
+  "type": "main",
+  "drainage_type": "peninsular",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Talakaveri, Brahmagiri range, Western Ghats",
+    "state": "karnataka",
+    "altitude_m": 1341,
+    "coordinates": [75.483, 12.383]
+  },
+  "sink": {
+    "name": "Kaveri Delta",
+    "type": "sea",
+    "location": "Bay of Bengal, near Poompuhar, Mayiladuthurai district, Tamil Nadu",
+    "coordinates": [79.867, 11.133]
+  },
+  "length_km_india": 800,
+  "length_km_total": 800,
+  "basin_area_total_km2": 81155,
+  "basin_area_india_km2": 81155,
+  "states_flows_through": ["karnataka", "tamil-nadu", "kerala", "puducherry"],
+  "basin_states": ["karnataka", "tamil-nadu", "kerala", "puducherry"],
+  "tributaries": { "left": ["hemavathi", "shimsha", "arkavathi"], "right": ["kabini", "bhavani", "amaravathi"] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["religious", "irrigation", "cultural"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Called the 'Ganga of the South', the Kaveri is considered so sacred that a sip of its water is traditionally regarded as equal to bathing in the Ganga.",
+    "Its waters have been at the centre of one of India's longest-running interstate river disputes, between Karnataka and Tamil Nadu, dating back to agreements from 1892 and 1924.",
+    "The delta town of Poompuhar (ancient Kaveripoompattinam) near its mouth was one of the busiest ports of the ancient world, trading with Rome and Southeast Asia."
+  ]
+}

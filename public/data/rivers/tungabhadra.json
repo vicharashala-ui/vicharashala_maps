@@ -1,0 +1,44 @@
+{
+  "id": "tungabhadra",
+  "name": "Tungabhadra",
+  "aliases": ["Pampa"],
+  "local_names": { "hi": "तुंगभद्रा" },
+  "basin": "krishna-basin",
+  "type": "tributary",
+  "drainage_type": "peninsular",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 7,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Confluence of the Tunga and Bhadra rivers, Koodli",
+    "state": "karnataka",
+    "altitude_m": 570,
+    "coordinates": [75.62, 13.95]
+  },
+  "sink": {
+    "name": "Confluence with the Krishna",
+    "type": "river",
+    "location": "Near Alampur/Sangameswaram, Andhra Pradesh-Karnataka border",
+    "coordinates": [78.13, 15.9]
+  },
+  "length_km_india": 552.5,
+  "length_km_total": 552.5,
+  "basin_area_total_km2": 71417,
+  "basin_area_india_km2": 71417,
+  "states_flows_through": ["karnataka", "andhra-pradesh"],
+  "basin_states": ["karnataka", "andhra-pradesh"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["irrigation", "cultural"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Tungabhadra is formed by the merger of the Tunga and Bhadra rivers at Koodli, a sangam considered sacred and referenced in the Ramayana as the Pampa.",
+    "It's the Krishna's largest tributary by drainage area, and the Hampi ruins of the Vijayanagara Empire sit directly on its banks."
+  ]
+}

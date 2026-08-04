@@ -1,0 +1,44 @@
+{
+  "id": "pranhita",
+  "name": "Pranhita",
+  "aliases": [],
+  "local_names": { "hi": "प्राणहिता" },
+  "basin": "godavari-basin",
+  "type": "tributary",
+  "drainage_type": "peninsular",
+  "seasonal_type": "seasonal",
+  "origin_type": "rain-fed",
+  "stream_order": 7,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Confluence of the Wainganga and Wardha rivers",
+    "state": "maharashtra",
+    "altitude_m": 145,
+    "coordinates": [79.6, 19.5]
+  },
+  "sink": {
+    "name": "Confluence with the Godavari",
+    "type": "river",
+    "location": "Near Kaleshwaram, Telangana",
+    "coordinates": [79.9, 18.83]
+  },
+  "length_km_india": 115.5,
+  "length_km_total": 115.5,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["maharashtra", "telangana"],
+  "basin_states": ["maharashtra", "telangana", "madhya-pradesh"],
+  "tributaries": { "left": ["wainganga"], "right": ["wardha"] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["irrigation"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Though the Pranhita itself flows barely 113-115km, it's the Godavari's largest tributary by drainage area, carrying the combined waters of the Wainganga, Wardha and Penganga.",
+    "Its mouth at Kaleshwaram, Telangana, gives its name to the Kaleshwaram Lift Irrigation Scheme, one of the world's largest multi-stage lift irrigation projects."
+  ]
+}

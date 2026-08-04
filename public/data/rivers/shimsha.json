@@ -1,0 +1,43 @@
+{
+  "id": "shimsha",
+  "name": "Shimsha",
+  "aliases": [],
+  "local_names": { "hi": "शिम्शा" },
+  "basin": "kaveri-basin",
+  "type": "tributary",
+  "drainage_type": "peninsular",
+  "seasonal_type": "seasonal",
+  "origin_type": "rain-fed",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Devarayanadurga hills, Tumkur district",
+    "state": "karnataka",
+    "altitude_m": 900,
+    "coordinates": [76.81, 13.39]
+  },
+  "sink": {
+    "name": "Confluence with the Kaveri",
+    "type": "river",
+    "location": "Near Shivanasamudra, Mandya district, Karnataka",
+    "coordinates": [77.0, 12.31]
+  },
+  "length_km_india": 221,
+  "length_km_total": 221,
+  "basin_area_total_km2": 8469,
+  "basin_area_india_km2": 8469,
+  "states_flows_through": ["karnataka"],
+  "basin_states": ["karnataka"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["irrigation"],
+  "notable_city_ids": [],
+  "upsc_relevant": false,
+  "did_you_know": [
+    "The Shimsha lies entirely within Karnataka and joins the Kaveri near Shivanasamudra, close to the famous twin Sivasamudram waterfalls."
+  ]
+}

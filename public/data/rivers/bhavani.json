@@ -1,0 +1,44 @@
+{
+  "id": "bhavani",
+  "name": "Bhavani",
+  "aliases": [],
+  "local_names": { "hi": "भवानी" },
+  "basin": "kaveri-basin",
+  "type": "tributary",
+  "drainage_type": "peninsular",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Nilgiri Hills, Western Ghats, near Silent Valley",
+    "state": "kerala",
+    "altitude_m": 1800,
+    "coordinates": [76.46, 11.3]
+  },
+  "sink": {
+    "name": "Confluence with the Kaveri (Kooduthurai)",
+    "type": "river",
+    "location": "Near Bhavani town, Erode district, Tamil Nadu",
+    "coordinates": [77.69, 11.45]
+  },
+  "length_km_india": 234,
+  "length_km_total": 234,
+  "basin_area_total_km2": 1410,
+  "basin_area_india_km2": 1410,
+  "states_flows_through": ["kerala", "tamil-nadu"],
+  "basin_states": ["kerala", "tamil-nadu"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["irrigation", "ecological"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Bhavani rises in the Nilgiris and briefly loops through Kerala's Silent Valley National Park, one of India's last undisturbed tracts of tropical evergreen forest, before returning to Tamil Nadu.",
+    "Roughly 90% of its water is drawn off for irrigation across Coimbatore and Erode districts before it meets the Kaveri."
+  ]
+}
