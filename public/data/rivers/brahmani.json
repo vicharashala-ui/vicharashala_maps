@@ -30,7 +30,10 @@
   "basin_states": ["jharkhand", "odisha"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "bhitarkanika-mangroves-ramsar",
+    "bhitarkanika-wls"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

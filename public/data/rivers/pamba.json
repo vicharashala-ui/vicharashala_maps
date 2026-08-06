@@ -30,7 +30,11 @@
   "basin_states": ["kerala"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "periyar-np",
+    "periyar-tr",
+    "vembanad-kol-wetland-ramsar"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

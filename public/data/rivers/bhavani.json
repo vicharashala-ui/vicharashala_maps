@@ -30,7 +30,10 @@
   "basin_states": ["kerala", "tamil-nadu"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "mukurthi-np",
+    "nilgiri-br"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

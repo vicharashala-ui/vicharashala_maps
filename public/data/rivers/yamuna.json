@@ -30,7 +30,11 @@
   "basin_states": ["uttarakhand", "himachal-pradesh", "haryana", "delhi", "uttar-pradesh", "madhya-pradesh", "rajasthan"],
   "tributaries": { "left": [], "right": ["chambal", "betwa", "ken"] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "national-chambal-wls",
+    "okhala-wls",
+    "sur-sarovar-bird-wls"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

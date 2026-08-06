@@ -30,7 +30,9 @@
   "basin_states": ["karnataka"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "kudremukh-np"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

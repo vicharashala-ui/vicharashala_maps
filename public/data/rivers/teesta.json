@@ -30,7 +30,11 @@
   "basin_states": ["sikkim", "west-bengal"],
   "tributaries": { "left": ["rangeet"], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "khangchendzonga-br",
+    "khangchendzonga-np",
+    "mahananda-wls"
+  ],
   "navigable": false,
   "transnational": true,
   "transnational_countries": ["bangladesh"],

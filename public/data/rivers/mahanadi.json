@@ -30,7 +30,14 @@
   "basin_states": ["chhattisgarh", "odisha"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "hirakud-reservoir-ramsar",
+    "satkosia-gorge-ramsar",
+    "satkosia-gorge-wls",
+    "satkosia-tr",
+    "sitanadi-wls",
+    "udanti-sitanadi-tr"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

@@ -30,7 +30,12 @@
   "basin_states": ["kerala", "tamil-nadu"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "periyar-np",
+    "periyar-tr",
+    "periyar-wls",
+    "thattekad-bird-wls"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

@@ -50,3 +50,35 @@ export interface StateEntry {
   notable_city_ids: string[];
   protected_area_ids: string[];
 }
+
+// search-index-primary.json / search-index-pa.json docs (scripts/buildSearchIndex.js) — trimmed
+// to result-row fields only, not full record duplicates (§4.7 step ⑬).
+export interface SearchRiverDoc {
+  type: 'river';
+  id: string;
+  name: string;
+  aliases: string[];
+  length_km_india: number;
+  drainage_type: RiverIndexEntry['drainage_type'];
+  transnational: boolean;
+}
+
+export interface SearchStateDoc {
+  type: 'state';
+  id: string;
+  name: string;
+  capital: string;
+  admin_type: StateEntry['admin_type'];
+}
+
+export interface SearchPADoc {
+  type: 'pa';
+  id: string;
+  name: string;
+  aliases: string[];
+  category: PACategory;
+  state: string[];
+  area_km2: number;
+}
+
+export type SearchDoc = SearchRiverDoc | SearchStateDoc | SearchPADoc;

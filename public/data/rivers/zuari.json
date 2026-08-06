@@ -30,7 +30,10 @@
   "basin_states": ["goa"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "bhagwan-mahavir-wls",
+    "netravali-wls"
+  ],
   "navigable": true,
   "transnational": false,
   "transnational_countries": [],

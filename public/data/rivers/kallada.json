@@ -30,7 +30,11 @@
   "basin_states": ["kerala"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "agasthyamalai-br",
+    "asthamudi-wetland-ramsar",
+    "shendurney-wls"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

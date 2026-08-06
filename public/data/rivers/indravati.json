@@ -30,7 +30,11 @@
   "basin_states": ["odisha", "chhattisgarh", "maharashtra", "telangana"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "bhairamgarh-wls",
+    "indravati-np",
+    "indravati-tr"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

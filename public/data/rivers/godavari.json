@@ -30,7 +30,14 @@
   "basin_states": ["maharashtra", "telangana", "andhra-pradesh", "chhattisgarh", "odisha", "madhya-pradesh", "karnataka"],
   "tributaries": { "left": ["pranhita", "indravati"], "right": ["manjira"] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "coringa-wls",
+    "jaikwadi-wls",
+    "lanja-madugu-sivaram-wls",
+    "nandur-madhameshwar-ramsar",
+    "nandur-madhameshwar-wls",
+    "papikonda-np"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

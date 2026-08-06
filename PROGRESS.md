@@ -46,12 +46,46 @@ Built via web research (batched by river system per spec §4.9), then reconciled
 - Everything in spec §5 onward
 
 ## Next step
-1. **`rivers/{id}.json` content is done (85/85).** The remaining river-data work is entirely about wiring it up and filling known gaps, not authoring more files:
-   - `protected_area_ids` for all 85 rivers are still `[]` placeholders. Re-run `node scripts/spatialIntersect.js` (needs `build/pa-merged.geojson` + `build/rivers-by-id/` regenerated locally first — these are gitignored intermediates, not present in a fresh clone) and paste the entries from `build/river-protected-area-ids.json` to merge in, now as one single pass across all 85.
-   - `deriveStateCrossRefs.js` (step ⑫) can now run against full 85-river coverage — no more partial-data caveat.
-   - `buildSearchIndex.js` (step ⑬) — after ⑪/⑫.
-2. Real research to backfill `basin_area_india_km2`/`basin_area_total_km2` for rivers currently shipping `null` on both fields — this list has grown across Steps 24–31 and is worth compiling once rather than chasing river-by-river: Brahmaputra tributaries (Lohit, Subansiri, Manas, Teesta, Rangeet, Torsa, Jaldhaka), Pranhita/Wainganga/Wardha, several Ganga gaps (Banas, Parbati, Son, Gomti, Sarda, Gandak, Mahananda), and the west-coast group where sources disagree or only cover shared estuaries rather than a single river (kallada, sharavati, zuari, mandovi, kali-karnataka, aghanashini, ponnaiyar).
-3. Not yet built: search, browse lists, filters, compare mode, state panel, header/footer, SEO pages, `basins.json` + basin badges/colors, `search-index-pa.json`.
+1. `basins.json` + basin badge colors (spec §4.7 — small, fixed, manually-authored dataset, no generation script).
+2. Browse/List mode (§3.7) — the primary keyboard-accessible route to feature selection; MapLibre's `KeyboardHandler` is pointer-only for feature selection, so this isn't optional a11y-wise (§12).
+3. State panel content (rivers/PAs/notable cities for a selected state) — Step 36 only built the map-level highlight/fitBounds for state selection, not a side panel. `selectedStateId`/`selectState()` already exist in `mapStore.ts`; a `StatePanel.tsx` following `PAInfoPanel.tsx`'s pattern is the natural next piece.
+4. Filters, compare mode, header/footer, SEO pages.
+5. Real research to backfill `basin_area_india_km2`/`basin_area_total_km2` for rivers currently shipping `null` on both fields — this list has grown across Steps 24–31 and is worth compiling once rather than chasing river-by-river: Brahmaputra tributaries (Lohit, Subansiri, Manas, Teesta, Rangeet, Torsa, Jaldhaka), Pranhita/Wainganga/Wardha, several Ganga gaps (Banas, Parbati, Son, Gomti, Sarda, Gandak, Mahananda), and the west-coast group where sources disagree or only cover shared estuaries rather than a single river (kallada, sharavati, zuari, mandovi, kali-karnataka, aghanashini, ponnaiyar).
+
+### Step 36 — Global search + state-selection highlight (delivered as `step36-patch.sh`)
+- **`SearchBar.tsx`** (new, `src/components/Search/`): Fuse.js search per §3.8. Primary index (rivers+states) lazy-fetched on first focus, not mount. PA index merges in once `loadPAData()` resolves elsewhere (layer toggle, `?pa=` deep link) — search itself never force-triggers the PA fetch, per spec. Results grouped Rivers/Protected Areas/States. `/` keyboard shortcut (skipped if already typing in a field), Escape clears, "No results for '{query}'" + Clear, "Search unavailable" + Retry, `aria-live="polite"` status region (§12).
+- **Closed a Step-19 `DEVIATION`**: `dataStore.ts`'s `loadPAData()` now fetches `search-index-pa.json` alongside `protected-areas.json`/`pa-id-map.json`, matching spec §5.3 — the file just didn't exist until Step 35.
+- **State selection, scoped deliberately narrow**: added `selectedStateId`/`selectState()` (`mapStore.ts`) and a new `StateHighlightLayer.tsx` (mirrors `RiversLayer`/`ProtectedAreasLayer`'s subscribe pattern) that highlights the state's border + `fitBounds`. This is the map-level reaction to a state search result or `?state=` deep link — it is **not** the state info panel (still on the "Next step" list); clicking a state result moves the map and nothing else, which is honest given no panel exists yet to show content in.
+- New `geometryBounds()` in `geoUtils.ts`: bbox over a raw GeoJSON Polygon/MultiPolygon, since `states.json` has no `bounds` field and Turf isn't a client dependency (kept the client bundle from pulling in a pipeline-only dep for one reduction).
+- `urlState.ts` extended to a 3-way `river`/`pa`/`state` URL param (still mutually exclusive, still `replaceState` only).
+- `index.astro`: mounts `<SearchBar client:idle>`, adds the `search-index-primary.json` preload link (§5.3).
+- **Verified**: `astro check` (0 errors) and `pnpm build` clean, both in this sandbox and against a fresh clone with Steps 33–35 applied first, sequentially, from a completely fresh `git clone` — full `src/` tree byte-identical after all 4 patches.
+
+### Step 35 — buildSearchIndex.js (delivered as `step35-patch.sh`)
+- `scripts/buildSearchIndex.js` — `Fuse.createIndex()` over trimmed river+state docs → `search-index-primary.json` (121 docs), and over trimmed PA docs → `search-index-pa.json` (837 docs).
+- **Docs are trimmed, not full-record duplicates**: only the fields `SearchBar.tsx`'s result rows need (§3.7) — e.g. river docs carry `length_km_india`/`drainage_type`/`transnational`, not `bounds`/tributaries/etc. Full records already load separately via inlined core-data / `loadPAData()`; duplicating them here would blow the on-wire budget for no benefit.
+- `name` weighted 2x over `aliases` in Fuse `keys`, per spec — verified "Ganges" search ranks Ganga first without demoting exact-name hits elsewhere.
+- **Version-drift guard implemented and tested**: stamps resolved `fuse.js` version (read from the installed package, not `require()`'d directly — its `package.json` has no `./package.json` export) as top-level `fuseVersion`; throws if a committed index's stamped version doesn't match. Verified it fires on a tampered version string and clears on a normal re-run.
+- **On-wire sizes** (Brotli): `search-index-primary.json` 3.6kB (budget <15kB), `search-index-pa.json` 18kB (budget <25kB) — both comfortably within spec.
+- Verified: functional `Fuse.parseIndex()` + search round-trip against real queries; byte-identical output on a second, fresh-clone run.
+
+### Step 34 — deriveStateCrossRefs.js (delivered as `step34-patch.sh`)
+- `scripts/deriveStateCrossRefs.js` — derives all 4 relational arrays on every `states.json` record from the already-authoritative source records: `rivers_flowing_through` ← river `states_flows_through`, `basin_rivers` ← river `basin_states`, `notable_city_ids` ← `cities.json` `state`, `protected_area_ids` ← PA `state`.
+- **Id-format mismatch found and handled**: `protected-areas.json`'s `state` field uses Title Case names with `&` (`"Jammu & Kashmir"`), while `states.json`/rivers/cities all use slugs with `and`. Normalizes `&` → `and` before matching against `states.json`'s `name` field — the only mismatch across all 4 sources; every other state reference already resolves cleanly by exact string/slug match.
+- Fails loudly (throws) on any unresolvable state reference, rather than silently dropping it.
+- Every record re-validated against `State` after deriving; all 36 pass.
+- **Result**: 32/36 states have `rivers_flowing_through` (the 4 without — Andaman & Nicobar, Chandigarh, Lakshadweep, Tripura — genuinely fall outside the 85-river spec scope, not a bug); all 36 have at least one `protected_area_id`; 11 have `notable_city_ids` (`cities.json` only covers 14 curated ghat cities, not one-per-state — expected).
+- Verified byte-identical output on a second, fresh-clone run.
+
+### Step 33 — Real `protected_area_ids` merged into all 85 rivers (delivered as `step33-patch.sh`)
+- **Blocker from Step 20/29–32**: `spatialIntersect.js` needs `build/pa-merged.geojson` + `build/rivers-by-id/`, gitignored intermediates built from source data (govt shapefile, Overpass fetches, HydroRIVERS clip) that only ever existed locally and aren't recoverable from the repo.
+- **Fix — `pa-merged.geojson`**: new `scripts/buildPaMerged.js` rebuilds it directly from the committed `src/boundaries/*.geojson` (already-canonicalized PA boundaries) — no dependency on the missing raw metadata pipeline.
+- **Fix — `rivers-by-id/`**: new `scripts/extractRiversFromPmtiles.mjs` decodes the already-built, committed `public/tiles/rivers.pmtiles` back to per-river GeoJSON (zoom 11 — dense enough for PA-intersection, keeps the India-bbox tile probe to ~25k cells instead of ~2M at z14). This is geometry sourced from the exact file the site ships, not a re-derivation from raw data.
+- **Verified**: re-running against the 7 rivers Step 23 already merged by hand (indus, ravi, beas, sutlej, zanskar, shyok, chenab) reproduces identical `protected_area_ids` — confirms the pmtiles-decode approach is equivalent to the original pipeline for this purpose.
+- New `scripts/mergeRiverProtectedAreaIds.js` does a targeted text replace of just the `protected_area_ids` field per file (not a full JSON re-serialization), so the diff is surgical — no incidental reformatting of hand-authored files.
+- Result: 44 of 85 `rivers/{id}.json` updated with real PA references (129 total refs, all cross-checked against `protected-areas.json` ids); 41 correctly stay `[]` (7 already-correct Indus batch + 34 with no intersecting PA). All 85 pass `RiverDetail` schema validation.
+- Ran twice — once locally, once against a fresh clone — byte-identical output both times.
+- New devDependencies: `@mapbox/vector-tile`, `pbf` (vector-tile decoding for the pmtiles extraction).
 
 ### Step 29 — Peninsular-East standalone `rivers/{id}.json` batch (delivered as `step29-patch.sh`)
 - All 6 geometry-backed standalone Peninsular-East rivers authored: mahanadi, brahmani, baitarani, subarnarekha, vamsadhara, nagavali. Each is independent (drains directly to the Bay of Bengal, not a tributary of another shipped river), so unlike prior system batches there's no `tributaries`/`distributaries` cross-referencing to worry about within this batch.

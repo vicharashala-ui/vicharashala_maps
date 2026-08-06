@@ -30,7 +30,12 @@
   "basin_states": ["arunachal-pradesh", "assam"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "nameri-np",
+    "nameri-tr",
+    "pakhui-wls",
+    "pakke-tr"
+  ],
   "navigable": false,
   "transnational": true,
   "transnational_countries": ["china"],

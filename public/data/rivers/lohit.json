@@ -30,7 +30,10 @@
   "basin_states": ["arunachal-pradesh", "assam"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "dibru-saikhowa-br",
+    "dibru-saikhowa-np"
+  ],
   "navigable": false,
   "transnational": true,
   "transnational_countries": ["china"],

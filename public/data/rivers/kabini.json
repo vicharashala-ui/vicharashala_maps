@@ -30,7 +30,13 @@
   "basin_states": ["kerala", "karnataka"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "bandipur-np",
+    "bandipur-tr",
+    "nagarhole-tr",
+    "nilgiri-br",
+    "rajiv-gandhi-nagarahole-np"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

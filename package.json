@@ -38,9 +38,11 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@mapbox/vector-tile": "^3.0.0",
     "@turf/turf": "^7.3.5",
     "mapshaper": "~0.7.49",
     "osmtogeojson": "^2.2.12",
+    "pbf": "^5.1.2",
     "typescript": "5.7.3",
     "vite": "^7.3.6",
     "zod": "^3.25.76"

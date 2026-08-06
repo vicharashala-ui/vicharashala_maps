@@ -30,7 +30,11 @@
   "basin_states": ["himachal-pradesh", "punjab", "haryana", "rajasthan"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "bir-bunerheri-wls",
+    "bir-gurdialpura-wls",
+    "morni-hills-khol-hi-raitan-wls"
+  ],
   "navigable": false,
   "transnational": true,
   "transnational_countries": ["pakistan"],

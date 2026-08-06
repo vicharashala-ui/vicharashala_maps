@@ -15,12 +15,24 @@ function readInlineJSON<T>(elementId: string, fallback: T): T {
 export const riversIndex: RiverIndexEntry[] = readInlineJSON('core-data-rivers', []);
 export const states: StateEntry[] = readInlineJSON('core-data-states', []);
 
-// DEVIATION FROM SPEC §5.3: search-index-pa.json (pipeline step ⑬) doesn't exist yet, so
-// loadPAData() fetches only protected-areas.json + pa-id-map.json. Add the search index fetch
-// back once buildSearchIndex.js ships.
+// Genuine network fetch — needed only for search (§3.8), never for map construction or ROTD.
+let searchIndexPromise: Promise<SearchIndexFile> | null = null;
+export function loadSearchIndex(): Promise<SearchIndexFile> {
+  searchIndexPromise ??= fetch('/data/search-index-primary.json').then((r) => r.json());
+  return searchIndexPromise;
+}
+
+export interface SearchIndexFile {
+  fuseVersion: string;
+  keys: unknown;
+  docs: Record<string, unknown>[];
+  index: unknown;
+}
+
 export interface PAData {
   protectedAreas: ProtectedArea[];
   paIdMap: Record<string, number>;
+  searchIndexPA: SearchIndexFile;
 }
 
 export const paDataLoaded = atom<boolean>(false);
@@ -30,9 +42,10 @@ export function loadPAData(): Promise<PAData> {
   paDataPromise ??= Promise.all([
     fetch('/data/protected-areas.json').then((r) => r.json()),
     fetch('/data/pa-id-map.json').then((r) => r.json()),
-  ]).then(([protectedAreas, paIdMap]) => {
+    fetch('/data/search-index-pa.json').then((r) => r.json()),
+  ]).then(([protectedAreas, paIdMap, searchIndexPA]) => {
     paDataLoaded.set(true);
-    return { protectedAreas, paIdMap };
+    return { protectedAreas, paIdMap, searchIndexPA };
   });
   return paDataPromise;
 }

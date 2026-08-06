@@ -30,7 +30,9 @@
   "basin_states": ["uttar-pradesh", "bihar"],
   "tributaries": { "left": [], "right": ["sarda"] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "katerniaghat-wls"
+  ],
   "navigable": false,
   "transnational": true,
   "transnational_countries": ["china", "nepal"],

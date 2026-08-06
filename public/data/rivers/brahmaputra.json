@@ -30,7 +30,11 @@
   "basin_states": ["arunachal-pradesh", "assam", "sikkim", "west-bengal", "meghalaya", "nagaland"],
   "tributaries": { "left": ["kopili"], "right": ["lohit", "subansiri", "kameng", "manas", "teesta", "torsa"] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "burachapori-wls",
+    "kaziranga-np",
+    "kaziranga-tr"
+  ],
   "navigable": true,
   "transnational": true,
   "transnational_countries": ["china", "bangladesh"],

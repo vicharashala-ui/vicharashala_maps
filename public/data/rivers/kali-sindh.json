@@ -30,7 +30,10 @@
   "basin_states": ["madhya-pradesh", "rajasthan"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "mukundra-hills-np",
+    "mukundra-hills-tr"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

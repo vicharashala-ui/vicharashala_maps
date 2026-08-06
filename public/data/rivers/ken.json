@@ -30,7 +30,12 @@
   "basin_states": ["madhya-pradesh", "uttar-pradesh"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "ken-gharial-wls",
+    "panna-br",
+    "panna-np",
+    "panna-tr"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

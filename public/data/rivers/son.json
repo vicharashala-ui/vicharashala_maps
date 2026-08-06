@@ -30,7 +30,11 @@
   "basin_states": ["madhya-pradesh", "chhattisgarh", "uttar-pradesh", "jharkhand", "bihar"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "bagdara-wls",
+    "panpatha-wls",
+    "son-gharial-wls"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

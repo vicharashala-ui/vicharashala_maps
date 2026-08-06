@@ -2,25 +2,32 @@
 // replaceState call itself — callers apply UI/map changes synchronously, then call this.
 let timer: ReturnType<typeof setTimeout> | null = null;
 
-export function debouncedUpdateUrl(params: { river?: string | null; pa?: string | null }): void {
+export function debouncedUpdateUrl(params: { river?: string | null; pa?: string | null; state?: string | null }): void {
   if (timer) clearTimeout(timer);
   timer = setTimeout(() => {
     const url = new URL(location.href);
     if (params.river) {
       url.searchParams.set('river', params.river);
       url.searchParams.delete('pa');
+      url.searchParams.delete('state');
     } else if (params.pa) {
       url.searchParams.set('pa', params.pa);
       url.searchParams.delete('river');
+      url.searchParams.delete('state');
+    } else if (params.state) {
+      url.searchParams.set('state', params.state);
+      url.searchParams.delete('river');
+      url.searchParams.delete('pa');
     } else {
       url.searchParams.delete('river');
       url.searchParams.delete('pa');
+      url.searchParams.delete('state');
     }
     history.replaceState(null, '', url);
   }, 300);
 }
 
-export function readInitialSelection(): { riverId: string | null; paId: string | null } {
+export function readInitialSelection(): { riverId: string | null; paId: string | null; stateId: string | null } {
   const params = new URLSearchParams(location.search);
-  return { riverId: params.get('river'), paId: params.get('pa') };
+  return { riverId: params.get('river'), paId: params.get('pa'), stateId: params.get('state') };
 }

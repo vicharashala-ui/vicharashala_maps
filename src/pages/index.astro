@@ -7,6 +7,7 @@ import LayerControl from '../components/Map/LayerControl';
 import MapControls from '../components/Map/MapControls';
 import RiverDetailPanel from '../components/Panels/RiverDetailPanel';
 import PAInfoPanel from '../components/Panels/PAInfoPanel';
+import SearchBar from '../components/Search/SearchBar';
 
 const riversIndex = JSON.parse(readFileSync('public/data/rivers-index.json', 'utf-8'));
 const states = JSON.parse(readFileSync('public/data/states.json', 'utf-8'));
@@ -16,6 +17,7 @@ const states = JSON.parse(readFileSync('public/data/states.json', 'utf-8'));
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Vicharashala Maps — Rivers &amp; Protected Areas of India</title>
+    <link rel="preload" href="/data/search-index-primary.json" as="fetch" crossorigin="anonymous" />
     <script is:inline set:html={themeInit.trim()}></script>
   </head>
   <body>
@@ -26,6 +28,7 @@ const states = JSON.parse(readFileSync('public/data/states.json', 'utf-8'));
       <MapView client:load />
       <LayerControl client:load />
       <MapControls client:load />
+      <SearchBar client:idle />
       <RiverDetailPanel client:load />
       <PAInfoPanel client:load />
     </main>

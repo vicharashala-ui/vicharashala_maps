@@ -30,7 +30,11 @@
   "basin_states": ["madhya-pradesh", "rajasthan", "uttar-pradesh"],
   "tributaries": { "left": [], "right": ["banas", "kali-sindh", "parbati"] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "jawahar-sagar-wls",
+    "national-chambal-wls",
+    "sawai-man-singh-wls"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

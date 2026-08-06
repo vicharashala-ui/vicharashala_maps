@@ -30,7 +30,15 @@
   "basin_states": ["uttarakhand", "uttar-pradesh", "bihar", "jharkhand", "west-bengal"],
   "tributaries": { "left": ["gomti", "ghaghra", "gandak", "kosi", "mahananda"], "right": ["yamuna", "son"] },
   "distributaries": ["hooghly"],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "haiderpur-wetland-ramsar",
+    "hastinapur-wls",
+    "rajaji-np",
+    "rajaji-tr",
+    "turtle-wls",
+    "upper-ganga-river-brijghat-to-narora-stretch-ramsar",
+    "vikramshila-gangetic-dolphin-wls"
+  ],
   "navigable": true,
   "transnational": true,
   "transnational_countries": ["bangladesh"],

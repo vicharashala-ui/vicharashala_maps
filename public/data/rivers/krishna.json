@@ -30,7 +30,14 @@
   "basin_states": ["maharashtra", "karnataka", "telangana", "andhra-pradesh"],
   "tributaries": { "left": ["bhima", "musi"], "right": ["tungabhadra"] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "amrabad-nagarjunasagar-srisailam-wls",
+    "amrabad-tr",
+    "krishna-wls",
+    "nagarjunasagar-srisailam-tr",
+    "nagarjunasagar-srisailam-wls",
+    "seshachalam-hills-br"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

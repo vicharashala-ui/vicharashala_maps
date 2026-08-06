@@ -30,7 +30,12 @@
   "basin_states": ["karnataka", "tamil-nadu", "kerala", "puducherry"],
   "tributaries": { "left": ["hemavathi", "shimsha", "arkavathi"], "right": ["kabini", "bhavani", "amaravathi"] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "cauvery-north-wls",
+    "cauvery-wls",
+    "ranganathittu-bird-sanctuary-ramsar",
+    "talakaveri-wls"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],

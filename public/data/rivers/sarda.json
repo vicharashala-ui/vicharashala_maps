@@ -30,7 +30,12 @@
   "basin_states": ["uttarakhand", "uttar-pradesh"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "askot-musk-deer-wls",
+    "kishanpur-wls",
+    "pilibhit-tr",
+    "pilibhit-wls"
+  ],
   "navigable": false,
   "transnational": true,
   "transnational_countries": ["nepal"],

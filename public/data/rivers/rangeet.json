@@ -30,7 +30,10 @@
   "basin_states": ["sikkim"],
   "tributaries": { "left": [], "right": [] },
   "distributaries": [],
-  "protected_area_ids": [],
+  "protected_area_ids": [
+    "kitam-bird-sanctuary-wls",
+    "maenam-wls"
+  ],
   "navigable": false,
   "transnational": false,
   "transnational_countries": [],
