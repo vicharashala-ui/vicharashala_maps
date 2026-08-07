@@ -1,5 +1,6 @@
 import { useStore } from '@nanostores/preact';
 import { useEffect, useState } from 'preact/hooks';
+import { useFocusOnOpen } from '../../utils/useFocusOnOpen';
 import { selectedPAId, activePanel, closePanel, selectRiver } from '../../utils/mapStore';
 import { loadPAData } from '../../utils/dataStore';
 import { riversIndex } from '../../utils/dataStore';
@@ -18,6 +19,7 @@ export default function PAInfoPanel() {
   const paId = useStore(selectedPAId);
   const panel = useStore(activePanel);
   const [pa, setPA] = useState<ProtectedArea | null>(null);
+  const panelRef = useFocusOnOpen<HTMLElement>(panel === 'pa' && !!pa);
 
   useEffect(() => {
     if (!paId) {
@@ -35,6 +37,8 @@ export default function PAInfoPanel() {
 
   return (
     <aside
+      ref={panelRef}
+      tabIndex={-1}
       className="panel-slide-in absolute top-0 right-0 h-full w-full sm:w-[360px] overflow-y-auto border-l shadow-lg z-20"
       style={{ background: 'var(--color-bg)', borderColor: 'var(--color-border)' }}
     >

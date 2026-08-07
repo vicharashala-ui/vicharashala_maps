@@ -1,0 +1,638 @@
+[
+  {
+    "id": "ganga-basin",
+    "name": "Ganga Basin",
+    "color_light": "#9d4325",
+    "color_dark": "#dd7f5f",
+    "area_km2": 861452,
+    "states": [
+      "bihar",
+      "jharkhand",
+      "west-bengal",
+      "uttarakhand",
+      "rajasthan",
+      "madhya-pradesh",
+      "uttar-pradesh",
+      "chhattisgarh",
+      "himachal-pradesh",
+      "haryana",
+      "delhi"
+    ],
+    "main_river": "ganga",
+    "rivers": [
+      "ajay",
+      "alaknanda",
+      "banas",
+      "barakar",
+      "betwa",
+      "bhagirathi",
+      "chambal",
+      "damodar",
+      "gandak",
+      "ganga",
+      "ghaghra",
+      "gomti",
+      "hooghly",
+      "kali-sindh",
+      "ken",
+      "kosi",
+      "mahananda",
+      "parbati",
+      "sarda",
+      "son",
+      "yamuna"
+    ],
+    "area_rank": 1
+  },
+  {
+    "id": "indus-basin",
+    "name": "Indus Basin",
+    "color_light": "#9d5725",
+    "color_dark": "#dd945f",
+    "area_km2": 321289,
+    "states": [
+      "himachal-pradesh",
+      "punjab",
+      "jammu-and-kashmir",
+      "ladakh"
+    ],
+    "main_river": "indus",
+    "rivers": [
+      "beas",
+      "chenab",
+      "indus",
+      "ravi",
+      "shyok",
+      "sutlej",
+      "zanskar"
+    ],
+    "area_rank": 2
+  },
+  {
+    "id": "godavari-basin",
+    "name": "Godavari Basin",
+    "color_light": "#9d6d25",
+    "color_dark": "#ddab5f",
+    "area_km2": 312812,
+    "states": [
+      "maharashtra",
+      "telangana",
+      "andhra-pradesh",
+      "chhattisgarh",
+      "odisha",
+      "madhya-pradesh",
+      "karnataka"
+    ],
+    "main_river": "godavari",
+    "rivers": [
+      "godavari",
+      "indravati",
+      "manjira",
+      "pranhita",
+      "wainganga",
+      "wardha"
+    ],
+    "area_rank": 3
+  },
+  {
+    "id": "krishna-basin",
+    "name": "Krishna Basin",
+    "color_light": "#957a23",
+    "color_dark": "#ddc05f",
+    "area_km2": 258948,
+    "states": [
+      "maharashtra",
+      "karnataka",
+      "telangana",
+      "andhra-pradesh"
+    ],
+    "main_river": "krishna",
+    "rivers": [
+      "bhima",
+      "krishna",
+      "musi",
+      "tungabhadra"
+    ],
+    "area_rank": 4
+  },
+  {
+    "id": "brahmaputra-basin",
+    "name": "Brahmaputra Basin",
+    "color_light": "#847d1f",
+    "color_dark": "#ddd55f",
+    "area_km2": 194413,
+    "states": [
+      "manipur",
+      "nagaland",
+      "mizoram",
+      "assam",
+      "meghalaya",
+      "tripura",
+      "arunachal-pradesh",
+      "sikkim",
+      "west-bengal"
+    ],
+    "main_river": "brahmaputra",
+    "rivers": [
+      "barak",
+      "brahmaputra",
+      "jaldhaka",
+      "kameng",
+      "kopili",
+      "lohit",
+      "manas",
+      "rangeet",
+      "subansiri",
+      "teesta",
+      "torsa"
+    ],
+    "area_rank": 5
+  },
+  {
+    "id": "mahanadi-basin",
+    "name": "Mahanadi Basin",
+    "color_light": "#7a841f",
+    "color_dark": "#d0dd5f",
+    "area_km2": 141600,
+    "states": [
+      "chhattisgarh",
+      "odisha"
+    ],
+    "main_river": "mahanadi",
+    "rivers": [
+      "mahanadi"
+    ],
+    "area_rank": 6
+  },
+  {
+    "id": "narmada-basin",
+    "name": "Narmada Basin",
+    "color_light": "#68841f",
+    "color_dark": "#b9dd5f",
+    "area_km2": 98796,
+    "states": [
+      "madhya-pradesh",
+      "gujarat",
+      "maharashtra",
+      "chhattisgarh"
+    ],
+    "main_river": "narmada",
+    "rivers": [
+      "narmada"
+    ],
+    "area_rank": 7
+  },
+  {
+    "id": "kaveri-basin",
+    "name": "Kaveri Basin",
+    "color_light": "#5c8c21",
+    "color_dark": "#a4dd5f",
+    "area_km2": 81155,
+    "states": [
+      "kerala",
+      "tamil-nadu",
+      "karnataka",
+      "puducherry"
+    ],
+    "main_river": "kaveri",
+    "rivers": [
+      "amaravathi",
+      "arkavathi",
+      "bhavani",
+      "hemavathi",
+      "kabini",
+      "kaveri",
+      "shimsha"
+    ],
+    "area_rank": 8
+  },
+  {
+    "id": "tapi-basin",
+    "name": "Tapi Basin",
+    "color_light": "#4a8c21",
+    "color_dark": "#8fdd5f",
+    "area_km2": 65145,
+    "states": [
+      "madhya-pradesh",
+      "maharashtra",
+      "gujarat"
+    ],
+    "main_river": "tapi",
+    "rivers": [
+      "tapi"
+    ],
+    "area_rank": 9
+  },
+  {
+    "id": "ghaggar-basin",
+    "name": "Ghaggar-Hakra Basin",
+    "color_light": "#368c21",
+    "color_dark": "#78dd5f",
+    "area_km2": 42200,
+    "states": [
+      "himachal-pradesh",
+      "punjab",
+      "haryana",
+      "rajasthan"
+    ],
+    "main_river": "ghaggar-hakra",
+    "rivers": [
+      "ghaggar-hakra"
+    ],
+    "area_rank": 10
+  },
+  {
+    "id": "brahmani-basin",
+    "name": "Brahmani Basin",
+    "color_light": "#258c21",
+    "color_dark": "#63dd5f",
+    "area_km2": 39033,
+    "states": [
+      "jharkhand",
+      "odisha"
+    ],
+    "main_river": "brahmani",
+    "rivers": [
+      "brahmani"
+    ],
+    "area_rank": 11
+  },
+  {
+    "id": "luni-basin",
+    "name": "Luni Basin",
+    "color_light": "#218c2f",
+    "color_dark": "#5fdd70",
+    "area_km2": 37363,
+    "states": [
+      "rajasthan",
+      "gujarat"
+    ],
+    "main_river": "luni",
+    "rivers": [
+      "luni"
+    ],
+    "area_rank": 12
+  },
+  {
+    "id": "mahi-basin",
+    "name": "Mahi Basin",
+    "color_light": "#218c41",
+    "color_dark": "#5fdd85",
+    "area_km2": 34842,
+    "states": [
+      "madhya-pradesh",
+      "rajasthan",
+      "gujarat"
+    ],
+    "main_river": "mahi",
+    "rivers": [
+      "mahi"
+    ],
+    "area_rank": 13
+  },
+  {
+    "id": "sabarmati-basin",
+    "name": "Sabarmati Basin",
+    "color_light": "#218c55",
+    "color_dark": "#5fdd9c",
+    "area_km2": 21674,
+    "states": [
+      "rajasthan",
+      "gujarat"
+    ],
+    "main_river": "sabarmati",
+    "rivers": [
+      "sabarmati"
+    ],
+    "area_rank": 14
+  },
+  {
+    "id": "subarnarekha-basin",
+    "name": "Subarnarekha Basin",
+    "color_light": "#218c67",
+    "color_dark": "#5fddb1",
+    "area_km2": 18951,
+    "states": [
+      "jharkhand",
+      "west-bengal",
+      "odisha"
+    ],
+    "main_river": "subarnarekha",
+    "rivers": [
+      "subarnarekha"
+    ],
+    "area_rank": 15
+  },
+  {
+    "id": "ponnaiyar-basin",
+    "name": "Ponnaiyar Basin",
+    "color_light": "#218c79",
+    "color_dark": "#5fddc6",
+    "area_km2": 16019,
+    "states": [
+      "karnataka",
+      "tamil-nadu"
+    ],
+    "main_river": "ponnaiyar",
+    "rivers": [
+      "ponnaiyar"
+    ],
+    "area_rank": 16
+  },
+  {
+    "id": "baitarani-basin",
+    "name": "Baitarani Basin",
+    "color_light": "#218c8c",
+    "color_dark": "#5fdddd",
+    "area_km2": 10982,
+    "states": [
+      "jharkhand",
+      "odisha"
+    ],
+    "main_river": "baitarani",
+    "rivers": [
+      "baitarani"
+    ],
+    "area_rank": 17
+  },
+  {
+    "id": "vamsadhara-basin",
+    "name": "Vamsadhara Basin",
+    "color_light": "#25899d",
+    "color_dark": "#5fc8dd",
+    "area_km2": 10830,
+    "states": [
+      "odisha",
+      "andhra-pradesh"
+    ],
+    "main_river": "vamsadhara",
+    "rivers": [
+      "vamsadhara"
+    ],
+    "area_rank": 18
+  },
+  {
+    "id": "nagavali-basin",
+    "name": "Nagavali Basin",
+    "color_light": "#25759d",
+    "color_dark": "#5fb3dd",
+    "area_km2": 9510,
+    "states": [
+      "odisha",
+      "andhra-pradesh"
+    ],
+    "main_river": "nagavali",
+    "rivers": [
+      "nagavali"
+    ],
+    "area_rank": 19
+  },
+  {
+    "id": "vaigai-basin",
+    "name": "Vaigai Basin",
+    "color_light": "#25619d",
+    "color_dark": "#5f9edd",
+    "area_km2": 7230,
+    "states": [
+      "tamil-nadu"
+    ],
+    "main_river": "vaigai",
+    "rivers": [
+      "vaigai"
+    ],
+    "area_rank": 20
+  },
+  {
+    "id": "bharathapuzha-basin",
+    "name": "Bharathapuzha Basin",
+    "color_light": "#254b9d",
+    "color_dark": "#5f87dd",
+    "area_km2": 6810,
+    "states": [
+      "kerala",
+      "tamil-nadu"
+    ],
+    "main_river": "bharathapuzha",
+    "rivers": [
+      "bharathapuzha"
+    ],
+    "area_rank": 21
+  },
+  {
+    "id": "periyar-basin",
+    "name": "Periyar Basin",
+    "color_light": "#25379d",
+    "color_dark": "#6879df",
+    "area_km2": 5398,
+    "states": [
+      "kerala",
+      "tamil-nadu"
+    ],
+    "main_river": "periyar",
+    "rivers": [
+      "periyar"
+    ],
+    "area_rank": 22
+  },
+  {
+    "id": "vaippar-basin",
+    "name": "Vaippar Basin",
+    "color_light": "#27259d",
+    "color_dark": "#7270e1",
+    "area_km2": 5288,
+    "states": [
+      "tamil-nadu"
+    ],
+    "main_river": "vaippar",
+    "rivers": [
+      "vaippar"
+    ],
+    "area_rank": 23
+  },
+  {
+    "id": "kali-karnataka-basin",
+    "name": "Kali Basin",
+    "color_light": "#3d259d",
+    "color_dark": "#8670e1",
+    "area_km2": 5104,
+    "states": [
+      "karnataka"
+    ],
+    "main_river": "kali-karnataka",
+    "rivers": [
+      "kali-karnataka"
+    ],
+    "area_rank": 24
+  },
+  {
+    "id": "palar-basin",
+    "name": "Palar Basin",
+    "color_light": "#51259d",
+    "color_dark": "#9368df",
+    "area_km2": 5044,
+    "states": [
+      "karnataka",
+      "andhra-pradesh",
+      "tamil-nadu"
+    ],
+    "main_river": "palar",
+    "rivers": [
+      "palar"
+    ],
+    "area_rank": 25
+  },
+  {
+    "id": "ulhas-basin",
+    "name": "Ulhas Basin",
+    "color_light": "#65259d",
+    "color_dark": "#a25fdd",
+    "area_km2": 4637,
+    "states": [
+      "maharashtra"
+    ],
+    "main_river": "ulhas",
+    "rivers": [
+      "ulhas"
+    ],
+    "area_rank": 26
+  },
+  {
+    "id": "netravati-basin",
+    "name": "Netravati Basin",
+    "color_light": "#79259d",
+    "color_dark": "#b75fdd",
+    "area_km2": 3502,
+    "states": [
+      "karnataka"
+    ],
+    "main_river": "netravati",
+    "rivers": [
+      "netravati"
+    ],
+    "area_rank": 27
+  },
+  {
+    "id": "sharavati-basin",
+    "name": "Sharavati Basin",
+    "color_light": "#8f259d",
+    "color_dark": "#ce5fdd",
+    "area_km2": 3042,
+    "states": [
+      "karnataka"
+    ],
+    "main_river": "sharavati",
+    "rivers": [
+      "sharavati"
+    ],
+    "area_rank": 28
+  },
+  {
+    "id": "damanganga-basin",
+    "name": "Damanganga Basin",
+    "color_light": "#9d2597",
+    "color_dark": "#dd5fd7",
+    "area_km2": 2318,
+    "states": [
+      "maharashtra",
+      "gujarat",
+      "dadra-and-nagar-haveli-and-daman-and-diu"
+    ],
+    "main_river": "damanganga",
+    "rivers": [
+      "damanganga"
+    ],
+    "area_rank": 29
+  },
+  {
+    "id": "pamba-basin",
+    "name": "Pamba Basin",
+    "color_light": "#9d2583",
+    "color_dark": "#dd5fc2",
+    "area_km2": 2235,
+    "states": [
+      "kerala"
+    ],
+    "main_river": "pamba",
+    "rivers": [
+      "pamba"
+    ],
+    "area_rank": 30
+  },
+  {
+    "id": "vellar-basin",
+    "name": "Vellar Basin",
+    "color_light": "#9d256d",
+    "color_dark": "#dd5fab",
+    "area_km2": 2034,
+    "states": [
+      "tamil-nadu"
+    ],
+    "main_river": "vellar",
+    "rivers": [
+      "vellar"
+    ],
+    "area_rank": 31
+  },
+  {
+    "id": "mandovi-basin",
+    "name": "Mandovi Basin",
+    "color_light": "#9d2559",
+    "color_dark": "#dd5f96",
+    "area_km2": 2032,
+    "states": [
+      "karnataka",
+      "goa",
+      "maharashtra"
+    ],
+    "main_river": "mandovi",
+    "rivers": [
+      "mandovi"
+    ],
+    "area_rank": 32
+  },
+  {
+    "id": "kallada-basin",
+    "name": "Kallada Basin",
+    "color_light": "#9d2545",
+    "color_dark": "#dd5f81",
+    "area_km2": 1699,
+    "states": [
+      "kerala"
+    ],
+    "main_river": "kallada",
+    "rivers": [
+      "kallada"
+    ],
+    "area_rank": 33
+  },
+  {
+    "id": "aghanashini-basin",
+    "name": "Aghanashini Basin",
+    "color_light": "#9d2531",
+    "color_dark": "#dd5f6c",
+    "area_km2": 1350,
+    "states": [
+      "karnataka"
+    ],
+    "main_river": "aghanashini",
+    "rivers": [
+      "aghanashini"
+    ],
+    "area_rank": 34
+  },
+  {
+    "id": "zuari-basin",
+    "name": "Zuari Basin",
+    "color_light": "#9d2f25",
+    "color_dark": "#dd6a5f",
+    "area_km2": 975,
+    "states": [
+      "goa"
+    ],
+    "main_river": "zuari",
+    "rivers": [
+      "zuari"
+    ],
+    "area_rank": 35
+  }
+]

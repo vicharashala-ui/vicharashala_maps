@@ -1,5 +1,5 @@
 import { atom } from 'nanostores';
-import type { RiverIndexEntry, StateEntry, ProtectedArea } from './types';
+import type { RiverIndexEntry, StateEntry, ProtectedArea, BasinEntry } from './types';
 
 // index.astro embeds these as inert JSON in a <script type="application/json"> tag (§5.3) —
 // read synchronously at module load, no fetch, no await.
@@ -14,6 +14,12 @@ function readInlineJSON<T>(elementId: string, fallback: T): T {
 
 export const riversIndex: RiverIndexEntry[] = readInlineJSON('core-data-rivers', []);
 export const states: StateEntry[] = readInlineJSON('core-data-states', []);
+export const basins: BasinEntry[] = readInlineJSON('core-data-basins', []);
+
+const basinById = new Map(basins.map((b) => [b.id, b]));
+export function getBasin(basinId: string): BasinEntry | undefined {
+  return basinById.get(basinId);
+}
 
 // Genuine network fetch — needed only for search (§3.8), never for map construction or ROTD.
 let searchIndexPromise: Promise<SearchIndexFile> | null = null;

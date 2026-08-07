@@ -1,8 +1,10 @@
 import { useStore } from '@nanostores/preact';
 import { selectedRiverId, activePanel, closePanel, selectPA } from '../../utils/mapStore';
-import { riversIndex, loadPAData, paDataLoaded } from '../../utils/dataStore';
+import { riversIndex, getBasin, loadPAData, paDataLoaded } from '../../utils/dataStore';
 import { debouncedUpdateUrl } from '../../utils/urlState';
+import { isDarkTheme } from '../../utils/theme';
 import { useEffect, useState } from 'preact/hooks';
+import { useFocusOnOpen } from '../../utils/useFocusOnOpen';
 import type { ComponentChildren } from 'preact';
 import type { ProtectedArea } from '../../utils/types';
 
@@ -17,10 +19,27 @@ function Chip({ children }: { children: ComponentChildren }) {
   );
 }
 
+function BasinBadge({ basinId }: { basinId: string }) {
+  const basin = getBasin(basinId);
+  if (!basin) return <Chip>{basinId.replace(/-basin$/, '').replace(/-/g, ' ')}</Chip>;
+  const color = isDarkTheme() ? basin.color_dark : basin.color_light;
+  return (
+    <span
+      className="inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-xs mr-1 mb-1"
+      style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)' }}
+    >
+      <span className="inline-block w-2 h-2 rounded-full" style={{ background: color }} aria-hidden="true" />
+      {basin.name}
+    </span>
+  );
+}
+
 export default function RiverDetailPanel() {
   const riverId = useStore(selectedRiverId);
   const panel = useStore(activePanel);
   const [relatedPAs, setRelatedPAs] = useState<ProtectedArea[]>([]);
+  const river = riverId ? riversIndex.find((r) => r.id === riverId) : undefined;
+  const panelRef = useFocusOnOpen<HTMLElement>(panel === 'river' && !!river);
 
   useEffect(() => {
     if (!riverId) return;
@@ -29,12 +48,12 @@ export default function RiverDetailPanel() {
     });
   }, [riverId]);
 
-  if (panel !== 'river' || !riverId) return null;
-  const river = riversIndex.find((r) => r.id === riverId);
-  if (!river) return null;
+  if (panel !== 'river' || !river) return null;
 
   return (
     <aside
+      ref={panelRef}
+      tabIndex={-1}
       className="panel-slide-in absolute top-0 right-0 h-full w-full sm:w-[360px] overflow-y-auto border-l shadow-lg z-20"
       style={{ background: 'var(--color-bg)', borderColor: 'var(--color-border)' }}
     >
@@ -46,7 +65,7 @@ export default function RiverDetailPanel() {
           <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
             {river.local_name_hi}
           </p>
-          <Chip>{river.basin.replace(/-basin$/, '').replace(/-/g, ' ')}</Chip>
+          <BasinBadge basinId={river.basin} />
         </div>
         <button aria-label="Close" onClick={closePanel} className="text-xl leading-none px-2">
           ×

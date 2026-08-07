@@ -40,6 +40,18 @@ export interface ProtectedArea {
   endemic_species: string[];
 }
 
+export interface BasinEntry {
+  id: string;
+  name: string;
+  color_light: string;
+  color_dark: string;
+  area_km2: number;
+  states: string[];
+  main_river: string;
+  rivers: string[];
+  area_rank: number;
+}
+
 export interface StateEntry {
   id: string;
   name: string;

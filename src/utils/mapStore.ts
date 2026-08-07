@@ -44,3 +44,8 @@ export function closePanel(): void {
   selectedStateId.set(null);
   activePanel.set(null);
 }
+
+// Browse/List mode (§3.7) — the primary keyboard-accessible route to feature selection,
+// since MapLibre's KeyboardHandler is pointer-only for selection (§12).
+export const browseOpen = atom<boolean>(false);
+export const browseTab = atom<'rivers' | 'pa'>('rivers');
