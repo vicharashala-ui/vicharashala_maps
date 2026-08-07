@@ -3,6 +3,8 @@ import { browseOpen, browseTab } from '../../utils/mapStore';
 import { useFocusOnOpen } from '../../utils/useFocusOnOpen';
 import RiverBrowseList from './RiverBrowseList';
 import PABrowseList from './PABrowseList';
+import RiverFilterPanel from '../Filters/RiverFilterPanel';
+import PAFilterPanel from '../Filters/PAFilterPanel';
 
 // Toggle button lives here (not MapControls) so Browse mode stays a single self-contained
 // island — the primary keyboard-accessible route to feature selection (§12), since MapLibre's
@@ -50,8 +52,9 @@ export default function BrowsePanel() {
             </button>
           </div>
 
-          <div className="flex-1 min-h-0">
-            {tab === 'rivers' ? <RiverBrowseList /> : <PABrowseList />}
+          <div className="flex-1 min-h-0 flex flex-col">
+            {tab === 'rivers' ? <RiverFilterPanel /> : <PAFilterPanel />}
+            <div className="flex-1 min-h-0">{tab === 'rivers' ? <RiverBrowseList /> : <PABrowseList />}</div>
           </div>
         </aside>
       )}

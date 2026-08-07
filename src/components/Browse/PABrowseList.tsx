@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'preact/hooks';
+import { useEffect, useMemo, useState } from 'preact/hooks';
+import { useStore } from '@nanostores/preact';
 import { loadPAData } from '../../utils/dataStore';
 import { selectPA } from '../../utils/mapStore';
+import { paFilters, paMatchesFilters } from '../../utils/filterStore';
 import { debouncedUpdateUrl } from '../../utils/urlState';
 import { useWindowedList } from '../../utils/useWindowedList';
 import type { ProtectedArea } from '../../utils/types';
@@ -30,10 +32,12 @@ export default function PABrowseList() {
   }
 
   // Flat, not category-grouped (§3.7 allows either "category-grouped or flat (filter-driven)"
-  // — the PA filter panel doesn't exist yet, so there's no filter state to group by).
+  // — filtered by the PA filter panel's Category/State selections below).
   useEffect(load, []);
 
-  const { containerRef, startIndex, endIndex, totalHeight, offsetY } = useWindowedList(areas.length, ROW_HEIGHT);
+  const filters = useStore(paFilters);
+  const filtered = useMemo(() => areas.filter((pa) => paMatchesFilters(pa, filters)), [areas, filters]);
+  const { containerRef, startIndex, endIndex, totalHeight, offsetY } = useWindowedList(filtered.length, ROW_HEIGHT);
 
   function pick(pa: ProtectedArea) {
     selectPA(pa.id);
@@ -59,6 +63,14 @@ export default function PABrowseList() {
     );
   }
 
+  if (filtered.length === 0) {
+    return (
+      <div className="p-4 text-sm" style={{ color: 'var(--color-text-muted)' }}>
+        No protected areas match the current filters.
+      </div>
+    );
+  }
+
   return (
     <div
       ref={containerRef}
@@ -68,7 +80,7 @@ export default function PABrowseList() {
     >
       <div style={{ height: totalHeight, position: 'relative' }}>
         <div style={{ transform: `translateY(${offsetY}px)` }}>
-          {areas.slice(startIndex, endIndex).map((pa) => (
+          {filtered.slice(startIndex, endIndex).map((pa) => (
             <button
               key={pa.id}
               type="button"

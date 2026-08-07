@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'preact/hooks';
 import maplibregl from 'maplibre-gl';
 import { loadPAData } from '../../utils/dataStore';
 import { selectedPAId, selectPA, paLayerVisible, paLayerCategories } from '../../utils/mapStore';
+import { paFilters, hasActivePAFilters, paMatchesFilters } from '../../utils/filterStore';
+import type { PAFilters } from '../../utils/filterStore';
 import { debouncedUpdateUrl } from '../../utils/urlState';
 import type { ProtectedArea } from '../../utils/types';
 
@@ -135,32 +137,66 @@ export default function ProtectedAreasLayer({ map }: { map: maplibregl.Map }) {
     }
 
     function setLayerVisibility(categories: Set<string>) {
+      const filters = paFilters.get();
+      const filtered = hasActivePAFilters(filters);
       for (const cat of CATEGORIES) {
         const visible = paLayerVisible.get() && categories.has(cat.id);
         map.setLayoutProperty(`pa-${cat.id}-fill`, 'visibility', visible ? 'visible' : 'none');
         map.setLayoutProperty(`pa-${cat.id}-outline`, 'visibility', visible ? 'visible' : 'none');
       }
       for (const [id, marker] of markersRef.current) {
-        const cat = paDataRef.current?.protectedAreas.find((p) => p.id === id)?.category;
-        marker.getElement().style.display = paLayerVisible.get() && cat && categories.has(cat) ? '' : 'none';
+        const pa = paDataRef.current?.protectedAreas.find((p) => p.id === id);
+        const shown =
+          paLayerVisible.get() &&
+          pa &&
+          categories.has(pa.category) &&
+          (!filtered || paMatchesFilters(pa, filters));
+        marker.getElement().style.display = shown ? '' : 'none';
       }
+    }
+
+    // §3.6: PA filter panel (Category + State) narrows via `setFilter`, layered on top of the
+    // per-category base filter above — orthogonal to LayerControl's visibility toggle (§3.2)
+    // and to `selected`/`highlighted` feature-state, never conflate the three.
+    function applyFilters(filters: PAFilters) {
+      const data = paDataRef.current;
+      const filtered = hasActivePAFilters(filters);
+      for (const cat of CATEGORIES) {
+        const fillId = `pa-${cat.id}-fill`;
+        const outlineId = `pa-${cat.id}-outline`;
+        if (!map.getLayer(fillId)) continue;
+        const base: maplibregl.FilterSpecification = ['==', ['get', 'category'], cat.id];
+        if (!filtered || !data) {
+          map.setFilter(fillId, base);
+          map.setFilter(outlineId, base);
+          continue;
+        }
+        const matchingIds = data.protectedAreas.filter((pa) => paMatchesFilters(pa, filters)).map((pa) => pa.id);
+        const combined: maplibregl.FilterSpecification = ['all', base, ['in', ['get', 'id'], ['literal', matchingIds]]];
+        map.setFilter(fillId, combined);
+        map.setFilter(outlineId, combined);
+      }
+      setLayerVisibility(paLayerCategories.get());
     }
 
     const unsubVisible = paLayerVisible.subscribe(async (visible) => {
       if (visible && !paDataRef.current) {
         paDataRef.current = await loadPAData();
         await ensureBoundarylessMarkers();
+        applyFilters(paFilters.get());
       }
       setLayerVisibility(paLayerCategories.get());
     });
     const unsubCategories = paLayerCategories.subscribe((cats) => setLayerVisibility(cats));
     const unsubSelected = selectedPAId.subscribe((id) => applySelection(id));
+    const unsubFilters = paFilters.subscribe((filters) => applyFilters(filters));
 
     return () => {
       map.off('click', onClick);
       unsubVisible();
       unsubCategories();
       unsubSelected();
+      unsubFilters();
       for (const marker of markersRef.current.values()) marker.remove();
       markersRef.current.clear();
     };

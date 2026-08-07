@@ -52,6 +52,17 @@ export interface BasinEntry {
   area_rank: number;
 }
 
+export interface CityEntry {
+  id: string;
+  name: string;
+  state: string;
+  river: string;
+  river_bank: 'left' | 'right' | string;
+  coordinates: [number, number];
+  significance: string[];
+  ghats: { id: string; name: string }[];
+}
+
 export interface StateEntry {
   id: string;
   name: string;

@@ -7,10 +7,8 @@ export const mapInstance = atom<maplibregl.Map | null>(null);
 
 export const selectedRiverId = atom<string | null>(null);
 export const selectedPAId = atom<string | null>(null);
-// State selection is map-only (highlight + fitBounds, §3.8) — no state info panel exists yet
-// (tracked separately in PROGRESS.md), so this doesn't participate in `activePanel`.
 export const selectedStateId = atom<string | null>(null);
-export const activePanel = atom<'river' | 'pa' | null>(null);
+export const activePanel = atom<'river' | 'pa' | 'state' | null>(null);
 
 export const paLayerVisible = atom<boolean>(false);
 export const paLayerCategories = atom<Set<string>>(new Set(['np', 'wls', 'tr', 'br', 'ramsar']));
@@ -34,8 +32,8 @@ export function selectPA(id: string | null): void {
 export function selectState(id: string | null): void {
   selectedRiverId.set(null);
   selectedPAId.set(null);
-  activePanel.set(null);
   selectedStateId.set(id);
+  activePanel.set(id ? 'state' : null);
 }
 
 export function closePanel(): void {

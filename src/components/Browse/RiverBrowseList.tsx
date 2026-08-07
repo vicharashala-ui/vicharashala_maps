@@ -1,6 +1,8 @@
 import { useMemo } from 'preact/hooks';
+import { useStore } from '@nanostores/preact';
 import { riversIndex, getBasin } from '../../utils/dataStore';
 import { selectRiver } from '../../utils/mapStore';
+import { matchingRiverIds } from '../../utils/filterStore';
 import { debouncedUpdateUrl } from '../../utils/urlState';
 import { useWindowedList } from '../../utils/useWindowedList';
 import type { RiverIndexEntry } from '../../utils/types';
@@ -9,7 +11,7 @@ const ROW_HEIGHT = 40;
 
 type Row = { kind: 'header'; basinId: string; label: string } | { kind: 'river'; river: RiverIndexEntry };
 
-const DRAINAGE_LABEL: Record<RiverIndexEntry['drainage_type'], string> = {
+export const DRAINAGE_LABEL: Record<RiverIndexEntry['drainage_type'], string> = {
   himalayan: 'Himalayan',
   peninsular: 'Peninsular',
   coastal: 'Coastal',
@@ -25,9 +27,10 @@ function TransnationalIcon() {
   );
 }
 
-function buildRows(): Row[] {
+function buildRows(activeIds: Set<string> | null): Row[] {
+  const source = activeIds ? riversIndex.filter((r) => activeIds.has(r.id)) : riversIndex;
   const byBasin = new Map<string, RiverIndexEntry[]>();
-  for (const river of riversIndex) {
+  for (const river of source) {
     if (!byBasin.has(river.basin)) byBasin.set(river.basin, []);
     byBasin.get(river.basin)!.push(river);
   }
@@ -50,12 +53,21 @@ function buildRows(): Row[] {
 }
 
 export default function RiverBrowseList() {
-  const rows = useMemo(buildRows, []);
+  const activeIds = useStore(matchingRiverIds);
+  const rows = useMemo(() => buildRows(activeIds), [activeIds]);
   const { containerRef, startIndex, endIndex, totalHeight, offsetY } = useWindowedList(rows.length, ROW_HEIGHT);
 
   function pick(river: RiverIndexEntry) {
     selectRiver(river.id);
     debouncedUpdateUrl({ river: river.id });
+  }
+
+  if (rows.length === 0) {
+    return (
+      <div className="p-4 text-sm" style={{ color: 'var(--color-text-muted)' }}>
+        No rivers match the current filters.
+      </div>
+    );
   }
 
   return (

@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/preact';
-import { selectedRiverId, activePanel, closePanel, selectPA } from '../../utils/mapStore';
-import { riversIndex, getBasin, loadPAData, paDataLoaded } from '../../utils/dataStore';
+import { selectedRiverId, activePanel, closePanel, selectPA, selectState } from '../../utils/mapStore';
+import { riversIndex, getBasin, getState, loadPAData, paDataLoaded } from '../../utils/dataStore';
 import { debouncedUpdateUrl } from '../../utils/urlState';
 import { isDarkTheme } from '../../utils/theme';
 import { useEffect, useState } from 'preact/hooks';
@@ -8,14 +8,16 @@ import { useFocusOnOpen } from '../../utils/useFocusOnOpen';
 import type { ComponentChildren } from 'preact';
 import type { ProtectedArea } from '../../utils/types';
 
-function Chip({ children }: { children: ComponentChildren }) {
+function Chip({ children, onClick }: { children: ComponentChildren; onClick?: () => void }) {
+  const Tag = onClick ? 'button' : 'span';
   return (
-    <span
+    <Tag
       className="inline-block rounded-full px-2 py-0.5 text-xs mr-1 mb-1"
       style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)' }}
+      onClick={onClick}
     >
       {children}
-    </span>
+    </Tag>
   );
 }
 
@@ -113,7 +115,15 @@ export default function RiverDetailPanel() {
           </div>
           <div>
             {river.states.map((s) => (
-              <Chip key={s}>{s}</Chip>
+              <Chip
+                key={s}
+                onClick={() => {
+                  selectState(s);
+                  debouncedUpdateUrl({ state: s });
+                }}
+              >
+                {getState(s)?.name ?? s}
+              </Chip>
             ))}
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { atom } from 'nanostores';
-import type { RiverIndexEntry, StateEntry, ProtectedArea, BasinEntry } from './types';
+import type { RiverIndexEntry, StateEntry, ProtectedArea, BasinEntry, CityEntry } from './types';
 
 // index.astro embeds these as inert JSON in a <script type="application/json"> tag (§5.3) —
 // read synchronously at module load, no fetch, no await.
@@ -15,10 +15,23 @@ function readInlineJSON<T>(elementId: string, fallback: T): T {
 export const riversIndex: RiverIndexEntry[] = readInlineJSON('core-data-rivers', []);
 export const states: StateEntry[] = readInlineJSON('core-data-states', []);
 export const basins: BasinEntry[] = readInlineJSON('core-data-basins', []);
+// Small (14 records), always-needed by StatePanel's "Notable cities" section — same
+// zero-fetch inlining rationale as basins.json (§5.3 pattern, Step 37).
+export const cities: CityEntry[] = readInlineJSON('core-data-cities', []);
 
 const basinById = new Map(basins.map((b) => [b.id, b]));
 export function getBasin(basinId: string): BasinEntry | undefined {
   return basinById.get(basinId);
+}
+
+const cityById = new Map(cities.map((c) => [c.id, c]));
+export function getCity(cityId: string): CityEntry | undefined {
+  return cityById.get(cityId);
+}
+
+const stateById = new Map(states.map((s) => [s.id, s]));
+export function getState(stateId: string): StateEntry | undefined {
+  return stateById.get(stateId);
 }
 
 // Genuine network fetch — needed only for search (§3.8), never for map construction or ROTD.

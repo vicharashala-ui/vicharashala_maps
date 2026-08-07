@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'preact/hooks';
 import maplibregl from 'maplibre-gl';
 import { riversIndex, loadRiversIdMap, loadPAData, paDataLoaded } from '../../utils/dataStore';
 import { selectedRiverId, selectRiver } from '../../utils/mapStore';
+import { matchingRiverIds } from '../../utils/filterStore';
 import { debouncedUpdateUrl } from '../../utils/urlState';
 
 const SOURCE_ID = 'rivers';
@@ -113,11 +114,20 @@ export default function RiversLayer({ map }: { map: maplibregl.Map }) {
       applySelection(id);
     });
 
+    // §3.6: river filter panel narrows which segments render, via `setFilter` — orthogonal to
+    // `selected`/`highlighted` feature-state above (never conflate the two, see RiversLayer's
+    // sibling comment on ProtectedAreasLayer for why setFilter must stay out of highlighting).
+    const unsubFilters = matchingRiverIds.subscribe((ids) => {
+      const filter: maplibregl.FilterSpecification | null = ids ? ['in', ['get', 'id'], ['literal', [...ids]]] : null;
+      map.setFilter(LINE_LAYER, filter);
+    });
+
     return () => {
       map.off('mousemove', LINE_LAYER, onMouseMove);
       map.off('mouseleave', LINE_LAYER, onMouseLeave);
       map.off('click', LINE_LAYER, onClick);
       unsubscribe();
+      unsubFilters();
       popup.remove();
     };
   }, [map]);

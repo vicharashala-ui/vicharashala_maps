@@ -4,7 +4,9 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import { Protocol } from 'pmtiles';
 import { riversIndex, loadPAData } from '../../utils/dataStore';
 import { mapInstance, selectRiver, selectPA, selectState } from '../../utils/mapStore';
-import { readInitialSelection } from '../../utils/urlState';
+import { readInitialSelection, readInitialFilters, debouncedUpdateUrl } from '../../utils/urlState';
+import { riverFilters, paFilters } from '../../utils/filterStore';
+import type { RiverFilters, PAFilters } from '../../utils/filterStore';
 import { centroidFallbackBounds, geometryBounds } from '../../utils/geoUtils';
 import RiversLayer from './RiversLayer';
 import ProtectedAreasLayer from './ProtectedAreasLayer';
@@ -24,6 +26,16 @@ export default function MapView() {
       maplibregl.addProtocol('pmtiles', protocol.tile);
 
       const { riverId, paId, stateId } = readInitialSelection();
+      // §3.6/§3.13: filters are deep-linkable and independent of selection — hydrate before
+      // RiversLayer/ProtectedAreasLayer mount so their first `setFilter` call is correct.
+      const initialFilters = readInitialFilters();
+      riverFilters.set({
+        states: initialFilters.riverStates,
+        basins: initialFilters.basins,
+        drainageType: initialFilters.drainageType as RiverFilters['drainageType'],
+        transnational: initialFilters.transnational,
+      });
+      paFilters.set({ categories: initialFilters.paCategories as PAFilters['categories'], states: initialFilters.paStates });
       let initialBounds: [number, number, number, number] | undefined;
       if (riverId) {
         initialBounds = riversIndex.find((r) => r.id === riverId)?.bounds;
@@ -69,6 +81,22 @@ export default function MapView() {
           source: 'india-states',
           paint: { 'line-color': stateBorderColor, 'line-width': 1 },
         });
+
+        // §3.5: click state polygon → open state panel. Lowest click priority — a river/PA
+        // feature drawn on top of the state fill owns the click first, so this only fires
+        // when nothing else at the point handled it.
+        m.on('click', 'land-fill', (e) => {
+          const onTopLayers = ['rivers-line', 'pa-np-fill', 'pa-tr-fill', 'pa-br-fill', 'pa-ramsar-fill', 'pa-wls-fill'].filter(
+            (id) => m.getLayer(id),
+          );
+          if (onTopLayers.length && m.queryRenderedFeatures(e.point, { layers: onTopLayers }).length) return;
+          const id = e.features?.[0]?.properties?.id as string | undefined;
+          if (!id) return;
+          selectState(id);
+          debouncedUpdateUrl({ state: id });
+        });
+        m.on('mouseenter', 'land-fill', () => (m.getCanvas().style.cursor = 'pointer'));
+        m.on('mouseleave', 'land-fill', () => (m.getCanvas().style.cursor = ''));
 
         if (cancelled) return;
         mapInstance.set(m);

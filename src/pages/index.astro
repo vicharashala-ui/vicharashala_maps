@@ -9,10 +9,12 @@ import RiverDetailPanel from '../components/Panels/RiverDetailPanel';
 import PAInfoPanel from '../components/Panels/PAInfoPanel';
 import SearchBar from '../components/Search/SearchBar';
 import BrowsePanel from '../components/Browse/BrowsePanel';
+import StatePanel from '../components/Panels/StatePanel';
 
 const riversIndex = JSON.parse(readFileSync('public/data/rivers-index.json', 'utf-8'));
 const states = JSON.parse(readFileSync('public/data/states.json', 'utf-8'));
 const basins = JSON.parse(readFileSync('public/data/basins.json', 'utf-8'));
+const cities = JSON.parse(readFileSync('public/data/cities.json', 'utf-8'));
 ---
 <html lang="en">
   <head>
@@ -26,6 +28,7 @@ const basins = JSON.parse(readFileSync('public/data/basins.json', 'utf-8'));
     <script is:inline type="application/json" id="core-data-rivers" set:html={JSON.stringify(riversIndex)} />
     <script is:inline type="application/json" id="core-data-states" set:html={JSON.stringify(states)} />
     <script is:inline type="application/json" id="core-data-basins" set:html={JSON.stringify(basins)} />
+    <script is:inline type="application/json" id="core-data-cities" set:html={JSON.stringify(cities)} />
 
     <main class="h-screen w-screen relative overflow-hidden">
       <MapView client:load />
@@ -35,6 +38,7 @@ const basins = JSON.parse(readFileSync('public/data/basins.json', 'utf-8'));
       <BrowsePanel client:load />
       <RiverDetailPanel client:load />
       <PAInfoPanel client:load />
+      <StatePanel client:load />
     </main>
   </body>
 </html>
