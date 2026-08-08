@@ -1,0 +1,178 @@
+---
+// Static SEO page per river (§5.5/§8/§14). Scope: rivers only — /state/[id] and /basin/[id]
+// are the next step. Content mirrors what RiverDetailPanel shows client-side, but as crawlable
+// static HTML (the interactive map itself isn't crawlable), plus a link back into the app.
+import { readFileSync } from 'node:fs';
+import '../../styles/global.css';
+import themeInit from '../../scripts/themeInit.raw.ts?raw';
+import Header from '../../components/Layout/Header.astro';
+import Footer from '../../components/Layout/Footer.astro';
+
+export function getStaticPaths() {
+  const riversIndex = JSON.parse(readFileSync('public/data/rivers-index.json', 'utf-8'));
+  return riversIndex.map((r: { id: string }) => ({ params: { id: r.id } }));
+}
+
+interface RiverDetailJson {
+  id: string;
+  name: string;
+  aliases: string[];
+  basin: string;
+  drainage_type: string;
+  seasonal_type: string;
+  origin_type: string;
+  source: { name: string; state: string; altitude_m: number; coordinates: [number, number] };
+  sink: { name: string; location: string };
+  length_km_india: number;
+  length_km_total: number;
+  states_flows_through: string[];
+  tributaries: { left: string[]; right: string[] };
+  protected_area_ids: string[];
+  navigable: boolean;
+  transnational: boolean;
+  transnational_countries: string[];
+  notable_city_ids: string[];
+  did_you_know: string[];
+}
+
+const { id } = Astro.params;
+const detail: RiverDetailJson = JSON.parse(readFileSync(`public/data/rivers/${id}.json`, 'utf-8'));
+const states = JSON.parse(readFileSync('public/data/states.json', 'utf-8'));
+const basins = JSON.parse(readFileSync('public/data/basins.json', 'utf-8'));
+const cities = JSON.parse(readFileSync('public/data/cities.json', 'utf-8'));
+const protectedAreas = JSON.parse(readFileSync('public/data/protected-areas.json', 'utf-8'));
+const riversIndex = JSON.parse(readFileSync('public/data/rivers-index.json', 'utf-8'));
+
+const stateName = (sid: string) => states.find((s: { id: string; name: string }) => s.id === sid)?.name ?? sid;
+const riverName = (rid: string) => riversIndex.find((r: { id: string; name: string }) => r.id === rid)?.name ?? rid;
+const cityName = (cid: string) => cities.find((c: { id: string; name: string }) => c.id === cid)?.name ?? cid;
+const paName = (pid: string) => protectedAreas.find((p: { id: string; name: string }) => p.id === pid)?.name ?? pid;
+const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).replace(/-/g, ' ');
+
+const basin = basins.find((b: { id: string; name: string }) => b.id === detail.basin);
+const stateCount = detail.states_flows_through.length;
+const tributaries = [...detail.tributaries.left, ...detail.tributaries.right];
+
+// §8's title/description templates — descriptions interpolate concrete facts, not boilerplate.
+const title = `${detail.name} River — Length, Tributaries & Map | Vicharashala Maps`;
+const description = `The ${detail.name} flows ${detail.length_km_india} km through ${stateCount} state${stateCount === 1 ? '' : 's'} in India${basin ? `, part of the ${basin.name}` : ''}${tributaries.length > 0 ? `, with ${tributaries.length} major tributaries` : ''}.`;
+const canonical = `https://vicharashalamaps.pages.dev/river/${id}/`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Place',
+  name: `${detail.name} River`,
+  description,
+  url: canonical,
+  geo: { '@type': 'GeoCoordinates', latitude: detail.source.coordinates[1], longitude: detail.source.coordinates[0] },
+};
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script is:inline set:html={themeInit.trim()}></script>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <Header />
+    <main class="flex-1 max-w-2xl mx-auto p-4 sm:p-6 text-sm" style="color: var(--color-text);">
+      <h1 class="text-2xl font-semibold mb-1" style="font-family: 'Sora', sans-serif;">{detail.name} River</h1>
+      {detail.aliases.length > 0 && (
+        <p class="text-sm mb-4" style="color: var(--color-text-muted);">Also known as {detail.aliases.join(', ')}</p>
+      )}
+
+      <a href={`/?river=${id}`} class="inline-block mb-6 text-sm underline" style="color: var(--color-accent);">
+        View on interactive map →
+      </a>
+
+      <dl class="grid grid-cols-2 gap-x-4 gap-y-2 mb-6">
+        <dt style="color: var(--color-text-muted);">Length in India</dt>
+        <dd>{detail.length_km_india} km</dd>
+        <dt style="color: var(--color-text-muted);">Total length</dt>
+        <dd>{detail.length_km_total} km</dd>
+        <dt style="color: var(--color-text-muted);">Basin</dt>
+        <dd>{basin ? <a href={`/basin/${basin.id}`} class="underline" style="color: var(--color-accent);">{basin.name}</a> : '—'}</dd>
+        <dt style="color: var(--color-text-muted);">Drainage type</dt>
+        <dd>{capitalize(detail.drainage_type)}</dd>
+        <dt style="color: var(--color-text-muted);">Seasonal type</dt>
+        <dd>{capitalize(detail.seasonal_type)}</dd>
+        <dt style="color: var(--color-text-muted);">Origin</dt>
+        <dd>{capitalize(detail.origin_type)}</dd>
+        <dt style="color: var(--color-text-muted);">Navigable</dt>
+        <dd>{detail.navigable ? 'Yes' : 'No'}</dd>
+        <dt style="color: var(--color-text-muted);">Transnational</dt>
+        <dd>{detail.transnational ? `Yes (${detail.transnational_countries.map(capitalize).join(', ')})` : 'No'}</dd>
+      </dl>
+
+      <h2 class="text-lg font-semibold mt-6 mb-2" style="font-family: 'Sora', sans-serif;">Source &amp; Sink</h2>
+      <p class="mb-1"><strong>Source:</strong> {detail.source.name} ({detail.source.altitude_m} m, {stateName(detail.source.state)})</p>
+      <p class="mb-4"><strong>Flows into:</strong> {detail.sink.name}, {detail.sink.location}</p>
+
+      <h2 class="text-lg font-semibold mt-6 mb-2" style="font-family: 'Sora', sans-serif;">States</h2>
+      <p class="mb-4">
+        {detail.states_flows_through.map((sid: string, i: number) => (
+          <>
+            {i > 0 && ', '}
+            <a href={`/state/${sid}`} class="underline" style="color: var(--color-accent);">{stateName(sid)}</a>
+          </>
+        ))}
+      </p>
+
+      {tributaries.length > 0 && (
+        <>
+          <h2 class="text-lg font-semibold mt-6 mb-2" style="font-family: 'Sora', sans-serif;">Tributaries</h2>
+          <p class="mb-4">
+            {tributaries.map((rid: string, i: number) => (
+              <>
+                {i > 0 && ', '}
+                <a href={`/river/${rid}`} class="underline" style="color: var(--color-accent);">{riverName(rid)}</a>
+              </>
+            ))}
+          </p>
+        </>
+      )}
+
+      {detail.protected_area_ids.length > 0 && (
+        <>
+          <h2 class="text-lg font-semibold mt-6 mb-2" style="font-family: 'Sora', sans-serif;">
+            Protected Areas Along the {detail.name}
+          </h2>
+          <ul class="list-disc list-inside mb-4">
+            {detail.protected_area_ids.map((pid) => (
+              <li>{paName(pid)}</li>
+            ))}
+          </ul>
+        </>
+      )}
+
+      {detail.notable_city_ids.length > 0 && (
+        <>
+          <h2 class="text-lg font-semibold mt-6 mb-2" style="font-family: 'Sora', sans-serif;">Notable Cities</h2>
+          <p class="mb-4">{detail.notable_city_ids.map(cityName).join(', ')}</p>
+        </>
+      )}
+
+      {detail.did_you_know.length > 0 && (
+        <>
+          <h2 class="text-lg font-semibold mt-6 mb-2" style="font-family: 'Sora', sans-serif;">Did You Know?</h2>
+          <ul class="list-disc list-inside mb-4 space-y-1">
+            {detail.did_you_know.map((fact) => (
+              <li>{fact}</li>
+            ))}
+          </ul>
+        </>
+      )}
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -72,6 +72,24 @@ export function debouncedUpdateFilterUrl(params: FilterUrlParams): void {
   }, 300);
 }
 
+// Compare mode (§3.10) — own page (`/compare`), own params (`r1`/`r2`/`r3`), never touches
+// selection/filter params above. No debounce: river slots change on discrete picker/remove
+// clicks, not a fast-firing input like search or a slider.
+export function updateCompareUrl(riverIds: (string | null)[]): void {
+  const url = new URL(location.href);
+  (['r1', 'r2', 'r3'] as const).forEach((key, i) => {
+    const id = riverIds[i];
+    if (id) url.searchParams.set(key, id);
+    else url.searchParams.delete(key);
+  });
+  history.replaceState(null, '', url);
+}
+
+export function readInitialCompareRivers(): string[] {
+  const params = new URLSearchParams(location.search);
+  return (['r1', 'r2', 'r3'] as const).map((key) => params.get(key)).filter((v): v is string => !!v);
+}
+
 export function readInitialFilters(): {
   riverStates: string[];
   basins: string[];

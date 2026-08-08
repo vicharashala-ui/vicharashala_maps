@@ -74,6 +74,41 @@ export interface StateEntry {
   protected_area_ids: string[];
 }
 
+// /data/rivers/{id}.json — detail, fetched on selection (§4.1). Used by RiverDetailPanel's
+// future expansion and Compare mode (§3.10), whose table needs length_km_total/tributaries/sink
+// that rivers-index.json doesn't carry.
+export interface RiverDetail {
+  id: string;
+  name: string;
+  aliases: string[];
+  local_names: Record<string, string>;
+  basin: string;
+  type: 'main' | 'tributary' | 'distributary';
+  drainage_type: RiverIndexEntry['drainage_type'];
+  seasonal_type: RiverIndexEntry['seasonal_type'];
+  origin_type: RiverIndexEntry['origin_type'];
+  stream_order: number;
+  wikimedia_image_id: string | null;
+  source: { name: string; state: string; altitude_m: number; coordinates: [number, number] };
+  sink: { name: string; type: string; location: string; coordinates: [number, number] };
+  length_km_india: number;
+  length_km_total: number;
+  basin_area_total_km2: number | null;
+  basin_area_india_km2: number | null;
+  states_flows_through: string[];
+  basin_states: string[];
+  tributaries: { left: string[]; right: string[] };
+  distributaries: string[];
+  protected_area_ids: string[];
+  navigable: boolean;
+  transnational: boolean;
+  transnational_countries: string[];
+  significance: string[];
+  notable_city_ids: string[];
+  upsc_relevant: boolean;
+  did_you_know: string[];
+}
+
 // search-index-primary.json / search-index-pa.json docs (scripts/buildSearchIndex.js) — trimmed
 // to result-row fields only, not full record duplicates (§4.7 step ⑬).
 export interface SearchRiverDoc {

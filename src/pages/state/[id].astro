@@ -1,0 +1,108 @@
+---
+// Static SEO page per state/UT (§5.5/§8). Same pattern as Step 44's /river/[id]: no per-entity
+// detail JSON to fetch here — states.json already carries everything this page needs.
+import { readFileSync } from 'node:fs';
+import '../../styles/global.css';
+import themeInit from '../../scripts/themeInit.raw.ts?raw';
+import Header from '../../components/Layout/Header.astro';
+import Footer from '../../components/Layout/Footer.astro';
+
+export function getStaticPaths() {
+  const states = JSON.parse(readFileSync('public/data/states.json', 'utf-8'));
+  return states.map((s: { id: string }) => ({ params: { id: s.id } }));
+}
+
+const { id } = Astro.params;
+const states = JSON.parse(readFileSync('public/data/states.json', 'utf-8'));
+const riversIndex = JSON.parse(readFileSync('public/data/rivers-index.json', 'utf-8'));
+const cities = JSON.parse(readFileSync('public/data/cities.json', 'utf-8'));
+const protectedAreas = JSON.parse(readFileSync('public/data/protected-areas.json', 'utf-8'));
+
+const state = states.find((s: { id: string }) => s.id === id);
+
+const riverName = (rid: string) => riversIndex.find((r: { id: string; name: string }) => r.id === rid)?.name ?? rid;
+const cityName = (cid: string) => cities.find((c: { id: string; name: string }) => c.id === cid)?.name ?? cid;
+const paName = (pid: string) => protectedAreas.find((p: { id: string; name: string }) => p.id === pid)?.name ?? pid;
+
+const riverCount = state.rivers_flowing_through.length;
+const paCount = state.protected_area_ids.length;
+const adminLabel = state.admin_type === 'ut' ? 'Union Territory' : 'State';
+
+const title = `Rivers & Protected Areas in ${state.name} | Vicharashala Maps`;
+const description = `${state.name} has ${riverCount} major river${riverCount === 1 ? '' : 's'} and ${paCount} protected area${paCount === 1 ? '' : 's'} — national parks, wildlife sanctuaries, and Ramsar sites.`;
+const canonical = `https://vicharashalamaps.pages.dev/state/${id}/`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Place',
+  name: state.name,
+  description,
+  url: canonical,
+  containedInPlace: { '@type': 'Country', name: 'India' },
+};
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script is:inline set:html={themeInit.trim()}></script>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <Header />
+    <main class="flex-1 max-w-2xl mx-auto p-4 sm:p-6 text-sm" style="color: var(--color-text);">
+      <h1 class="text-2xl font-semibold mb-1" style="font-family: 'Sora', sans-serif;">{state.name}</h1>
+      <p class="text-sm mb-4" style="color: var(--color-text-muted);">{adminLabel} · Capital: {state.capital}</p>
+
+      <a href={`/?state=${id}`} class="inline-block mb-6 text-sm underline" style="color: var(--color-accent);">
+        View on interactive map →
+      </a>
+
+      {state.rivers_flowing_through.length > 0 && (
+        <>
+          <h2 class="text-lg font-semibold mt-6 mb-2" style="font-family: 'Sora', sans-serif;">
+            Rivers Flowing Through {state.name}
+          </h2>
+          <p class="mb-4">
+            {state.rivers_flowing_through.map((rid: string, i: number) => (
+              <>
+                {i > 0 && ', '}
+                <a href={`/river/${rid}`} class="underline" style="color: var(--color-accent);">{riverName(rid)}</a>
+              </>
+            ))}
+          </p>
+        </>
+      )}
+
+      {state.notable_city_ids.length > 0 && (
+        <>
+          <h2 class="text-lg font-semibold mt-6 mb-2" style="font-family: 'Sora', sans-serif;">Notable Cities</h2>
+          <p class="mb-4">{state.notable_city_ids.map(cityName).join(', ')}</p>
+        </>
+      )}
+
+      {state.protected_area_ids.length > 0 && (
+        <>
+          <h2 class="text-lg font-semibold mt-6 mb-2" style="font-family: 'Sora', sans-serif;">
+            Protected Areas in {state.name}
+          </h2>
+          <ul class="list-disc list-inside mb-4 columns-1 sm:columns-2 gap-x-6">
+            {state.protected_area_ids.map((pid: string) => (
+              <li>{paName(pid)}</li>
+            ))}
+          </ul>
+        </>
+      )}
+    </main>
+    <Footer />
+  </body>
+</html>

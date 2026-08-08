@@ -1,0 +1,37 @@
+---
+import { readFileSync } from 'node:fs';
+import '../styles/global.css';
+import themeInit from '../scripts/themeInit.raw.ts?raw';
+import CompareView from '../components/Compare/CompareView';
+import Header from '../components/Layout/Header.astro';
+import Footer from '../components/Layout/Footer.astro';
+
+const riversIndex = JSON.parse(readFileSync('public/data/rivers-index.json', 'utf-8'));
+const states = JSON.parse(readFileSync('public/data/states.json', 'utf-8'));
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Compare Rivers — Vicharashala Maps</title>
+    <meta name="description" content="Compare India's rivers side by side — length, basin area, drainage type, tributaries, and more." />
+    <link rel="canonical" href="https://vicharashalamaps.pages.dev/compare/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Compare Rivers — Vicharashala Maps" />
+    <meta property="og:description" content="Compare India's rivers side by side — length, basin area, drainage type, tributaries, and more." />
+    <meta property="og:url" content="https://vicharashalamaps.pages.dev/compare/" />
+    <meta name="twitter:card" content="summary" />
+    <script is:inline set:html={themeInit.trim()}></script>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <script is:inline type="application/json" id="core-data-rivers" set:html={JSON.stringify(riversIndex)} />
+    <script is:inline type="application/json" id="core-data-states" set:html={JSON.stringify(states)} />
+
+    <Header />
+    <main class="flex-1">
+      <CompareView client:load />
+    </main>
+    <Footer />
+  </body>
+</html>

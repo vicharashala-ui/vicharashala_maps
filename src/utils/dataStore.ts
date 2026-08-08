@@ -1,5 +1,5 @@
 import { atom } from 'nanostores';
-import type { RiverIndexEntry, StateEntry, ProtectedArea, BasinEntry, CityEntry } from './types';
+import type { RiverIndexEntry, StateEntry, ProtectedArea, BasinEntry, CityEntry, RiverDetail } from './types';
 
 // index.astro embeds these as inert JSON in a <script type="application/json"> tag (§5.3) —
 // read synchronously at module load, no fetch, no await.
@@ -67,6 +67,21 @@ export function loadPAData(): Promise<PAData> {
     return { protectedAreas, paIdMap, searchIndexPA };
   });
   return paDataPromise;
+}
+
+// Per-river detail (§4.1) — cached individually since only a handful of rivers get fetched in
+// a given session (selection, Compare mode), unlike PA data which is one batch fetch of everything.
+const riverDetailPromises = new Map<string, Promise<RiverDetail>>();
+export function loadRiverDetail(riverId: string): Promise<RiverDetail> {
+  let promise = riverDetailPromises.get(riverId);
+  if (!promise) {
+    promise = fetch(`/data/rivers/${riverId}.json`).then((r) => {
+      if (!r.ok) throw new Error(`Failed to load river detail: ${riverId}`);
+      return r.json();
+    });
+    riverDetailPromises.set(riverId, promise);
+  }
+  return promise;
 }
 
 // river ID -> segment Feature IDs in rivers.pmtiles (§4.6). Lazy — only needed post-selection

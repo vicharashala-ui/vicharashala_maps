@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+import themeInit from '../scripts/themeInit.raw.ts?raw';
+import Header from '../components/Layout/Header.astro';
+import Footer from '../components/Layout/Footer.astro';
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — Vicharashala Maps</title>
+    <meta name="description" content="Vicharashala Maps' privacy policy — Cloudflare Web Analytics only, no cookies, no tracking." />
+    <link rel="canonical" href="https://vicharashalamaps.pages.dev/privacy-policy/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script is:inline set:html={themeInit.trim()}></script>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <Header />
+    <main class="flex-1 max-w-2xl mx-auto p-4 sm:p-6 text-sm" style="color: var(--color-text);">
+      <h1 class="text-2xl font-semibold mb-4" style="font-family: 'Sora', sans-serif;">Privacy Policy</h1>
+      <p class="mb-3">
+        Vicharashala Maps uses Cloudflare Web Analytics to understand overall site traffic. This is a
+        privacy-first, cookie-free analytics service — it doesn't use tracking scripts, cookies, or any client-side
+        state, and doesn't collect or store personal data about individual visitors.
+      </p>
+      <p class="mb-3">
+        This site does not use any other analytics, advertising, or tracking services. No account, sign-up, or
+        personal information is required to use the map.
+      </p>
+      <p class="mb-3">
+        Your theme preference (light/dark) is stored locally in your browser (<code>localStorage</code>) and never
+        leaves your device.
+      </p>
+      <p>
+        This policy may be updated if the site adds new services in the future (for example, advertising) — any
+        such change will be reflected on this page.
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>

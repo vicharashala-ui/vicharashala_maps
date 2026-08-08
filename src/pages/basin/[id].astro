@@ -1,0 +1,103 @@
+---
+// Static SEO page per river basin (§5.5/§8). Same pattern as /river/[id] and /state/[id];
+// basins.json already carries everything this page needs, no per-entity detail file.
+import { readFileSync } from 'node:fs';
+import '../../styles/global.css';
+import themeInit from '../../scripts/themeInit.raw.ts?raw';
+import Header from '../../components/Layout/Header.astro';
+import Footer from '../../components/Layout/Footer.astro';
+
+export function getStaticPaths() {
+  const basins = JSON.parse(readFileSync('public/data/basins.json', 'utf-8'));
+  return basins.map((b: { id: string }) => ({ params: { id: b.id } }));
+}
+
+const { id } = Astro.params;
+const basins = JSON.parse(readFileSync('public/data/basins.json', 'utf-8'));
+const states = JSON.parse(readFileSync('public/data/states.json', 'utf-8'));
+const riversIndex = JSON.parse(readFileSync('public/data/rivers-index.json', 'utf-8'));
+
+const basin = basins.find((b: { id: string }) => b.id === id);
+
+const stateName = (sid: string) => states.find((s: { id: string; name: string }) => s.id === sid)?.name ?? sid;
+const riverName = (rid: string) => riversIndex.find((r: { id: string; name: string }) => r.id === rid)?.name ?? rid;
+
+const stateCount = basin.states.length;
+const riverCount = basin.rivers.length;
+
+const title = `${basin.name} — Rivers, Area & Map | Vicharashala Maps`;
+const description = `The ${basin.name} spans ${stateCount} state${stateCount === 1 ? '' : 's'}${basin.area_km2 ? ` and covers ${basin.area_km2.toLocaleString()} km²` : ''}, draining ${riverCount} river${riverCount === 1 ? '' : 's'} including the ${riverName(basin.main_river)}.`;
+const canonical = `https://vicharashalamaps.pages.dev/basin/${id}/`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Place',
+  name: basin.name,
+  description,
+  url: canonical,
+  containedInPlace: { '@type': 'Country', name: 'India' },
+};
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script is:inline set:html={themeInit.trim()}></script>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <Header />
+    <main class="flex-1 max-w-2xl mx-auto p-4 sm:p-6 text-sm" style="color: var(--color-text);">
+      <h1 class="text-2xl font-semibold mb-4" style="font-family: 'Sora', sans-serif;">{basin.name}</h1>
+
+      <a href={`/?basin=${id}`} class="inline-block mb-6 text-sm underline" style="color: var(--color-accent);">
+        View on interactive map →
+      </a>
+
+      <dl class="grid grid-cols-2 gap-x-4 gap-y-2 mb-6">
+        <dt style="color: var(--color-text-muted);">Main river</dt>
+        <dd><a href={`/river/${basin.main_river}`} class="underline" style="color: var(--color-accent);">{riverName(basin.main_river)}</a></dd>
+        <dt style="color: var(--color-text-muted);">Basin area</dt>
+        <dd>{basin.area_km2 ? `${basin.area_km2.toLocaleString()} km²` : '—'}</dd>
+        <dt style="color: var(--color-text-muted);">Area rank (India)</dt>
+        <dd>{basin.area_rank ?? '—'}</dd>
+      </dl>
+
+      <h2 class="text-lg font-semibold mt-6 mb-2" style="font-family: 'Sora', sans-serif;">States</h2>
+      <p class="mb-4">
+        {basin.states.map((sid: string, i: number) => (
+          <>
+            {i > 0 && ', '}
+            <a href={`/state/${sid}`} class="underline" style="color: var(--color-accent);">{stateName(sid)}</a>
+          </>
+        ))}
+      </p>
+
+      {basin.rivers.length > 0 && (
+        <>
+          <h2 class="text-lg font-semibold mt-6 mb-2" style="font-family: 'Sora', sans-serif;">
+            Rivers in the {basin.name}
+          </h2>
+          <p class="mb-4">
+            {basin.rivers.map((rid: string, i: number) => (
+              <>
+                {i > 0 && ', '}
+                <a href={`/river/${rid}`} class="underline" style="color: var(--color-accent);">{riverName(rid)}</a>
+              </>
+            ))}
+          </p>
+        </>
+      )}
+    </main>
+    <Footer />
+  </body>
+</html>

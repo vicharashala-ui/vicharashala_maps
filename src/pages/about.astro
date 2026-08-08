@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+import themeInit from '../scripts/themeInit.raw.ts?raw';
+import Header from '../components/Layout/Header.astro';
+import Footer from '../components/Layout/Footer.astro';
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Vicharashala Maps</title>
+    <meta name="description" content="Vicharashala Maps is a free, static interactive atlas of India's rivers and protected areas, built for students and researchers." />
+    <link rel="canonical" href="https://vicharashalamaps.pages.dev/about/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About — Vicharashala Maps" />
+    <meta property="og:description" content="Vicharashala Maps is a free, static interactive atlas of India's rivers and protected areas." />
+    <meta property="og:url" content="https://vicharashalamaps.pages.dev/about/" />
+    <meta name="twitter:card" content="summary" />
+    <script is:inline set:html={themeInit.trim()}></script>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <Header />
+    <main class="flex-1 max-w-2xl mx-auto p-4 sm:p-6 text-sm" style="color: var(--color-text);">
+      <h1 class="text-2xl font-semibold mb-4" style="font-family: 'Sora', sans-serif;">About Vicharashala Maps</h1>
+      <p class="mb-3">
+        Vicharashala Maps is a free, static interactive atlas of India's rivers and protected areas — built for
+        students, researchers, and anyone curious about the country's ecological geography.
+      </p>
+      <p class="mb-3">
+        The map covers India's major river systems and their basins, alongside national parks, wildlife
+        sanctuaries, tiger reserves, biosphere reserves, and Ramsar sites, cross-referenced with the states and
+        union territories they belong to.
+      </p>
+      <p class="mb-3">
+        Rivers are compiled from government (data.gov.in, India-WRIS, CWC) and OpenStreetMap sources with manually
+        researched detail; protected area boundaries and metadata build on the open-source
+        <a href="https://github.com/vicharashala-ui/ecoguesser" class="underline" style="color: var(--color-accent);" rel="noopener noreferrer">ecoguesser</a>
+        project. Full data-source attribution is in the footer of every page.
+      </p>
+      <p>
+        This is an independent educational project, not affiliated with any government body. Found an error?
+        Source is on
+        <a href="https://github.com/vicharashala-ui/vicharashala_maps" class="underline" style="color: var(--color-accent);" rel="noopener noreferrer">GitHub</a>.
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>
