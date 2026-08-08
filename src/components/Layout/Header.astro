@@ -2,7 +2,6 @@
 // §6.3/§6.4 header. Scoped to logo + nav + theme toggle only — Search stays as the existing
 // floating SearchBar over the map (index.astro), not relocated here; the full desktop 3-column
 // grid (docked Sidebar, Quick Stats banner, AdSense slots) is still deferred from Step 38.
-// Blog link omitted: /blog doesn't exist yet (spec Phase 2).
 ---
 <header
   class="flex items-center justify-between gap-4 px-4 h-14 border-b shrink-0"
@@ -13,6 +12,7 @@
   </a>
   <nav class="hidden sm:flex items-center gap-4 text-sm" style="color: var(--color-text-muted);">
     <a href="/compare" class="hover:underline">Compare</a>
+    <a href="/blog" class="hover:underline">Blog</a>
     <a href="/about" class="hover:underline">About</a>
   </nav>
   <button

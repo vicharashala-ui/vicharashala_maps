@@ -1,0 +1,53 @@
+---
+// §8/§14 blog index. Static list, newest first — no pagination needed at 5 seed articles.
+import { getCollection } from 'astro:content';
+import '../../styles/global.css';
+import themeInit from '../../scripts/themeInit.raw.ts?raw';
+import Header from '../../components/Layout/Header.astro';
+import Footer from '../../components/Layout/Footer.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const title = 'Blog | Vicharashala Maps';
+const description = "Articles on India's rivers, national parks, tiger reserves, and Ramsar wetlands — written for students and UPSC aspirants.";
+const canonical = 'https://vicharashalamaps.pages.dev/blog/';
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://vicharashalamaps.pages.dev/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline set:html={themeInit.trim()}></script>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <Header />
+    <main class="flex-1 max-w-2xl mx-auto p-4 sm:p-6 text-sm" style="color: var(--color-text);">
+      <h1 class="text-2xl font-semibold mb-4" style="font-family: 'Sora', sans-serif;">Blog</h1>
+      <ul class="space-y-6">
+        {posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.id}/`} class="text-lg font-semibold hover:underline" style="font-family: 'Sora', sans-serif; color: var(--color-text);">
+              {post.data.title}
+            </a>
+            <p class="text-xs mt-0.5 mb-1" style="color: var(--color-text-muted);">
+              {post.data.pubDate.toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+            <p>{post.data.description}</p>
+          </li>
+        ))}
+      </ul>
+    </main>
+    <Footer />
+  </body>
+</html>

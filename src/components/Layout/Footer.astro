@@ -2,7 +2,7 @@
 // §6.3 footer. Hidden on mobile (<768px) — spec's mobile layout (§6.4) has no footer row, only
 // header + ROTD + map/browse tabs + bottom sheet. "Sources" isn't a separate route anywhere in
 // the spec, so its content (§13's licence/attribution note) is inlined directly here rather than
-// linking to a page that doesn't exist. Blog link omitted: /blog doesn't exist yet (Phase 2).
+// linking to a page that doesn't exist.
 const year = new Date().getFullYear();
 ---
 <footer
@@ -11,6 +11,7 @@ const year = new Date().getFullYear();
 >
   <nav class="flex flex-wrap gap-x-4 gap-y-1">
     <a href="/about" class="hover:underline">About</a>
+    <a href="/blog" class="hover:underline">Blog</a>
     <a href="/privacy-policy" class="hover:underline">Privacy Policy</a>
     <a href="/terms" class="hover:underline">Terms of Use</a>
   </nav>

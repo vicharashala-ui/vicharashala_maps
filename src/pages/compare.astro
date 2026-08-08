@@ -21,7 +21,8 @@ const states = JSON.parse(readFileSync('public/data/states.json', 'utf-8'));
     <meta property="og:title" content="Compare Rivers — Vicharashala Maps" />
     <meta property="og:description" content="Compare India's rivers side by side — length, basin area, drainage type, tributaries, and more." />
     <meta property="og:url" content="https://vicharashalamaps.pages.dev/compare/" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://vicharashalamaps.pages.dev/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <script is:inline set:html={themeInit.trim()}></script>
   </head>
   <body class="flex flex-col min-h-screen">
