@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import themeInit from '../scripts/themeInit.raw.ts?raw';
+import soraLatin600 from '@fontsource/sora/files/sora-latin-600-normal.woff2?url';
+import interLatin400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
 import Header from '../components/Layout/Header.astro';
 import Footer from '../components/Layout/Footer.astro';
 ---
@@ -11,6 +13,9 @@ import Footer from '../components/Layout/Footer.astro';
     <title>Page not found — Vicharashala Maps</title>
     <meta name="robots" content="noindex" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href={soraLatin600} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={interLatin400} as="font" type="font/woff2" crossorigin />
+    <link rel="preconnect" href="https://static.cloudflareinsights.com" />
     <script is:inline set:html={themeInit.trim()}></script>
   </head>
   <body class="flex flex-col min-h-screen">

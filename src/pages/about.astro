@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import themeInit from '../scripts/themeInit.raw.ts?raw';
+import soraLatin600 from '@fontsource/sora/files/sora-latin-600-normal.woff2?url';
+import interLatin400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
 import Header from '../components/Layout/Header.astro';
 import Footer from '../components/Layout/Footer.astro';
 ---
@@ -12,6 +14,9 @@ import Footer from '../components/Layout/Footer.astro';
     <meta name="description" content="Vicharashala Maps is a free, static interactive atlas of India's rivers and protected areas, built for students and researchers." />
     <link rel="canonical" href="https://vicharashalamaps.pages.dev/about/" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href={soraLatin600} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={interLatin400} as="font" type="font/woff2" crossorigin />
+    <link rel="preconnect" href="https://static.cloudflareinsights.com" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="About — Vicharashala Maps" />
     <meta property="og:description" content="Vicharashala Maps is a free, static interactive atlas of India's rivers and protected areas." />

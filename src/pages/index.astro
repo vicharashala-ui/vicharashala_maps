@@ -2,6 +2,8 @@
 import { readFileSync } from 'node:fs';
 import '../styles/global.css';
 import themeInit from '../scripts/themeInit.raw.ts?raw';
+import soraLatin600 from '@fontsource/sora/files/sora-latin-600-normal.woff2?url';
+import interLatin400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
 import MapView from '../components/Map/MapView';
 import LayerControl from '../components/Map/LayerControl';
 import MapControls from '../components/Map/MapControls';
@@ -29,6 +31,9 @@ const cities = JSON.parse(readFileSync('public/data/cities.json', 'utf-8'));
     />
     <link rel="canonical" href="https://vicharashalamaps.pages.dev/" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href={soraLatin600} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={interLatin400} as="font" type="font/woff2" crossorigin />
+    <link rel="preconnect" href="https://static.cloudflareinsights.com" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Vicharashala Maps — Rivers & Protected Areas of India" />
     <meta
