@@ -18,7 +18,37 @@ const INDIA_BOUNDS: [number, number, number, number] = [68.1, 6.4, 97.4, 37.6];
 // Afghanistan-to-Myanmar region real roads/place labels/terrain instead of a flat fill. Style
 // choice matches the site's own light/dark theme; picked once at mount, same as the other
 // colors below — the map doesn't currently live-update on an in-page theme toggle either way.
+// Evaluated OSM Liberty (OpenFreeMap's `liberty` style) as an alternative: rejected. Liberty is
+// the actively-maintained full-detail style (roads, POIs, buildings) — Positron is a deliberately
+// stripped-down fork with POIs removed and labels pushed to higher zooms, i.e. already the
+// "quiet basemap for overlaying your own data" style this atlas needs; Liberty's extra detail
+// would visually compete with the rivers/PA layers rather than recede behind them. Kept Positron/
+// Dark; see raiseSettlementLabelZoom below for a real bug this evaluation turned up in Dark.
 const BASEMAP_STYLE = (dark: boolean) => `https://tiles.openfreemap.org/styles/${dark ? 'dark' : 'positron'}`;
+
+// Both Positron and Dark (OpenFreeMap's OpenMapTiles-schema forks) put every settlement label on
+// symbol layers sourced from `place`, just under different layer ids — and Dark's ship with no
+// `minzoom` at all, so city/town/village labels there render from zoom 0 (found while looking
+// into label clutter, not something Liberty would have fixed either — Liberty has the same
+// schema). Matching on `source-layer` + a name pattern and calling setLayerZoomRange works
+// uniformly across both styles without forking/self-hosting either one. Country labels are left
+// alone: low density, and they're useful context for where transnational rivers cross into
+// Nepal/Bangladesh/Pakistan/China/Myanmar.
+const SETTLEMENT_MIN_ZOOM: [RegExp, number][] = [
+  [/city/i, 6],
+  [/town/i, 7],
+  [/village|suburb|hamlet|other/i, 8],
+  [/state/i, 5],
+];
+
+function raiseSettlementLabelZoom(m: maplibregl.Map) {
+  for (const layer of m.getStyle()?.layers ?? []) {
+    if (layer.type !== 'symbol' || (layer as { 'source-layer'?: string })['source-layer'] !== 'place') continue;
+    if (/country/i.test(layer.id)) continue;
+    const minzoom = SETTLEMENT_MIN_ZOOM.find(([re]) => re.test(layer.id))?.[1];
+    if (minzoom !== undefined) m.setLayerZoomRange(layer.id, minzoom, layer.maxzoom ?? 24);
+  }
+}
 
 export default function MapView() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -76,6 +106,8 @@ export default function MapView() {
       });
 
       m.on('load', () => {
+        raiseSettlementLabelZoom(m);
+
         m.addSource('india-states', { type: 'geojson', data: '/geojson/india-states.geojson' });
         // Invisible but still present — 'land-fill' exists purely as a click/hit-test target
         // for the state-select handler below. The real basemap (roads, place labels) now

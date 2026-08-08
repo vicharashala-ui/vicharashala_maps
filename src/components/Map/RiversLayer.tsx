@@ -8,6 +8,11 @@ import { debouncedUpdateUrl } from '../../utils/urlState';
 const SOURCE_ID = 'rivers';
 const SOURCE_LAYER = 'rivers';
 const LINE_LAYER = 'rivers-line';
+// Transnational rivers' course outside India (extendTransnationalRivers.js) — decorative-only
+// per MapView.tsx's original comment, but there's no reason a click on a river's Bangladesh/
+// Pakistan/etc. reach shouldn't open the same info panel as its India reach. Same handlers,
+// keyed off `river_id` (this layer's property) instead of `id` (the pmtiles layer's).
+const CONTEXT_LAYER = 'rivers-context-line';
 
 export default function RiversLayer({ map }: { map: maplibregl.Map }) {
   const currentSegmentsRef = useRef<number[]>([]);
@@ -29,14 +34,16 @@ export default function RiversLayer({ map }: { map: maplibregl.Map }) {
         'source-layer': SOURCE_LAYER,
         paint: {
           'line-color': ['case', ['boolean', ['feature-state', 'selected'], false], accentWarm, riverDefault],
-          'line-width': ['interpolate', ['linear'], ['zoom'], 4, 0.6, 10, 2.2],
+          // Widened/brightened at the low end (zoom 4 ≈ the default India-wide view) so rivers
+          // read clearly against the basemap without waiting for the user to zoom in.
+          'line-width': ['interpolate', ['linear'], ['zoom'], 4, 1.2, 10, 2.4],
           'line-opacity': [
             'case',
             ['boolean', ['feature-state', 'selected'], false],
             1.0,
             ['boolean', ['feature-state', 'highlighted'], false],
-            0.7,
-            0.6,
+            0.85,
+            0.75,
           ],
         },
       });
@@ -44,34 +51,50 @@ export default function RiversLayer({ map }: { map: maplibregl.Map }) {
 
     const popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 8 });
 
-    function onMouseMove(e: maplibregl.MapMouseEvent & { features?: maplibregl.MapGeoJSONFeature[] }) {
-      map.getCanvas().style.cursor = 'pointer';
-      const f = e.features?.[0];
-      if (!f) return;
-      const entry = riversIndex.find((r) => r.id === f.properties?.id);
-      popup
-        .setLngLat(e.lngLat)
-        .setHTML(
-          `<strong>${entry?.name ?? f.properties?.id}</strong>${entry ? `<br/>${entry.length_km_india} km` : ''}`,
-        )
-        .addTo(map);
+    // Factories instead of duplicating the handler body per layer — LINE_LAYER keys its river
+    // id under `id` (pmtiles), CONTEXT_LAYER under `river_id` (geojson, see extendTransnationalRivers.js).
+    function makeMouseMoveHandler(propKey: 'id' | 'river_id') {
+      return (e: maplibregl.MapMouseEvent & { features?: maplibregl.MapGeoJSONFeature[] }) => {
+        map.getCanvas().style.cursor = 'pointer';
+        const f = e.features?.[0];
+        if (!f) return;
+        const id = f.properties?.[propKey];
+        const entry = riversIndex.find((r) => r.id === id);
+        popup
+          .setLngLat(e.lngLat)
+          .setHTML(`<strong>${entry?.name ?? id}</strong>${entry ? `<br/>${entry.length_km_india} km` : ''}`)
+          .addTo(map);
+      };
     }
     function onMouseLeave() {
       map.getCanvas().style.cursor = '';
       popup.remove();
     }
-    async function onClick(e: maplibregl.MapMouseEvent & { features?: maplibregl.MapGeoJSONFeature[] }) {
-      const f = e.features?.[0];
-      const id = f?.properties?.id as string | undefined;
-      if (!id) return;
-      await applySelection(id);
-      selectRiver(id);
-      debouncedUpdateUrl({ river: id });
+    function makeClickHandler(propKey: 'id' | 'river_id') {
+      return async (e: maplibregl.MapMouseEvent & { features?: maplibregl.MapGeoJSONFeature[] }) => {
+        const f = e.features?.[0];
+        const id = f?.properties?.[propKey] as string | undefined;
+        if (!id) return;
+        await applySelection(id);
+        selectRiver(id);
+        debouncedUpdateUrl({ river: id });
+      };
     }
+
+    const onMouseMove = makeMouseMoveHandler('id');
+    const onClick = makeClickHandler('id');
+    const onContextMouseMove = makeMouseMoveHandler('river_id');
+    const onContextClick = makeClickHandler('river_id');
+    const hasContextLayer = !!map.getLayer(CONTEXT_LAYER);
 
     map.on('mousemove', LINE_LAYER, onMouseMove);
     map.on('mouseleave', LINE_LAYER, onMouseLeave);
     map.on('click', LINE_LAYER, onClick);
+    if (hasContextLayer) {
+      map.on('mousemove', CONTEXT_LAYER, onContextMouseMove);
+      map.on('mouseleave', CONTEXT_LAYER, onMouseLeave);
+      map.on('click', CONTEXT_LAYER, onContextClick);
+    }
 
     async function applySelection(riverId: string | null) {
       // Clear previous feature-state (§3.3: never use setFilter for highlighting)
@@ -126,6 +149,11 @@ export default function RiversLayer({ map }: { map: maplibregl.Map }) {
       map.off('mousemove', LINE_LAYER, onMouseMove);
       map.off('mouseleave', LINE_LAYER, onMouseLeave);
       map.off('click', LINE_LAYER, onClick);
+      if (hasContextLayer) {
+        map.off('mousemove', CONTEXT_LAYER, onContextMouseMove);
+        map.off('mouseleave', CONTEXT_LAYER, onMouseLeave);
+        map.off('click', CONTEXT_LAYER, onContextClick);
+      }
       unsubscribe();
       unsubFilters();
       popup.remove();
