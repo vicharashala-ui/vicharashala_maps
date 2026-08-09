@@ -62,6 +62,9 @@ export default function ProtectedAreasLayer({ map }: { map: maplibregl.Map }) {
     }
 
     let currentSelected: number | null = null;
+    // Set while a PA is selected (info panel open) — narrows the map to that one PA only,
+    // instead of showing it highlighted among every other visible site. Cleared on deselect.
+    let isolatedId: string | null = null;
 
     async function ensureBoundarylessMarkers() {
       if (markersRef.current.size > 0) return;
@@ -110,12 +113,19 @@ export default function ProtectedAreasLayer({ map }: { map: maplibregl.Map }) {
         currentSelected = null;
       }
       for (const marker of markersRef.current.values()) marker.getElement().classList.remove('highlighted');
-      if (!paId) return;
+      isolatedId = paId;
+      if (!paId) {
+        applyFilters(paFilters.get());
+        return;
+      }
 
       const data = paDataRef.current ?? (await loadPAData());
       paDataRef.current = data;
       const pa = data.protectedAreas.find((p) => p.id === paId);
-      if (!pa) return;
+      if (!pa) {
+        applyFilters(paFilters.get());
+        return;
+      }
 
       if (pa.has_boundary) {
         const fid = data.paIdMap[paId];
@@ -132,6 +142,8 @@ export default function ProtectedAreasLayer({ map }: { map: maplibregl.Map }) {
         markersRef.current.get(paId)?.getElement().classList.add('highlighted');
       }
 
+      applyFilters(paFilters.get());
+
       if (pa.bounds) map.fitBounds(pa.bounds, { padding: 60, duration: 500 });
       else map.flyTo({ center: [pa.centroid_lng, pa.centroid_lat], zoom: 10 });
     }
@@ -146,18 +158,20 @@ export default function ProtectedAreasLayer({ map }: { map: maplibregl.Map }) {
       }
       for (const [id, marker] of markersRef.current) {
         const pa = paDataRef.current?.protectedAreas.find((p) => p.id === id);
-        const shown =
-          paLayerVisible.get() &&
-          pa &&
-          categories.has(pa.category) &&
-          (!filtered || paMatchesFilters(pa, filters));
+        const shown = isolatedId
+          ? id === isolatedId
+          : paLayerVisible.get() && pa && categories.has(pa.category) && (!filtered || paMatchesFilters(pa, filters));
         marker.getElement().style.display = shown ? '' : 'none';
       }
     }
 
     // §3.6: PA filter panel (Category + State) narrows via `setFilter`, layered on top of the
     // per-category base filter above — orthogonal to LayerControl's visibility toggle (§3.2)
-    // and to `selected`/`highlighted` feature-state, never conflate the three.
+    // and to `selected`/`highlighted` feature-state, never conflate the three. `isolatedId`
+    // (set on selection) takes priority over both: while a PA is selected, every category
+    // layer is filtered down to that one feature id, so selecting a site hides every other
+    // site regardless of category/filter state — restored automatically on deselect since
+    // this function re-derives the filter from scratch each call.
     function applyFilters(filters: PAFilters) {
       const data = paDataRef.current;
       const filtered = hasActivePAFilters(filters);
@@ -166,15 +180,15 @@ export default function ProtectedAreasLayer({ map }: { map: maplibregl.Map }) {
         const outlineId = `pa-${cat.id}-outline`;
         if (!map.getLayer(fillId)) continue;
         const base: maplibregl.FilterSpecification = ['==', ['get', 'category'], cat.id];
-        if (!filtered || !data) {
-          map.setFilter(fillId, base);
-          map.setFilter(outlineId, base);
-          continue;
+        let next: maplibregl.FilterSpecification = base;
+        if (isolatedId) {
+          next = ['all', base, ['==', ['get', 'id'], isolatedId]];
+        } else if (filtered && data) {
+          const matchingIds = data.protectedAreas.filter((pa) => paMatchesFilters(pa, filters)).map((pa) => pa.id);
+          next = ['all', base, ['in', ['get', 'id'], ['literal', matchingIds]]];
         }
-        const matchingIds = data.protectedAreas.filter((pa) => paMatchesFilters(pa, filters)).map((pa) => pa.id);
-        const combined: maplibregl.FilterSpecification = ['all', base, ['in', ['get', 'id'], ['literal', matchingIds]]];
-        map.setFilter(fillId, combined);
-        map.setFilter(outlineId, combined);
+        map.setFilter(fillId, next);
+        map.setFilter(outlineId, next);
       }
       setLayerVisibility(paLayerCategories.get());
     }

@@ -8,32 +8,30 @@ import { readInitialSelection, readInitialFilters, debouncedUpdateUrl } from '..
 import { riverFilters, paFilters } from '../../utils/filterStore';
 import type { RiverFilters, PAFilters } from '../../utils/filterStore';
 import { centroidFallbackBounds, geometryBounds } from '../../utils/geoUtils';
-import { isDarkTheme } from '../../utils/theme';
 import RiversLayer from './RiversLayer';
 import ProtectedAreasLayer from './ProtectedAreasLayer';
 import StateHighlightLayer from './StateHighlightLayer';
 
-const INDIA_BOUNDS: [number, number, number, number] = [68.1, 6.4, 97.4, 37.6];
-// Free, no-API-key, unlimited hosted vector basemap (https://openfreemap.org) — gives the
-// Afghanistan-to-Myanmar region real roads/place labels/terrain instead of a flat fill. Style
-// choice matches the site's own light/dark theme; picked once at mount, same as the other
-// colors below — the map doesn't currently live-update on an in-page theme toggle either way.
-// Evaluated OSM Liberty (OpenFreeMap's `liberty` style) as an alternative: rejected. Liberty is
-// the actively-maintained full-detail style (roads, POIs, buildings) — Positron is a deliberately
-// stripped-down fork with POIs removed and labels pushed to higher zooms, i.e. already the
-// "quiet basemap for overlaying your own data" style this atlas needs; Liberty's extra detail
-// would visually compete with the rivers/PA layers rather than recede behind them. Kept Positron/
-// Dark; see raiseSettlementLabelZoom below for a real bug this evaluation turned up in Dark.
-const BASEMAP_STYLE = (dark: boolean) => `https://tiles.openfreemap.org/styles/${dark ? 'dark' : 'positron'}`;
+const INDIA_BOUNDS: [number, number, number, number] = [68.1, 6.4, 97.4, 37.1];
+// Pan limit, well beyond INDIA_BOUNDS so users can still see neighbouring countries/context
+// while panning, but can't scroll off into open ocean or wrap the globe. Matches ecoguesser's
+// MAP_CONFIG.MAX_BOUNDS (config.js) so both apps frame/constrain the subcontinent identically.
+const MAX_BOUNDS: [[number, number], [number, number]] = [
+  [45, -18],
+  [112, 52],
+];
+// OFM Liberty (https://openfreemap.org) — full-detail OSM Liberty fork, single style (no
+// separate dark variant, unlike Positron/Dark). Previously ran Positron/Dark instead (see Step
+// 50's rejection rationale in git history for the "Liberty competes with the rivers/PA layers"
+// concern) — switched to Liberty per explicit request. The theme toggle no longer affects the
+// basemap tiles themselves, only the site's own UI chrome.
+const BASEMAP_STYLE = 'https://tiles.openfreemap.org/styles/liberty';
 
-// Both Positron and Dark (OpenFreeMap's OpenMapTiles-schema forks) put every settlement label on
-// symbol layers sourced from `place`, just under different layer ids — and Dark's ship with no
-// `minzoom` at all, so city/town/village labels there render from zoom 0 (found while looking
-// into label clutter, not something Liberty would have fixed either — Liberty has the same
-// schema). Matching on `source-layer` + a name pattern and calling setLayerZoomRange works
-// uniformly across both styles without forking/self-hosting either one. Country labels are left
-// alone: low density, and they're useful context for where transnational rivers cross into
-// Nepal/Bangladesh/Pakistan/China/Myanmar.
+// Liberty (OpenMapTiles schema) puts every settlement label on symbol layers sourced from
+// `place`, same ids/schema this was originally tuned against on Positron/Dark. Matching on
+// `source-layer` + a name pattern and calling setLayerZoomRange works regardless of which
+// OpenFreeMap style is active. Country labels are left alone: low density, and they're useful
+// context for where transnational rivers cross into Nepal/Bangladesh/Pakistan/China/Myanmar.
 const SETTLEMENT_MIN_ZOOM: [RegExp, number][] = [
   [/city/i, 6],
   [/town/i, 7],
@@ -47,6 +45,20 @@ function raiseSettlementLabelZoom(m: maplibregl.Map) {
     if (/country/i.test(layer.id)) continue;
     const minzoom = SETTLEMENT_MIN_ZOOM.find(([re]) => re.test(layer.id))?.[1];
     if (minzoom !== undefined) m.setLayerZoomRange(layer.id, minzoom, layer.maxzoom ?? 24);
+  }
+}
+
+// This atlas's own data (rivers, PAs) is the subject — the basemap's road/rail network is noise
+// competing for attention, not context anyone needs here (unlike place labels/borders, kept for
+// orientation). Matched by `source-layer` (stable OpenMapTiles-schema names), not layer id, so
+// this keeps working if the style URL ever changes again.
+const TRANSPORT_SOURCE_LAYERS = new Set(['transportation', 'transportation_name', 'aeroway', 'aerodrome_label']);
+
+function removeTransportLayers(m: maplibregl.Map) {
+  for (const layer of m.getStyle()?.layers ?? []) {
+    if (TRANSPORT_SOURCE_LAYERS.has((layer as { 'source-layer'?: string })['source-layer'] ?? '')) {
+      m.removeLayer(layer.id);
+    }
   }
 }
 
@@ -95,9 +107,10 @@ export default function MapView() {
 
       const m = new maplibregl.Map({
         container: containerRef.current,
-        style: BASEMAP_STYLE(isDarkTheme()),
+        style: BASEMAP_STYLE,
         bounds: initialBounds ?? INDIA_BOUNDS,
         fitBoundsOptions: { padding: 20 },
+        maxBounds: MAX_BOUNDS,
         minZoom: 4,
         maxZoom: 14,
         dragRotate: false,
@@ -106,6 +119,7 @@ export default function MapView() {
       });
 
       m.on('load', () => {
+        removeTransportLayers(m);
         raiseSettlementLabelZoom(m);
 
         m.addSource('india-states', { type: 'geojson', data: '/geojson/india-states.geojson' });

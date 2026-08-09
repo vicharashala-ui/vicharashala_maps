@@ -2,7 +2,7 @@ import { useStore } from '@nanostores/preact';
 import { mapInstance, closePanel } from '../../utils/mapStore';
 import { debouncedUpdateUrl } from '../../utils/urlState';
 
-const INDIA_BOUNDS: [number, number, number, number] = [68.1, 6.4, 97.4, 37.6];
+const INDIA_BOUNDS: [number, number, number, number] = [68.1, 6.4, 97.4, 37.1];
 
 export default function MapControls() {
   const map = useStore(mapInstance);
