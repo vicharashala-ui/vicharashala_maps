@@ -13,6 +13,10 @@ export const activePanel = atom<'river' | 'pa' | 'state' | null>(null);
 export const paLayerVisible = atom<boolean>(false);
 export const paLayerCategories = atom<Set<string>>(new Set(['np', 'wls', 'tr', 'br', 'ramsar']));
 
+// State-borders line layer (MapView.tsx) — off by default (borders are namable via State
+// panel/search without needing every internal line drawn up front); toggled from LayerControl.
+export const stateBordersVisible = atom<boolean>(false);
+
 export { paDataLoaded } from './dataStore';
 
 export function selectRiver(id: string | null): void {

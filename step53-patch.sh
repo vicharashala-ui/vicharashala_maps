@@ -1,3 +1,77 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# step53-patch.sh -- idempotent, tested on a fresh clone.
+# 1) State Borders toggle added to LayerControl, off by default. New 'stateBordersVisible'
+#    atom (mapStore.ts) + new StateBordersLayer.tsx sibling component controls the existing
+#    'state-borders' line layer's visibility; 'india-border' (national outline) and 'land-fill'
+#    (state click hit-test) are untouched and stay on regardless of the toggle.
+# 2) Fixed river-hover popup text being invisible in dark mode: MapLibre's default popup CSS
+#    ships a fixed white background but inherits body's text color, which is light in dark mode.
+#    global.css now pins both the popup background and text color to the theme.
+
+if [ ! -f "package.json" ] || [ ! -d "src/components/Map" ]; then
+  echo "Run this from the repo root (vicharashala_maps/)." >&2
+  exit 1
+fi
+
+cat > "src/utils/mapStore.ts" << 'STEP53_EOF'
+import { atom } from 'nanostores';
+import type maplibregl from 'maplibre-gl';
+
+// Set once by MapView.tsx after `load`; consumed by LayerControl/panels (separate islands)
+// to call MapLibre methods (setLayoutProperty, flyTo, setFeatureState) without prop drilling.
+export const mapInstance = atom<maplibregl.Map | null>(null);
+
+export const selectedRiverId = atom<string | null>(null);
+export const selectedPAId = atom<string | null>(null);
+export const selectedStateId = atom<string | null>(null);
+export const activePanel = atom<'river' | 'pa' | 'state' | null>(null);
+
+export const paLayerVisible = atom<boolean>(false);
+export const paLayerCategories = atom<Set<string>>(new Set(['np', 'wls', 'tr', 'br', 'ramsar']));
+
+// State-borders line layer (MapView.tsx) — off by default (borders are namable via State
+// panel/search without needing every internal line drawn up front); toggled from LayerControl.
+export const stateBordersVisible = atom<boolean>(false);
+
+export { paDataLoaded } from './dataStore';
+
+export function selectRiver(id: string | null): void {
+  selectedPAId.set(null);
+  selectedStateId.set(null);
+  selectedRiverId.set(id);
+  activePanel.set(id ? 'river' : null);
+}
+
+export function selectPA(id: string | null): void {
+  selectedRiverId.set(null);
+  selectedStateId.set(null);
+  selectedPAId.set(id);
+  activePanel.set(id ? 'pa' : null);
+}
+
+export function selectState(id: string | null): void {
+  selectedRiverId.set(null);
+  selectedPAId.set(null);
+  selectedStateId.set(id);
+  activePanel.set(id ? 'state' : null);
+}
+
+export function closePanel(): void {
+  selectedRiverId.set(null);
+  selectedPAId.set(null);
+  selectedStateId.set(null);
+  activePanel.set(null);
+}
+
+// Browse/List mode (§3.7) — the primary keyboard-accessible route to feature selection,
+// since MapLibre's KeyboardHandler is pointer-only for selection (§12).
+export const browseOpen = atom<boolean>(false);
+export const browseTab = atom<'rivers' | 'pa'>('rivers');
+STEP53_EOF
+
+cat > "src/components/Map/MapView.tsx" << 'STEP53_EOF'
 import { useEffect, useRef, useState } from 'preact/hooks';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
@@ -215,3 +289,228 @@ export default function MapView() {
     </div>
   );
 }
+STEP53_EOF
+
+cat > "src/components/Map/LayerControl.tsx" << 'STEP53_EOF'
+import { useStore } from '@nanostores/preact';
+import { paLayerVisible, paLayerCategories, stateBordersVisible } from '../../utils/mapStore';
+
+const PA_CATEGORIES: { id: string; label: string }[] = [
+  { id: 'np', label: 'National Parks' },
+  { id: 'wls', label: 'Wildlife Sanctuaries' },
+  { id: 'tr', label: 'Tiger Reserves' },
+  { id: 'br', label: 'Biosphere Reserves' },
+  { id: 'ramsar', label: 'Ramsar Sites' },
+];
+
+export default function LayerControl() {
+  const visible = useStore(paLayerVisible);
+  const categories = useStore(paLayerCategories);
+  const bordersVisible = useStore(stateBordersVisible);
+
+  function toggleCategory(id: string) {
+    const next = new Set(categories);
+    if (next.has(id)) next.delete(id);
+    else next.add(id);
+    paLayerCategories.set(next);
+  }
+
+  return (
+    <div
+      className="absolute top-4 right-4 z-10 w-56 rounded-lg border shadow-sm"
+      style={{ background: 'var(--color-surface)', borderColor: 'var(--color-border)' }}
+    >
+      <div className="px-3 py-2 border-b text-sm font-semibold" style={{ borderColor: 'var(--color-border)' }}>
+        Layers
+      </div>
+      <div className="px-3 py-2 border-b text-sm" style={{ borderColor: 'var(--color-border)' }}>
+        <label className="flex items-center gap-2">
+          <input type="checkbox" checked readOnly disabled />
+          Rivers
+        </label>
+      </div>
+      <div className="px-3 py-2 border-b text-sm" style={{ borderColor: 'var(--color-border)' }}>
+        <label className="flex items-center gap-2">
+          <input
+            type="checkbox"
+            checked={bordersVisible}
+            onChange={(e) => stateBordersVisible.set((e.target as HTMLInputElement).checked)}
+          />
+          State Borders
+        </label>
+      </div>
+      <div className="px-3 py-2 text-sm">
+        <label className="flex items-center gap-2 font-medium">
+          <input
+            type="checkbox"
+            checked={visible}
+            onChange={(e) => paLayerVisible.set((e.target as HTMLInputElement).checked)}
+          />
+          Protected Areas
+        </label>
+        {visible && (
+          <div className="mt-2 ml-6 flex flex-col gap-1">
+            {PA_CATEGORIES.map((cat) => (
+              <label key={cat.id} className="flex items-center gap-2 text-xs" style={{ color: 'var(--color-text-muted)' }}>
+                <input type="checkbox" checked={categories.has(cat.id)} onChange={() => toggleCategory(cat.id)} />
+                {cat.label}
+              </label>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+STEP53_EOF
+
+cat > "src/components/Map/StateBordersLayer.tsx" << 'STEP53_EOF'
+import { useEffect } from 'preact/hooks';
+import maplibregl from 'maplibre-gl';
+import { stateBordersVisible } from '../../utils/mapStore';
+
+const LAYER_ID = 'state-borders';
+
+export default function StateBordersLayer({ map }: { map: maplibregl.Map }) {
+  useEffect(() => {
+    if (!map.getLayer(LAYER_ID)) return;
+    const unsubscribe = stateBordersVisible.subscribe((visible) => {
+      map.setLayoutProperty(LAYER_ID, 'visibility', visible ? 'visible' : 'none');
+    });
+    return () => unsubscribe();
+  }, [map]);
+
+  return null;
+}
+STEP53_EOF
+
+cat > "src/styles/global.css" << 'STEP53_EOF'
+@import "tailwindcss";
+@import "@fontsource/sora/600.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/600.css";
+
+:root {
+  --color-bg: #FFFFFF;          --color-surface: #F4F6F9;    --color-border: #D1D9E0;
+  --color-text: #111827;        --color-text-muted: #4B5563; --color-accent: #1D6FE8;
+  --color-accent-warm: #A45A05; --color-land: #D4E6C3;       --color-state-border: #577E43;
+  --color-river-context: #6D93B8;
+
+  --color-pa-np-label: #1B5E20;
+  --color-pa-wls-label: #2A712D;
+  --color-pa-tr-label: #AF3E00;
+  --color-pa-br-label: #4527A0;
+  --color-pa-ramsar-label: #0D47A1;
+
+  --color-river-default: #2E75B6;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0F1923;          --color-surface: #1A2634;    --color-border: #2D4159;
+  --color-text: #E8EFF7;        --color-text-muted: #8FA6BF; --color-accent: #3B9EFF;
+  --color-accent-warm: #F5A623; --color-land: #1E3A2F;       --color-state-border: #539278;
+  --color-river-context: #3C5670;
+
+  --color-pa-np-label: #30B439;
+  --color-pa-wls-label: #3EB344;
+  --color-pa-tr-label: #FF7225;
+  --color-pa-br-label: #A58FE6;
+  --color-pa-ramsar-label: #639DF6;
+
+  --color-river-default: #5B9BD5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #0F1923;          --color-surface: #1A2634;    --color-border: #2D4159;
+    --color-text: #E8EFF7;        --color-text-muted: #8FA6BF; --color-accent: #3B9EFF;
+    --color-accent-warm: #F5A623; --color-land: #1E3A2F;       --color-state-border: #539278;
+    --color-river-context: #3C5670;
+
+    --color-pa-np-label: #30B439;
+    --color-pa-wls-label: #3EB344;
+    --color-pa-tr-label: #FF7225;
+    --color-pa-br-label: #A58FE6;
+    --color-pa-ramsar-label: #639DF6;
+
+    --color-river-default: #5B9BD5;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.map-container {
+  touch-action: none;
+}
+
+/* MapLibre's default popup (river-hover tooltip, RiversLayer.tsx) ships a fixed white
+   background but doesn't set its own text color — it inherits `body`'s `color`, which is
+   light in dark mode, so the box became light-on-white/invisible. Pin both explicitly to the
+   theme so it reads correctly either way. */
+.maplibregl-popup-content {
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+  border-top-color: var(--color-surface);
+}
+.maplibregl-popup-anchor-top .maplibregl-popup-tip {
+  border-bottom-color: var(--color-surface);
+}
+.maplibregl-popup-anchor-left .maplibregl-popup-tip {
+  border-right-color: var(--color-surface);
+}
+.maplibregl-popup-anchor-right .maplibregl-popup-tip {
+  border-left-color: var(--color-surface);
+}
+
+/* Boundary-less TR marker (§4.6) */
+.pa-marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px dashed var(--color-pa-tr-label);
+  background: transparent;
+  cursor: pointer;
+}
+.pa-marker.highlighted {
+  background: color-mix(in srgb, var(--color-pa-tr-label) 35%, transparent);
+}
+
+.panel-slide-in {
+  animation: panel-slide-in 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes panel-slide-in {
+  from { transform: translateX(16px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel-slide-in { animation: none; }
+}
+
+/* Visually-hidden but screen-reader-accessible (WCAG 4.1.3 aria-live status regions, §12) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+STEP53_EOF
+
+echo "Files written. Installing deps and verifying build..."
+pnpm install
+pnpm exec astro check
+pnpm build
+echo "step53-patch.sh applied and verified."

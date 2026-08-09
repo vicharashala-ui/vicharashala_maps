@@ -1,5 +1,5 @@
 import { useStore } from '@nanostores/preact';
-import { paLayerVisible, paLayerCategories } from '../../utils/mapStore';
+import { paLayerVisible, paLayerCategories, stateBordersVisible } from '../../utils/mapStore';
 
 const PA_CATEGORIES: { id: string; label: string }[] = [
   { id: 'np', label: 'National Parks' },
@@ -12,6 +12,7 @@ const PA_CATEGORIES: { id: string; label: string }[] = [
 export default function LayerControl() {
   const visible = useStore(paLayerVisible);
   const categories = useStore(paLayerCategories);
+  const bordersVisible = useStore(stateBordersVisible);
 
   function toggleCategory(id: string) {
     const next = new Set(categories);
@@ -32,6 +33,16 @@ export default function LayerControl() {
         <label className="flex items-center gap-2">
           <input type="checkbox" checked readOnly disabled />
           Rivers
+        </label>
+      </div>
+      <div className="px-3 py-2 border-b text-sm" style={{ borderColor: 'var(--color-border)' }}>
+        <label className="flex items-center gap-2">
+          <input
+            type="checkbox"
+            checked={bordersVisible}
+            onChange={(e) => stateBordersVisible.set((e.target as HTMLInputElement).checked)}
+          />
+          State Borders
         </label>
       </div>
       <div className="px-3 py-2 text-sm">
