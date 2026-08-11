@@ -1,0 +1,44 @@
+{
+  "id": "spiti",
+  "name": "Spiti",
+  "aliases": [],
+  "local_names": { "hi": "स्पीति" },
+  "basin": "indus-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Kunzum Range glaciers, near Kunzum Pass",
+    "state": "himachal-pradesh",
+    "altitude_m": 4590,
+    "coordinates": [77.6625, 32.61458]
+  },
+  "sink": {
+    "name": "Confluence with the Sutlej at Khab Sangam",
+    "type": "river",
+    "location": "Khab, Kinnaur district, Himachal Pradesh, India",
+    "coordinates": [78.6438, 31.7997]
+  },
+  "length_km_india": 182,
+  "length_km_total": 182,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["himachal-pradesh"],
+  "basin_states": ["himachal-pradesh"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["irrigation"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Spiti Valley — carved by this river — is a cold desert, receiving so little of the monsoon that it's often called \"Little Tibet.\"",
+    "The Spiti meets the much larger, glacier-grey Sutlej at Khab Sangam, where the two rivers run visibly different colours before merging."
+  ]
+}

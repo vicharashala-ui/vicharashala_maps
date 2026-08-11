@@ -2269,5 +2269,83 @@
       77.09554217917423,
       30.80717061657729
     ]
+  },
+  {
+    "id": "spiti",
+    "name": "Spiti",
+    "local_name_hi": "स्पीति",
+    "basin": "indus-basin",
+    "length_km_india": 182,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "himachal-pradesh"
+    ],
+    "aliases": [],
+    "bounds": [
+      77.6625,
+      31.80625,
+      78.64375,
+      32.61458
+    ]
+  },
+  {
+    "id": "burhi-gandak",
+    "name": "Burhi Gandak",
+    "local_name_hi": "बूढ़ी गंडक",
+    "basin": "ganga-basin",
+    "length_km_india": 441,
+    "basin_area_india_km2": 10150,
+    "drainage_type": "himalayan",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "bihar"
+    ],
+    "aliases": [
+      "Sikrahna",
+      "Sikrana"
+    ],
+    "bounds": [
+      84.39792,
+      25.47708,
+      86.57292,
+      27.35
+    ]
+  },
+  {
+    "id": "jhelum",
+    "name": "Jhelum",
+    "local_name_hi": "झेलम",
+    "basin": "indus-basin",
+    "length_km_india": 228,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "spring-fed",
+    "navigable": true,
+    "transnational": true,
+    "states": [
+      "jammu-and-kashmir"
+    ],
+    "aliases": [
+      "Vitasta",
+      "Vyeth"
+    ],
+    "bounds": [
+      74.04792,
+      33.56875,
+      75.50417,
+      34.37708
+    ]
   }
 ]

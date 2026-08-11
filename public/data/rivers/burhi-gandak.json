@@ -1,0 +1,44 @@
+{
+  "id": "burhi-gandak",
+  "name": "Burhi Gandak",
+  "aliases": ["Sikrahna", "Sikrana"],
+  "local_names": { "hi": "बूढ़ी गंडक" },
+  "basin": "ganga-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Someshwar hills, near Chautarwa Chaur, Bishambharpur",
+    "state": "bihar",
+    "altitude_m": 300,
+    "coordinates": [84.40833, 27.35]
+  },
+  "sink": {
+    "name": "Confluence with the Ganga",
+    "type": "river",
+    "location": "Near Khagaria, Bihar, India",
+    "coordinates": [86.60694, 25.43389]
+  },
+  "length_km_india": 441,
+  "length_km_total": 441,
+  "basin_area_total_km2": 10150,
+  "basin_area_india_km2": 10150,
+  "states_flows_through": ["bihar"],
+  "basin_states": ["bihar"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["frequent, severe flooding", "irrigation"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Also called the Sikrahna in its upper reaches, the river takes the name Burhi (\"Old\") Gandak only after the Dhanauti river joins it near Motihari — the name marks it as an ancient, now-shifted channel of the neighbouring Gandak.",
+    "The Burhi Gandak is rain-fed rather than glacier-fed, unlike the true Gandak it flows parallel to — making it far more prone to sudden, severe monsoon flooding across northern Bihar."
+  ]
+}

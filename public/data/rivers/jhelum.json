@@ -1,0 +1,44 @@
+{
+  "id": "jhelum",
+  "name": "Jhelum",
+  "aliases": ["Vitasta", "Vyeth"],
+  "local_names": { "hi": "झेलम" },
+  "basin": "indus-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "spring-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Verinag Spring, base of the Pir Panjal range",
+    "state": "jammu-and-kashmir",
+    "altitude_m": 1876,
+    "coordinates": [75.50417, 33.59792]
+  },
+  "sink": {
+    "name": "Continues into Pakistan-administered Kashmir toward the Chenab",
+    "type": "river",
+    "location": "Line of Control near Uri, Baramulla district, Jammu and Kashmir, India",
+    "coordinates": [74.0509, 34.0806]
+  },
+  "length_km_india": 228,
+  "length_km_total": 725,
+  "basin_area_total_km2": 51052,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["jammu-and-kashmir"],
+  "basin_states": ["jammu-and-kashmir"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": true,
+  "transnational": true,
+  "transnational_countries": ["pakistan"],
+  "significance": ["lifeline of the Kashmir Valley", "hydropower", "historic waterway (Srinagar's Dal Lake and Wular Lake)"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Jhelum is the westernmost of the five rivers that give Punjab (\"land of five waters\") its name, and the only one of the five that rises entirely within Indian territory rather than Tibet.",
+    "Unlike its glacier-fed neighbours, the Jhelum rises from a spring — Verinag, at the foot of the Pir Panjal — and its waters pass through both Dal Lake and Wular Lake before leaving the Kashmir Valley."
+  ]
+}
