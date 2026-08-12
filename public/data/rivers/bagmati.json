@@ -1,0 +1,44 @@
+{
+  "id": "bagmati",
+  "name": "Bagmati",
+  "aliases": [],
+  "local_names": { "hi": "बागमती" },
+  "basin": "ganga-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "spring-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Bāghdwār (\"Tiger Gate\"), Shivapuri Hills",
+    "state": "nepal",
+    "altitude_m": 2740,
+    "coordinates": [85.42722, 27.77111]
+  },
+  "sink": {
+    "name": "Confluence with the Kamala River",
+    "type": "river",
+    "location": "Jagmohra, Bihar, India",
+    "coordinates": [86.364722, 25.73225]
+  },
+  "length_km_india": 201.5,
+  "length_km_total": 586,
+  "basin_area_total_km2": null,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["bihar"],
+  "basin_states": ["bihar"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["nepal"],
+  "significance": ["major Kosi/Ganga tributary", "irrigation across north Bihar", "sacred river in Nepal's Kathmandu Valley (upstream)"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Bagmati is worshipped as a sacred river in Nepal's Kathmandu Valley, flowing past the Pashupatinath Temple before crossing into Bihar.",
+    "Unlike the glacier-fed Himalayan giants nearby, the Bagmati begins as a spring at Bāghdwār (\"Tiger Gate\") in the Shivapuri hills north of Kathmandu — not from a glacier."
+  ]
+}

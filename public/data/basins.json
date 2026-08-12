@@ -419,6 +419,21 @@
     "area_rank": 21
   },
   {
+    "id": "tamiraparani-basin",
+    "name": "Tamiraparani Basin",
+    "color_light": "#51259d",
+    "color_dark": "#9368df",
+    "area_km2": 5717,
+    "states": [
+      "tamil-nadu"
+    ],
+    "main_river": "tamiraparani",
+    "rivers": [
+      "tamiraparani"
+    ],
+    "area_rank": 22
+  },
+  {
     "id": "periyar-basin",
     "name": "Periyar Basin",
     "color_light": "#25379d",
@@ -432,7 +447,7 @@
     "rivers": [
       "periyar"
     ],
-    "area_rank": 22
+    "area_rank": 23
   },
   {
     "id": "vaippar-basin",
@@ -447,7 +462,7 @@
     "rivers": [
       "vaippar"
     ],
-    "area_rank": 23
+    "area_rank": 24
   },
   {
     "id": "kali-karnataka-basin",
@@ -462,7 +477,7 @@
     "rivers": [
       "kali-karnataka"
     ],
-    "area_rank": 24
+    "area_rank": 25
   },
   {
     "id": "palar-basin",
@@ -479,7 +494,7 @@
     "rivers": [
       "palar"
     ],
-    "area_rank": 25
+    "area_rank": 26
   },
   {
     "id": "ulhas-basin",
@@ -494,7 +509,22 @@
     "rivers": [
       "ulhas"
     ],
-    "area_rank": 26
+    "area_rank": 27
+  },
+  {
+    "id": "vaitarna-basin",
+    "name": "Vaitarna Basin",
+    "color_light": "#7c259d",
+    "color_dark": "#c25fdd",
+    "area_km2": 3795,
+    "states": [
+      "maharashtra"
+    ],
+    "main_river": "vaitarna",
+    "rivers": [
+      "vaitarna"
+    ],
+    "area_rank": 28
   },
   {
     "id": "netravati-basin",
@@ -509,7 +539,7 @@
     "rivers": [
       "netravati"
     ],
-    "area_rank": 27
+    "area_rank": 29
   },
   {
     "id": "sharavati-basin",
@@ -524,7 +554,7 @@
     "rivers": [
       "sharavati"
     ],
-    "area_rank": 28
+    "area_rank": 30
   },
   {
     "id": "damanganga-basin",
@@ -541,7 +571,7 @@
     "rivers": [
       "damanganga"
     ],
-    "area_rank": 29
+    "area_rank": 31
   },
   {
     "id": "pamba-basin",
@@ -556,7 +586,7 @@
     "rivers": [
       "pamba"
     ],
-    "area_rank": 30
+    "area_rank": 32
   },
   {
     "id": "vellar-basin",
@@ -571,7 +601,7 @@
     "rivers": [
       "vellar"
     ],
-    "area_rank": 31
+    "area_rank": 33
   },
   {
     "id": "mandovi-basin",
@@ -588,7 +618,7 @@
     "rivers": [
       "mandovi"
     ],
-    "area_rank": 32
+    "area_rank": 34
   },
   {
     "id": "kallada-basin",
@@ -603,7 +633,7 @@
     "rivers": [
       "kallada"
     ],
-    "area_rank": 33
+    "area_rank": 35
   },
   {
     "id": "aghanashini-basin",
@@ -618,7 +648,7 @@
     "rivers": [
       "aghanashini"
     ],
-    "area_rank": 34
+    "area_rank": 36
   },
   {
     "id": "zuari-basin",
@@ -633,6 +663,6 @@
     "rivers": [
       "zuari"
     ],
-    "area_rank": 35
+    "area_rank": 37
   }
 ]

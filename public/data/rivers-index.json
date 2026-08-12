@@ -2347,5 +2347,81 @@
       75.50417,
       34.37708
     ]
+  },
+  {
+    "id": "bagmati",
+    "name": "Bagmati",
+    "local_name_hi": "बागमती",
+    "basin": "ganga-basin",
+    "length_km_india": 201.5,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "spring-fed",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "bihar"
+    ],
+    "aliases": [],
+    "bounds": [
+      85.26042,
+      25.71042,
+      86.31042,
+      26.74375
+    ]
+  },
+  {
+    "id": "tamiraparani",
+    "name": "Tamiraparani",
+    "local_name_hi": "ताम्रपर्णी",
+    "basin": "tamiraparani-basin",
+    "length_km_india": 135.1,
+    "basin_area_india_km2": 5717,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "tamil-nadu"
+    ],
+    "aliases": [
+      "Thamirabarani",
+      "Porunai",
+      "Tamraparni"
+    ],
+    "bounds": [
+      77.24167,
+      8.60625,
+      78.10625,
+      8.78125
+    ]
+  },
+  {
+    "id": "vaitarna",
+    "name": "Vaitarna",
+    "local_name_hi": "वैतरणा",
+    "basin": "vaitarna-basin",
+    "length_km_india": 149.2,
+    "basin_area_india_km2": 3795,
+    "drainage_type": "coastal",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra"
+    ],
+    "aliases": [],
+    "bounds": [
+      72.78125,
+      19.50625,
+      73.54792,
+      19.90833
+    ]
   }
 ]

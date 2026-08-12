@@ -1,1 +1,275 @@
-{"indus":[1],"chenab":[2],"ravi":[3],"beas":[4],"sutlej":[5],"zanskar":[6],"shyok":[7],"ganga":[8],"bhagirathi":[9],"alaknanda":[10],"yamuna":[11],"chambal":[12],"banas":[13],"kali-sindh":[14],"parbati":[15],"betwa":[16],"ken":[17],"son":[18],"gomti":[19],"ghaghra":[20],"sarda":[21],"gandak":[22],"kosi":[23],"mahananda":[24],"damodar":[25],"hooghly":[26],"barakar":[27],"ajay":[28],"brahmaputra":[29],"lohit":[30],"subansiri":[31],"kameng":[32],"manas":[33],"teesta":[34],"rangeet":[35],"torsa":[36],"jaldhaka":[37],"barak":[38],"kopili":[39],"mahanadi":[40],"brahmani":[41],"baitarani":[42],"subarnarekha":[43],"vamsadhara":[44],"nagavali":[45],"godavari":[46],"krishna":[47],"tungabhadra":[48],"bhima":[49],"musi":[50],"manjira":[51],"indravati":[52],"pranhita":[53],"wainganga":[54],"wardha":[55],"kaveri":[56],"amaravathi":[57],"kabini":[58],"hemavathi":[59],"shimsha":[60],"arkavathi":[61],"bhavani":[62],"palar":[63],"ponnaiyar":[64],"vellar":[65],"vaigai":[66],"narmada":[67],"tapi":[68],"mahi":[69],"sabarmati":[70],"periyar":[71],"bharathapuzha":[72],"pamba":[73],"kallada":[74],"sharavati":[75],"zuari":[76],"mandovi":[77],"ulhas":[78],"kali-karnataka":[79],"netravati":[80],"aghanashini":[81],"damanganga":[82],"vaippar":[83],"luni":[84],"ghaggar-hakra":[85],"spiti":[86],"burhi-gandak":[87],"jhelum":[88]}
+{
+  "indus": [
+    1
+  ],
+  "chenab": [
+    2
+  ],
+  "ravi": [
+    3
+  ],
+  "beas": [
+    4
+  ],
+  "sutlej": [
+    5
+  ],
+  "zanskar": [
+    6
+  ],
+  "shyok": [
+    7
+  ],
+  "ganga": [
+    8
+  ],
+  "bhagirathi": [
+    9
+  ],
+  "alaknanda": [
+    10
+  ],
+  "yamuna": [
+    11
+  ],
+  "chambal": [
+    12
+  ],
+  "banas": [
+    13
+  ],
+  "kali-sindh": [
+    14
+  ],
+  "parbati": [
+    15
+  ],
+  "betwa": [
+    16
+  ],
+  "ken": [
+    17
+  ],
+  "son": [
+    18
+  ],
+  "gomti": [
+    19
+  ],
+  "ghaghra": [
+    20
+  ],
+  "sarda": [
+    21
+  ],
+  "gandak": [
+    22
+  ],
+  "kosi": [
+    23
+  ],
+  "mahananda": [
+    24
+  ],
+  "damodar": [
+    25
+  ],
+  "hooghly": [
+    26
+  ],
+  "barakar": [
+    27
+  ],
+  "ajay": [
+    28
+  ],
+  "brahmaputra": [
+    29
+  ],
+  "lohit": [
+    30
+  ],
+  "subansiri": [
+    31
+  ],
+  "kameng": [
+    32
+  ],
+  "manas": [
+    33
+  ],
+  "teesta": [
+    34
+  ],
+  "rangeet": [
+    35
+  ],
+  "torsa": [
+    36
+  ],
+  "jaldhaka": [
+    37
+  ],
+  "barak": [
+    38
+  ],
+  "kopili": [
+    39
+  ],
+  "mahanadi": [
+    40
+  ],
+  "brahmani": [
+    41
+  ],
+  "baitarani": [
+    42
+  ],
+  "subarnarekha": [
+    43
+  ],
+  "vamsadhara": [
+    44
+  ],
+  "nagavali": [
+    45
+  ],
+  "godavari": [
+    46
+  ],
+  "krishna": [
+    47
+  ],
+  "tungabhadra": [
+    48
+  ],
+  "bhima": [
+    49
+  ],
+  "musi": [
+    50
+  ],
+  "manjira": [
+    51
+  ],
+  "indravati": [
+    52
+  ],
+  "pranhita": [
+    53
+  ],
+  "wainganga": [
+    54
+  ],
+  "wardha": [
+    55
+  ],
+  "kaveri": [
+    56
+  ],
+  "amaravathi": [
+    57
+  ],
+  "kabini": [
+    58
+  ],
+  "hemavathi": [
+    59
+  ],
+  "shimsha": [
+    60
+  ],
+  "arkavathi": [
+    61
+  ],
+  "bhavani": [
+    62
+  ],
+  "palar": [
+    63
+  ],
+  "ponnaiyar": [
+    64
+  ],
+  "vellar": [
+    65
+  ],
+  "vaigai": [
+    66
+  ],
+  "narmada": [
+    67
+  ],
+  "tapi": [
+    68
+  ],
+  "mahi": [
+    69
+  ],
+  "sabarmati": [
+    70
+  ],
+  "periyar": [
+    71
+  ],
+  "bharathapuzha": [
+    72
+  ],
+  "pamba": [
+    73
+  ],
+  "kallada": [
+    74
+  ],
+  "sharavati": [
+    75
+  ],
+  "zuari": [
+    76
+  ],
+  "mandovi": [
+    77
+  ],
+  "ulhas": [
+    78
+  ],
+  "kali-karnataka": [
+    79
+  ],
+  "netravati": [
+    80
+  ],
+  "aghanashini": [
+    81
+  ],
+  "damanganga": [
+    82
+  ],
+  "vaippar": [
+    83
+  ],
+  "luni": [
+    84
+  ],
+  "ghaggar-hakra": [
+    85
+  ],
+  "spiti": [
+    86
+  ],
+  "burhi-gandak": [
+    87
+  ],
+  "jhelum": [
+    88
+  ],
+  "bagmati": [
+    89
+  ],
+  "tamiraparani": [
+    90
+  ],
+  "vaitarna": [
+    91
+  ]
+}

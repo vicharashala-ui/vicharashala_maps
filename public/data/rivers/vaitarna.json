@@ -1,0 +1,44 @@
+{
+  "id": "vaitarna",
+  "name": "Vaitarna",
+  "aliases": [],
+  "local_names": { "mr": "वैतरणा" },
+  "basin": "vaitarna-basin",
+  "type": "main",
+  "drainage_type": "coastal",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Triambak-Anjaneri range, Western Ghats, near Trimbakeshwar",
+    "state": "maharashtra",
+    "altitude_m": 900,
+    "coordinates": [73.54792, 19.90833]
+  },
+  "sink": {
+    "name": "Arabian Sea",
+    "type": "sea",
+    "location": "Near Arnala, Palghar district, Maharashtra, India",
+    "coordinates": [72.73247, 19.46577]
+  },
+  "length_km_india": 149.2,
+  "length_km_total": 149.2,
+  "basin_area_total_km2": 3795,
+  "basin_area_india_km2": 3795,
+  "states_flows_through": ["maharashtra"],
+  "basin_states": ["maharashtra"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["supplies a large share of Mumbai's drinking water", "hydropower (Upper Vaitarna project)", "largest river of the Northern Konkan region"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Vaitarna rises just 2 km from the source of the Godavari on the same Trimbakeshwar hillside, yet the two rivers flow in opposite directions to opposite coasts.",
+    "Three major dams on the Vaitarna — including the Upper and Lower Vaitarna dams — together supply a large share of Mumbai's drinking water."
+  ]
+}

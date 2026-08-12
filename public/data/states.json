@@ -263,6 +263,8 @@
     "capital": "Patna",
     "rivers_flowing_through": [
       "ajay",
+      "bagmati",
+      "burhi-gandak",
       "gandak",
       "ganga",
       "ghaghra",
@@ -272,6 +274,8 @@
     ],
     "basin_rivers": [
       "ajay",
+      "bagmati",
+      "burhi-gandak",
       "gandak",
       "ganga",
       "ghaghra",
@@ -518,6 +522,7 @@
       "chenab",
       "ghaggar-hakra",
       "ravi",
+      "spiti",
       "sutlej",
       "yamuna"
     ],
@@ -526,6 +531,7 @@
       "chenab",
       "ghaggar-hakra",
       "ravi",
+      "spiti",
       "sutlej",
       "yamuna"
     ],
@@ -580,10 +586,12 @@
     "admin_type": "ut",
     "capital": "Srinagar",
     "rivers_flowing_through": [
-      "chenab"
+      "chenab",
+      "jhelum"
     ],
     "basin_rivers": [
-      "chenab"
+      "chenab",
+      "jhelum"
     ],
     "notable_city_ids": [],
     "protected_area_ids": [
@@ -953,6 +961,7 @@
       "pranhita",
       "tapi",
       "ulhas",
+      "vaitarna",
       "wainganga",
       "wardha"
     ],
@@ -968,6 +977,7 @@
       "pranhita",
       "tapi",
       "ulhas",
+      "vaitarna",
       "wainganga",
       "wardha"
     ],
@@ -1361,6 +1371,7 @@
       "palar",
       "periyar",
       "ponnaiyar",
+      "tamiraparani",
       "vaigai",
       "vaippar",
       "vellar"
@@ -1373,6 +1384,7 @@
       "palar",
       "periyar",
       "ponnaiyar",
+      "tamiraparani",
       "vaigai",
       "vaippar",
       "vellar"
