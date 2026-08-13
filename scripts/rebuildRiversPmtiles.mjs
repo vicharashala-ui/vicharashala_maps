@@ -1,9 +1,14 @@
 // Rebuilds public/tiles/rivers.pmtiles with new rivers appended, at full maxzoom (z14) fidelity.
-// Re-extracts the 88 EXISTING rivers losslessly from the current pmtiles by scanning each river's
+// Re-extracts the EXISTING rivers losslessly from the current pmtiles by scanning each river's
 // own bbox (from rivers-index.json) at z14 — not the whole-India grid, which would be ~1.4M tiles
 // to probe at z14; per-river bbox scoping keeps each scan small while still hitting full maxzoom.
 // Preserves the existing numeric vector-tile feature ids (rivers-id-map.json) byte-for-byte; new
 // rivers get fresh sequential ids appended after the current max.
+//
+// "New" rivers = any id present in rivers-index.json but absent from rivers-id-map.json (no
+// hardcoded list). Each new river's shipped geometry is read from build/trace-output/{id}.json
+// (the India-portion `indiaCoords` written by scripts_tmp/trace_clip.mjs during tracing) — run
+// the tracer for all of this batch's rivers before running this script.
 import fs from 'node:fs';
 import { execSync } from 'node:child_process';
 import { PMTiles } from 'pmtiles';
@@ -84,9 +89,10 @@ async function run() {
   const idMap = JSON.parse(fs.readFileSync('public/data/rivers-id-map.json', 'utf-8'));
   const existingIds = new Set(Object.keys(idMap));
 
-  const NEW_RIVER_IDS = ['bagmati', 'tamiraparani', 'vaitarna'];
-  const existingRivers = riversIndex.filter((r) => !NEW_RIVER_IDS.includes(r.id));
-  const newRivers = riversIndex.filter((r) => NEW_RIVER_IDS.includes(r.id));
+  const existingRivers = riversIndex.filter((r) => existingIds.has(r.id));
+  const newRivers = riversIndex.filter((r) => !existingIds.has(r.id));
+  if (newRivers.length === 0) throw new Error('no new rivers found — every rivers-index.json id is already in rivers-id-map.json');
+  console.log(`New rivers detected: ${newRivers.map((r) => r.id).join(', ')}`);
 
   if (existingRivers.length !== existingIds.size) {
     throw new Error(`existing river count mismatch: index has ${existingRivers.length}, id-map has ${existingIds.size}`);
@@ -122,8 +128,11 @@ async function run() {
   let nextId = Math.max(...Object.values(idMap).flat()) + 1;
   console.log(`Appending ${newRivers.length} new rivers starting at id ${nextId}...`);
   for (const river of newRivers) {
-    // shipped geometry = India-portion trace coords, produced during tracing (scripts_tmp/*.json)
-    const traceOut = JSON.parse(fs.readFileSync(`/tmp/${river.id}.json`, 'utf-8'));
+    const traceOutPath = `build/trace-output/${river.id}.json`;
+    if (!fs.existsSync(traceOutPath)) {
+      throw new Error(`missing ${traceOutPath} — run the tracer for "${river.id}" first (scripts_tmp/trace_clip.mjs writes here)`);
+    }
+    const traceOut = JSON.parse(fs.readFileSync(traceOutPath, 'utf-8'));
     const numId = nextId++;
     features.push({
       type: 'Feature',
@@ -135,15 +144,15 @@ async function run() {
   }
 
   fs.mkdirSync('build', { recursive: true });
-  fs.writeFileSync('build/rivers-prepared-v4.geojson', features.map((f) => JSON.stringify(f)).join('\n'));
+  fs.writeFileSync('build/rivers-prepared.geojson', features.map((f) => JSON.stringify(f)).join('\n'));
   fs.writeFileSync('public/data/rivers-id-map.json', JSON.stringify(finalIdMap, null, 2) + '\n');
 
   console.log('Running tippecanoe...');
   execSync(
-    `tippecanoe --output=build/rivers-v4.pmtiles --layer=rivers --minimum-zoom=4 --maximum-zoom=14 --drop-smallest-as-needed --include=id --include=stream_order --name="India Rivers" --attribution="OpenStreetMap contributors" --force build/rivers-prepared-v4.geojson`,
+    `tippecanoe --output=build/rivers-rebuilt.pmtiles --layer=rivers --minimum-zoom=4 --maximum-zoom=14 --drop-smallest-as-needed --include=id --include=stream_order --name="India Rivers" --attribution="OpenStreetMap contributors" --force build/rivers-prepared.geojson`,
     { stdio: 'inherit' }
   );
-  fs.copyFileSync('build/rivers-v4.pmtiles', 'public/tiles/rivers.pmtiles');
+  fs.copyFileSync('build/rivers-rebuilt.pmtiles', 'public/tiles/rivers.pmtiles');
   console.log('Wrote public/tiles/rivers.pmtiles');
 }
 

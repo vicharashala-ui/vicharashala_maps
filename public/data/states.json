@@ -163,12 +163,14 @@
     "capital": "Itanagar",
     "rivers_flowing_through": [
       "brahmaputra",
+      "dibang",
       "kameng",
       "lohit",
       "subansiri"
     ],
     "basin_rivers": [
       "brahmaputra",
+      "dibang",
       "kameng",
       "lohit",
       "subansiri"
@@ -202,19 +204,23 @@
     "rivers_flowing_through": [
       "barak",
       "brahmaputra",
+      "dibang",
       "kameng",
       "kopili",
       "lohit",
       "manas",
+      "sankosh",
       "subansiri"
     ],
     "basin_rivers": [
       "barak",
       "brahmaputra",
+      "dibang",
       "kameng",
       "kopili",
       "lohit",
       "manas",
+      "sankosh",
       "subansiri"
     ],
     "notable_city_ids": [
@@ -1655,6 +1661,7 @@
       "hooghly",
       "jaldhaka",
       "mahananda",
+      "sankosh",
       "subarnarekha",
       "teesta",
       "torsa"
@@ -1668,6 +1675,7 @@
       "hooghly",
       "jaldhaka",
       "mahananda",
+      "sankosh",
       "subarnarekha",
       "teesta",
       "torsa"

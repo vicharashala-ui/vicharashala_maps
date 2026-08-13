@@ -1,0 +1,44 @@
+{
+  "id": "sankosh",
+  "name": "Sankosh",
+  "aliases": ["Puna Tsang Chu", "Gangadhar"],
+  "local_names": { "hi": "संकोश" },
+  "basin": "brahmaputra-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Northern Bhutan (Punakha, confluence of Mo Chhu and Pho Chhu)",
+    "state": "bhutan",
+    "altitude_m": 1364,
+    "coordinates": [90.33125, 28.06667]
+  },
+  "sink": {
+    "name": "Confluence with the Brahmaputra River",
+    "type": "river",
+    "location": "Dhubri district, Assam, India",
+    "coordinates": [89.839, 25.9705]
+  },
+  "length_km_india": 107,
+  "length_km_total": 321,
+  "basin_area_total_km2": 10345,
+  "basin_area_india_km2": null,
+  "states_flows_through": ["assam", "west-bengal"],
+  "basin_states": ["assam", "west-bengal"],
+  "tributaries": { "left": [], "right": [] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": true,
+  "transnational_countries": ["bhutan"],
+  "significance": ["forms much of the Assam-West Bengal state boundary after entering India", "known as Gangadhar in the Assam plains below Srirampur", "site of the Punatsangchhu I & II hydroelectric projects in Bhutan"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Known as the Puna Tsang Chu through most of Bhutan and the Gangadhar once it reaches the Assam plains, the Sankosh carries three different names across its short course.",
+    "After crossing from Bhutan into India, the Sankosh runs along the boundary between Assam and West Bengal before it finally joins the Brahmaputra."
+  ]
+}

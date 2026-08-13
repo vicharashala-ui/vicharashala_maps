@@ -2423,5 +2423,61 @@
       73.54792,
       19.90833
     ]
+  },
+  {
+    "id": "dibang",
+    "name": "Dibang",
+    "local_name_hi": "दिबांग",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 209.8,
+    "basin_area_india_km2": 13933,
+    "drainage_type": "himalayan",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "arunachal-pradesh",
+      "assam"
+    ],
+    "aliases": [
+      "Talon",
+      "Sikang"
+    ],
+    "bounds": [
+      95.58125,
+      27.79792,
+      95.88958,
+      29.30833
+    ]
+  },
+  {
+    "id": "sankosh",
+    "name": "Sankosh",
+    "local_name_hi": "संकोश",
+    "basin": "brahmaputra-basin",
+    "length_km_india": 107,
+    "basin_area_india_km2": null,
+    "drainage_type": "himalayan",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "glacial",
+    "navigable": false,
+    "transnational": true,
+    "states": [
+      "assam",
+      "west-bengal"
+    ],
+    "aliases": [
+      "Puna Tsang Chu",
+      "Gangadhar"
+    ],
+    "bounds": [
+      89.79792,
+      25.99792,
+      89.92708,
+      26.77292
+    ]
   }
 ]

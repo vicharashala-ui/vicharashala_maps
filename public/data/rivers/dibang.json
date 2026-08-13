@@ -1,0 +1,44 @@
+{
+  "id": "dibang",
+  "name": "Dibang",
+  "aliases": ["Talon", "Sikang"],
+  "local_names": { "hi": "दिबांग" },
+  "basin": "brahmaputra-basin",
+  "type": "tributary",
+  "drainage_type": "himalayan",
+  "seasonal_type": "perennial",
+  "origin_type": "glacial",
+  "stream_order": 6,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Dri stream, near Keya Pass, Indo-China border",
+    "state": "arunachal-pradesh",
+    "altitude_m": 4200,
+    "coordinates": [95.86028, 28.78075]
+  },
+  "sink": {
+    "name": "Confluence with the Lohit River",
+    "type": "river",
+    "location": "Near Sadiya, Assam, India",
+    "coordinates": [95.5173, 27.8012]
+  },
+  "length_km_india": 209.8,
+  "length_km_total": 209.8,
+  "basin_area_total_km2": 13933,
+  "basin_area_india_km2": 13933,
+  "states_flows_through": ["arunachal-pradesh", "assam"],
+  "basin_states": ["arunachal-pradesh", "assam"],
+  "tributaries": { "left": ["Emra"], "right": ["Tangon"] },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": ["right-bank tributary that helps form the Brahmaputra near Sadiya", "site of the proposed Dibang Multipurpose Project (India's tallest planned dam)", "flows through the biodiverse Dibang Valley"],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Dibang is one of three rivers — alongside the Lohit and Siang — whose confluence near Sadiya, Assam gives rise to the Brahmaputra itself.",
+    "Between Nizamghat and Sadiya the Dibang turns highly braided, with its channel width swinging between 4 and 9 kilometres across the flood season."
+  ]
+}
