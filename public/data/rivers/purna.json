@@ -1,0 +1,65 @@
+{
+  "id": "purna",
+  "name": "Purna",
+  "aliases": [
+    "Purna River (Tapi tributary)"
+  ],
+  "local_names": {
+    "hi": "पूर्णा"
+  },
+  "basin": "tapi-basin",
+  "type": "tributary",
+  "drainage_type": "peninsular",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Satpura Range, near Pokhrani, Betul district",
+    "state": "madhya-pradesh",
+    "altitude_m": 650,
+    "coordinates": [
+      77.777,
+      21.333
+    ]
+  },
+  "sink": {
+    "name": "Confluence with the Tapi near Changdev",
+    "type": "river",
+    "location": "Muktainagar taluk, Jalgaon district, Maharashtra",
+    "coordinates": [
+      76.01,
+      21.096
+    ]
+  },
+  "length_km_india": 280.5,
+  "length_km_total": 280.5,
+  "basin_area_total_km2": 18530,
+  "basin_area_india_km2": 18530,
+  "states_flows_through": [
+    "madhya-pradesh",
+    "maharashtra"
+  ],
+  "basin_states": [
+    "madhya-pradesh",
+    "maharashtra"
+  ],
+  "tributaries": {
+    "left": [],
+    "right": []
+  },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": [
+    "largest tributary of the Tapi, draining much of the Vidarbha and Khandesh plains",
+    "confluences with the Tapi near the historic pilgrim town of Changdev"
+  ],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Not to be confused with the Purna that joins the Godavari near Parbhani — this is the Tapi's own Purna, rising in Madhya Pradesh's Satpura Range."
+  ]
+}

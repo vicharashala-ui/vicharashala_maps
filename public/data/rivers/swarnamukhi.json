@@ -1,0 +1,66 @@
+{
+  "id": "swarnamukhi",
+  "name": "Swarnamukhi",
+  "aliases": [
+    "Mogaleru",
+    "Ponmugali"
+  ],
+  "local_names": {
+    "hi": "स्वर्णमुखी",
+    "te": "స్వర్ణముఖి"
+  },
+  "basin": "swarnamukhi-basin",
+  "type": "main",
+  "drainage_type": "coastal",
+  "seasonal_type": "seasonal",
+  "origin_type": "rain-fed",
+  "stream_order": 4,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Eastern Ghats near Pakala",
+    "state": "andhra-pradesh",
+    "altitude_m": 300,
+    "coordinates": [
+      79.16667,
+      13.4375
+    ]
+  },
+  "sink": {
+    "name": "Bay of Bengal near Vakadu",
+    "type": "sea",
+    "location": "Tirupati district, Andhra Pradesh",
+    "coordinates": [
+      80.135,
+      14.069
+    ]
+  },
+  "length_km_india": 164.1,
+  "length_km_total": 164.1,
+  "basin_area_total_km2": 3225,
+  "basin_area_india_km2": 3225,
+  "states_flows_through": [
+    "andhra-pradesh"
+  ],
+  "basin_states": [
+    "andhra-pradesh"
+  ],
+  "tributaries": {
+    "left": [],
+    "right": []
+  },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": [
+    "flows past Tirupati and Srikalahasti, both major pilgrim towns",
+    "an independent river with no major tributaries — flow depends entirely on catchment rainfall",
+    "dammed at Tirupati by the Kalyani Dam"
+  ],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Swarnamukhi's traced catchment (3,131km² at its mouth) matches its official basin area (3,225km²) almost exactly — one of the tightest confirmations in this batch."
+  ]
+}

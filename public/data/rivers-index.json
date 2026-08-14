@@ -2479,5 +2479,241 @@
       89.92708,
       26.77292
     ]
+  },
+  {
+    "id": "rushikulya",
+    "name": "Rushikulya",
+    "local_name_hi": "ऋषिकुल्या",
+    "basin": "rushikulya-basin",
+    "length_km_india": 155.4,
+    "basin_area_india_km2": 7700,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "odisha"
+    ],
+    "aliases": [
+      "Rishikulya"
+    ],
+    "bounds": [
+      84.57708,
+      19.38958,
+      85.02292,
+      20.30417
+    ]
+  },
+  {
+    "id": "chaliyar",
+    "name": "Chaliyar",
+    "local_name_hi": "चालियार",
+    "basin": "chaliyar-basin",
+    "length_km_india": 111.2,
+    "basin_area_india_km2": 2923,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "kerala",
+      "tamil-nadu"
+    ],
+    "aliases": [
+      "Beypore River",
+      "Chaliyar Puzha"
+    ],
+    "bounds": [
+      75.83542,
+      11.19375,
+      76.525,
+      11.48125
+    ]
+  },
+  {
+    "id": "purna",
+    "name": "Purna",
+    "local_name_hi": "पूर्णा",
+    "basin": "tapi-basin",
+    "length_km_india": 280.5,
+    "basin_area_india_km2": 18530,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "madhya-pradesh",
+      "maharashtra"
+    ],
+    "aliases": [
+      "Purna River (Tapi tributary)"
+    ],
+    "bounds": [
+      76.05208,
+      20.81458,
+      77.81875,
+      21.33333
+    ]
+  },
+  {
+    "id": "girna",
+    "name": "Girna",
+    "local_name_hi": "गिरणा",
+    "basin": "tapi-basin",
+    "length_km_india": 292.6,
+    "basin_area_india_km2": 9249,
+    "drainage_type": "peninsular",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra"
+    ],
+    "aliases": [],
+    "bounds": [
+      73.71667,
+      20.46875,
+      75.51458,
+      21.13958
+    ]
+  },
+  {
+    "id": "savitri",
+    "name": "Savitri",
+    "local_name_hi": "सावित्री",
+    "basin": "savitri-basin",
+    "length_km_india": 97.3,
+    "basin_area_india_km2": 994,
+    "drainage_type": "coastal",
+    "stream_order": 6,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra"
+    ],
+    "aliases": [],
+    "bounds": [
+      73.08125,
+      17.98125,
+      73.54375,
+      18.31875
+    ]
+  },
+  {
+    "id": "vashisthi",
+    "name": "Vashisthi",
+    "local_name_hi": "वशिष्ठी",
+    "basin": "vashisthi-basin",
+    "length_km_india": 88.1,
+    "basin_area_india_km2": 2184,
+    "drainage_type": "coastal",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "maharashtra"
+    ],
+    "aliases": [
+      "Vashishti"
+    ],
+    "bounds": [
+      73.21875,
+      17.56875,
+      73.55625,
+      17.87708
+    ]
+  },
+  {
+    "id": "gurupur",
+    "name": "Gurupur",
+    "local_name_hi": "गुरुपुर",
+    "basin": "netravati-basin",
+    "length_km_india": 128.6,
+    "basin_area_india_km2": 870,
+    "drainage_type": "coastal",
+    "stream_order": 5,
+    "seasonal_type": "perennial",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "karnataka"
+    ],
+    "aliases": [
+      "Phalguni",
+      "Kulur River",
+      "Pachamagaru River"
+    ],
+    "bounds": [
+      74.85625,
+      12.53542,
+      75.6875,
+      12.89792
+    ]
+  },
+  {
+    "id": "swarnamukhi",
+    "name": "Swarnamukhi",
+    "local_name_hi": "स्वर्णमुखी",
+    "basin": "swarnamukhi-basin",
+    "length_km_india": 164.1,
+    "basin_area_india_km2": 3225,
+    "drainage_type": "coastal",
+    "stream_order": 4,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "andhra-pradesh"
+    ],
+    "aliases": [
+      "Mogaleru",
+      "Ponmugali"
+    ],
+    "bounds": [
+      79.15625,
+      13.4375,
+      80.13542,
+      14.07708
+    ]
+  },
+  {
+    "id": "manimuktha",
+    "name": "Manimuktha",
+    "local_name_hi": "मणिमुक्ता",
+    "basin": "vellar-basin",
+    "length_km_india": 115.4,
+    "basin_area_india_km2": 2952,
+    "drainage_type": "coastal",
+    "stream_order": 4,
+    "seasonal_type": "seasonal",
+    "origin_type": "rain-fed",
+    "navigable": false,
+    "transnational": false,
+    "states": [
+      "tamil-nadu"
+    ],
+    "aliases": [
+      "Manimukthanadhi"
+    ],
+    "bounds": [
+      78.75833,
+      11.41458,
+      79.46458,
+      11.95625
+    ]
   }
 ]

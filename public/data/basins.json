@@ -219,6 +219,8 @@
     ],
     "main_river": "tapi",
     "rivers": [
+      "girna",
+      "purna",
       "tapi"
     ],
     "area_rank": 9
@@ -388,6 +390,21 @@
     "area_rank": 19
   },
   {
+    "id": "rushikulya-basin",
+    "name": "Rushikulya Basin",
+    "color_light": "#1e6b8c",
+    "color_dark": "#5fb8dd",
+    "area_km2": 7700,
+    "states": [
+      "odisha"
+    ],
+    "main_river": "rushikulya",
+    "rivers": [
+      "rushikulya"
+    ],
+    "area_rank": 20
+  },
+  {
     "id": "vaigai-basin",
     "name": "Vaigai Basin",
     "color_light": "#25619d",
@@ -400,7 +417,7 @@
     "rivers": [
       "vaigai"
     ],
-    "area_rank": 20
+    "area_rank": 21
   },
   {
     "id": "bharathapuzha-basin",
@@ -416,7 +433,7 @@
     "rivers": [
       "bharathapuzha"
     ],
-    "area_rank": 21
+    "area_rank": 22
   },
   {
     "id": "tamiraparani-basin",
@@ -431,7 +448,7 @@
     "rivers": [
       "tamiraparani"
     ],
-    "area_rank": 22
+    "area_rank": 23
   },
   {
     "id": "periyar-basin",
@@ -447,7 +464,7 @@
     "rivers": [
       "periyar"
     ],
-    "area_rank": 23
+    "area_rank": 24
   },
   {
     "id": "vaippar-basin",
@@ -462,7 +479,7 @@
     "rivers": [
       "vaippar"
     ],
-    "area_rank": 24
+    "area_rank": 25
   },
   {
     "id": "kali-karnataka-basin",
@@ -477,7 +494,7 @@
     "rivers": [
       "kali-karnataka"
     ],
-    "area_rank": 25
+    "area_rank": 26
   },
   {
     "id": "palar-basin",
@@ -494,7 +511,7 @@
     "rivers": [
       "palar"
     ],
-    "area_rank": 26
+    "area_rank": 27
   },
   {
     "id": "ulhas-basin",
@@ -509,7 +526,7 @@
     "rivers": [
       "ulhas"
     ],
-    "area_rank": 27
+    "area_rank": 28
   },
   {
     "id": "vaitarna-basin",
@@ -524,7 +541,7 @@
     "rivers": [
       "vaitarna"
     ],
-    "area_rank": 28
+    "area_rank": 29
   },
   {
     "id": "netravati-basin",
@@ -537,9 +554,25 @@
     ],
     "main_river": "netravati",
     "rivers": [
+      "gurupur",
       "netravati"
     ],
-    "area_rank": 29
+    "area_rank": 30
+  },
+  {
+    "id": "swarnamukhi-basin",
+    "name": "Swarnamukhi Basin",
+    "color_light": "#8c3a1e",
+    "color_dark": "#dd7f5f",
+    "area_km2": 3225,
+    "states": [
+      "andhra-pradesh"
+    ],
+    "main_river": "swarnamukhi",
+    "rivers": [
+      "swarnamukhi"
+    ],
+    "area_rank": 31
   },
   {
     "id": "sharavati-basin",
@@ -554,7 +587,23 @@
     "rivers": [
       "sharavati"
     ],
-    "area_rank": 30
+    "area_rank": 32
+  },
+  {
+    "id": "chaliyar-basin",
+    "name": "Chaliyar Basin",
+    "color_light": "#8c5a1e",
+    "color_dark": "#ddab5f",
+    "area_km2": 2923,
+    "states": [
+      "kerala",
+      "tamil-nadu"
+    ],
+    "main_river": "chaliyar",
+    "rivers": [
+      "chaliyar"
+    ],
+    "area_rank": 33
   },
   {
     "id": "damanganga-basin",
@@ -571,7 +620,7 @@
     "rivers": [
       "damanganga"
     ],
-    "area_rank": 31
+    "area_rank": 34
   },
   {
     "id": "pamba-basin",
@@ -586,7 +635,22 @@
     "rivers": [
       "pamba"
     ],
-    "area_rank": 32
+    "area_rank": 35
+  },
+  {
+    "id": "vashisthi-basin",
+    "name": "Vashisthi Basin",
+    "color_light": "#6b1e8c",
+    "color_dark": "#b85fdd",
+    "area_km2": 2184,
+    "states": [
+      "maharashtra"
+    ],
+    "main_river": "vashisthi",
+    "rivers": [
+      "vashisthi"
+    ],
+    "area_rank": 36
   },
   {
     "id": "vellar-basin",
@@ -599,9 +663,10 @@
     ],
     "main_river": "vellar",
     "rivers": [
+      "manimuktha",
       "vellar"
     ],
-    "area_rank": 33
+    "area_rank": 37
   },
   {
     "id": "mandovi-basin",
@@ -618,7 +683,7 @@
     "rivers": [
       "mandovi"
     ],
-    "area_rank": 34
+    "area_rank": 38
   },
   {
     "id": "kallada-basin",
@@ -633,7 +698,7 @@
     "rivers": [
       "kallada"
     ],
-    "area_rank": 35
+    "area_rank": 39
   },
   {
     "id": "aghanashini-basin",
@@ -648,7 +713,22 @@
     "rivers": [
       "aghanashini"
     ],
-    "area_rank": 36
+    "area_rank": 40
+  },
+  {
+    "id": "savitri-basin",
+    "name": "Savitri Basin",
+    "color_light": "#1e8c5e",
+    "color_dark": "#5fddab",
+    "area_km2": 994,
+    "states": [
+      "maharashtra"
+    ],
+    "main_river": "savitri",
+    "rivers": [
+      "savitri"
+    ],
+    "area_rank": 41
   },
   {
     "id": "zuari-basin",
@@ -663,6 +743,6 @@
     "rivers": [
       "zuari"
     ],
-    "area_rank": 37
+    "area_rank": 42
   }
 ]

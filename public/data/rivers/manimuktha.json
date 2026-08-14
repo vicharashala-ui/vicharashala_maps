@@ -1,0 +1,65 @@
+{
+  "id": "manimuktha",
+  "name": "Manimuktha",
+  "aliases": [
+    "Manimukthanadhi"
+  ],
+  "local_names": {
+    "hi": "मणिमुक्ता",
+    "ta": "மணிமுக்தா"
+  },
+  "basin": "vellar-basin",
+  "type": "tributary",
+  "drainage_type": "coastal",
+  "seasonal_type": "seasonal",
+  "origin_type": "rain-fed",
+  "stream_order": 4,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Confluence of the Mani and Muktha rivers, Kalvarayan Hills",
+    "state": "tamil-nadu",
+    "altitude_m": 125,
+    "coordinates": [
+      78.75833,
+      11.95
+    ]
+  },
+  "sink": {
+    "name": "Confluence with the Vellar near Srimushnam",
+    "type": "river",
+    "location": "Vriddhachalam taluk, Cuddalore district, Tamil Nadu",
+    "coordinates": [
+      79.464,
+      11.417
+    ]
+  },
+  "length_km_india": 115.4,
+  "length_km_total": 115.4,
+  "basin_area_total_km2": 2952,
+  "basin_area_india_km2": 2952,
+  "states_flows_through": [
+    "tamil-nadu"
+  ],
+  "basin_states": [
+    "tamil-nadu"
+  ],
+  "tributaries": {
+    "left": [],
+    "right": [
+      "Gomukhi",
+      "Periya"
+    ]
+  },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": [
+    "the Vellar's largest tributary, joining it near Srimushnam in Cuddalore district",
+    "rises from the confluence of the Mani and Muktha streams in the Kalvarayan Hills"
+  ],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": []
+}

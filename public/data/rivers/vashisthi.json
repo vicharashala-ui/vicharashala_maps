@@ -1,0 +1,64 @@
+{
+  "id": "vashisthi",
+  "name": "Vashisthi",
+  "aliases": [
+    "Vashishti"
+  ],
+  "local_names": {
+    "hi": "वशिष्ठी"
+  },
+  "basin": "vashisthi-basin",
+  "type": "main",
+  "drainage_type": "coastal",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Western Ghats, near Chiplun",
+    "state": "maharashtra",
+    "altitude_m": 800,
+    "coordinates": [
+      73.554,
+      17.877
+    ]
+  },
+  "sink": {
+    "name": "Dabhol estuary",
+    "type": "sea",
+    "location": "Ratnagiri district, Maharashtra, Arabian Sea",
+    "coordinates": [
+      73.172,
+      17.585
+    ]
+  },
+  "length_km_india": 88.1,
+  "length_km_total": 88.1,
+  "basin_area_total_km2": 2184,
+  "basin_area_india_km2": 2184,
+  "states_flows_through": [
+    "maharashtra"
+  ],
+  "basin_states": [
+    "maharashtra"
+  ],
+  "tributaries": {
+    "left": [],
+    "right": []
+  },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": [
+    "one of the widest estuaries on the Konkan coast at Dabhol",
+    "fed by the Kolkewadi Dam reservoir near Alore",
+    "town of Chiplun sits on its banks and floods regularly in the monsoon"
+  ],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "Basin area here is HydroRIVERS' own measured upstream catchment (2,184km²) rather than a literature figure — no reliable independent citation for the Vashisthi's basin area specifically was found."
+  ]
+}

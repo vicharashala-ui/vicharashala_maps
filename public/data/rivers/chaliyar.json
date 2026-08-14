@@ -1,0 +1,75 @@
+{
+  "id": "chaliyar",
+  "name": "Chaliyar",
+  "aliases": [
+    "Beypore River",
+    "Chaliyar Puzha"
+  ],
+  "local_names": {
+    "hi": "चालियार",
+    "ml": "ചാലിയാർ"
+  },
+  "basin": "chaliyar-basin",
+  "type": "main",
+  "drainage_type": "peninsular",
+  "seasonal_type": "perennial",
+  "origin_type": "rain-fed",
+  "stream_order": 5,
+  "wikimedia_image_id": null,
+  "source": {
+    "name": "Elambaleri Hills, Western Ghats, near Cherambadi",
+    "state": "tamil-nadu",
+    "altitude_m": 2066,
+    "coordinates": [
+      76.525,
+      11.471
+    ]
+  },
+  "sink": {
+    "name": "Beypore estuary, Lakshadweep Sea (Arabian Sea)",
+    "type": "sea",
+    "location": "Beypore, Kozhikode district, Kerala",
+    "coordinates": [
+      75.808,
+      11.156
+    ]
+  },
+  "length_km_india": 111.2,
+  "length_km_total": 111.2,
+  "basin_area_total_km2": 2923,
+  "basin_area_india_km2": 2923,
+  "states_flows_through": [
+    "kerala",
+    "tamil-nadu"
+  ],
+  "basin_states": [
+    "kerala",
+    "tamil-nadu"
+  ],
+  "tributaries": {
+    "left": [
+      "Iruvazhinjipuzha",
+      "Cherupuzha",
+      "Engappuzha"
+    ],
+    "right": [
+      "Punnapuzha",
+      "Karimpuzha"
+    ]
+  },
+  "distributaries": [],
+  "protected_area_ids": [],
+  "navigable": false,
+  "transnational": false,
+  "transnational_countries": [],
+  "significance": [
+    "fourth-longest river in Kerala, flowing through Nilambur, Areekode and Feroke before Beypore",
+    "historically important for the timber trade at Beypore, one of India's oldest ports"
+  ],
+  "notable_city_ids": [],
+  "upsc_relevant": true,
+  "did_you_know": [
+    "The Chaliyar is known as the Beypore River in its final stretch, giving the historic port town of Beypore its name.",
+    "The traced channel's length (111km) falls well short of the ~169km commonly quoted for the Chaliyar, consistent across two independently-anchored traces — a real gap between HydroRIVERS' modelled course and the cited figure, not a tracing error."
+  ]
+}
