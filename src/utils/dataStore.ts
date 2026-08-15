@@ -62,10 +62,17 @@ export function loadPAData(): Promise<PAData> {
     fetch('/data/protected-areas.json').then((r) => r.json()),
     fetch('/data/pa-id-map.json').then((r) => r.json()),
     fetch('/data/search-index-pa.json').then((r) => r.json()),
-  ]).then(([protectedAreas, paIdMap, searchIndexPA]) => {
-    paDataLoaded.set(true);
-    return { protectedAreas, paIdMap, searchIndexPA };
-  });
+  ])
+    .then(([protectedAreas, paIdMap, searchIndexPA]) => {
+      paDataLoaded.set(true);
+      return { protectedAreas, paIdMap, searchIndexPA };
+    })
+    // Without this, a rejected promise stays cached forever and every future call —
+    // including a user-triggered Retry — just replays the same failure.
+    .catch((err) => {
+      paDataPromise = null;
+      throw err;
+    });
   return paDataPromise;
 }
 

@@ -66,9 +66,15 @@ function removeTransportLayers(m: maplibregl.Map) {
 export default function MapView() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [map, setMap] = useState<maplibregl.Map | null>(null);
+  // §3.12: initial-load placeholder + tile/style-error banner. `retryAttempt` re-runs the
+  // effect below on demand (Retry button) — everything else about init() is unchanged.
+  const [mapError, setMapError] = useState(false);
+  const [retryAttempt, setRetryAttempt] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
+    let errorReported = false;
+    setMapError(false);
 
     async function init() {
       const protocol = new Protocol();
@@ -189,6 +195,12 @@ export default function MapView() {
 
       m.on('error', (e) => {
         console.error('MapLibre error:', e.error);
+        // MapLibre can emit multiple 'error' events for one failed load (e.g. several failed
+        // tile requests) — report the banner once per attempt, not once per event.
+        if (!errorReported && !cancelled) {
+          errorReported = true;
+          setMapError(true);
+        }
       });
     }
 
@@ -198,12 +210,50 @@ export default function MapView() {
       cancelled = true;
       mapInstance.get()?.remove();
       mapInstance.set(null);
+      setMap(null);
     };
-  }, []);
+  }, [retryAttempt]);
+
+  function handleRetry() {
+    setMapError(false);
+    setRetryAttempt((n) => n + 1);
+  }
 
   return (
     <div className="relative h-full w-full">
       <div ref={containerRef} className="map-container h-full w-full" />
+      {!map && !mapError && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="absolute inset-0 flex flex-col items-center justify-center gap-3"
+          style={{ background: 'var(--color-bg)' }}
+        >
+          <div
+            className="map-loading-spinner h-8 w-8 rounded-full border-2"
+            style={{ borderColor: 'var(--color-border)', borderTopColor: 'var(--color-accent)' }}
+            aria-hidden="true"
+          />
+          <span className="text-sm" style={{ color: 'var(--color-text-muted)' }}>Loading map…</span>
+        </div>
+      )}
+      {mapError && (
+        <div
+          role="alert"
+          className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-4 text-center"
+          style={{ background: 'var(--color-bg)' }}
+        >
+          <span className="text-sm" style={{ color: 'var(--color-text)' }}>Could not load map data.</span>
+          <button
+            type="button"
+            onClick={handleRetry}
+            className="rounded border px-4 py-1.5 text-sm font-medium"
+            style={{ borderColor: 'var(--color-border)', color: 'var(--color-accent)' }}
+          >
+            Retry
+          </button>
+        </div>
+      )}
       {map && (
         <>
           <RiversLayer map={map} />

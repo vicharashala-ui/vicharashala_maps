@@ -108,6 +108,17 @@ html, body {
   .panel-slide-in { animation: none; }
 }
 
+/* Initial map load + Protected Areas fetch (§3.12) */
+.map-loading-spinner {
+  animation: map-loading-spin 900ms linear infinite;
+}
+@keyframes map-loading-spin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-loading-spinner { animation: none; }
+}
+
 /* Visually-hidden but screen-reader-accessible (WCAG 4.1.3 aria-live status regions, §12) */
 .sr-only {
   position: absolute;
