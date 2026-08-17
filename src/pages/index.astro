@@ -14,11 +14,13 @@ import BrowsePanel from '../components/Browse/BrowsePanel';
 import StatePanel from '../components/Panels/StatePanel';
 import Header from '../components/Layout/Header.astro';
 import Footer from '../components/Layout/Footer.astro';
+import QuickStatsBar from '../components/QuickStats/QuickStatsBar.astro';
 
 const riversIndex = JSON.parse(readFileSync('public/data/rivers-index.json', 'utf-8'));
 const states = JSON.parse(readFileSync('public/data/states.json', 'utf-8'));
 const basins = JSON.parse(readFileSync('public/data/basins.json', 'utf-8'));
 const cities = JSON.parse(readFileSync('public/data/cities.json', 'utf-8'));
+const protectedAreas = JSON.parse(readFileSync('public/data/protected-areas.json', 'utf-8'));
 ---
 <html lang="en">
   <head>
@@ -65,6 +67,12 @@ const cities = JSON.parse(readFileSync('public/data/cities.json', 'utf-8'));
     <script is:inline type="application/json" id="core-data-cities" set:html={JSON.stringify(cities)} />
 
     <Header />
+    <QuickStatsBar
+      riverCount={riversIndex.length}
+      paCount={protectedAreas.length}
+      basinCount={basins.length}
+      stateCount={states.length}
+    />
 
     <main class="flex-1 min-h-0 w-full relative overflow-hidden">
       <MapView client:load />

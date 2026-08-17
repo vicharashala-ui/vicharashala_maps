@@ -27,6 +27,25 @@ export default function RiversLayer({ map }: { map: maplibregl.Map }) {
       const accentWarm = style.getPropertyValue('--color-accent-warm').trim();
       const riverDefault = style.getPropertyValue('--color-river-default').trim();
 
+      // Soft blurred underlay, visible only for the selected river (opacity 0 otherwise) — a
+      // duplicate wide line beneath the crisp one reads as a glow without blurring the actual
+      // line geometry, which stays sharp for legibility at all zooms.
+      if (!map.getLayer('rivers-line-glow')) {
+        map.addLayer({
+          id: 'rivers-line-glow',
+          type: 'line',
+          source: SOURCE_ID,
+          'source-layer': SOURCE_LAYER,
+          layout: { 'line-cap': 'round', 'line-join': 'round' },
+          paint: {
+            'line-color': accentWarm,
+            'line-width': ['interpolate', ['linear'], ['zoom'], 4, 5, 10, 9],
+            'line-blur': 4,
+            'line-opacity': ['case', ['boolean', ['feature-state', 'selected'], false], 0.4, 0],
+          },
+        });
+      }
+
       map.addLayer({
         id: LINE_LAYER,
         type: 'line',
@@ -35,8 +54,20 @@ export default function RiversLayer({ map }: { map: maplibregl.Map }) {
         paint: {
           'line-color': ['case', ['boolean', ['feature-state', 'selected'], false], accentWarm, riverDefault],
           // Widened/brightened at the low end (zoom 4 ≈ the default India-wide view) so rivers
-          // read clearly against the basemap without waiting for the user to zoom in.
-          'line-width': ['interpolate', ['linear'], ['zoom'], 4, 1.2, 10, 2.4],
+          // read clearly against the basemap without waiting for the user to zoom in. Selected
+          // rivers get an extra width bump on top, paired with the glow layer above.
+          // NB: MapLibre only allows one zoom-based interpolate/step subexpression per paint
+          // property — a 'case' wrapping two separate interpolates (as this was) throws at
+          // runtime. The 'selected' branch has to live inside each stop instead.
+          'line-width': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            4,
+            ['case', ['boolean', ['feature-state', 'selected'], false], 2.2, 1.2],
+            10,
+            ['case', ['boolean', ['feature-state', 'selected'], false], 3.8, 2.4],
+          ],
           'line-opacity': [
             'case',
             ['boolean', ['feature-state', 'selected'], false],

@@ -41,7 +41,14 @@ export default function ProtectedAreasLayer({ map }: { map: maplibregl.Map }) {
           layout: { visibility: 'none' },
           paint: {
             'fill-color': cat.fill,
-            'fill-opacity': ['case', ['boolean', ['feature-state', 'selected'], false], 0.4, 0.25],
+            'fill-opacity': [
+              'case',
+              ['boolean', ['feature-state', 'selected'], false],
+              0.45,
+              ['boolean', ['feature-state', 'hover'], false],
+              0.35,
+              0.25,
+            ],
           },
         });
       }
@@ -55,7 +62,20 @@ export default function ProtectedAreasLayer({ map }: { map: maplibregl.Map }) {
           layout: { visibility: 'none' },
           paint: {
             'line-color': cat.fill,
-            'line-width': ['case', ['boolean', ['feature-state', 'highlighted'], false], 2.5, 1],
+            // 'highlighted' (river-selection cross-highlight, set by RiversLayer) and 'selected'
+            // (direct PA selection, set below) both bump width; 'selected' also adds a soft
+            // outward blur so the chosen site visibly pops instead of just recoloring.
+            'line-width': [
+              'case',
+              ['boolean', ['feature-state', 'selected'], false],
+              3,
+              ['boolean', ['feature-state', 'highlighted'], false],
+              2.5,
+              ['boolean', ['feature-state', 'hover'], false],
+              1.8,
+              1,
+            ],
+            'line-blur': ['case', ['boolean', ['feature-state', 'selected'], false], 1.5, 0],
           },
         });
       }
@@ -106,6 +126,25 @@ export default function ProtectedAreasLayer({ map }: { map: maplibregl.Map }) {
       map.on('mouseenter', `pa-${cat.id}-fill`, () => (map.getCanvas().style.cursor = 'pointer'));
       map.on('mouseleave', `pa-${cat.id}-fill`, () => (map.getCanvas().style.cursor = ''));
     }
+
+    // Per-feature hover state (rivers already had this via RiversLayer's popup handler; PA
+    // polygons didn't) — single map-wide mousemove instead of one per category layer, since we
+    // need to query across whichever category layers are currently visible either way.
+    let hoveredId: number | null = null;
+    function onHoverMove(e: maplibregl.MapMouseEvent) {
+      const layers = CATEGORIES.map((c) => `pa-${c.id}-fill`).filter((id) => map.getLayer(id));
+      const feature = map.queryRenderedFeatures(e.point, { layers })[0];
+      const id = feature?.id as number | undefined;
+      if (id === hoveredId) return;
+      if (hoveredId !== null) {
+        map.setFeatureState({ source: SOURCE_ID, sourceLayer: SOURCE_LAYER, id: hoveredId }, { hover: false });
+      }
+      hoveredId = id ?? null;
+      if (hoveredId !== null) {
+        map.setFeatureState({ source: SOURCE_ID, sourceLayer: SOURCE_LAYER, id: hoveredId }, { hover: true });
+      }
+    }
+    map.on('mousemove', onHoverMove);
 
     async function applySelection(paId: string | null) {
       if (currentSelected !== null) {
@@ -207,6 +246,7 @@ export default function ProtectedAreasLayer({ map }: { map: maplibregl.Map }) {
 
     return () => {
       map.off('click', onClick);
+      map.off('mousemove', onHoverMove);
       unsubVisible();
       unsubCategories();
       unsubSelected();

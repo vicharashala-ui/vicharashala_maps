@@ -5,6 +5,7 @@ import { selectedPAId, activePanel, closePanel, selectRiver } from '../../utils/
 import { loadPAData } from '../../utils/dataStore';
 import { riversIndex } from '../../utils/dataStore';
 import { debouncedUpdateUrl } from '../../utils/urlState';
+import CloseButton from '../UI/CloseButton';
 import type { ProtectedArea } from '../../utils/types';
 
 const CATEGORY_LABEL: Record<ProtectedArea['category'], string> = {
@@ -57,9 +58,7 @@ export default function PAInfoPanel() {
             {pa.state.join(', ')}
           </p>
         </div>
-        <button aria-label="Close" onClick={closePanel} className="text-xl leading-none px-2">
-          ×
-        </button>
+        <CloseButton onClick={closePanel} />
       </div>
 
       <div className="p-4 flex flex-col gap-3 text-sm">

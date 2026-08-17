@@ -4,6 +4,7 @@ import { useFocusOnOpen } from '../../utils/useFocusOnOpen';
 import { selectedStateId, activePanel, closePanel, selectRiver, selectPA } from '../../utils/mapStore';
 import { getState, getCity, riversIndex, loadPAData, paDataLoaded } from '../../utils/dataStore';
 import { debouncedUpdateUrl } from '../../utils/urlState';
+import CloseButton from '../UI/CloseButton';
 import type { ProtectedArea } from '../../utils/types';
 
 export default function StatePanel() {
@@ -53,9 +54,7 @@ export default function StatePanel() {
             Capital: {state.capital}
           </p>
         </div>
-        <button aria-label="Close" onClick={closePanel} className="text-xl leading-none px-2">
-          ×
-        </button>
+        <CloseButton onClick={closePanel} />
       </div>
 
       <div className="p-4 flex flex-col gap-3 text-sm">

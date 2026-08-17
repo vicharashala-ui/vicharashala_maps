@@ -5,6 +5,7 @@ import RiverBrowseList from './RiverBrowseList';
 import PABrowseList from './PABrowseList';
 import RiverFilterPanel from '../Filters/RiverFilterPanel';
 import PAFilterPanel from '../Filters/PAFilterPanel';
+import CloseButton from '../UI/CloseButton';
 
 // Toggle button lives here (not MapControls) so Browse mode stays a single self-contained
 // island — the primary keyboard-accessible route to feature selection (§12), since MapLibre's
@@ -20,8 +21,8 @@ export default function BrowsePanel() {
         type="button"
         aria-expanded={open}
         aria-controls="browse-panel"
-        className="absolute bottom-6 left-4 z-10 h-9 px-3 rounded border shadow-sm text-sm font-medium flex items-center gap-2"
-        style={{ background: 'var(--color-surface)', borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
+        className="icon-btn glass-panel absolute bottom-6 left-4 z-10 h-9 px-3 rounded-lg shadow-sm text-sm font-medium flex items-center gap-2"
+        style={{ color: 'var(--color-text)' }}
         onClick={() => browseOpen.set(!open)}
       >
         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
@@ -47,9 +48,7 @@ export default function BrowsePanel() {
                 Protected Areas
               </TabButton>
             </div>
-            <button aria-label="Close" onClick={() => browseOpen.set(false)} className="text-xl leading-none px-2">
-              ×
-            </button>
+            <CloseButton onClick={() => browseOpen.set(false)} />
           </div>
 
           <div className="flex-1 min-h-0 flex flex-col">

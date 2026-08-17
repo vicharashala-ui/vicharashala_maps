@@ -84,9 +84,11 @@ export default function CompareView() {
                 <button
                   aria-label={`Remove ${river?.name ?? id} from comparison`}
                   onClick={() => setSlot(i, null)}
-                  className="leading-none"
+                  className="icon-btn h-5 w-5 rounded-full flex items-center justify-center leading-none"
                 >
-                  ×
+                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                    <path d="M4 4l8 8M12 4l-8 8" strokeLinecap="round" />
+                  </svg>
                 </button>
               </span>
             );

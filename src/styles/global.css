@@ -96,6 +96,154 @@ html, body {
 .pa-marker.highlighted {
   background: color-mix(in srgb, var(--color-pa-tr-label) 35%, transparent);
 }
+.pa-marker {
+  transition: transform 120ms ease;
+}
+.pa-marker:hover {
+  transform: scale(1.35);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pa-marker { transition: none; }
+}
+
+/* Shared interaction layer for icon-only buttons (zoom, close, theme toggle, Browse toggle) —
+   hover fill + press scale + keyboard focus ring. Colors/background/border stay per-instance
+   (inline style or .glass-panel below); this only adds the interactive feel so every icon
+   button behaves consistently across the app (UI polish pass, Aug 2026). */
+.icon-btn {
+  transition: background-color 150ms ease, transform 100ms ease, color 150ms ease;
+}
+.icon-btn:hover {
+  background: var(--color-border);
+}
+.icon-btn:active {
+  transform: scale(0.92);
+}
+.icon-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .icon-btn { transition: none; }
+  .icon-btn:active { transform: none; }
+}
+
+/* Frosted-glass treatment for controls that float over the map (Search, LayerControl,
+   MapControls, Browse toggle) — distinguishes them from the opaque side panels (River/PA/State
+   detail), which sit on solid --color-bg. Falls back to a plain opaque surface when
+   backdrop-filter isn't supported. */
+.glass-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .glass-panel {
+    background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+    backdrop-filter: blur(12px) saturate(1.4);
+    -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  }
+}
+
+/* Custom checkbox — replaces the bare OS checkbox used across LayerControl/filter panels with
+   a themed box + animated check (pure CSS, no image asset). */
+input[type='checkbox'] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 1.5px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-bg);
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+input[type='checkbox']::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  transform: scale(0);
+  transition: transform 120ms ease;
+  box-shadow: inset 1em 1em #fff;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+input[type='checkbox']:checked {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+input[type='checkbox']:checked::before {
+  transform: scale(1);
+}
+input[type='checkbox']:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+input[type='checkbox']:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  input[type='checkbox'],
+  input[type='checkbox']::before {
+    transition: none;
+  }
+}
+
+/* Custom <select> arrow + focus ring, replacing the raw OS dropdown chrome (CompareView river
+   slots, RiverFilterPanel drainage type). */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%234B5563' stroke-width='1.5'%3E%3Cpath d='M4 6l4 4 4-4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+  padding-right: 24px !important;
+  transition: border-color 150ms ease;
+}
+select:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+/* Data-URIs can't reference CSS custom properties, so the dark-mode arrow needs its own literal
+   color (--color-text-muted's dark value, #8FA6BF) instead of the light-mode one above. */
+[data-theme='dark'] select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%238FA6BF' stroke-width='1.5'%3E%3Cpath d='M4 6l4 4 4-4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%238FA6BF' stroke-width='1.5'%3E%3Cpath d='M4 6l4 4 4-4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+}
+
+/* Custom <details>/<summary> disclosure (RiverFilterPanel/PAFilterPanel's State/Basin/Category
+   pickers) — removes the OS triangle marker in favour of a rotating chevron. */
+summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid var(--color-text-muted);
+  border-bottom: 1.5px solid var(--color-text-muted);
+  transform: rotate(-45deg);
+  transition: transform 150ms ease;
+  flex-shrink: 0;
+}
+details[open] > summary::before {
+  transform: rotate(45deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  summary::before { transition: none; }
+}
 
 .panel-slide-in {
   animation: panel-slide-in 300ms cubic-bezier(0.16, 1, 0.3, 1);

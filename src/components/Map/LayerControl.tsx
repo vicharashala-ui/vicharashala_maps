@@ -37,10 +37,7 @@ export default function LayerControl() {
   }
 
   return (
-    <div
-      className="absolute top-4 right-4 z-10 w-56 rounded-lg border shadow-sm"
-      style={{ background: 'var(--color-surface)', borderColor: 'var(--color-border)' }}
-    >
+    <div className="glass-panel absolute top-4 right-4 z-10 w-56 rounded-lg shadow-sm">
       <div className="px-3 py-2 border-b text-sm font-semibold" style={{ borderColor: 'var(--color-border)' }}>
         Layers
       </div>

@@ -1,0 +1,33 @@
+---
+// Fills the "Quick Stats banner" gap Header.astro's own comment flagged as deferred — a plain
+// Astro component (no client JS, no hydration cost) since these counts are static per build.
+// Deliberately scoped to just this strip, not the full deferred 3-column desktop layout.
+interface Props {
+  riverCount: number;
+  paCount: number;
+  basinCount: number;
+  stateCount: number;
+}
+const { riverCount, paCount, basinCount, stateCount } = Astro.props;
+
+const stats = [
+  { label: 'Rivers', value: riverCount, color: 'var(--color-river-default)' },
+  { label: 'Protected Areas', value: paCount, color: 'var(--color-pa-np-label)' },
+  { label: 'Basins', value: basinCount, color: 'var(--color-accent-warm)' },
+  { label: 'States & UTs', value: stateCount, color: 'var(--color-accent)' },
+];
+---
+<div
+  class="flex items-center gap-5 px-4 h-9 border-b text-xs shrink-0 overflow-x-auto"
+  style="background: var(--color-bg); border-color: var(--color-border); color: var(--color-text-muted);"
+>
+  {
+    stats.map((s) => (
+      <span class="flex items-center gap-1.5 whitespace-nowrap">
+        <span class="inline-block w-1.5 h-1.5 rounded-full shrink-0" style={`background: ${s.color}`} aria-hidden="true" />
+        <span class="font-semibold tabular-nums" style="color: var(--color-text);">{s.value.toLocaleString()}</span>
+        {s.label}
+      </span>
+    ))
+  }
+</div>

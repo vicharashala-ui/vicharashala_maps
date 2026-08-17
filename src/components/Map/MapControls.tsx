@@ -19,26 +19,30 @@ export default function MapControls() {
       <button
         type="button"
         aria-label="Zoom in"
-        className="h-9 w-9 rounded border shadow-sm text-lg leading-none"
-        style={{ background: 'var(--color-surface)', borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
+        className="icon-btn glass-panel h-9 w-9 rounded-lg shadow-sm flex items-center justify-center"
+        style={{ color: 'var(--color-text)' }}
         onClick={() => map.zoomIn()}
       >
-        +
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+          <path d="M8 2v12M2 8h12" strokeLinecap="round" />
+        </svg>
       </button>
       <button
         type="button"
         aria-label="Zoom out"
-        className="h-9 w-9 rounded border shadow-sm text-lg leading-none"
-        style={{ background: 'var(--color-surface)', borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
+        className="icon-btn glass-panel h-9 w-9 rounded-lg shadow-sm flex items-center justify-center"
+        style={{ color: 'var(--color-text)' }}
         onClick={() => map.zoomOut()}
       >
-        −
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+          <path d="M2 8h12" strokeLinecap="round" />
+        </svg>
       </button>
       <button
         type="button"
         aria-label="Reset view"
-        className="h-9 w-9 rounded border shadow-sm flex items-center justify-center"
-        style={{ background: 'var(--color-surface)', borderColor: 'var(--color-border)', color: 'var(--color-text)' }}
+        className="icon-btn glass-panel h-9 w-9 rounded-lg shadow-sm flex items-center justify-center"
+        style={{ color: 'var(--color-text)' }}
         onClick={reset}
       >
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">

@@ -122,10 +122,7 @@ export default function SearchBar() {
 
   return (
     <div className="absolute top-4 left-4 z-10 w-72 sm:w-80">
-      <div
-        className="rounded-lg border shadow-sm"
-        style={{ background: 'var(--color-surface)', borderColor: 'var(--color-border)' }}
-      >
+      <div className="glass-panel rounded-lg shadow-sm">
         <input
           ref={inputRef}
           type="text"
